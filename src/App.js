@@ -1,11 +1,8 @@
-import './App.css';
+import "./App.css"
+import Routes from "./Routing"
 
-function App() {
-  return (
-    <div className="App">
-      Learn React
-    </div>
-  );
+const App = () => {
+  return <Routes/>
 }
 
-export default App;
+export default App
