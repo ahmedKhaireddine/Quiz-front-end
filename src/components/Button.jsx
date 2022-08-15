@@ -25,9 +25,7 @@ const Button = () => {
     }
 
     return ( 
-        <Btn onClick={handleClick} type='button'>              
-             Bouton
-        </Btn>
+        <Btn onClick={handleClick} type='button'>Bouton</Btn>
     )
 }
 
