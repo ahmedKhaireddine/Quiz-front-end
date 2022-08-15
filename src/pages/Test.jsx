@@ -1,5 +1,6 @@
 import React from 'react'
-import QuizLayout from '../layouts/QuizLayout'
+import Button from '../components/Button'
+import QuizLayout from '../components/layouts/QuizLayout'
 import Logo from '../components/Logo'
 
 const Test = () => {
@@ -7,6 +8,7 @@ const Test = () => {
         <div>
             <Logo/>
             <QuizLayout/>
+            <Button/>
         </div>
     )
 }
