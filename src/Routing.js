@@ -6,6 +6,7 @@ import Error404 from "./pages/Error404"
 import QuizInterface from "./pages/QuizInterface"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
+import Test from "./pages/Test"
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     element: <SignUp/>,
     name: "signup",
     path: "/signup"
+  },
+    {
+    element: <Test/>,
+    name: "test",
+    path: "/test"
   }
 ]
 
