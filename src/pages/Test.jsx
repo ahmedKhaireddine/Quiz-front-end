@@ -7,8 +7,8 @@ const Test = () => {
     return (
         <div>
             <Logo/>
-            <QuizLayout/>
             <Button/>
+            <QuizLayout/>
         </div>
     )
 }

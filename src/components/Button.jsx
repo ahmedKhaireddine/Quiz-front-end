@@ -3,19 +3,19 @@ import styled from 'styled-components'
 
 const Btn = styled.div`
     display: block;
-    height: 60px;
+    height: 50px;
     width: 100px;
-    margin: 150px auto 0;
     font-size: 30px;
-    font-weight: lighter;
     color: white;
-    padding: 25px 80px;
-    background: teal;
+    padding: 10px 60px;
+    background: red;
     outline: none;
     cursor: pointer;
     border-radius: 5px;
+    :hover {
+        background: blue;
+    }
 `
-
 
 const Button = () => {
 
