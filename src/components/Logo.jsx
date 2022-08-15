@@ -4,8 +4,7 @@ const Logo = () => {
     return (
         <div style={{
             fontFamily: 'Henny Penny',
-            height: '100px',
-            width: '100px'
+            fontSize: '100px'
             }}>
             Logo
         </div>
