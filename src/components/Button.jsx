@@ -1,8 +1,14 @@
 import React from 'react'
 
 const Button = () => {
+
+    const handleClick = (e) => {
+        e.preventDefault()
+        console.log('Le lien a été cliqué.')  
+    }
+
     return (
-        <div style={{
+        <div onClick={handleClick} style={{
             width: '100px',
             height: '40px',
             background: 'teal',
