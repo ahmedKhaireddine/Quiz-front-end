@@ -1,0 +1,299 @@
+[
+  {
+    "choices": [
+      {
+        "id": 1,
+        "value": "12",
+        "weight": 0
+      },
+      {
+        "id": 2,
+        "value": "16",
+        "weight": 0
+      },
+      {
+        "id": 3,
+        "value": "20",
+        "weight": 0
+      },
+      {
+        "id": 4,
+        "value": "24",
+        "weight": 1
+      }
+    ],
+    "is_active": true,
+    "title": "Combien d’équipes seront présentes lors de l’Euro 2016 de foot ?",
+    "topic": "Sports"
+  },
+  {
+    "choices": [
+      {
+        "id": 1,
+        "value": "Manchester United",
+        "weight": 0
+      },
+      {
+        "id": 2,
+        "value": "Arsenal FC",
+        "weight": 1
+      },
+      {
+        "id": 3,
+        "value": "Sunderland AFC",
+        "weight": 0
+      },
+      {
+        "id": 4,
+        "value": "Manchester City",
+        "weight": 0
+      }
+    ],
+    "is_active": true,
+    "title": "Quel club de foot anglais joue dans l’enceinte de l’Emirates Stadium ?",
+    "topic": "Sports"
+  },
+  {
+    "choices": [
+      {
+        "id": 1,
+        "value": "Nice",
+        "weight": 0
+      },
+      {
+        "id": 2,
+        "value": "Saint-Étienne",
+        "weight": 0
+      },
+      {
+        "id": 3,
+        "value": "Nantes",
+        "weight": 1
+      },
+      {
+        "id": 4,
+        "value": "Toulouse",
+        "weight": 0
+      }
+    ],
+    "is_active": true,
+    "title": "Parmi ces villes françaises, laquelle n’accueillera pas de match de l’Euro 2016 ?",
+    "topic": "Sports"
+  },
+  {
+    "choices": [
+      {
+        "id": 1,
+        "value": "Mathieu Valbuena",
+        "weight": 0
+      },
+      {
+        "id": 2,
+        "value": "Andres Iniesta",
+        "weight": 0
+      },
+      {
+        "id": 3,
+        "value": "Carlos Tevez",
+        "weight": 0
+      },
+      {
+        "id": 4,
+        "value": "Lionel Messi",
+        "weight": 1
+      }
+    ],
+    "is_active": true,
+    "title": "Quel footballeur est surnommé la Puce ?",
+    "topic": "Sports"
+  },
+  {
+    "choices": [
+      {
+        "id": 1,
+        "value": "Autriche/Hongrie/Islande",
+        "weight": 0
+      },
+      {
+        "id": 2,
+        "value": "Roumanie/Albanie/Suisse",
+        "weight": 1
+      },
+      {
+        "id": 3,
+        "value": "Angleterre/Russie/Slovaquie",
+        "weight": 0
+      },
+      {
+        "id": 4,
+        "value": "Croatie/République tchèque/Turquie",
+        "weight": 0
+      }
+    ],
+    "is_active": true,
+    "title": "Quelles sont les 3 équipes figurant dans le groupe de la France pour l’Euro 2016 de foot ?",
+    "topic": "Sports"
+  },
+  {
+    "choices": [
+      {
+        "id": 1,
+        "value": "1999",
+        "weight": 0
+      },
+      {
+        "id": 2,
+        "value": "2002",
+        "weight": 0
+      },
+      {
+        "id": 3,
+        "value": "2006",
+        "weight": 1
+      },
+      {
+        "id": 4,
+        "value": "2008",
+        "weight": 0
+      }
+    ],
+    "is_active": true,
+    "title": "En quelle année Zinédine Zidane a-t-il pris sa retraite en tant que joueur ?",
+    "topic": "Sports"
+  },
+  {
+    "choices": [
+      {
+        "id": 1,
+        "value": "Le FC Porto",
+        "weight": 0
+      },
+      {
+        "id": 2,
+        "value": "Le Málaga CF",
+        "weight": 0
+      },
+      {
+        "id": 3,
+        "value": "Le Real Madrid",
+        "weight": 1
+      },
+      {
+        "id": 4,
+        "value": "Le FC Barcelone",
+        "weight": 0
+      }
+    ],
+    "is_active": true,
+    "title": "Quelle équipe de foot joue dans l’enceinte du stade de Santiago Bernabeu ?",
+    "topic": "Sports"
+  },
+  {
+    "choices": [
+      {
+        "id": 1,
+        "value": "Le FC Porto",
+        "weight": 0
+      },
+      {
+        "id": 2,
+        "value": "Le Málaga CF",
+        "weight": 0
+      },
+      {
+        "id": 3,
+        "value": "Le Real Madrid",
+        "weight": 1
+      },
+      {
+        "id": 4,
+        "value": "Le FC Barcelone",
+        "weight": 0
+      }
+    ],
+    "is_active": true,
+    "title": "Quelle équipe de foot joue dans l’enceinte du stade de Santiago Bernabeu ?",
+    "topic": "Sports"
+  },
+  {
+    "choices": [
+      {
+        "id": 1,
+        "value": "Michel Platini",
+        "weight": 0
+      },
+      {
+        "id": 2,
+        "value": "Didier Deschamps",
+        "weight": 1
+      },
+      {
+        "id": 3,
+        "value": "Laurent Blanc",
+        "weight": 0
+      },
+      {
+        "id": 4,
+        "value": "Claude Puel",
+        "weight": 0
+      }
+    ],
+    "is_active": true,
+    "title": "Quel est le nom du sélectionneur des Bleus en 2016 ?",
+    "topic": "Sports"
+  },
+  {
+    "choices": [
+      {
+        "id": 1,
+        "value": "Allianz Riviera",
+        "weight": 0
+      },
+      {
+        "id": 2,
+        "value": "Stade Geoffroy-Guichard",
+        "weight": 0
+      },
+      {
+        "id": 3,
+        "value": "Stade Chaban-Delmas",
+        "weight": 0
+      },
+      {
+        "id": 4,
+        "value": "Matmut Atlantique",
+        "weight": 1
+      }
+    ],
+    "is_active": true,
+    "title": "Quel est le nom du stade de la ville de Bordeaux qui accueillera des matchs de l’Euro 2016 ?",
+    "topic": "Sports"
+  },
+  {
+    "choices": [
+      {
+        "id": 1,
+        "value": "Manchester City",
+        "weight": 1
+      },
+      {
+        "id": 2,
+        "value": "Chelsea",
+        "weight": 0
+      },
+      {
+        "id": 3,
+        "value": "Athletico Madrid",
+        "weight": 0
+      },
+      {
+        "id": 4,
+        "value": "Borussia Dortmund",
+        "weight": 0
+      }
+    ],
+    "is_active": true,
+    "title": "Quelle équipe a éliminé le PSG en quarts de finale de la Ligue des Champions 2016 ?",
+    "topic": "Sports"
+  }
+]
