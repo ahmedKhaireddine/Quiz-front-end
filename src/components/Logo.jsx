@@ -5,10 +5,9 @@ const Logo = () => {
         <div style={{
             fontFamily: 'Henny Penny',
             height: '100px',
-            width: '100px',
-            color: 'teal'          
+            width: '100px'
             }}>
-            Quiz
+            Logo
         </div>
     )
 }
