@@ -1,4 +1,21 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const Btn = styled.div`
+    display: block;
+    height: 60px;
+    width: 100px;
+    margin: 150px auto 0;
+    font-size: 30px;
+    font-weight: lighter;
+    color: white;
+    padding: 25px 80px;
+    background: teal;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+`
+
 
 const Button = () => {
 
@@ -7,17 +24,10 @@ const Button = () => {
         console.log('Le lien a été cliqué.')  
     }
 
-    return (
-        <div onClick={handleClick} style={{
-            width: '100px',
-            height: '40px',
-            background: 'teal',
-            borderRadius: '5px',
-            textAlign: 'center',
-            verticalAlign: 'center',
-            color: "white"
-        }} hover={{cursor: 'pointer'}}>Button    
-        </div>
+    return ( 
+        <Btn onClick={handleClick} type='button'>              
+             Bouton
+        </Btn>
     )
 }
 

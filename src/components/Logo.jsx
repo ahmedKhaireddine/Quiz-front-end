@@ -1,13 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const LogoComponent = styled.div`
+    font-family: 'Henny Penny';
+    font-size: 100px
+`
 
 const Logo = () => {
     return (
-        <div style={{
-            fontFamily: 'Henny Penny',
-            fontSize: '100px'
-            }}>
+        <LogoComponent>
             Logo
-        </div>
+        </LogoComponent>
     )
 }
 
