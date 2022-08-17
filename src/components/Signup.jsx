@@ -12,7 +12,6 @@ const Signup = () => {
         },
 
         validationSchema: Yup.object({
-
             firstName: Yup.string()
                 .max(15, 'Must be 15 characters or less')
                 .required('Required'),
