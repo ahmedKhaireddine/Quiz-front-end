@@ -12,8 +12,9 @@ const Form = styled.div`
     align-items: center; 
 
     label {
+        font-size: 25px;
         color: #F1F1F1;
-        margin: 15px auto;
+        margin: 10px auto;
     }
     input {
         height: 30px;
@@ -34,7 +35,7 @@ const QuizSignin = () => {
             validationSchema: Yup.object({
                 code: Yup.number()
                     .max(15, 'Must be 15 characters or less')
-                    .required('Required'),
+                    .required('*Champs requis'),
             }),
 
             onSubmit: values => {
