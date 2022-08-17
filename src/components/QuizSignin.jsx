@@ -47,11 +47,12 @@ const QuizSignin = () => {
     return (
         <Form onSubmit={formik.handleSubmit}>
 
-            <label htmlFor="code">Entrer le code ici</label><br></br>
+            <label htmlFor="code">Code</label><br></br>
             <input
                 id="code"
                 name="code"
                 type="number"
+                placeholder='Entrer le code ici'
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.code}
@@ -67,4 +68,4 @@ const QuizSignin = () => {
     )
 }
 
-export default  QuizSignin
+export default QuizSignin
