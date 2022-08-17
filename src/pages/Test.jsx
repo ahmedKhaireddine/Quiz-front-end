@@ -1,4 +1,3 @@
-import Signup from "../components/Signup"
 import QuizSignin from "../components/QuizSignin"
 import QuizHomeLayout from "../components/layouts/QuizHomeLayout"
 

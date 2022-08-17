@@ -10,12 +10,9 @@ const Btn = styled.div`
     outline: none;
     cursor: pointer;
     border-radius: 5px;
-
-    span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     :hover {
         background: #95F6FD;
@@ -31,9 +28,7 @@ const Button = () => {
     }
 
     return ( 
-        <Btn onClick={handleClick} type='button'>
-            <span>Bouton</span>
-        </Btn>
+        <Btn onClick={handleClick} type='button'>Bouton</Btn>
     )
 }
 

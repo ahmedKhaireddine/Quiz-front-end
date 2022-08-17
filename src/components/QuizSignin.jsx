@@ -56,13 +56,14 @@ const QuizSignin = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.code}
+                error={formik.errors.code}
             />
 
             {formik.touched.code && formik.errors.code ? (
                 <div>{formik.errors.code}</div>
             ) : null}
 
-            <Button type="submit">Submit</Button>
+            <Button type="submit">Entrer</Button>
 
         </Form>
     )
