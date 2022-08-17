@@ -1,6 +1,27 @@
 import React from 'react'
+import Button from './Button'
+
+import styled from 'styled-components'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+
+const Form = styled.div`
+    display: flex;
+    flex-direction column;
+    justify-content: center;
+    align-items: center; 
+
+    label {
+        color: #F1F1F1;
+        margin: 15px auto;
+    }
+    input {
+        height: 30px;
+        width: 200px;
+        border-radius: 5px;
+        margin: 30px 0;
+    }
+`
 
 const QuizSignin = () => {
 
@@ -23,9 +44,9 @@ const QuizSignin = () => {
         });
 
     return (
-        <form onSubmit={formik.handleSubmit}>
+        <Form onSubmit={formik.handleSubmit}>
 
-            <label htmlFor="code">Entrer le code ici</label>
+            <label htmlFor="code">Entrer le code ici</label><br></br>
             <input
                 id="code"
                 name="code"
@@ -39,9 +60,9 @@ const QuizSignin = () => {
                 <div>{formik.errors.code}</div>
             ) : null}
 
-            <button type="submit">Submit</button>
+            <Button type="submit">Submit</Button>
 
-        </form>
+        </Form>
     )
 }
 
