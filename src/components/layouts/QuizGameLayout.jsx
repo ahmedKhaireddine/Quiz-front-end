@@ -30,7 +30,7 @@ const Index = styled.div`
     grid-column: 1 / -1
 `
 
-const QuizLayout = () => {
+const QuizGameLayout = () => {
     return (
         <QuizLayoutComponent>
             <Title>Titre</Title>
@@ -44,4 +44,4 @@ const QuizLayout = () => {
     )
 }
 
-export default QuizLayout
+export default QuizGameLayout

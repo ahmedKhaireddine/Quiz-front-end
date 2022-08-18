@@ -1,23 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-
-import Button from '../components/Button'
-import QuizLayout from '../components/layouts/QuizLayout'
+import Body from "../components/Body"
+import FormCard from "../components/FormCard"
+import SignIn from "./SignIn"
 import Logo from '../components/Logo'
-
-const Card = styled.div`
-    height: 200px;
-    width: 200px;
-    background: salmon
-`
+import Button from "../components/Button"
 
 const Test = () => {
     return (
-        <QuizLayout>
-            <Logo/>
+        // <Body>
             <Button/>
-            <Card/>
-        </QuizLayout>
+        // </Body>
     )
 }
 

@@ -1,19 +1,21 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const Btn = styled.div`
-    display: block;
-    height: 50px;
-    width: 100px;
+    height: 40px;
+    width: 200px;
     font-size: 30px;
     color: white;
-    padding: 10px 60px;
-    background: red;
+    background: #45DDE7;
     outline: none;
     cursor: pointer;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     :hover {
-        background: blue;
+        background: #95F6FD;
+        color: #636161;
     }
 `
 
