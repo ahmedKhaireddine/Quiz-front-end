@@ -12,7 +12,7 @@ const Box = styled.div`
     padding: 30px;
 `
 const Message = styled.h1`
-    p{
+    p {
         font-size: 40px;
         font-weight: lighter;
         padding: 40px;
@@ -58,7 +58,7 @@ const PlayerInfos = (props) => {
     return (
         <QuizLayout>
             <Message>
-                <h1><p>Avant de continuer, merci d'ndiquer votre nom et prénom</p></h1>
+                <h1><p>Dernière étape avant de commencer</p></h1>
             </Message>
             <Box>
                 <Form onSubmit={formik.handleSubmit}>
@@ -92,7 +92,7 @@ const PlayerInfos = (props) => {
                         <div>{formik.errors.prenom}</div>
                     ) : null}
 
-                    <Button type="submit">Entrer</Button>
+                    <Button type="submit">Go !</Button>
                 </Form>
             </Box>
         </QuizLayout>
