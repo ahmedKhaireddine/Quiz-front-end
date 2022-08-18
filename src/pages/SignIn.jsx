@@ -1,11 +1,12 @@
-import QuizHomeLayout from "../components/layouts/QuizHomeLayout"
-import SigninComponent from "../components/SigninComponent"
+// import QuizHomeLayout from "../components/layouts/QuizHomeLayout"
+// import SigninComponent from "../components/SigninComponent"
 
 const SignIn = () => {
   return (
-    <QuizHomeLayout>
-      <SigninComponent/>
-    </QuizHomeLayout>
+    <div></div>
+    // <QuizHomeLayout>
+    //   <SigninComponent/>
+    // </QuizHomeLayout>
   )
 }
 

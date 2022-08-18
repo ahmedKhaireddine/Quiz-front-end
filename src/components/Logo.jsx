@@ -1,17 +1,28 @@
 import styled from 'styled-components'
 
-const LogoComponent = styled.div`
+const Span = styled.span`
     font-family: 'Henny Penny';
-    font-size: 100px;
+    font-size: ${props => props.size};
     color: #F1F1F1;
 `
-
-const Logo = () => {
+    
+const Link = styled.a`
+    text-decoration: none;
+`
+const Logo = ({href, size}) => {
     return (
-        <LogoComponent>
-            Quiz
-        </LogoComponent>
+        <Link href={href}>
+            <Span size={size}>
+                Quiz
+            </Span>
+        </Link>
+        
     )
+}
+
+Logo.defaultProps = {
+    href: '#',
+    size: '100px'
 }
 
 export default Logo

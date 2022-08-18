@@ -12,23 +12,20 @@ const Btn = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-
     :hover {
         background: #95F6FD;
         color: #636161;
     }
 `
 
-const Button = () => {
-
-    const handleClick = (e) => {
-        e.preventDefault()
-        console.log('Le lien a été cliqué.')  
-    }
-
+const Button = ({handleClick, children}) => {
     return ( 
-        <Btn onClick={handleClick} type='button'>Bouton</Btn>
+        <Btn onClick={children} type='button'>{children}</Btn>
     )
+}
+
+Button.defaultProps = {
+    handleClick: () => {}
 }
 
 export default Button

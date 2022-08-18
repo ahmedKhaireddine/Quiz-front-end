@@ -23,7 +23,7 @@ const Form = styled.div`
     }
 `
 
-const SigninComponent = () => {
+const SigninComponent = (props) => {
 
         const formik = useFormik({
 
