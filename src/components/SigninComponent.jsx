@@ -1,9 +1,8 @@
-import React from 'react'
-import Button from './Button'
-
-import styled from 'styled-components'
-import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import { useFormik } from 'formik'
+import styled from 'styled-components'
+
+import Button from './Button'
 
 const Form = styled.div`
     display: flex;
@@ -24,7 +23,7 @@ const Form = styled.div`
     }
 `
 
-const QuizSignin = () => {
+const SigninComponent = () => {
 
         const formik = useFormik({
 
@@ -69,4 +68,4 @@ const QuizSignin = () => {
     )
 }
 
-export default QuizSignin
+export default SigninComponent

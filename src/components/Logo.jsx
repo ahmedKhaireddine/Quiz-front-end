@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const LogoComponent = styled.div`
@@ -10,7 +9,7 @@ const LogoComponent = styled.div`
 const Logo = () => {
     return (
         <LogoComponent>
-            Logo
+            Quiz
         </LogoComponent>
     )
 }

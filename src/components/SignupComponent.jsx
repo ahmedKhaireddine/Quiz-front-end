@@ -2,7 +2,9 @@ import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
-const Signup = () => {
+import Button from './Button'
+
+const SignupComponent = () => {
 
     const formik = useFormik({
 
@@ -61,10 +63,10 @@ const Signup = () => {
                 <div>{formik.errors.lastName}</div>
             ) : null}
 
-            <button type="submit">Submit</button>
+            <Button type="submit">Submit</Button>
 
         </form>
     )
 }
 
-export default Signup
+export default SignupComponent
