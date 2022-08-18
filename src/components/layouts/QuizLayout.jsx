@@ -7,7 +7,8 @@ const Container = styled.div`
     background: ${props => props.background};
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    flex-direction: column;
 `
 
 const QuizLayout = ({background, children}) => {

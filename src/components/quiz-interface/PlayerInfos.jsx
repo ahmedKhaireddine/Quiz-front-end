@@ -7,35 +7,37 @@ import QuizLayout from "../layouts/QuizLayout"
 import Button from "../Button"
 
 const Box = styled.div`
-    height: 400px;
-    width: 300px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction column;
-    border: 1px solid white;
+    padding: 30px;
+`
+const Message = styled.h1`
+    p{
+        font-size: 40px;
+        font-weight: lighter;
+        padding: 40px;
+        color: #F1F1F1;     
+    }
 `
 const Form = styled.div`
     display: flex;
     flex-direction column;
-    justify-content: center;
-    align-items: center; 
+    justify-content: flex-start;
     label {
         font-size: 25px;
         color: #F1F1F1;
-        margin: 10px auto;
     }
     input {
         height: 30px;
-        width: 200px;
+        width: 300px;
+        padding-left: 10px;
         border-radius: 5px;
-        margin: 30px 0;
+        margin: 10px auto;
     }
 `
 
 const PlayerInfos = (props) => {
     const formik = useFormik({
-
         initialValues: {
             nom: '',
             prenom: ''
@@ -55,6 +57,9 @@ const PlayerInfos = (props) => {
 
     return (
         <QuizLayout>
+            <Message>
+                <h1><p>Avant de continuer, merci d'ndiquer votre nom et prénom</p></h1>
+            </Message>
             <Box>
                 <Form onSubmit={formik.handleSubmit}>
                     <label htmlFor="nom">Nom</label><br></br>
@@ -71,7 +76,7 @@ const PlayerInfos = (props) => {
                     {formik.touched.nom && formik.errors.nom ? (
                         <div>{formik.errors.nom}</div>
                     ) : null}
-
+                
                     <label htmlFor="prenom">Prénom</label><br></br>
                     <input
                         id="prenom"
