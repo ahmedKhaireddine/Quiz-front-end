@@ -1,7 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-// import Body from "../Body"
-// import FormCard from "../FormCard"
 
 const Container = styled.div`
     height: 100vh;

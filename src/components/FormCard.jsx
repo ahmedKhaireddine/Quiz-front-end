@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
 const CardContainer = styled.div`
     height: 400px;
@@ -10,7 +11,7 @@ const CardContainer = styled.div`
     border: 1px solid white;
 `
 
-const FormCard = () => {
+const FormCard = (props) => {
     return (
         <CardContainer>titre</CardContainer>
     )

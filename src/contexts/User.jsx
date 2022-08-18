@@ -1,8 +1,8 @@
-import {{ createContext, useState }} from 'react'
+import { createContext, useState } from "react"
 
 const User = createContext({})
 
-const UserProvider = props => {
+const UserProvider = (props) => {
 
     const[user, setUser] = useState(null)
 

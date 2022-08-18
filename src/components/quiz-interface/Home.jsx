@@ -6,6 +6,7 @@ import { useFormik } from "formik"
 import QuizLayout from "../layouts/QuizLayout"
 import Logo from "../Logo"
 import Button from "../Button"
+import FormCard from "../FormCard"
 
 const Box = styled.div`
     height: 400px;
@@ -16,24 +17,23 @@ const Box = styled.div`
     flex-direction column;
     border: 1px solid white;
 `
-const Form = styled.div`
-    display: flex;
-    flex-direction column;
-    justify-content: center;
-    align-items: center; 
-
-    label {
-        font-size: 25px;
-        color: #F1F1F1;
-        margin: 10px auto;
-    }
-    input {
-        height: 30px;
-        width: 200px;
-        border-radius: 5px;
-        margin: 30px 0;
-    }
-`
+// const FormCard = styled.div`
+//     display: flex;
+//     flex-direction column;
+//     justify-content: center;
+//     align-items: center; 
+//     label {
+//         font-size: 25px;
+//         color: #F1F1F1;
+//         margin: 10px auto;
+//     }
+//     input {
+//         height: 30px;
+//         width: 200px;
+//         border-radius: 5px;
+//         margin: 30px 0;
+//     }
+// `
 
 const Home = (props) => {
     const formik = useFormik({
@@ -55,7 +55,7 @@ const Home = (props) => {
         <QuizLayout>
             <Box>
                 <Logo/>
-                <Form onSubmit={formik.handleSubmit}>
+                <FormCard onSubmit={formik.handleSubmit}>
                     <label htmlFor="code">Code</label><br></br>
                     <input
                         id="code"
@@ -73,7 +73,7 @@ const Home = (props) => {
                     ) : null}
 
                     <Button type="submit">Entrer</Button>
-                </Form>
+                </FormCard>
             </Box>
         </QuizLayout>
     )

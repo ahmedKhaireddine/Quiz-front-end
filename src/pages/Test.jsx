@@ -1,3 +1,5 @@
+import React from "react"
+
 import Body from "../components/Body"
 import FormCard from "../components/FormCard"
 import SigninComponent from '../components/SigninComponent'
@@ -6,21 +8,13 @@ import Button from "../components/Button"
 import SignupComponent from "../components/SignupComponent"
 import QuizLayout from "../components/layouts/QuizLayout"
 import Home from "../components/quiz-interface/Home"
+import PlayerInfos from "../components/quiz-interface/PlayerInfos"
 
 const Test = (props) => {
     return (
         <div>
-
-            <Home/>
-
-            {/* <SignupComponent/> */}
-            {/* <SigninComponent/> */}
-            {/* <FormCard/> */}
-            {/* <Body/> */}
-            {/* <Logo/> */}
-            {/* <Button/> */}
+            <PlayerInfos/>
         </div>
-
     )
 }
 
