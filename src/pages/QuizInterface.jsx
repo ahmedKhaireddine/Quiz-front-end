@@ -1,12 +1,15 @@
 import React from "react"
 
 import { QuizContextProvider } from "../contexts/Quiz"
+import QuizLayout from "../components/layouts/QuizLayout"
 import Stepper from "../components/quiz-interface/Stepper"
 
 const QuizInterface = () => {
   return (
     <QuizContextProvider>
-      <Stepper />
+      <QuizLayout>
+        <Stepper />
+      </QuizLayout>
     </QuizContextProvider>
   )
 }
