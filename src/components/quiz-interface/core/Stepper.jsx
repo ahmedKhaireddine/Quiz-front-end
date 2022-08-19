@@ -1,10 +1,10 @@
 import { useContext } from "react"
 
-import Home from "./Home"
-import Over from "./Over"
-import PlayerInfos from "./PlayerInfos"
-import Quiz from "./Quiz"
-import { QuizContext } from "../../contexts/Quiz"
+import Home from "../Home"
+import Over from "../Over"
+import PlayerInfos from "../PlayerInfos"
+import Quiz from "../Quiz"
+import { QuizContext } from "../../../contexts/Quiz"
 
 const Stepper = () => {
 

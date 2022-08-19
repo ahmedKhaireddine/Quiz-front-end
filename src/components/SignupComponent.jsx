@@ -3,7 +3,7 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import styled from 'styled-components'
 
-import Button from './Button'
+import Button from "./quiz-interface/core/Button"
 
 const Container = styled.div`
 
@@ -53,7 +53,7 @@ const SignupComponent = () => {
                     <div>{formik.errors.firstName}</div>
                 ) : null}
 
-    
+
 
                 <label htmlFor="lastName">Last Name</label>
                 <input

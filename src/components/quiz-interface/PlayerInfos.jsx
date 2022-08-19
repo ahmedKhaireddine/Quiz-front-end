@@ -3,7 +3,7 @@ import styled from "styled-components"
 import * as Yup from "yup"
 import { useFormik } from "formik"
 
-import Button from "../Button"
+import Button from "./core/Button"
 
 const Box = styled.div`
     display: flex;

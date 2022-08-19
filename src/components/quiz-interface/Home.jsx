@@ -4,7 +4,7 @@ import * as Yup from "yup"
 import { useFormik } from "formik"
 
 import Logo from "../Logo"
-import Button from "../Button"
+import Button from "./core/Button"
 
 const Box = styled.div`
     height: 400px;
