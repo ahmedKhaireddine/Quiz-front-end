@@ -3,13 +3,13 @@ import * as Yup from "yup"
 import { useFormik } from "formik"
 import styled from "styled-components"
 
-import Button from "./Button"
+import Button from "./quiz-interface/core/Button"
 
 const Form = styled.div`
     display: flex;
     flex-direction column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 
     label {
         font-size: 25px;
@@ -41,7 +41,7 @@ const SigninComponent = (props) => {
             onSubmit: values => {
                 alert(JSON.stringify(values, null, 2));
             },
-            
+
         });
 
     return (

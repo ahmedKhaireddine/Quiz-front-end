@@ -2,19 +2,22 @@ import { createContext, useState } from "react"
 
 const QuizContext = createContext({})
 
-const QuizContextProvider = (props) => {
+const QuizContextProvider = ({ children }) => {
 
   const [quiz, setQuiz] = useState({})
   const [infos, setInfos] = useState({})
   const [answers, setAnswers] = useState([])
   const [score, setScore] = useState(0)
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState(4)
 
-  const value = {}
+  const value = {
+    step,
+    setStep
+  }
 
   return (
     <QuizContext.Provider value={value}>
-      {props.children}
+      {children}
     </QuizContext.Provider>
   )
 }

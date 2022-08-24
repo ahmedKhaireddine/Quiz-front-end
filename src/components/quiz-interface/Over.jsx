@@ -1,7 +1,5 @@
 import React from "react"
 
-
-
 const Over = (props) => {
     return (
         <div>

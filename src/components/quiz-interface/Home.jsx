@@ -3,9 +3,8 @@ import styled from "styled-components"
 import * as Yup from "yup"
 import { useFormik } from "formik"
 
-import QuizLayout from "../layouts/QuizLayout"
 import Logo from "../Logo"
-import Button from "../Button"
+import Button from "./core/Button"
 
 const Box = styled.div`
     height: 400px;
@@ -20,7 +19,7 @@ const Form = styled.div`
     display: flex;
     flex-direction column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     label {
         font-size: 25px;
         color: #F1F1F1;
@@ -51,7 +50,7 @@ const Home = (props) => {
     });
 
     return (
-        <QuizLayout>
+        <>
             <Box>
                 <Logo/>
                 <Form onSubmit={formik.handleSubmit}>
@@ -74,7 +73,7 @@ const Home = (props) => {
                     <Button type="submit">Entrer</Button>
                 </Form>
             </Box>
-        </QuizLayout>
+        </>
     )
 }
 

@@ -1,6 +1,10 @@
 import { useContext } from "react"
 
-import { QuizContext } from "../../contexts/Quiz"
+import Home from "../Home"
+import Over from "../Over"
+import PlayerInfos from "../PlayerInfos"
+import Quiz from "../Quiz"
+import { QuizContext } from "../../../contexts/Quiz"
 
 const Stepper = () => {
 
@@ -8,13 +12,13 @@ const Stepper = () => {
 
   switch (step) {
     case 1:
-      return "home component"
+      return <Home />
     case 2:
-      return "Player infos component"
+      return <PlayerInfos />
     case 3:
-      return "Quiz component"
+      return <Quiz />
     case 4:
-      return "End component"
+      return <Over />
 
     default:
       return <h1 style={{ color: "white" }}>Unknown step</h1>;

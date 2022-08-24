@@ -3,8 +3,7 @@ import styled from "styled-components"
 import * as Yup from "yup"
 import { useFormik } from "formik"
 
-import QuizLayout from "../layouts/QuizLayout"
-import Button from "../Button"
+import Button from "./core/Button"
 
 const Box = styled.div`
     display: flex;
@@ -16,7 +15,7 @@ const Message = styled.h1`
         font-size: 40px;
         font-weight: lighter;
         padding: 40px;
-        color: #F1F1F1;     
+        color: #F1F1F1;
     }
 `
 const Form = styled.div`
@@ -56,7 +55,7 @@ const PlayerInfos = (props) => {
     });
 
     return (
-        <QuizLayout>
+        <>
             <Message>
                 <h1><p>Dernière étape avant de commencer</p></h1>
             </Message>
@@ -76,7 +75,7 @@ const PlayerInfos = (props) => {
                     {formik.touched.nom && formik.errors.nom ? (
                         <div>{formik.errors.nom}</div>
                     ) : null}
-                
+
                     <label htmlFor="prenom">Prénom</label><br></br>
                     <input
                         id="prenom"
@@ -95,7 +94,7 @@ const PlayerInfos = (props) => {
                     <Button type="submit">Go !</Button>
                 </Form>
             </Box>
-        </QuizLayout>
+        </>
     )
 }
 
