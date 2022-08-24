@@ -24,7 +24,8 @@
     ],
     "is_active": true,
     "title": "Combien d’équipes seront présentes lors de l’Euro 2016 de foot ?",
-    "topic": "Sports"
+    "topic": "Sports",
+    "duration": 4
   },
   {
     "choices": [
@@ -51,7 +52,8 @@
     ],
     "is_active": true,
     "title": "Quel club de foot anglais joue dans l’enceinte de l’Emirates Stadium ?",
-    "topic": "Sports"
+    "topic": "Sports",
+    "duration": 3
   },
   {
     "choices": [
@@ -78,7 +80,8 @@
     ],
     "is_active": true,
     "title": "Parmi ces villes françaises, laquelle n’accueillera pas de match de l’Euro 2016 ?",
-    "topic": "Sports"
+    "topic": "Sports",
+    "duration": 4
   },
   {
     "choices": [
@@ -105,7 +108,8 @@
     ],
     "is_active": true,
     "title": "Quel footballeur est surnommé la Puce ?",
-    "topic": "Sports"
+    "topic": "Sports",
+    "duration": 3
   },
   {
     "choices": [
@@ -132,7 +136,8 @@
     ],
     "is_active": true,
     "title": "Quelles sont les 3 équipes figurant dans le groupe de la France pour l’Euro 2016 de foot ?",
-    "topic": "Sports"
+    "topic": "Sports",
+    "duration": 7
   },
   {
     "choices": [
@@ -159,7 +164,8 @@
     ],
     "is_active": true,
     "title": "En quelle année Zinédine Zidane a-t-il pris sa retraite en tant que joueur ?",
-    "topic": "Sports"
+    "topic": "Sports",
+    "duration": 5
   },
   {
     "choices": [
@@ -186,7 +192,8 @@
     ],
     "is_active": true,
     "title": "Quelle équipe de foot joue dans l’enceinte du stade de Santiago Bernabeu ?",
-    "topic": "Sports"
+    "topic": "Sports",
+    "duration": 3
   },
   {
     "choices": [
@@ -213,7 +220,8 @@
     ],
     "is_active": true,
     "title": "Quelle équipe de foot joue dans l’enceinte du stade de Santiago Bernabeu ?",
-    "topic": "Sports"
+    "topic": "Sports",
+    "duration": 3
   },
   {
     "choices": [
@@ -240,7 +248,8 @@
     ],
     "is_active": true,
     "title": "Quel est le nom du sélectionneur des Bleus en 2016 ?",
-    "topic": "Sports"
+    "topic": "Sports",
+    "duration": 6
   },
   {
     "choices": [
@@ -267,7 +276,8 @@
     ],
     "is_active": true,
     "title": "Quel est le nom du stade de la ville de Bordeaux qui accueillera des matchs de l’Euro 2016 ?",
-    "topic": "Sports"
+    "topic": "Sports",
+    "duration": 3
   },
   {
     "choices": [
@@ -294,6 +304,7 @@
     ],
     "is_active": true,
     "title": "Quelle équipe a éliminé le PSG en quarts de finale de la Ligue des Champions 2016 ?",
-    "topic": "Sports"
+    "topic": "Sports",
+    "duration": 3
   }
 ]

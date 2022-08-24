@@ -1,10 +1,12 @@
-import React from "react"
+// import QuizHomeLayout from "../components/layouts/QuizHomeLayout"
+// import SigninComponent from "../components/SigninComponent"
 
 const SignIn = () => {
   return (
-    <div>
-      SignIn
-    </div>
+    <div></div>
+    // <QuizHomeLayout>
+    //   <SigninComponent/>
+    // </QuizHomeLayout>
   )
 }
 
