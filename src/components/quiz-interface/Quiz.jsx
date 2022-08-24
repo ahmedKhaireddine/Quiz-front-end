@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 import Questions from "../../questions.json"
-import ChoiceList from "./core/Stepper"
+import ChoiceList from "./core/ChoiceList"
 
 const Quiz = () => {
   const [index, setIndex] = useState(0)
