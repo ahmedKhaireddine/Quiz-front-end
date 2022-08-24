@@ -13,7 +13,8 @@ import PlayerInfos from "../components/quiz-interface/PlayerInfos"
 const Test = (props) => {
     return (
         <div>
-            <PlayerInfos/>
+            {/* <PlayerInfos/> */}
+            <Button />
         </div>
     )
 }

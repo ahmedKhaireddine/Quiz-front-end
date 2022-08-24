@@ -1,4 +1,5 @@
 import React from "react"
+
 import styled from "styled-components"
 
 const Btn = styled.div`
@@ -21,13 +22,19 @@ const Btn = styled.div`
 `
 
 const Button = ({handleClick, children}) => {
+
     return ( 
-        <Btn onClick={children} type='button'>{children}</Btn>
+        <Btn 
+        onClick={children} 
+        type="button"
+        >
+            {children}
+        </Btn>
     )
 }
 
 Button.defaultProps = {
-    handleClick: () => {}
+    handleClick: () => {return console.log("clicked")}
 }
 
 export default Button
