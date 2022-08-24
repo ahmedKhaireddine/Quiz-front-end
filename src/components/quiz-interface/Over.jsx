@@ -1,10 +1,12 @@
 import React from "react"
 
+import Title from "./Title"
+
 const Over = (props) => {
     return (
-        <div>
-            <p>Félicitations! Vous avez terminé le quiz!</p>
-        </div>
+        <Title>
+            Félicitations! Vous avez terminé le quiz!
+        </Title>
     )
 }
 
