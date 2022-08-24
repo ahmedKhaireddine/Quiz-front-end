@@ -17,9 +17,13 @@ const Test = (props) => {
     return (
         <div>
             {/* <PlayerInfos/> */}
+<<<<<<< HEAD
             <Quiz />
             {/* <Over /> */}
             {/* <ChoiceList /> */}
+=======
+            <Button />
+>>>>>>> ddbacf9c6f9d328049b277530a07a470418f4b92
         </div>
     )
 }

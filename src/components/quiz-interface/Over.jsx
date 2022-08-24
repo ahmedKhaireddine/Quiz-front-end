@@ -1,11 +1,9 @@
 import React from "react"
 
-
-
 const Over = (props) => {
     return (
         <div>
-            Over
+            <p>Félicitations! Vous avez terminé le quiz!</p>
         </div>
     )
 }
