@@ -1,7 +1,7 @@
 import React from "react"
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
-import Dashboard from "./pages/Dashborad"
+import Dashboard from "./pages/Dashboard"
 import Error404 from "./pages/Error404"
 import QuizInterface from "./pages/QuizInterface"
 import SignIn from "./pages/SignIn"

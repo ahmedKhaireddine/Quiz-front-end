@@ -9,14 +9,12 @@ import QuizLayout from "../components/layouts/QuizLayout"
 import Home from "../components/quiz-interface/Home"
 import PlayerInfos from "../components/quiz-interface/PlayerInfos"
 import Over from "../components/quiz-interface/Over"
+import Quiz from "../components/quiz-interface/Quiz"
 
 const Test = (props) => {
     return (
         <>
-            <QuizLayout>
-                <Logo />
-                <Over />
-            </QuizLayout>
+            <Quiz />
         </>
     )
 }
