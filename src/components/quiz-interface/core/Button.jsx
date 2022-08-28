@@ -3,9 +3,7 @@ import React from "react"
 import styled from "styled-components"
 
 const Btn = styled.div`
-    height: 40px;
-    width: 300px;
-    font-size: 30px;
+    font-size: 20px;
     color: white;
     background: #45DDE7;
     outline: none;
@@ -14,19 +12,19 @@ const Btn = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px auto;
+    margin: 30px auto;
+    padding: 10px 30px;
     :hover {
         background: #95F6FD;
         color: #636161;
     }
 `
 
-const Button = ({handleClick, children}) => {
-
-    return ( 
-        <Btn 
-        onClick={children} 
-        type="button"
+const Button = ({ handleClick, children }) => {
+    return (
+        <Btn
+            onClick={handleClick}
+            type="button"
         >
             {children}
         </Btn>
@@ -34,7 +32,7 @@ const Button = ({handleClick, children}) => {
 }
 
 Button.defaultProps = {
-    handleClick: () => {return console.log("clicked")}
+    handleClick: () => console.log("clicked")
 }
 
 export default Button
