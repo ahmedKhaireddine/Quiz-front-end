@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 
 import Button from "./core/Button"
 import ChoiceList from "./core/ChoiceList"
 import Logo from "../Logo"
 import Questions from "../../questions.json"
+import { QuizContext } from "../../contexts/Quiz"
 import { QuizContainer, Timer, Question, Index } from "../../styles/QuizStyled"
 import { useTimer } from "../../hooks/useTimer"
 
 
-const Quiz = () => {
+const Quiz = (props) => {
   const [index, setIndex] = useState(0)
   const { time, start } = useTimer({
     onTimeOver: () => {
@@ -20,6 +21,11 @@ const Quiz = () => {
   })
 
   const { choices, title } = Questions[index]
+  const { answers } = useContext(QuizContext)
+
+  const nextQuestion = () => {
+
+  }
 
   useEffect(() => {
     start(Questions[index].duration)

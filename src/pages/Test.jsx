@@ -3,7 +3,6 @@ import React from "react"
 import Over from "../components/quiz-interface/Over"
 import Quiz from "../components/quiz-interface/Quiz"
 import Body from "../components/Body"
-import FormCard from "../components/FormCard"
 import SigninComponent from '../components/SigninComponent'
 import Logo from '../components/Logo'
 import Button from "../components/quiz-interface/core/Button"
