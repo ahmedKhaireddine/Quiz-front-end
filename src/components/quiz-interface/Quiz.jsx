@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react"
 
-import Questions from "../../questions.json"
+import Button from "./core/Button"
 import ChoiceList from "./core/ChoiceList"
+import Logo from "../Logo"
+import Questions from "../../questions.json"
+import { QuizContainer, Timer, Question, Index } from "../../styles/QuizStyled"
 import { useTimer } from "../../hooks/useTimer"
+
 
 const Quiz = () => {
   const [index, setIndex] = useState(0)
@@ -14,6 +18,7 @@ const Quiz = () => {
     },
     order: "DECREMENTAL"
   })
+
   const { choices, title } = Questions[index]
 
   useEffect(() => {
@@ -21,12 +26,20 @@ const Quiz = () => {
   }, [index, start])
 
   return (
-    <div>
-      <h1>Timer {time}</h1>
-      <h2>{index + 1}. {title}</h2>
+    <QuizContainer>
+      <Logo margin="0px 0px 30px 0px" size="50px"/>
+      <Question>
+        <Timer>{time}s</Timer>
+        {index + 1}. {title}
+      </Question>
       <ChoiceList choices={choices}/>
-      <button onClick={() => setIndex(index + 1)}>Question suivant</button>
-    </div>
+      <Button
+        handleClick={() => setIndex(index + 1)}
+      >
+        Question suivante
+      </Button>
+      <Index>{index + 1} / {Questions.length}</Index>
+    </QuizContainer>
   )
 }
 

@@ -1,17 +1,19 @@
 import React from "react"
 
+import { ListItems, Item } from "../../../styles/ChoiceListStyled"
+
 const ChoiceList = (props) => {
 
   const { choices } = props
 
   const choicesItemsJsx = choices.map(({id, value, weight}, index) => {
-    return <li
+    return <Item
       key={index}
       onClick={() => {}}
-    >{value}</li>
+    >{value}</Item>
   })
 
-  return <ul>{choicesItemsJsx}</ul>
+  return <ListItems>{choicesItemsJsx}</ListItems>
 }
 
 ChoiceList.defaultProps = {
