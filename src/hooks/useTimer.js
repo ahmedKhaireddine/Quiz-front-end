@@ -12,6 +12,12 @@ export const useTimer = ({
   }, [])
 
   useEffect(() => {
+    if (typeof onTimeOver === "function" && time === endTime) {
+      onTimeOver()
+    }
+  }, [endTime, onTimeOver, time])
+
+  useEffect(() => {
     let interval = null
     let newTime = 0
 
@@ -21,10 +27,8 @@ export const useTimer = ({
         setTime(newTime)
       }, 1000)
     } else {
-      if (typeof onTimeOver === "function" && time === endTime) {
-        onTimeOver()
-        clearInterval(interval)
-      }
+      setTime(null)
+      clearInterval(interval)
     }
 
     return () => clearInterval(interval)
