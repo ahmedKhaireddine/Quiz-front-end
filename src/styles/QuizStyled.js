@@ -24,6 +24,8 @@ export const Question = styled.h2`
   border-radius: 5px;
   text-align: center;
   position: relative;
+  width: 722px;
+  height: 50px;
 `
 export const Index = styled.span`
   padding: 8px 20px;
