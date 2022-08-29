@@ -10,6 +10,7 @@ import { useTimer } from "../../hooks/useTimer"
 
 
 const Quiz = (props) => {
+  const { answers } = useContext(QuizContext)
   const [index, setIndex] = useState(0)
   const { time, start } = useTimer({
     onTimeOver: () => {
@@ -21,7 +22,6 @@ const Quiz = (props) => {
   })
 
   const { choices, title } = Questions[index]
-  const { answers } = useContext(QuizContext)
 
   const nextQuestion = () => {
 
@@ -33,10 +33,12 @@ const Quiz = (props) => {
 
   return (
     <QuizContainer>
-      <Logo margin="0px 0px 30px 0px" size="50px"/>
+      <Logo margin="0px 0px 50px 0px" size="50px" color="#45DDE7"/>
       <Question>
-        <Timer>{time}s</Timer>
-        {index + 1}. {title}
+        <Timer>
+          <p>{time}</p>
+        </Timer>
+        {title}
       </Question>
       <ChoiceList choices={choices}/>
       <Button

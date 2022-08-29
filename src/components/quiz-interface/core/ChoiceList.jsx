@@ -54,39 +54,41 @@ const ChoiceList = (props) => {
 
   // ----------Deuxième méthode-----------------
 
-  const answers = document.querySelectorAll(".reponse")
+  // const answers = document.querySelectorAll(".reponse")
 
-  let indexAnswer = 0
+  // let indexAnswer = 0
 
-  answers.forEach(answer => {
+  // answers.forEach(answer => {
 
-    answer.addEventListener("click", () => {
+  //   answer.addEventListener("click", () => {
 
-      indexAnswer = answer.getAttribute("placeholder")
+  //     indexAnswer = answer.getAttribute("placeholder")
 
-      console.log(indexAnswer)
+  //     console.log(indexAnswer)
 
-    })
+  //   })
 
-  })
+  // })
 
   const choicesItemsJsx = choices.map(({id, value, weight}, index) => {
     return <Item
       key={index}
       onClick={() => {}}
     >
-      <label htmlFor="ok">
+      <span></span>
+      {/* <label htmlFor="ok">
         <input
-        className="reponse"
-        name="ok"
-        type="checkbox"
-        id={id}
-        placeholder={value}
-        onClick={() => {}}
+          className="reponse"
+          name="ok"
+          type="checkbox"
+          id={id}
+          placeholder={value}
+          onClick={() => {}}
         >
           {value}
         </input>
-      </label>
+      </label> */}
+      <p>{value}</p>
     </Item>
   })
 
