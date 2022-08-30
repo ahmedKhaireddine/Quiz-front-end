@@ -44,8 +44,15 @@ const Quiz = () => {
     } 
   }
 
-  const timeOver = () => {
-    
+  const handleTimeOver = () => {
+    if(index < Questions.length) {
+      setAnswers([
+        ...answers, answerSelected
+      ])
+      setIndex(index => index + 1)
+    } else {
+      setStep(4)
+    }
   }
 
   // useEffect(() => {
