@@ -25,18 +25,18 @@ export const Item = styled.li`
   &:nth-child(2n+1) {
     margin-right: 15px;
   }
+`
 
-  & span {
-    display: inline-block;
-    width: 40px;
-    height: 50px;
-    background-color: #45DDE7;
-    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
+export const Polygon = styled.span`
+  display: inline-block;
+  width: 40px;
+  height: 50px;
+  background-color: #45DDE7;
+  clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+`
 
-  & p {
-    margin-left: 20px;
-  }
+export const Text = styled.p`
+  margin-left: 20px;
 `
