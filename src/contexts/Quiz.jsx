@@ -12,6 +12,8 @@ const QuizContextProvider = ({ children }) => {
   const score = useScoreCalculator(answers)
 
   const value = {
+    answers,
+    setAnswers,
     score,
     setStep,
     step

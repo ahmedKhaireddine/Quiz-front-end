@@ -41,3 +41,5 @@ export const Index = styled.span`
   font-weight: bold;
   color: white;
 `
+
+export const Text = styled.p``
