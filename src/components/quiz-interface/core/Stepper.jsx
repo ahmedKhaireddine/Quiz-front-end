@@ -7,9 +7,8 @@ import Quiz from "../Quiz"
 import { QuizContext } from "../../../contexts/Quiz"
 
 const Stepper = () => {
-
   const { step } = useContext(QuizContext)
-  console.log("étape", step)
+
   switch (step) {
     case 1:
       return <Home />

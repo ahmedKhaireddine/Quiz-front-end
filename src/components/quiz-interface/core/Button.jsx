@@ -24,12 +24,11 @@ const Btn = styled.div`
 const Button = ({handleClick, children}) => {
 
     return ( 
-        <Btn 
+        <button 
         onClick={children} 
-        type="button"
         >
             {children}
-        </Btn>
+        </button>
     )
 }
 
