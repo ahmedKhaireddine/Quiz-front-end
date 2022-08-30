@@ -1,19 +1,21 @@
 import React from "react"
-import { useState } from "react"
+// import { useState } from "react"
 
 const ChoiceList = (props) => {
 
-  const { choices } = props
-  const [active, setActive] = useState(false)
+  const { choices, onClick } = props
+  // const [active, setActive] = useState(false)
 
-  const answers = document.querySelectorAll(".answer")
-  console.log("Answers array :", answers)
+  // const answers = document.querySelectorAll(".answer")
+  // console.log("Answers array :", answers)
 
-  const toggleActive = (index) => {
-    setActive(!active)
-  }
+  // const toggleActive = () => {
+  //   setActive(!active)
+  // }
 
-    console.log(active)
+  // console.log(active)
+
+
   // const answers = document.querySelectorAll(".answer")
   // console.log("Answers array :", answers)
 
@@ -97,7 +99,7 @@ const ChoiceList = (props) => {
       className="answer"
       id={id}
       key={index}
-      onClick={() => toggleActive(index)}
+      onClick={onClick}
     >{value}</li>
   })
 
