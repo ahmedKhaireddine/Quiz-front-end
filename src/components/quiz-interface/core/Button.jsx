@@ -26,8 +26,7 @@ const Button = ({handleClick, children}) => {
     return ( 
         <Btn 
         onClick={children} 
-        type="button"
-        >
+        type="button">
             {children}
         </Btn>
     )

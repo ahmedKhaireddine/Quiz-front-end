@@ -13,7 +13,6 @@ const Box = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction column;
-    border: 1px solid white;
 `
 const Form = styled.div`
     display: flex;
@@ -30,6 +29,7 @@ const Form = styled.div`
         width: 200px;
         border-radius: 5px;
         margin: 30px 0;
+        padding-left: 10px;
     }
 `
 
@@ -40,7 +40,7 @@ const Home = (props) => {
             code: '',
         },
         validationSchema: Yup.object({
-            code: Yup.number()
+            code: Yup.string()
                 .max(15, 'Must be 15 characters or less')
                 .required('*Champs requis'),
         }),
@@ -58,7 +58,6 @@ const Home = (props) => {
                     <input
                         id="code"
                         name="code"
-                        type="number"
                         placeholder='Entrer le code ici'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}

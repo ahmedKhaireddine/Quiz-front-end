@@ -10,8 +10,7 @@ const Title = ({fontSize, color, children}) => {
     return (
         <Container
             fontSize={fontSize}
-            color={color}
-        >
+            color={color}>
             {children}
         </Container>
     )

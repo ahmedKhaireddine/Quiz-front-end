@@ -7,7 +7,7 @@ import { useTimer } from "../../hooks/useTimer"
 
 const Quiz = (props) => {
   const { step } = useContext(QuizContext)
-  const [active, setActive] = useState([])
+  const [active, setActive] = useState(false)
   const [index, setIndex] = useState(0)
   const { time, start } = useTimer({
     onTimeOver: () => {
@@ -18,11 +18,8 @@ const Quiz = (props) => {
     order: "DECREMENTAL"
   })
   const { choices, title } = Questions[index]
-
-  const toggleActive = () => {
-    setActive(!active)
-  }
-  console.log(active)
+  // const { answers } = useContext(QuizContext)
+  
   // const nextQuestion = () => {
 
     // Condition qui vérifie si au moins une question a été selectionnée
@@ -39,10 +36,7 @@ const Quiz = (props) => {
     <div>
       <h1>Timer {time}</h1>
       <h2>{index + 1}. {title}</h2>
-      <ChoiceList 
-        choices={choices}
-        onClick={toggleActive}
-      />
+      <ChoiceList choices={choices}/>
       <button onClick={() => setIndex(index + 1)}>Question suivante</button>
     </div>
   )
