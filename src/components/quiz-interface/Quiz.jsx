@@ -1,11 +1,17 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 
+import { QuizContext } from "../../contexts/Quiz"
 import Questions from "../../questions.json"
 import ChoiceList from "./core/ChoiceList"
 
 const Quiz = () => {
   const [index, setIndex] = useState(0)
   const { choices, title } = Questions[index]
+  const [choice, setChoice] = useState()
+  const { answer } = useContext(QuizContext)
+
+  const nextQuestion = () => {
+  }
 
   return (
     <div>

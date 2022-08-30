@@ -11,8 +11,10 @@ const QuizContextProvider = ({ children }) => {
   const [step, setStep] = useState(3)
 
   const value = {
-    step,
-    setStep
+    answers,
+    setStep,
+    setAnswers,
+    step
   }
 
   return (

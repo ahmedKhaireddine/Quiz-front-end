@@ -40,7 +40,7 @@ const Home = (props) => {
             code: '',
         },
         validationSchema: Yup.object({
-            code: Yup.number()
+            code: Yup.string()
                 .max(15, 'Must be 15 characters or less')
                 .required('*Champs requis'),
         }),

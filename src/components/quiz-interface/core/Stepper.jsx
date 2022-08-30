@@ -3,7 +3,7 @@ import { useContext } from "react"
 import Home from "../Home"
 import Over from "../Over"
 import PlayerInfos from "../PlayerInfos"
-import QuizComponent from "../QuizComponent"
+import Quiz from "../Quiz"
 import { QuizContext } from "../../../contexts/Quiz"
 
 const Stepper = () => {
@@ -16,7 +16,7 @@ const Stepper = () => {
     case 2:
       return <PlayerInfos />
     case 3:
-      return <QuizComponent />
+      return <Quiz />
     case 4:
       return <Over />
 

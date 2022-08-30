@@ -12,15 +12,17 @@ import QuizLayout from "../components/layouts/QuizLayout"
 import Home from "../components/quiz-interface/Home"
 import PlayerInfos from "../components/quiz-interface/PlayerInfos"
 import ChoiceList from "../components/quiz-interface/core/ChoiceList"
+import QuizGameLayout from "../components/layouts/QuizGameLayout"
 
 const Test = (props) => {
     return (
         <div>
             {/* <PlayerInfos/> */}
-            <Quiz />
+            {/* <Quiz /> */}
             {/* <Over /> */}
             {/* <ChoiceList /> */}
-            <Button />
+            {/* <Button /> */}
+            <QuizGameLayout />
         </div>
     )
 }
