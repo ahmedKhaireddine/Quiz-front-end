@@ -1,90 +1,104 @@
 import React from "react"
+import { useState } from "react"
 
 const ChoiceList = (props) => {
 
   const { choices } = props
+  const [active, setActive] = useState(false)
 
+  const answers = document.querySelectorAll(".answer")
+  console.log("Answers array :", answers)
 
-  // Fonction qui permet de sélectionner/désélectionner une réponse
+  const toggleActive = (index) => {
+    setActive(!active)
+  }
 
-  // ----------Première méthode-----------------
-
+    console.log(active)
   // const answers = document.querySelectorAll(".answer")
+  // console.log("Answers array :", answers)
 
-  // let indexAnswer = 0
+  // answers.forEach(answer => {
+
+  //   answer.addEventListener("click", () => {
+  //     setActive(!active)
+  //   })
+
+  // })
+  
+  // ----------First method with toggle----------------
+  
+  // const answers = document.querySelectorAll(".answer")
+  // console.log("Answers array :", answers)
 
   // answers.forEach(answer => {
 
   //   answer.addEventListener("click", () => {
 
-  //     // if (answer.classList.contains("checked")) {
-  //     //   return
-  //     // } else {
-  //     //   answer.classList.add("checked")
-  //     // }
+  //       answer.classList.toggle("active")
 
-  //         // answer.classList.toggle("checked")
-      
-  //     indexAnswer = answer.getAttribute("id")
-  //     console.log("id de la réponse:", indexAnswer)
-      
-  //     let i = 0
+  //   })
 
-  //     for (i; i < answers.length; i++) {
-  //       if (answers[i].getAttribute("checked")) {
-  //         answers[i].classList.remove("checked")
-  //       }
+  // })
+
+  // ----------Second method with add & remove----------------
+  
+  // const answers = document.querySelectorAll(".answer")
+  // console.log("Answers array :", answers)
+
+  // answers.forEach(answer => {
+
+  //   answer.addEventListener("click", () => {
+      
+  //     if (answer.classList.contains("active")) {
+  //       answer.classList.remove("active")
+  //     } else {
+  //       answer.classList.add("active")
   //     }
 
   //   })
 
   // })
 
-  // const choicesItemsJsx = choices.map(({id, value, weight}, index) => {
-  //   return <li
-  //     className="answer"
-  //     id={id}
-  //     key={index}
-  //     onClick={() => {}}
-  //   >{value}</li>
+  // ----------Third method only add----------------
+  
+  // const answers = document.querySelectorAll(".answer")
+  // console.log("Answers array :", answers)
+
+  // answers.forEach(answer => {
+
+  //   answer.addEventListener("click", () => {
+      
+  //     if (answer.classList.contains("active")) {
+  //       return
+  //     } else {
+  //       answer.classList.add("active")
+  //     }
+
+  //   })
+
   // })
 
+  // ----------Test----------------
 
-  // ----------Deuxième méthode-----------------
+  // const answers = document.querySelectorAll(".answer")
+  // console.log("Answers array :", answers)
 
-  const answers = document.querySelectorAll(".reponse")
+  // answers.forEach(answer => {
 
-  let indexAnswer = 0
+  //   answer.addEventListener("click", () => {
+  //     answer.classList.add("active")
+  //   })
 
-  answers.forEach(answer => {
-    
-    answer.addEventListener("click", () => {
 
-      indexAnswer = answer.getAttribute("placeholder")
-
-      console.log(indexAnswer)
-
-    })
-  
-  })
+  // })
 
   const choicesItemsJsx = choices.map(({id, value, weight}, index) => {
     return <li
+      className="answer"
+      id={id}
       key={index}
-    >
-      <label htmlFor="ok">
-        <input
-        className="reponse"
-        name="ok"
-        type="checkbox"
-        id={id}
-        placeholder={value}
-        onClick={() => {}}
-        >
-          {value}
-        </input>
-      </label>
-    </li>
+      onClick={() => toggleActive(index)}
+    >{value}</li>
   })
 
   return <ul>{choicesItemsJsx}</ul>

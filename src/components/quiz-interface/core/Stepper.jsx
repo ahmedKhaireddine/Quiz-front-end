@@ -9,7 +9,7 @@ import { QuizContext } from "../../../contexts/Quiz"
 const Stepper = () => {
 
   const { step } = useContext(QuizContext)
-
+  console.log("étape", step)
   switch (step) {
     case 1:
       return <Home />
@@ -21,7 +21,7 @@ const Stepper = () => {
       return <Over />
 
     default:
-      return <h1 style={{ color: "white" }}>Unknown step</h1>;
+      return <h1 style={{ color: "black" }}>Unknown step</h1>;
   }
 }
 
