@@ -15,7 +15,7 @@ export const Item = styled.li`
   width: 48%;
   margin-bottom: 20px;
   height: 50px;
-  background-color: #2d3359;
+  background-color: ${ props => props.selected ? "#45DDE7" : "#2d3359"};
   border-radius: 5px;
 
   &:nth-child(2n+0) {

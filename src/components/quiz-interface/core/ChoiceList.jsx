@@ -2,13 +2,21 @@ import React from "react"
 
 import { Item, ListItems, Polygon, Text } from "../../../styles/ChoiceListStyled"
 
-const ChoiceList = (props) => {
-  const { choices } = props
-
-  const choicesItemsJsx = choices.map(({id, value, weight}, index) => {
+const ChoiceList = ({
+  answerSelected,
+  choices,
+  handleClick,
+  questionId
+}) => {
+  const choicesItemsJsx = choices.map(({ id, value, weight }, index) => {
     return <Item
+      onClick={() => handleClick({
+        answerId: id,
+        questionId,
+        weight
+      })}
       key={index}
-      onClick={() => {}}
+      selected={id == answerSelected.answerId}
     >
       <Polygon>✨✨</Polygon>
       <Text>{value}</Text>
@@ -19,7 +27,10 @@ const ChoiceList = (props) => {
 }
 
 ChoiceList.defaultProps = {
-  choises: []
+  answerSelected: {},
+  choices: [],
+  handleClick: () => {},
+  questionId: "Pas d'id"
 }
 
 export default ChoiceList
