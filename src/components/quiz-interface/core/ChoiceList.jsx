@@ -1,25 +1,14 @@
-import React from "react"
-// import Answer from "./Answer"
 import { useState } from "react"
 
 const ChoiceList = (props) => {
 
-  const { choices } = props
-
-  const [active, setActive] = useState([])
-
-  const toggleActive = () => {
-    setActive(!active)
-    console.log(active)
-  }
-  console.log(active)
+  const { choices, answerSelected, setAnswerSelected, questionId } = props
 
   const choicesItemsJsx = choices.map(({id, value, weight}, index) => {
     return <li
-      className={`${active ? "answer-anime" : ""}`}
       id={id}
       key={index}
-      onClick={toggleActive}
+      onClick={() => setAnswerSelected({id, weight, questionId})}
     >{value}</li>
   })
 
