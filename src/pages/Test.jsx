@@ -1,20 +1,19 @@
-import React from 'react'
-import Logo from '../Logo'
+import React from "react"
 
-const Test = () => {
+import Body from "../components/Body"
+import FormCard from "../components/FormCard"
+import SigninComponent from '../components/SigninComponent'
+import Logo from '../components/Logo'
+import Button from "../components/quiz-interface/core/Button"
+import SignupComponent from "../components/SignupComponent"
+import QuizLayout from "../components/layouts/QuizLayout"
+import Home from "../components/quiz-interface/Home"
+import PlayerInfos from "../components/quiz-interface/PlayerInfos"
+
+const Test = (props) => {
     return (
         <div>
-            <div style={{
-                width: "200px",
-                height: "200px",
-                background: "teal",
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                }}>
-                <Logo/>
-            </div>
+            <PlayerInfos/>
         </div>
     )
 }

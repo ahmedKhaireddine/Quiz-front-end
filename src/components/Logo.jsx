@@ -1,16 +1,29 @@
-import React from 'react'
+import React from "react"
+import styled from "styled-components"
 
-const Logo = () => {
+const Span = styled.span`
+    font-family: 'Henny Penny';
+    font-size: ${props => props.size};
+    color: #F1F1F1;
+`
+    
+const Link = styled.a`
+    text-decoration: none;
+`
+const Logo = ({href, size}) => {
     return (
-        <div style={{
-            fontFamily: 'Henny Penny',
-            height: '100px',
-            width: '100px',
-            color: 'teal'          
-            }}>
-            Quiz
-        </div>
+        <Link href={href}>
+            <Span size={size}>
+                Quiz
+            </Span>
+        </Link>
+        
     )
+}
+
+Logo.defaultProps = {
+    href: '#',
+    size: '100px'
 }
 
 export default Logo
