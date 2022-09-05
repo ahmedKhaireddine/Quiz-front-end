@@ -3,7 +3,7 @@ import styled from "styled-components"
 import * as Yup from "yup"
 import { useFormik } from "formik"
 
-import Button from "./core/Button"
+import ButtonComponent from "./core/ButtonComponent"
 
 const Box = styled.div`
     display: flex;
@@ -91,7 +91,7 @@ const PlayerInfos = (props) => {
                         <div>{formik.errors.prenom}</div>
                     ) : null}
 
-                    <Button type="submit">Go !</Button>
+                    <ButtonComponent type="submit">Go !</ButtonComponent>
                 </Form>
             </Box>
         </>

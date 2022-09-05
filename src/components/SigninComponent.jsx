@@ -3,7 +3,7 @@ import * as Yup from "yup"
 import { useFormik } from "formik"
 import styled from "styled-components"
 
-import Button from "./quiz-interface/core/Button"
+import ButtonComponent from "./quiz-interface/core/ButtonComponent"
 
 const Form = styled.div`
     display: flex;
@@ -63,7 +63,7 @@ const SigninComponent = (props) => {
                 <div>{formik.errors.code}</div>
             ) : null}
 
-            <Button type="submit">Entrer</Button>
+            <ButtonComponent type="submit">Entrer</ButtonComponent>
 
         </Form>
     )

@@ -1,9 +1,9 @@
-import React from 'react'
-import { useFormik } from 'formik'
-import * as Yup from 'yup'
-import styled from 'styled-components'
+import React from "react"
+import { useFormik } from "formik"
+import * as Yup from "yup"
+import styled from "styled-components"
 
-import Button from "./quiz-interface/core/Button"
+import ButtonComponent from "./quiz-interface/core/ButtonComponent"
 
 const Container = styled.div`
 
@@ -14,18 +14,18 @@ const SignupComponent = () => {
     const formik = useFormik({
 
         initialValues: {
-            firstName: '',
-            lastName: '',
+            firstName: "",
+            lastName: "",
         },
 
         validationSchema: Yup.object({
             firstName: Yup.string()
-                .max(15, 'Must be 15 characters or less')
-                .required('Required'),
+                .max(15, "Must be 15 characters or less")
+                .required("Required"),
 
             lastName: Yup.string()
-                .max(20, 'Must be 20 characters or less')
-                .required('Required'),
+                .max(20, "Must be 20 characters or less")
+                .required("Required"),
         }),
 
         onSubmit: values => {
@@ -69,7 +69,7 @@ const SignupComponent = () => {
                     <div>{formik.errors.lastName}</div>
                 ) : null}
 
-                <Button type="submit">Submit</Button>
+                <ButtonComponent type="submit">Submit</ButtonComponent>
 
             </form>
         </Container>
