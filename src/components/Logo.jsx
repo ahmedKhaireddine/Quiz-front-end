@@ -9,7 +9,6 @@ const Link = styled.a`
 const Span = styled.span`
     font-family: "Henny Penny";
     font-size: ${props => props.size};
-    color: #F1F1F1;
     color: ${props => props.color};
 `
 const Logo = ({
