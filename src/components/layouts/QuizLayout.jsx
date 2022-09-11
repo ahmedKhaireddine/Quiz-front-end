@@ -6,9 +6,9 @@ const Container = styled.div`
     width; 100vw;
     background: ${props => props.background};
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 `
 
 const QuizLayout = ({background, children}) => {

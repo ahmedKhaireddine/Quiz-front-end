@@ -29,13 +29,13 @@ const SigninComponent = (props) => {
         const formik = useFormik({
 
             initialValues: {
-                code: '',
+                code: "",
             },
 
             validationSchema: Yup.object({
                 code: Yup.number()
-                    .max(15, 'Must be 15 characters or less')
-                    .required('*Champs requis'),
+                    .max(15, "Must be 15 characters or less")
+                    .required("*Champs requis"),
             }),
 
             onSubmit: values => {
@@ -52,7 +52,7 @@ const SigninComponent = (props) => {
                 id="code"
                 name="code"
                 type="number"
-                placeholder='Entrer le code ici'
+                placeholder="Entrer le code ici"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.code}

@@ -38,16 +38,16 @@ const Form = styled.div`
 const PlayerInfos = (props) => {
     const formik = useFormik({
         initialValues: {
-            nom: '',
-            prenom: ''
+            nom: "",
+            prenom: ""
         },
         validationSchema: Yup.object({
             nom: Yup.string()
-                .max(15, 'Must be 15 characters or less')
-                .required('*Champs requis'),
+                .max(15, "Must be 15 characters or less")
+                .required("*Champs requis"),
             prenom: Yup.string()
-                .max(15, 'Must be 15 characters or less')
-                .required('*Champs requis'),
+                .max(15, "Must be 15 characters or less")
+                .required("*Champs requis"),
         }),
         onSubmit: values => {
             alert(JSON.stringify(values, null, 2));
@@ -66,7 +66,7 @@ const PlayerInfos = (props) => {
                         id="nom"
                         name="nom"
                         type="text"
-                        placeholder='Nom'
+                        placeholder="Nom"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.nom}
@@ -81,7 +81,7 @@ const PlayerInfos = (props) => {
                         id="prenom"
                         name="prenom"
                         type="text"
-                        placeholder='Prénom'
+                        placeholder="Prénom"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.prenom}

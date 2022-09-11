@@ -1,93 +1,73 @@
-import styled from "styled-components"
-import { Formik, Form, Field } from "formik"
+// import styled from "styled-components"
+import { useFormik, Formik, Form, Field } from "formik"
+import * as Yup from "yup"
 
 import Logo from "../Logo"
 import {
+  FormErrorMessage,
+  FormHelperText,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-//   FormHelperText,
+  Input,
+  VStack,
+  Button
 } from "@chakra-ui/react"
 import InputComponent from "../InputComponent"
 import ButtonComponent from "./core/ButtonComponent"
 
-const Box = styled.div`
-    height: 400px;
-    width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction column;
-`
-// const Form = styled.div`
+// const Box = styled.div`
+//     height: 400px;
+//     width: 300px;
 //     display: flex;
-//     flex-direction column;
 //     justify-content: center;
 //     align-items: center;
-//     label {
-//         font-size: 25px;
-//         color: #F1F1F1;
-//         margin: 10px auto;
-//     }
-//     input {
-//         height: 30px;
-//         width: 200px;
-//         margin: 30px 0;
-//         padding-left: 10px;
-//     }
+//     flex-direction column;
 // `
 
-const Home = (props) => {
-
-    function validateCode(value) {
-        let error
-
-        if (!value) {
-            error = "Un code est requis"
-        } else if (value.toLowerCase() !== "") {      // (value.toLowerCase() !== code)
-            error = "Le code saisi est invalide"
-        }
-        return error
-    }
-
+const Home = () => {
     return (
-        <>
-            <Box>
-                <Logo/>
-                    <Formik
-                        // initialValues={{ name: "Votre code" }}
-                        onSubmit={(values, actions) => {
-                            setTimeout(() => {
-                                alert(JSON.stringify(values, null, 2))
-                                actions.setSubmitting(false)
-                            }, 1000)
-                        }}
+        <Formik
+            initialValues={{code: ""}}
+            validationSchema={Yup.object({
+                code: Yup
+                    .string()
+                    .required("Vous devez entrer un code")
+            })}
+            onSubmit={(values, actions) => {
+                alert(JSON.stringify(values, null, 2))
+                actions.resetForm()
+            }}
+        >
+            {(formik) => (     
+                <VStack
+                    as="form"
+                    mx="auto"
+                    w={{ base: "90%", md: 300 }}
+                    h="100vh"
+                    justifyContent="center"
+                    onSubmit={formik.handleSubmit}
+                >
+                    <Logo/>
+                    <FormControl isInvalid={formik.errors.code}>
+                        <FormLabel>Code</FormLabel>
+                        <Field
+                            as={Input}
+                            name="code"
+                            placeholder="Entrer votre code..."
+                            color="white"
+                        />
+                        <FormErrorMessage>{formik.errors.code}</FormErrorMessage>
+                    </FormControl>
+                    <Button
+                        type="submit"
+                        variant="outline"
+                        colorScheme="teal"
                     >
-                    {(props) => (
-                        <Form name="code" validate={validateCode}>
-                            {({ field, form }) => (
-                                <Field>
-                                    <FormControl isInvalid={form.errors.code && form.touched.code}>
-                                        <FormLabel>Code</FormLabel>
-                                        <InputComponent
-                                            {...field}
-                                            placeholder="Entrer votre code..."
-                                        />
-                                        <FormErrorMessage>{}</FormErrorMessage>
-                                    </FormControl>
-                                </Field>
-                            )}
-                            <ButtonComponent
-                                isLoading={props.isSubmitting}
-                                type="submit"
-                            >
-                                Entrer
-                            </ButtonComponent>
-                        </Form>
-                    )}
-                </Formik>
-            </Box>
-        </>
+                        Entrer
+                    </Button>
+                </VStack>
+            )}
+        </Formik>
     )
 }
 

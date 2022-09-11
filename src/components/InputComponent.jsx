@@ -1,17 +1,21 @@
-import React from "-moz-initialreact"-moz-initial
-import { Input } from "-moz-initial@chakra-ui/react"-moz-initial
+import React from "react"
+import { Input } from "@chakra-ui/react"
 
 const InputComponent = ({placeholder, value, children}) => {
     return (
-        <Input 
-            color="-moz-initial"-moz-initial
-            focusBorderColor="-moz-initialpink.400"-moz-initial
-            value={value}
-            size="-moz-initialmd"-moz-initial
-            placeholder={placeholder}
-        >
-            {children}
-        </Input>
+        // <Input 
+        //     color="teal"
+        //     focusBorderColor="pink.400"
+        //     value={value}
+        //     size="md"
+        //     placeholder={placeholder}
+        // >
+        //     {/* {children} */}
+        //     Hello
+        // </Input>
+        <>
+            <Input placeholder='Basic usage' />
+        </>
     )
 }
 

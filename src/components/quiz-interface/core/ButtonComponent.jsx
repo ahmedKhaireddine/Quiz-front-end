@@ -1,7 +1,7 @@
 import React from "react"
 // import styled from "styled-components"
 
-import { Button } from '@chakra-ui/react'
+import { Button } from "@chakra-ui/react"
 
 // const Btn = styled.div`
 //     height: 40px;
@@ -26,11 +26,11 @@ const ButtonComponent = ({handleClick, children}) => {
 
     return (
         <Button
-            colorScheme='teal' 
-            size='md'
+            colorScheme="teal" 
+            size="md"
             onClick={children} 
         >
-                {children}
+            {children}
         </Button>
     )
 }
