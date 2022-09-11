@@ -13,7 +13,8 @@ import styled from "styled-components"
 import QuizLayout from "../components/layouts/QuizLayout"
 import Logo from "../components/Logo"
 
-const FormTest = (props) => {
+const FormTest = () => {
+  
   function validateName(value) {
     let error
     if (!value) {

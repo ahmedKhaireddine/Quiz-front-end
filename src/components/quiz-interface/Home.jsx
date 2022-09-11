@@ -1,17 +1,13 @@
 // import styled from "styled-components"
 import { useFormik, Formik, Form, Field } from "formik"
 import * as Yup from "yup"
-
-import Logo from "../Logo"
 import {
-  FormErrorMessage,
-  FormHelperText,
-  FormControl,
-  FormLabel,
-  Input,
-  VStack,
-  Button
+    VStack,
+    Button
 } from "@chakra-ui/react"
+
+import TextField from "../TextField"
+import Logo from "../Logo"
 import InputComponent from "../InputComponent"
 import ButtonComponent from "./core/ButtonComponent"
 
@@ -48,16 +44,10 @@ const Home = () => {
                     onSubmit={formik.handleSubmit}
                 >
                     <Logo/>
-                    <FormControl isInvalid={formik.errors.code}>
-                        <FormLabel>Code</FormLabel>
-                        <Field
-                            as={Input}
-                            name="code"
-                            placeholder="Entrer votre code..."
-                            color="white"
-                        />
-                        <FormErrorMessage>{formik.errors.code}</FormErrorMessage>
-                    </FormControl>
+                    <TextField 
+                        name="code"
+                        placeholder="Entrer votre code..."
+                    />
                     <Button
                         type="submit"
                         variant="outline"
