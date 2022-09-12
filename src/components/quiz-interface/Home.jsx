@@ -1,8 +1,7 @@
-import { useFormik, Formik, Form, Field } from "formik"
+import { Formik } from "formik"
 import * as Yup from "yup"
 import {
     VStack,
-    Button,
     Heading
 } from "@chakra-ui/react"
 import styled from "styled-components"
@@ -16,7 +15,6 @@ const Box = styled.div`
     flex-direction: column;
     align-items: center;
 `
-
 
 const Home = () => {
     return (
@@ -37,25 +35,25 @@ const Home = () => {
                     <Logo />
                     <Heading
                         as='h1' 
-                        // size='lg'
                         color="#F1F1F1"
-                        mt="60px"    
-                    >Bienvenue! Veuillez entrer votre code pour commencer le Quiz!</Heading>
+                        my="60px"    
+                    >
+                        Bienvenue! Veuillez entrer votre code pour commencer le Quiz!
+                    </Heading>
                     <VStack
                         as="form"
                         w={{ base: "90%", md: 300 }}
                         mx="auto"
                         spacing="30px"
-                        // h="100vh"
                         justifyContent="center"
                         onSubmit={formik.handleSubmit}
                     >
                         <TextField
                             name="code"
                             placeholder="Entrer votre code..."
-                            mt="30px"
+                            // mt="30px"
                         />
-                        <ButtonComponent>Entrer</ButtonComponent>
+                        <ButtonComponent px={ 10 }>Entrer</ButtonComponent>
                     </VStack>
                 </Box>   
             )}

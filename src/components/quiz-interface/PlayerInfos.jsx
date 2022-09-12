@@ -1,100 +1,73 @@
-import React from "react"
-import styled from "styled-components"
+import { Formik, useFormik } from "formik"
 import * as Yup from "yup"
-import { useFormik } from "formik"
+import {
+    VStack,
+    Button,
+    Heading
+} from "@chakra-ui/react"
+import styled from "styled-components"
 
+import TextField from "../TextField"
 import ButtonComponent from "./core/ButtonComponent"
 
 const Box = styled.div`
     display: flex;
     flex-direction column;
-    padding: 30px;
-`
-const Message = styled.h1`
-    p {
-        font-size: 40px;
-        font-weight: lighter;
-        padding: 40px;
-        color: #F1F1F1;
-    }
-`
-const Form = styled.div`
-    display: flex;
-    flex-direction column;
-    justify-content: flex-start;
-    label {
-        font-size: 25px;
-        color: #F1F1F1;
-    }
-    input {
-        height: 30px;
-        width: 300px;
-        padding-left: 10px;
-        border-radius: 5px;
-        margin: 10px auto;
-    }
 `
 
 const PlayerInfos = (props) => {
-    const formik = useFormik({
-        initialValues: {
-            nom: "",
-            prenom: ""
-        },
-        validationSchema: Yup.object({
-            nom: Yup.string()
-                .max(15, "Must be 15 characters or less")
-                .required("*Champs requis"),
-            prenom: Yup.string()
-                .max(15, "Must be 15 characters or less")
-                .required("*Champs requis"),
-        }),
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
-        },
-    });
 
     return (
-        <>
-            <Message>
-                <h1><p>Dernière étape avant de commencer</p></h1>
-            </Message>
-            <Box>
-                <Form onSubmit={formik.handleSubmit}>
-                    <label htmlFor="nom">Nom</label><br></br>
-                    <input
-                        id="nom"
-                        name="nom"
-                        type="text"
-                        placeholder="Nom"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.nom}
-                        error={formik.errors.nom}
-                    />
-                    {formik.touched.nom && formik.errors.nom ? (
-                        <div>{formik.errors.nom}</div>
-                    ) : null}
-
-                    <label htmlFor="prenom">Prénom</label><br></br>
-                    <input
-                        id="prenom"
-                        name="prenom"
-                        type="text"
-                        placeholder="Prénom"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.prenom}
-                        error={formik.errors.prenom}
-                    />
-                    {formik.touched.prenom && formik.errors.prenom ? (
-                        <div>{formik.errors.prenom}</div>
-                    ) : null}
-
-                    <ButtonComponent type="submit">Go !</ButtonComponent>
-                </Form>
-            </Box>
-        </>
+        <Formik
+            initialValues={{
+                nom: "",
+                prenom: ""
+            }}
+            validationSchema={Yup.object({
+                nom: Yup
+                    .string()
+                    .max(15, "*15 caractères maximum")
+                    .required("*Veuillez renseigner un nom"),
+                prenom: Yup
+                    .string()
+                    .max(15, "*15 caractères maximum")
+                    .required("*Veuillez renseigner un prénom"),
+            })}
+            onSubmit={(values, actions) => {
+                alert(JSON.stringify(values, null, 2))
+                actions.resetForm()
+            }}
+        >
+            {(formik) => ( 
+                <Box>
+                    <Heading
+                        as='h1' 
+                        color="#F1F1F1"
+                        mb="60px"    
+                    >
+                        Dernière étape avant de commencer
+                    </Heading>
+                    <VStack
+                        as="form"
+                        w={{ base: "90%", md: 300 }}
+                        mx="auto"
+                        spacing="30px"
+                        justifyContent="center"
+                        onSubmit={formik.handleSubmit}
+                    >
+                        <TextField
+                            name="nom"
+                            placeholder="Nom..."
+                        />
+                        <TextField
+                            name="prenom"
+                            placeholder="Prenom..."
+                        />
+                        <ButtonComponent px={ 10 }>Entrer</ButtonComponent>
+                    </VStack>
+                </Box>   
+            )}
+        </Formik>
     )
 }
 
