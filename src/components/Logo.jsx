@@ -6,7 +6,7 @@ const Span = styled.span`
     font-size: ${props => props.size};
     color: #F1F1F1;
 `
-    
+
 const Link = styled.a`
     text-decoration: none;
 `
