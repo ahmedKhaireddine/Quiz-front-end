@@ -36,7 +36,9 @@ const Home = () => {
             {(formik) => ( 
                 <Box>
                     <Logo />
-                    <Heading 
+                    <Heading
+                        as='h1' 
+                        // size='lg'
                         color="#F1F1F1"
                         mt="60px"    
                     >Bienvenue! Veuillez entrer votre code pour commencer le Quiz!</Heading>
