@@ -3,22 +3,21 @@ import { useFormik, Formik, Form, Field } from "formik"
 import * as Yup from "yup"
 import {
     VStack,
-    Button
+    Button,
+    Heading
 } from "@chakra-ui/react"
+import styled from "styled-components"
 
 import TextField from "../TextField"
 import Logo from "../Logo"
-import InputComponent from "../InputComponent"
 import ButtonComponent from "./core/ButtonComponent"
 
-// const Box = styled.div`
-//     height: 400px;
-//     width: 300px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction column;
-// `
+const Box = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
 
 const Home = () => {
     return (
@@ -34,28 +33,30 @@ const Home = () => {
                 actions.resetForm()
             }}
         >
-            {(formik) => (     
-                <VStack
-                    as="form"
-                    mx="auto"
-                    w={{ base: "90%", md: 300 }}
-                    h="100vh"
-                    justifyContent="center"
-                    onSubmit={formik.handleSubmit}
-                >
-                    <Logo/>
-                    <TextField 
-                        name="code"
-                        placeholder="Entrer votre code..."
-                    />
-                    <Button
-                        type="submit"
-                        variant="outline"
-                        colorScheme="teal"
+            {(formik) => ( 
+                <Box>
+                    <Logo />
+                    <Heading 
+                        color="#F1F1F1"
+                        mt="60px"    
+                    >Bienvenue! Veuillez entrer votre code pour commencer le Quiz!</Heading>
+                    <VStack
+                        as="form"
+                        w={{ base: "90%", md: 300 }}
+                        mx="auto"
+                        spacing="30px"
+                        // h="100vh"
+                        justifyContent="center"
+                        onSubmit={formik.handleSubmit}
                     >
-                        Entrer
-                    </Button>
-                </VStack>
+                        <TextField
+                            name="code"
+                            placeholder="Entrer votre code..."
+                            mt="30px"
+                        />
+                        <ButtonComponent>Entrer</ButtonComponent>
+                    </VStack>
+                </Box>   
             )}
         </Formik>
     )

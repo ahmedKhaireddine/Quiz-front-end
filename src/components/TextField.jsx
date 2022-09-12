@@ -10,7 +10,7 @@ const TextField = ({label, ...props}) => {
     const [field, meta] = useField(props)
     return (
         <FormControl isInvalid={meta.error && meta.touched}>
-            <FormLabel>{label}</FormLabel>
+            <FormLabel color="white">{label}</FormLabel>
             <Field
                 as={Input}
                 {...field}

@@ -13,7 +13,9 @@ const Link = styled.a`
 const Logo = ({href, size}) => {
     return (
         <Link href={href}>
-            <Span size={size}>
+            <Span 
+                size={size}
+            >
                 Quiz
             </Span>
         </Link>
