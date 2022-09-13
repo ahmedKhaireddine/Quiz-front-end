@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Container = styled.div`
     height: 100vh;
     width; 100vw;
-    background: ${props => props.background};
+    // background: ${props => props.background};
     display: flex;
     flex-direction: column;
     justify-content: center;
