@@ -1,8 +1,9 @@
 import React from "react"
 
-import { Button } from "@chakra-ui/react"
+import { Button, useToast } from "@chakra-ui/react"
 
 const ButtonComponent = ({handleClick, px, children}) => {
+    const toast = useToast()
 
     return (
         <Button
@@ -11,7 +12,15 @@ const ButtonComponent = ({handleClick, px, children}) => {
             px={px}
             variant="outline"
             colorScheme="teal" 
-            // onClick={children} 
+            onClick={() => toast({
+                isClosable: true,
+                title: "Code Valide",
+                description:"Vous pouvez accéder au Quiz",
+                duration:3000,
+                position:"bottom-right",
+                status:"success",
+                })
+            }
         >
             {children}
         </Button>

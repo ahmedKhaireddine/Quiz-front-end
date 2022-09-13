@@ -2,7 +2,8 @@ import { Formik } from "formik"
 import * as Yup from "yup"
 import {
     VStack,
-    Heading
+    Heading,
+    useToast
 } from "@chakra-ui/react"
 import styled from "styled-components"
 
@@ -17,6 +18,7 @@ const Box = styled.div`
 `
 
 const Home = () => {
+
     return (
         <Formik
             initialValues={{code: ""}}
@@ -24,6 +26,7 @@ const Home = () => {
                 code: Yup
                     .string()
                     .required("Vous devez entrer un code")
+                    .max(15, "Le code ne peut contenir plus de 15 caractères")
             })}
             onSubmit={(values, actions) => {
                 alert(JSON.stringify(values, null, 2))
@@ -51,7 +54,11 @@ const Home = () => {
                             name="code"
                             placeholder="Entrer votre code..."
                         />
-                        <ButtonComponent px={ 10 }>Entrer</ButtonComponent>
+                        <ButtonComponent 
+                            px={ 10 }
+                        >
+                            Entrer
+                        </ButtonComponent>
                     </VStack>
                 </Box>   
             )}
