@@ -42,7 +42,6 @@ const PlayerInfos = (props) => {
                 <Box>
                     <Heading
                         as='h1' 
-                        color="#F1F1F1"
                         mb="60px"    
                     >
                         Dernière étape avant de commencer

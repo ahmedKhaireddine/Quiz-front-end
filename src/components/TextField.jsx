@@ -15,7 +15,6 @@ const TextField = ({label, ...props}) => {
                 as={Input}
                 {...field}
                 {...props}
-                color="white"
             />
             <FormErrorMessage>{meta.error}</FormErrorMessage>
         </FormControl>

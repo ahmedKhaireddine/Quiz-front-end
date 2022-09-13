@@ -35,7 +35,6 @@ const Home = () => {
                     <Logo />
                     <Heading
                         as='h1' 
-                        color="#F1F1F1"
                         my="60px"    
                     >
                         Bienvenue! Veuillez entrer votre code pour commencer le Quiz!
@@ -51,7 +50,6 @@ const Home = () => {
                         <TextField
                             name="code"
                             placeholder="Entrer votre code..."
-                            // mt="30px"
                         />
                         <ButtonComponent px={ 10 }>Entrer</ButtonComponent>
                     </VStack>

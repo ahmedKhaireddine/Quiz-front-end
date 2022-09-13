@@ -4,7 +4,6 @@ import styled from "styled-components"
 const Span = styled.span`
     font-family: 'Henny Penny';
     font-size: ${props => props.size};
-    color: #F1F1F1;
 `
 
 const Link = styled.a`
