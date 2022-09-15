@@ -8,7 +8,7 @@ const QuizContextProvider = ({ children }) => {
   const [infos, setInfos] = useState({})
   const [answers, setAnswers] = useState([])
   const [score, setScore] = useState(0)
-  const [step, setStep] = useState(4)
+  const [step, setStep] = useState(1)
 
   const value = {
     step,

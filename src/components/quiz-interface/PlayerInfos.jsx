@@ -42,8 +42,6 @@ const PlayerInfos = (props) => {
                 <Box>
                     <Heading
                         as="h1" 
-                        w={{ base: "80%", md:"100%"}}
-                        mx="auto"
                         mb="60px"    
                     >
                         Dernière étape avant de commencer

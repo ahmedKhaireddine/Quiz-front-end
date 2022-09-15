@@ -40,7 +40,6 @@ const Home = () => {
                     <Logo />
                     <Heading
                         as='h1'
-                        w={{ base: "80%", md:"100%"}}
                         my="60px"    
                     >
                         Bienvenue! Veuillez entrer votre code pour commencer le Quiz!
