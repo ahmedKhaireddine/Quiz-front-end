@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react"
+import ButtonComponent from "./core/ButtonComponent"
 
 import { QuizContext } from "../../contexts/Quiz"
 import Questions from "../../questions.json"
@@ -14,7 +15,7 @@ const Quiz = () => {
   const [index, setIndex] = useState(0)
   const { time, start } = useTimer({
     onTimeOver: () => {
-      if(index < Questions.length) {
+      if (index < Questions.length) {
         setIndex(index => index + 1)
       }
     },
@@ -69,7 +70,7 @@ const Quiz = () => {
         setAnswerSelected={setAnswerSelected}
         questionId={id}
       />
-      <button onClick={() => saveAnswer()}>Question suivante</button>
+      <ButtonComponent onClick={() => saveAnswer()}>Question suivante</ButtonComponent>
     </div>
   )
 }

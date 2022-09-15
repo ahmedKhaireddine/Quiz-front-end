@@ -18,6 +18,8 @@ const Box = styled.div`
 `
 
 const Home = () => {
+    const toast = useToast()
+
 
     return (
         <Formik
@@ -34,17 +36,18 @@ const Home = () => {
             }}
         >
             {(formik) => ( 
-                <Box>
+                <Box width={[1, 1 / 2, 1 / 4]} >
                     <Logo />
                     <Heading
-                        as='h1' 
+                        as='h1'
+                        w={{ base: "80%", md:"100%"}}
                         my="60px"    
                     >
                         Bienvenue! Veuillez entrer votre code pour commencer le Quiz!
                     </Heading>
                     <VStack
                         as="form"
-                        w={{ base: "90%", md: 300 }}
+                        w={{ base: "80%", md: 400 }}
                         mx="auto"
                         spacing="30px"
                         justifyContent="center"
@@ -56,6 +59,15 @@ const Home = () => {
                         />
                         <ButtonComponent 
                             px={ 10 }
+                            onClick={() => toast({
+                                isClosable: true,
+                                title: "Code Valide",
+                                description:"Vous pouvez accéder au Quiz",
+                                duration:3000,
+                                position:"bottom-right",
+                                status:"success",
+                                })
+                            }
                         >
                             Entrer
                         </ButtonComponent>

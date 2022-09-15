@@ -41,17 +41,18 @@ const PlayerInfos = (props) => {
             {(formik) => ( 
                 <Box>
                     <Heading
-                        as='h1' 
+                        as="h1" 
+                        w={{ base: "80%", md:"100%"}}
+                        mx="auto"
                         mb="60px"    
                     >
                         Dernière étape avant de commencer
                     </Heading>
                     <VStack
                         as="form"
-                        w={{ base: "90%", md: 300 }}
+                        w={{ base: "80%" }}
                         mx="auto"
                         spacing="30px"
-                        justifyContent="center"
                         onSubmit={formik.handleSubmit}
                     >
                         <TextField

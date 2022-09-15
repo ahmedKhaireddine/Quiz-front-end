@@ -2,8 +2,7 @@ import React from "react"
 
 import { Button, useToast } from "@chakra-ui/react"
 
-const ButtonComponent = ({handleClick, px, children}) => {
-    const toast = useToast()
+const ButtonComponent = ({handleClick, onClick, px, children}) => {
 
     return (
         <Button
@@ -11,24 +10,16 @@ const ButtonComponent = ({handleClick, px, children}) => {
             size="md"
             px={px}
             variant="outline"
-            colorScheme="teal" 
-            onClick={() => toast({
-                isClosable: true,
-                title: "Code Valide",
-                description:"Vous pouvez accéder au Quiz",
-                duration:3000,
-                position:"bottom-right",
-                status:"success",
-                })
-            }
+            colorScheme="teal"
+            onClick={onClick}
         >
             {children}
         </Button>
     )
 }
 
-// ButtonComponent.defaultProps = {
-//     handleClick: () => {return console.log("clicked")}
-// }
+ButtonComponent.defaultProps = {
+    handleClick: () => {return console.log("clicked")}
+}
 
 export default ButtonComponent
