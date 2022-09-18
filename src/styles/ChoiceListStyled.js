@@ -16,12 +16,12 @@ export const Item = styled.li`
   margin-bottom: 20px;
   height: 50px;
   background: ${ props => props.selected ? (
-    "linear-gradient(103deg, #45DDE7 75%, #d5f9fc 90%)"
+    "linear-gradient(100deg, #45DDE7 75%, #d5f9fc 90%)"
   ) : (
     "#2d3359"
   )};
-  transition: 1s;
   border-radius: 5px;
+  box-shadow: 4px 4px 20px #202020, -4px -4px 5px #464646;
 
   &:nth-child(2n+0) {
     margin-left: 15px;
