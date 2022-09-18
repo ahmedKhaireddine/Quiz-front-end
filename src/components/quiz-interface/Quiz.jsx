@@ -1,77 +1,92 @@
-import { useEffect, useState, useContext } from "react"
-import ButtonComponent from "./core/ButtonComponent"
+import { useContext, useCallback, useEffect, useState } from "react"
 
-import { QuizContext } from "../../contexts/Quiz"
-import Questions from "../../questions.json"
+import Button from "./core/Button"
 import ChoiceList from "./core/ChoiceList"
+import Logo from "../Logo"
+import Questions from "../../questions.json"
+import { QuizContext } from "../../contexts/Quiz"
+import { Index, Question, QuizContainer, Timer, Text } from "../../styles/QuizStyled"
 import { useTimer } from "../../hooks/useTimer"
 
-const Quiz = () => {
-  const { step, setStep, answers, setAnswers } = useContext(QuizContext)
-  // Valeur de chaque réponse(objet qui contiendra l'id de la question, l'id et le weight de la réponse sélectionnée)
+
+const Quiz = (props) => {
+  const { answers, setAnswers, step, setStep } = useContext(QuizContext)
   const [answerSelected, setAnswerSelected] = useState({
+    answerId: "",
+    questionId: "",
     weight: 0
-  })
+   })
   const [index, setIndex] = useState(0)
   const { time, start } = useTimer({
-    onTimeOver: () => {
-      if (index < Questions.length) {
-        setIndex(index => index + 1)
-      }
-    },
+    onTimeOver: () => handleTimeOver(),
     order: "DECREMENTAL"
   })
-  const { id, choices, title } = Questions[index]
 
-  // console.log("valeur de answerSelected :", answerSelected)
+  const { choices, id, title } = Questions[index]
 
-  console.log("index :", index)
-  // console.log("Questions: ", Questions)
-  console.log("id :", id)
+  const handleTimeOver = useCallback(() => {
+    setAnswers([...answers, answerSelected])
+    setAnswerSelected({
+      answerId: "",
+      questionId: "",
+      weight: 0
+    })
 
-  const saveAnswer = () => {
+    if(index < Questions.length - 1)
+      setIndex(index => index + 1)
+    else
+      setStep(4)
+  }, [answers, answerSelected, index, setAnswers, setIndex, setStep])
+
+  const saveAnswer = useCallback(() => {
     if (index < Questions.length) {
-      setAnswers([
-        ...answers, answerSelected
-      ])
+      setAnswers([...answers, answerSelected])
       setAnswerSelected({
+        answerId: "",
+        questionId: "",
         weight: 0
       })
-      if (index < Questions.length -1) {
-        setIndex(index + 1)
-      } else {
-        setStep(4)
-      } 
-    } 
-  }
 
-  const handleTimeOver = () => {
-    if(index < Questions.length) {
-      setAnswers([
-        ...answers, answerSelected
-      ])
-      setIndex(index => index + 1)
-    } else {
-      setStep(4)
+      if (index < Questions.length - 1)
+        setIndex(index + 1)
+      else
+        setStep(4)
     }
-  }
+  }, [answers, answerSelected, index, setAnswers, setIndex, setAnswerSelected, setStep])
+
+  // const handleTimeOver = () => {
+  //   if(index < Questions.length) {
+  //     setAnswers([
+  //       ...answers, answerSelected
+  //     ])
+  //     setIndex(index => index + 1)
+  //   } else {
+  //     setStep(4)
+  //   }
+  // }
 
   // useEffect(() => {
   //   start(Questions[index].duration)
   // }, [index, start])
 
   return (
-    <div>
-      <h1>Timer {time}</h1>
-      <h2>{index + 1}. {title}</h2>
+    <QuizContainer>
+      <Logo margin="0px 0px 50px 0px" size="50px" color="#45DDE7"/>
+      <Question>
+        <Timer>
+          <Text>✨{time}✨</Text>
+        </Timer>
+        {title}
+      </Question>
       <ChoiceList
-        choices={choices}
         answerSelected={answerSelected}
-        setAnswerSelected={setAnswerSelected}
+        choices={choices}
+        handleClick={setAnswerSelected}
         questionId={id}
       />
-      <ButtonComponent onClick={() => saveAnswer()}>Question suivante</ButtonComponent>
-    </div>
+      <Button handleClick={() => saveAnswer()}>Question suivante</Button>
+      <Index>{index + 1} / {Questions.length}</Index>
+    </QuizContainer>
   )
 }
 

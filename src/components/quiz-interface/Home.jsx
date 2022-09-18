@@ -21,7 +21,6 @@ const Box = styled.div`
 const Home = () => {
     const toast = useToast()
 
-
     return (
         <Formik
             initialValues={{code: ""}}
