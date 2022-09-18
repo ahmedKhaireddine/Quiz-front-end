@@ -10,6 +10,7 @@ import styled from "styled-components"
 import TextField from "../TextField"
 import Logo from "../Logo"
 import ButtonComponent from "./core/ButtonComponent"
+import LogoAnim from "../../others/LogoAnim"
 
 const Box = styled.div`
     display: flex;
@@ -37,7 +38,7 @@ const Home = () => {
         >
             {(formik) => ( 
                 <Box width={[1, 1 / 2, 1 / 4]} >
-                    <Logo />
+                    <LogoAnim />
                     <Heading
                         as='h1'
                         my="60px"    
