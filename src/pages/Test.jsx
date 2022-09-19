@@ -1,5 +1,3 @@
-import React from "react"
-
 import Body from "../components/Body"
 import SigninComponent from '../components/SigninComponent'
 import Logo from '../components/Logo'

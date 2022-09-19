@@ -1,5 +1,3 @@
-import React from "react"
-
 import { Button, useToast } from "@chakra-ui/react"
 
 const ButtonComponent = ({handleClick, onClick, px, children}) => {

@@ -1,4 +1,3 @@
-import React from "react"
 import { QuizContext } from "../contexts/Quiz"
 
 const NextQuestion = ({answers}) => {
