@@ -1,32 +1,19 @@
+import React from "react"
 import "./LogoAnimStyle.css"
 
 const LogoAnim = () => {
+    const logo = "QUIZ !!!"
+    const logoAnim = logo.split()
+    console.log(logoAnim)
+
   return (
-    <div className="grid">
-        <div className="letter-anim">
-            <span data-letter="Q">Q</span>
-        </div>
-        <div className="letter-anim">
-            <span data-letter="U">U</span>
-        </div>
-        <div className="letter-anim">
-            <span data-letter="I">I</span>
-        </div>
-        <div className="letter-anim">
-            <span data-letter="Z">Z</span>
-        </div>
-        <div className="letter-anim">
-            <span data-letter="">&nbsp;</span>
-        </div>
-        <div className="letter-anim">
-            <span data-letter="!">!</span>
-        </div>
-        <div className="letter-anim">
-            <span data-letter="!">!</span>
-        </div>
-        <div className="letter-anim">
-            <span data-letter="!">!</span>
-        </div> 
+      <div className="grid">
+        {logo.split().map(index => {
+           <div className="letter-anim">
+                <span data-letter={index}>{index}</span>
+            </div>
+        })
+        }
     </div>
   )
 }
