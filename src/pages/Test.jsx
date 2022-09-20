@@ -1,5 +1,3 @@
-import React from "react"
-
 import Body from "../components/Body"
 import Logo from '../components/Logo'
 import QuizLayout from "../components/layouts/QuizLayout"
