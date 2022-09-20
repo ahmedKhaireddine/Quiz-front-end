@@ -20,9 +20,14 @@
         "id": 4,
         "value": "24",
         "weight": 1
+      },
+      {
+        "id": 5,
+        "value": "28",
+        "weight": 1
       }
     ],
-    "id": 1, 
+    "id": 1,
     "is_active": true,
     "title": "Combien d’équipes seront présentes lors de l’Euro 2016 de foot ?",
     "topic": "Sports",
@@ -51,7 +56,7 @@
         "weight": 0
       }
     ],
-    "id": 2, 
+    "id": 2,
     "is_active": true,
     "title": "Quel club de foot anglais joue dans l’enceinte de l’Emirates Stadium ?",
     "topic": "Sports",
@@ -73,14 +78,9 @@
         "id": 3,
         "value": "Nantes",
         "weight": 1
-      },
-      {
-        "id": 4,
-        "value": "Toulouse",
-        "weight": 0
       }
     ],
-    "id": 3, 
+    "id": 3,
     "is_active": true,
     "title": "Parmi ces villes françaises, laquelle n’accueillera pas de match de l’Euro 2016 ?",
     "topic": "Sports",
@@ -109,7 +109,7 @@
         "weight": 1
       }
     ],
-    "id": 4, 
+    "id": 4,
     "is_active": true,
     "title": "Quel footballeur est surnommé la Puce ?",
     "topic": "Sports",
@@ -138,7 +138,7 @@
         "weight": 0
       }
     ],
-    "id": 5, 
+    "id": 5,
     "is_active": true,
     "title": "Quelles sont les 3 équipes figurant dans le groupe de la France pour l’Euro 2016 de foot ?",
     "topic": "Sports",
@@ -167,7 +167,7 @@
         "weight": 0
       }
     ],
-    "id": 6, 
+    "id": 6,
     "is_active": true,
     "title": "En quelle année Zinédine Zidane a-t-il pris sa retraite en tant que joueur ?",
     "topic": "Sports",
@@ -196,7 +196,7 @@
         "weight": 0
       }
     ],
-    "id": 7, 
+    "id": 7,
     "is_active": true,
     "title": "Quelle équipe de foot joue dans l’enceinte du stade de Santiago Bernabeu ?",
     "topic": "Sports",
@@ -225,7 +225,7 @@
         "weight": 0
       }
     ],
-    "id": 8, 
+    "id": 8,
     "is_active": true,
     "title": "Quelle équipe de foot joue dans l’enceinte du stade de Santiago Bernabeu ?",
     "topic": "Sports",
@@ -254,7 +254,7 @@
         "weight": 0
       }
     ],
-    "id": 9, 
+    "id": 9,
     "is_active": true,
     "title": "Quel est le nom du sélectionneur des Bleus en 2016 ?",
     "topic": "Sports",
@@ -283,7 +283,7 @@
         "weight": 1
       }
     ],
-    "id": 10, 
+    "id": 10,
     "is_active": true,
     "title": "Quel est le nom du stade de la ville de Bordeaux qui accueillera des matchs de l’Euro 2016 ?",
     "topic": "Sports",
@@ -312,7 +312,7 @@
         "weight": 0
       }
     ],
-    "id": 11, 
+    "id": 11,
     "is_active": true,
     "title": "Quelle équipe a éliminé le PSG en quarts de finale de la Ligue des Champions 2016 ?",
     "topic": "Sports",

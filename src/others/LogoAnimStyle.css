@@ -1,0 +1,45 @@
+@keyframes relief {
+    
+}
+
+.letter-anim, .letter-anim span {
+    display: inline-block;
+    font-family: 'Henny Penny';
+}
+
+.grid span {
+    cursor: pointer;
+    position: relative;
+    font-size: 100px;
+    perspective: 550px;
+    color: black;
+}
+
+.letter-anim span::before,
+.letter-anim span::after {
+    position: absolute;
+    content: attr(data-letter);
+    inset: 0;
+    transform-origin: left;
+}
+
+.letter-anim span::before {
+    transition: transform 0.4s ease-out;
+    color: rgba(0,0,0,0.8);
+}
+
+.letter-anim span::after {
+    color: #45DDE7;
+    transition: 
+        transform 0.4s ease-out,
+        color 0.4s ease-out;
+    transform: rotateY(-20deg);
+}
+
+.letter-anim:hover span::before {
+    transform: scaleX(0.85) skewY(20deg);
+}
+
+.letter-anim:hover span::after {
+    transform: rotateY(-40deg);
+}

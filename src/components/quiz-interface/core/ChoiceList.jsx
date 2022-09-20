@@ -1,22 +1,36 @@
 import { useState } from "react"
 
-const ChoiceList = (props) => {
+import { Item, ListItems, Polygon, Text } from "../../../styles/ChoiceListStyled"
 
-  const { choices, answerSelected, setAnswerSelected, questionId } = props
-
-  const choicesItemsJsx = choices.map(({id, value, weight}, index) => {
-    return <li
-      id={id}
+const ChoiceList = ({
+  answerSelected,
+  choices,
+  handleClick,
+  questionId
+}) => {
+  const choicesItemsJsx = choices.map(({ id, value, weight }, index) => {
+    return <Item
+      onClick={() => handleClick({
+        answerId: id,
+        questionId,
+        weight
+      })}
       key={index}
-      onClick={() => setAnswerSelected({id, weight, questionId})}
-    >{value}</li>
+      selected={id == answerSelected.answerId}
+    >
+      <Polygon>✨✨</Polygon>
+      <Text>{value}</Text>
+    </Item>
   })
 
-  return <ul>{choicesItemsJsx}</ul>
+  return <ListItems>{choicesItemsJsx}</ListItems>
 }
 
 ChoiceList.defaultProps = {
-  choises: []
+  answerSelected: {},
+  choices: [],
+  handleClick: () => {},
+  questionId: "Pas d'id"
 }
 
 export default ChoiceList
