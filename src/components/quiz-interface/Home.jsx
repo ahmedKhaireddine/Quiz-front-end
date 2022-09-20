@@ -1,16 +1,14 @@
 import { Formik } from "formik"
 import * as Yup from "yup"
-import {
-    VStack,
-    Heading,
-    useToast
-} from "@chakra-ui/react"
+import { VStack } from "@chakra-ui/react"
 import styled from "styled-components"
+import { useContext } from "react"
 
 import TextField from "../TextField"
-import Logo from "../Logo"
-import ButtonComponent from "./core/ButtonComponent"
 import LogoAnim from "../../others/LogoAnim"
+import Button from "./core/Button"
+import { QuizContext } from "../../contexts/Quiz"
+import questions from "../../questions.json"
 
 const Box = styled.div`
     display: flex;
@@ -19,7 +17,7 @@ const Box = styled.div`
 `
 
 const Home = () => {
-    const toast = useToast()
+    const { setStep, setQuiz } = useContext(QuizContext)
 
     return (
         <Formik
@@ -31,45 +29,29 @@ const Home = () => {
                     .max(15, "Le code ne peut contenir plus de 15 caractères")
             })}
             onSubmit={(values, actions) => {
-                alert(JSON.stringify(values, null, 2))
+                setQuiz({
+                    questions
+                })
                 actions.resetForm()
+                setStep(2)
             }}
         >
             {(formik) => ( 
                 <Box width={[1, 1 / 2, 1 / 4]} >
-                    <LogoAnim />
-                    <Heading
-                        as='h1'
-                        my="60px"    
-                    >
-                        Bienvenue! Veuillez entrer votre code pour commencer le Quiz!
-                    </Heading>
                     <VStack
                         as="form"
                         w={{ base: "80%", md: 400 }}
                         mx="auto"
-                        spacing="30px"
+                        spacing="50px"
                         justifyContent="center"
                         onSubmit={formik.handleSubmit}
                     >
+                        <LogoAnim />
                         <TextField
                             name="code"
                             placeholder="Entrer votre code..."
                         />
-                        <ButtonComponent 
-                            px={ 10 }
-                            onClick={() => toast({
-                                isClosable: true,
-                                title: "Code Valide",
-                                description:"Vous pouvez accéder au Quiz",
-                                duration:3000,
-                                position:"bottom-right",
-                                status:"success",
-                                })
-                            }
-                        >
-                            Entrer
-                        </ButtonComponent>
+                        <Button type="submit">Entrer</Button>
                     </VStack>
                 </Box>   
             )}

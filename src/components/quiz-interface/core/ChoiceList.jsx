@@ -9,18 +9,20 @@ const ChoiceList = ({
   questionId
 }) => {
   const choicesItemsJsx = choices.map(({ id, value, weight }, index) => {
-    return <Item
-      onClick={() => handleClick({
-        answerId: id,
-        questionId,
-        weight
-      })}
-      key={index}
-      selected={id == answerSelected.answerId}
-    >
-      <Polygon>✨✨</Polygon>
-      <Text>{value}</Text>
-    </Item>
+    return (
+      <Item
+        onClick={() => handleClick({
+          answerId: id,
+          questionId,
+          weight
+        })}
+        key={index}
+        selected={id == answerSelected.answerId}
+      >
+        <Polygon>✨✨</Polygon>
+        <Text>{value}</Text>
+      </Item>
+    )
   })
 
   return <ListItems>{choicesItemsJsx}</ListItems>

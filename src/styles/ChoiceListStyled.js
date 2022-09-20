@@ -21,7 +21,7 @@ export const Item = styled.li`
     "#2d3359"
   )};
   border-radius: 5px;
-  box-shadow: 4px 4px 20px #202020, -4px -4px 5px #464646;
+  // box-shadow: 4px 4px 20px #202020, -4px -4px 5px #464646;
 
   &:nth-child(2n+0) {
     margin-left: 15px;
