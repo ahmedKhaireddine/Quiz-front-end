@@ -1,3 +1,4 @@
+import React from "react"
 import { Item, MagicItems, Text } from "../../styles/OverStyled"
 import Logo from "../Logo"
 
