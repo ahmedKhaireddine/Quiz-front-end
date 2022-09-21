@@ -1,3 +1,4 @@
+import React from "react"
 import { createContext, useState } from "react"
 import { useScoreCalculator } from "../hooks/useScoreCalculator"
 
@@ -8,7 +9,7 @@ const QuizContextProvider = ({ children }) => {
   const [quiz, setQuiz] = useState({})
   const [infos, setInfos] = useState({})
   const [answers, setAnswers] = useState([])
-  const [step, setStep] = useState(3)
+  const [step, setStep] = useState(1)
   const score = useScoreCalculator(answers)
 
   const value = {
@@ -16,8 +17,17 @@ const QuizContextProvider = ({ children }) => {
     setAnswers,
     score,
     setStep,
-    step
+    step,
+    quiz,
+    setQuiz,
+    infos, 
+    setInfos
   }
+
+  console.log("tableau des réponses :", answers)
+  console.log("quiz", quiz)
+  console.log("infos", infos)
+  
 
   return (
     <QuizContext.Provider value={value}>

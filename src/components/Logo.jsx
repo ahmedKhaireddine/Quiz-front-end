@@ -11,6 +11,7 @@ const Span = styled.span`
     font-size: ${props => props.size};
     color: ${props => props.color};
 `
+
 const Logo = ({
     color,
     href,

@@ -1,3 +1,4 @@
+import React from "react"
 import { useContext, useCallback, useEffect, useState } from "react"
 
 import Button from "./core/Button"
@@ -7,7 +8,6 @@ import Questions from "../../questions.json"
 import { QuizContext } from "../../contexts/Quiz"
 import { Index, Question, QuizContainer, Timer, Text } from "../../styles/QuizStyled"
 import { useTimer } from "../../hooks/useTimer"
-
 
 const Quiz = (props) => {
   const { answers, setAnswers, step, setStep } = useContext(QuizContext)
@@ -54,9 +54,20 @@ const Quiz = (props) => {
     }
   }, [answers, answerSelected, index, setAnswers, setIndex, setAnswerSelected, setStep])
 
-  useEffect(() => {
-    start(Questions[index].duration)
-  }, [index, start])
+  // const handleTimeOver = () => {
+  //   if(index < Questions.length) {
+  //     setAnswers([
+  //       ...answers, answerSelected
+  //     ])
+  //     setIndex(index => index + 1)
+  //   } else {
+  //     setStep(4)
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   start(Questions[index].duration)
+  // }, [index, start])
 
   return (
     <QuizContainer>
