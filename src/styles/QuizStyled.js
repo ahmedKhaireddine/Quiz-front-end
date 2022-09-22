@@ -24,13 +24,13 @@ export const Timer = styled.div`
   left: 43%;
 `
 export const Question = styled.h2`
-  padding: 70px 40px 40px;
+  padding: 70px 40px;
   margin: 20px;
   background-color: #2d3359;
   border-radius: 5px;
   text-align: center;
   position: relative;
-  width: 722px;
+  width: 800px;
   height: 60px;
   line-height: 35px;
 `

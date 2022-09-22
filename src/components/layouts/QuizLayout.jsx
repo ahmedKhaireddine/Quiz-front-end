@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import { useColorModeValue } from "@chakra-ui/react"
 
 const Container = styled.div`
     height: 100vh;
     width; 100vw;
-    // background: ${props => props.background};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,9 +14,12 @@ const Container = styled.div`
     }
 `
 
-const QuizLayout = ({background, children}) => {
+const QuizLayout = ({children}) => {
+    
+    const bg = useColorModeValue("#242233", 'green')
+    const color = useColorModeValue("#F9F7F3", 'green')
     return (
-        <Container background={background}>
+        <Container bg={bg} color={color}>
             {children}
         </Container>
     )

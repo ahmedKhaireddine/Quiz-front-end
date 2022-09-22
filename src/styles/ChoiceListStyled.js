@@ -38,7 +38,7 @@ export const Polygon = styled.span`
   width: 40px;
   height: 50px;
   clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
-  background-color: linear-gradient(100deg, #45DDE7 75%, #d5f9fc 90%);
+  // background-color: linear-gradient(100deg, #45DDE7 75%, #d5f9fc 90%);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 `
@@ -46,18 +46,3 @@ export const Polygon = styled.span`
 export const Text = styled.p`
   margin-left: 20px;
 `
-
-// p {
-//   animation-duration: 1s;
-//   animation-name: slidein;
-// }
-
-// @keyframes slidein {
-//   from {
-//     left: 0;
-//   }
-
-//   to {
-//     right: 0;
-//   }
-// }
