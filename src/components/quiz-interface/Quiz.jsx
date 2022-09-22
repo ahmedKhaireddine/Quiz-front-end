@@ -10,7 +10,7 @@ import { Index, Question, QuizContainer, Timer, Text } from "../../styles/QuizSt
 import { useTimer } from "../../hooks/useTimer"
 
 const Quiz = (props) => {
-  const { answers, setAnswers, step, setStep } = useContext(QuizContext)
+  const { answers, setAnswers, step, setStep, setQuiz } = useContext(QuizContext)
   const [answerSelected, setAnswerSelected] = useState({
     answerId: "",
     questionId: "",
