@@ -1,15 +1,19 @@
 import "./App.css"
 import Routes from "./Routing"
+import QuizInterface from "./pages/QuizInterface"
 
-import { ChakraProvider } from '@chakra-ui/react'
+import { Box } from "@chakra-ui/react"
 import ToggleMode from "./components/layouts/ToggleMode"
+import QuizLayout from "./components/layouts/QuizLayout"
 
 const App = () => {
   return (
-    <ChakraProvider>
-      <ToggleMode />
-      <Routes/>
-    </ChakraProvider>
+    <Box>
+      <QuizLayout>
+          <ToggleMode />
+          <QuizInterface/>
+      </QuizLayout>
+    </Box>
   )
 }
 
