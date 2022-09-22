@@ -21,14 +21,14 @@ const Logo = ({
     return (
         <Link href={href} margin={margin}>
             <Span size={size} color={color}>
-                Quiz!!!
+                Quiz !!!
             </Span>
         </Link>
     )
 }
 
 Logo.defaultProps = {
-    color: "white",
+    color: "#45DDE7",
     href: "#",
     margin: "0px",
     size: "100px"

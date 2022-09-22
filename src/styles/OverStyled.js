@@ -66,7 +66,6 @@ export const MagicItems = styled.ul`
 `
 
 export const Text = styled.p`
-    // color: white;
     font-size: ${props => props.size};
     text-align: center;
     margin-bottom: 10px;

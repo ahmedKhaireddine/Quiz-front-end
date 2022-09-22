@@ -1,22 +1,19 @@
-import Body from "../components/Body"
-import Logo from '../components/Logo'
-import QuizLayout from "../components/layouts/QuizLayout"
-import Home from "../components/quiz-interface/Home"
-import PlayerInfos from "../components/quiz-interface/PlayerInfos"
-import Over from "../components/quiz-interface/Over"
-import Quiz from "../components/quiz-interface/Quiz"
-import ChoiceList from "../components/quiz-interface/core/ChoiceList"
+import StarsList from "../components/StarsList"
+import Logo from "../components/Logo"
+import { Text } from "../styles/OverStyled"
+import { Body, Box } from "../styles/StarsListStyled"
 
 const Test = (props) => {
     return (
-        <div>
-            {/* <PlayerInfos/> */}
-            {/* <Quiz /> */}
-            {/* <Over /> */}
-            {/* <ChoiceList /> */}
-            <QuizLayout>
-            </QuizLayout>
-        </div>
+        <Body>
+            <StarsList />
+                <Box>
+                    <Logo margin="0px auto 50px"/>
+                    <Text size="3em">Félicitations!</Text>
+                    <Text size="2em">Vous avez terminé le quiz!</Text>
+                </Box>
+            <StarsList />
+        </Body>
     )
 }
 
