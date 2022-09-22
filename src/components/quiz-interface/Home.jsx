@@ -6,7 +6,7 @@ import styled from "styled-components"
 import { useContext } from "react"
 
 import TextField from "../TextField"
-import LogoAnimated from "../../others/LogoAnimated"
+import LogoAnimated from "../LogoAnimated"
 import Button from "./core/Button"
 import { QuizContext } from "../../contexts/Quiz"
 import questions from "../../questions.json"
