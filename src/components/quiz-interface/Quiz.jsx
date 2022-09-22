@@ -32,7 +32,7 @@ const Quiz = (props) => {
       weight: 0
     })
 
-    if(index < Questions.length - 1)
+    if (index < Questions.length - 1)
       setIndex(index => index + 1)
     else
       setStep(4)
@@ -53,17 +53,6 @@ const Quiz = (props) => {
         setStep(4)
     }
   }, [answers, answerSelected, index, setAnswers, setIndex, setAnswerSelected, setStep])
-
-  // const handleTimeOver = () => {
-  //   if(index < Questions.length) {
-  //     setAnswers([
-  //       ...answers, answerSelected
-  //     ])
-  //     setIndex(index => index + 1)
-  //   } else {
-  //     setStep(4)
-  //   }
-  // }
 
   // useEffect(() => {
   //   start(Questions[index].duration)

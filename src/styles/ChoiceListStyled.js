@@ -35,12 +35,12 @@ export const Item = styled.li`
 export const Polygon = styled.span`
   display: flex;
   flex-direction: column;
-  // width: 40px;
-  // height: 50px;
-  // clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
-  // background-color: linear-gradient(100deg, #45DDE7 75%, #d5f9fc 90%);
-  // border-top-left-radius: 5px;
-  // border-bottom-left-radius: 5px;
+  width: 40px;
+  height: 50px;
+  clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+  background-color: linear-gradient(100deg, #45DDE7 75%, #d5f9fc 90%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 `
 
 export const Text = styled.p`

@@ -1,13 +1,9 @@
 import React from "react"
-import { useContext } from "react"
 
 import { Item, MagicItems, Text } from "../../styles/OverStyled"
 import Logo from "../Logo"
-import { QuizContext } from "../../contexts/Quiz"
 
 const Over = (props) => {
-    const { answerSelected } = useContext(QuizContext)
-    console.log("réponses séléctionnées :", answerSelected)
     return (
         <>
             <Logo size="50px" />

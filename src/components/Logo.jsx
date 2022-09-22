@@ -24,7 +24,6 @@ const Logo = ({
                 Quiz!!!
             </Span>
         </Link>
-
     )
 }
 
