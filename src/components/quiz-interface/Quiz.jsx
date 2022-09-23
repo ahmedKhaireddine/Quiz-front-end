@@ -4,13 +4,12 @@ import { useContext, useCallback, useEffect, useState } from "react"
 import Button from "./core/Button"
 import ChoiceList from "./core/ChoiceList"
 import Logo from "../Logo"
-import Questions from "../../questions.json"
 import { QuizContext } from "../../contexts/Quiz"
 import { Index, Question, QuizContainer, Timer, Text } from "../../styles/QuizStyled"
 import { useTimer } from "../../hooks/useTimer"
 
 const Quiz = (props) => {
-  const { answers, setAnswers, step, setStep } = useContext(QuizContext)
+  const { answers, setAnswers, setStep, quiz } = useContext(QuizContext)
   const [answerSelected, setAnswerSelected] = useState({
     answerId: "",
     questionId: "",
@@ -22,7 +21,7 @@ const Quiz = (props) => {
     order: "DECREMENTAL"
   })
 
-  const { choices, id, title } = Questions[index]
+  const { choices, id, title } = quiz.questions[index]
 
   const handleTimeOver = useCallback(() => {
     setAnswers([...answers, answerSelected])
@@ -32,14 +31,14 @@ const Quiz = (props) => {
       weight: 0
     })
 
-    if(index < Questions.length - 1)
-      setIndex(index => index + 1)
+    if (index < quiz.questions.length - 1)
+      setIndex(index + 1)
     else
       setStep(4)
-  }, [answers, answerSelected, index, setAnswers, setIndex, setStep])
+  }, [answers, answerSelected, index, setAnswers, setIndex, setStep, quiz])
 
   const saveAnswer = useCallback(() => {
-    if (index < Questions.length) {
+    if (index < quiz.questions.length) {
       setAnswers([...answers, answerSelected])
       setAnswerSelected({
         answerId: "",
@@ -47,27 +46,16 @@ const Quiz = (props) => {
         weight: 0
       })
 
-      if (index < Questions.length - 1)
+      if (index < quiz.questions.length - 1)
         setIndex(index + 1)
       else
         setStep(4)
     }
-  }, [answers, answerSelected, index, setAnswers, setIndex, setAnswerSelected, setStep])
-
-  // const handleTimeOver = () => {
-  //   if(index < Questions.length) {
-  //     setAnswers([
-  //       ...answers, answerSelected
-  //     ])
-  //     setIndex(index => index + 1)
-  //   } else {
-  //     setStep(4)
-  //   }
-  // }
+  }, [answers, answerSelected, index, setAnswers, setIndex, setAnswerSelected, setStep, quiz])
 
   // useEffect(() => {
-  //   start(Questions[index].duration)
-  // }, [index, start])
+  //   start(quiz.questions[index].duration)
+  // }, [index, start, quiz])
 
   return (
     <QuizContainer>
@@ -84,8 +72,8 @@ const Quiz = (props) => {
         handleClick={setAnswerSelected}
         questionId={id}
       />
-      <Button handleClick={() => saveAnswer()}>Question suivante</Button>
-      <Index>{index + 1} / {Questions.length}</Index>
+      <Button handleClick={() => saveAnswer()} width="250px">Question suivante</Button>
+      <Index>{index + 1} / {quiz.questions.length}</Index>
     </QuizContainer>
   )
 }
