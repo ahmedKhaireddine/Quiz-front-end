@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Btn = styled.button`
     font-size: 20px;
-    width: 200px;
+    width: ${props => props.width};
     color: white;
     background: #45DDE7;
     outline: none;
@@ -20,11 +20,12 @@ const Btn = styled.button`
     }
 `
 
-const Button = ({ handleClick, children, type }) => {
+const Button = ({ handleClick, children, width, type }) => {
     return (
         <Btn
             onClick={handleClick}
-            type={type}        
+            type={type}
+            width={width}
         >
             {children}
         </Btn>
@@ -32,8 +33,9 @@ const Button = ({ handleClick, children, type }) => {
 }
 
 Button.defaultProps = {
-    handleClick: () => console.log("clicked"),
-    type: "button"
+    handleClick: () => {},
+    type: "button",
+    width: "200px"
 }
 
 export default Button
