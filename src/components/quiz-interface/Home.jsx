@@ -1,9 +1,9 @@
 import React from "react"
+import { useContext } from "react"
 import { Formik } from "formik"
 import * as Yup from "yup"
 import { VStack } from "@chakra-ui/react"
 import styled from "styled-components"
-import { useContext } from "react"
 
 import TextField from "../TextField"
 import LogoAnimated from "../LogoAnimated"

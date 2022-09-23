@@ -16,7 +16,7 @@ const ChoiceList = ({
           weight
         })}
         key={index}
-        selected={id == answerSelected.answerId}
+        selected={id === answerSelected.answerId}
       >
         <Polygon>
           <span>✨</span>
