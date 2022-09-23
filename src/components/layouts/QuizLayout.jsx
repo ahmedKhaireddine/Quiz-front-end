@@ -16,15 +16,12 @@ const Container = styled.div`
 `
 
 const QuizLayout = ({background, children}) => {
+
     return (
-        <Container background={background}>
+        <Container>
             {children}
         </Container>
     )
-}
-
-QuizLayout.defaultProps = {
-    background: '#242233'
 }
 
 export default QuizLayout

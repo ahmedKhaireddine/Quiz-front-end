@@ -15,7 +15,7 @@ const Box = styled.div`
 `
 
 const PlayerInfos = (props) => {
-    const { setStep, setQuiz, setInfos } = useContext(QuizContext)
+    const { setStep, setInfos } = useContext(QuizContext)
     
     return (
         <Formik

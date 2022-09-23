@@ -1,7 +1,6 @@
 import React from "react"
-import styled from "styled-components"
 
-import { Item } from "../../styles/OverStyled"
+import { Item, MagicItems, Text } from "../../styles/OverStyled"
 import Logo from "../Logo"
 
 const Box = styled.div`

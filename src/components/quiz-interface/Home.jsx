@@ -6,7 +6,7 @@ import styled from "styled-components"
 import { useContext } from "react"
 
 import TextField from "../TextField"
-import LogoAnim from "../../others/LogoAnim"
+import LogoAnimated from "../LogoAnimated"
 import Button from "./core/Button"
 import { QuizContext } from "../../contexts/Quiz"
 import questions from "../../questions.json"
@@ -47,7 +47,7 @@ const Home = () => {
                         justifyContent="center"
                         onSubmit={formik.handleSubmit}
                     >
-                        <LogoAnim />
+                        <LogoAnimated word="Quiz &nbsp; !!!"/>
                         <TextField
                             name="code"
                             placeholder="Entrer votre code..."
