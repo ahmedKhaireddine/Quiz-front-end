@@ -18,7 +18,7 @@ export const Item = styled.li`
   background: ${ props => props.selected ? (
     "linear-gradient(100deg, #45DDE7 75%, #d5f9fc 90%)"
   ) : (
-    "linear-gradient(100deg, #45DDE7 0%, #45DDE7 15%, #2d3359 20%)"
+    "linear-gradient(100deg, #45DDE7 0%, #45DDE7 10%, #2d3359 15%)"
   )};
   border-radius: 5px;
   // box-shadow: 4px 4px 20px #202020, -4px -4px 5px #464646;
@@ -44,7 +44,7 @@ export const Polygon = styled.span`
 `
 
 export const Text = styled.p`
-  margin-left: 20px;
+  margin-left: 60px;
 `
 
 // p {
