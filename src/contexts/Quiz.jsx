@@ -14,20 +14,15 @@ const QuizContextProvider = ({ children }) => {
 
   const value = {
     answers,
-    setAnswers,
-    score,
-    setStep,
-    step,
+    infos,
     quiz,
+    score,
+    setAnswers,
+    setStep,
     setQuiz,
-    infos, 
-    setInfos
+    setInfos,
+    step,
   }
-
-  console.log("tableau des réponses :", answers)
-  console.log("quiz", quiz)
-  console.log("infos", infos)
-  
 
   return (
     <QuizContext.Provider value={value}>
