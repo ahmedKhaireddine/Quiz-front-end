@@ -8,18 +8,18 @@ import AnswerTest from "../components/others/AnswerTest"
 
 const Test = (props) => {
     return (
-        <>
-            <AnswerTest />
-        </>
-        // <Body>
-        //     <StarsList />
-        //         <Box>
-        //             <Logo margin="0px auto 50px"/>
-        //             <Text size="3em">Félicitations!</Text>
-        //             <Text size="2em">Vous avez terminé le quiz!</Text>
-        //         </Box>
-        //     <StarsList />
-        // </Body>
+        // <>
+        //     <AnswerTest />
+        // </>
+        <Body>
+            <StarsList />
+                <Box>
+                    <Logo margin="0px auto 50px"/>
+                    <Text size="3em">Félicitations!</Text>
+                    <Text size="2em">Vous avez terminé le quiz!</Text>
+                </Box>
+            <StarsList />
+        </Body>
     )
 }
 

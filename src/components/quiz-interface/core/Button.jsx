@@ -1,12 +1,13 @@
 import React from "react"
 import styled from "styled-components"
+import { ColorMode } from "@chakra-ui/react"
 
 const Btn = styled.button`
     font-size: 20px;
     width: 200px;
-    color: white;
+    color: #242233;
+    border: ${ props => props.colorMode === "dark" ? "" : "2px solid #242233"};
     background: #45DDE7;
-    outline: none;
     cursor: pointer;
     border-radius: 5px;
     display: flex;
@@ -24,7 +25,7 @@ const Button = ({ handleClick, children, type }) => {
     return (
         <Btn
             onClick={handleClick}
-            type={type}        
+            type={type}    
         >
             {children}
         </Btn>
