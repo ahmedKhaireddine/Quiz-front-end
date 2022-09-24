@@ -6,11 +6,10 @@ import { useScoreCalculator } from "../hooks/useScoreCalculator"
 const QuizContext = createContext({})
 
 const QuizContextProvider = ({ children }) => {
-
   const [quiz, setQuiz] = useState({})
   const [infos, setInfos] = useState({})
   const [answers, setAnswers] = useState([])
-  const [step, setStep] = useState(4)
+  const [step, setStep] = useState(1)
   const score = useScoreCalculator(answers)
 
   const value = {

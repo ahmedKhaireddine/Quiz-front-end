@@ -25,8 +25,4 @@ const QuizLayout = ({children}) => {
     )
 }
 
-QuizLayout.defaultProps = {
-    background: '#242233'
-}
-
 export default QuizLayout
