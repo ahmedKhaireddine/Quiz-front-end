@@ -86,19 +86,11 @@ export const Polygon = styled.span`
   width: 40px;
   height: 50px;
   clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
-<<<<<<< HEAD
-  // background-color: linear-gradient(100deg, #45DDE7 75%, #d5f9fc 90%);
-=======
   background: #45DDE7;
->>>>>>> 958b355cc90c1cc38e80e80ca0e6ab754092e0ae
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 `
 
 export const Text = styled.p`
   margin-left: 20px;
-<<<<<<< HEAD
 `
-=======
-`
->>>>>>> 958b355cc90c1cc38e80e80ca0e6ab754092e0ae

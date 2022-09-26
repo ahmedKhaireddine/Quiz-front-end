@@ -9,7 +9,7 @@ import ToggleMode from "./components/layouts/ToggleMode"
 
 const App = () => {
   // const { bg, color } = useContext(AppContext)
-  const bg = useColorModeValue("red", "#ebebeb")
+  const bg = useColorModeValue("#242233", "#ebebeb")
   const color = useColorModeValue("#ebebeb", "#242233")
   console.log("bg =>", bg, "color =>", color)
   return (
@@ -18,10 +18,10 @@ const App = () => {
         bg={bg}
         color={color}
       >
-        <QuizLayout>
+        {/* <QuizLayout> */}
             <ToggleMode />
             <QuizInterface/>
-        </QuizLayout>
+        {/* </QuizLayout> */}
       </Box>
     </AppContextProvider>
   )
