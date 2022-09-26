@@ -11,7 +11,7 @@ const ToggleMode = () => {
             top="0"
             right="0"
             m="1rem"
-            bg={colorMode === "dark" ? "#242233" : "#ebebeb"}
+            bg={colorMode === "dark" ? "#242233" : "#e6e6e6"}
         >
             {colorMode === "light" ? (
                 <SunIcon color="orange.400"/>

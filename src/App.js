@@ -20,10 +20,8 @@ const App = () => {
         color={color}
         borderColor={borderColor}
       >
-        <QuizLayout>
-            <ToggleMode />
-            <QuizInterface/>
-        </QuizLayout>
+        <ToggleMode />
+        <QuizInterface/>
       </Box>
     </AppContextProvider>
   )

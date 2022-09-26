@@ -13,17 +13,15 @@ const TextField = ({ label, colorMode, ...props }) => {
                 as={Input}
                 {...field}
                 {...props}
-                placeholder={{ color:"inherit" }}
-                // color="#45DDE7"
             />
             ) : ( 
             <Field
                 as={Input}
                 {...field}
                 {...props}
-                _placeholder={{ color:"#242233" }}
                 borderColor={{ color:"#242233" }}
-                // color="#242233"
+                _placeholder={{ color:"inherit" }}
+                _hover={{ borderColor: "#276eca" }}
             />
             )}
             <FormErrorMessage>{meta.error}</FormErrorMessage>
