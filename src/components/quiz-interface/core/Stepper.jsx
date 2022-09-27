@@ -1,4 +1,3 @@
-import React from "react"
 import { useContext } from "react"
 
 import Home from "../Home"
@@ -19,9 +18,6 @@ const Stepper = () => {
       return <Quiz />
     case 4:
       return <Over />
-
-    default:
-      return <h1 style={{ color: "black" }}>Unknown step</h1>;
   }
 }
 

@@ -1,21 +1,13 @@
-import React from "react"
 import { useContext } from "react"
 import { Formik } from "formik"
 import * as Yup from "yup"
-import { VStack } from "@chakra-ui/react"
-import styled from "styled-components"
+import { VStack, Box } from "@chakra-ui/react"
 
-import TextField from "../TextField"
-import LogoAnimated from "../LogoAnimated"
 import Button from "./core/Button"
-import { QuizContext } from "../../contexts/Quiz"
+import LogoAnimated from "../LogoAnimated"
 import questions from "../../questions.json"
-
-const Box = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`
+import { QuizContext } from "../../contexts/Quiz"
+import TextField from "../TextField"
 
 const Home = () => {
     const { setStep, setQuiz } = useContext(QuizContext)
@@ -39,7 +31,12 @@ const Home = () => {
             }}
         >
             {(formik) => (
-                <Box width={[1, 1 / 2, 1 / 4]} >
+                <Box
+                    width="45vw"
+                    justifyContent="center"
+                    display="flex"
+                    flexDirection="column"
+                >
                     <VStack
                         as="form"
                         w={{ base: "80%", md: 400 }}
@@ -48,12 +45,15 @@ const Home = () => {
                         justifyContent="center"
                         onSubmit={formik.handleSubmit}
                     >
-                        <LogoAnimated word="Quiz &nbsp; !!!"/>
+                        <LogoAnimated 
+                            color="black"
+                            colorAfter="#45DDE7"
+                            colorBefore="rgba(0, 0, 0, 0.8)"
+                            word="Quiz &nbsp; !!!"
+                        />
                         <TextField
                             name="code"
                             placeholder="Entrer votre code..."
-                            bgColor="rgba(26, 32, 44, 1)"
-                            boxShadow="md"
                         />
                         <Button type="submit">Entrer</Button>
                     </VStack>

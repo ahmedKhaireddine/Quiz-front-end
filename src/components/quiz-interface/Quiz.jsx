@@ -1,22 +1,21 @@
-import React from "react"
-import { useContext, useCallback, useEffect, useState } from "react"
+import { useCallback, useContext, useEffect, useState } from "react"
 
 import Button from "./core/Button"
 import ChoiceList from "./core/ChoiceList"
 import Logo from "../Logo"
+import { Index, Question, QuizContainer, Text, Timer } from "../../styles/QuizStyled"
 import { QuizContext } from "../../contexts/Quiz"
-import { Index, Question, QuizContainer, Timer, Text } from "../../styles/QuizStyled"
 import { useTimer } from "../../hooks/useTimer"
 
 const Quiz = (props) => {
-  const { answers, setAnswers, setStep, quiz } = useContext(QuizContext)
+  const { answers, quiz, setAnswers, setStep } = useContext(QuizContext)
   const [answerSelected, setAnswerSelected] = useState({
     answerId: "",
     questionId: "",
     weight: 0
    })
   const [index, setIndex] = useState(0)
-  const { time, start } = useTimer({
+  const { start, time } = useTimer({
     onTimeOver: () => handleTimeOver(),
     order: "DECREMENTAL"
   })
@@ -51,15 +50,15 @@ const Quiz = (props) => {
       else
         setStep(4)
     }
-  }, [answers, answerSelected, index, setAnswers, setIndex, setAnswerSelected, setStep, quiz])
+  }, [answers, answerSelected, index, quiz, setAnswers, setAnswerSelected, setIndex, setStep])
 
-  useEffect(() => {
-    start(quiz.questions[index].duration)
-  }, [index, start, quiz])
+  // useEffect(() => {
+  //   start(quiz.questions[index].duration)
+  // }, [index, start, quiz])
 
   return (
     <QuizContainer>
-      <Logo margin="0px 0px 50px 0px" size="50px" color="#45DDE7"/>
+      <Logo margin="0px 0px 50px 0px" size="50px"/>
       <Question>
         <Timer>
           <Text>{time}</Text>

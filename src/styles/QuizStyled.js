@@ -1,5 +1,25 @@
 import styled from "styled-components"
 
+export const Index = styled.span`
+  padding: 8px 20px;
+  border-top: 2px solid #45DDE7;
+  margin: 20px;
+  font-weight: bold;
+  color: white;
+`
+export const Question = styled.h2`
+  padding: 70px 40px;
+  margin: 20px;
+  background-color: rgba(26, 32, 44, 1);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 12px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  width: 800px;
+  height: 60px;
+  line-height: 35px;
+`
+
 export const QuizContainer = styled.div`
   width: 70%;
   display: flex;
@@ -8,6 +28,9 @@ export const QuizContainer = styled.div`
   flex-direction: column;
   color: white
 `
+
+export const Text = styled.p``
+
 export const Timer = styled.div`
   display: flex;
   justify-content: center;
@@ -23,24 +46,5 @@ export const Timer = styled.div`
   top: -46px;
   left: 43%;
 `
-export const Question = styled.h2`
-  padding: 70px 40px;
-  margin: 20px;
-  background-color: rgba(26, 32, 44, 1);
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 12px;
-  border-radius: 5px;
-  text-align: center;
-  position: relative;
-  width: 800px;
-  height: 60px;
-  line-height: 35px;
-`
-export const Index = styled.span`
-  padding: 8px 20px;
-  border-top: 2px solid #45DDE7;
-  margin: 20px;
-  font-weight: bold;
-  color: white;
-`
 
-export const Text = styled.p``
+

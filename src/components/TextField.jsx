@@ -7,23 +7,12 @@ const TextField = ({ label, colorMode, ...props }) => {
 
     return (
         <FormControl isInvalid={meta.error && meta.touched}>
-            <FormLabel color="white">{label}</FormLabel>
-            {colorMode === "dark" ? (
+            <FormLabel>{label}</FormLabel>
             <Field
                 as={Input}
                 {...field}
                 {...props}
             />
-            ) : ( 
-            <Field
-                as={Input}
-                {...field}
-                {...props}
-                borderColor={{ color:"#242233" }}
-                _placeholder={{ color:"inherit" }}
-                _hover={{ borderColor: "#276eca" }}
-            />
-            )}
             <FormErrorMessage>{meta.error}</FormErrorMessage>
         </FormControl>
     )

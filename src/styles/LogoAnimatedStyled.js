@@ -29,7 +29,7 @@ export const Span = styled.span`
         inset: 0;
         transform-origin: left;
         transition: transform 0.4s ease-out;
-        color: rgba(0,0,0,0.8);
+        color: ${props => props.colorBefore};
     }
 
     &::after {
@@ -37,7 +37,7 @@ export const Span = styled.span`
         content: attr(data-letter);
         inset: 0;
         transform-origin: left;
-        // color:;
+        color: ${props => props.colorAfter};
         transition: transform 0.4s ease-out;
         transform: rotateY(-20deg);
     }

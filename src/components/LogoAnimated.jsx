@@ -1,20 +1,20 @@
 import React from "react"
-import { useColorMode } from "@chakra-ui/react"
 
 import { Grid, Letter, Span } from "../styles/LogoAnimatedStyled"
 
-const LogoAnimated = ({ color, href, margin, size, word }) => {
-    const { colorMode } = useColorMode()
+const LogoAnimated = ({ color, colorAfter, colorBefore, margin, size, word }) => {
     const LogoItemsJSX = word.split("").map((element, index) => {
         return (
             <Letter key={index}>
                 <Span 
                     data-letter={element} 
-                    color={colorMode === "dark" ? "#0B878F" : "#45DDE7"}
+                    color={color}
+                    colorAfter={colorAfter}
+                    colorBefore={colorBefore}
                     size={size}
                 >
                     {element}
-                    </Span>
+                </Span>
             </Letter>
         )
     })
@@ -24,10 +24,11 @@ const LogoAnimated = ({ color, href, margin, size, word }) => {
 
 LogoAnimated.defaultProps = {
     color: "black",
-    href: "#",
     margin: "0px",
     size: "100px",
-    word: "Logo"
+    word: "Logo",
+    colorAfter: "white",
+    colorBefore: "rgba(0, 0, 0, 0.8)"
 }
 
 export default LogoAnimated

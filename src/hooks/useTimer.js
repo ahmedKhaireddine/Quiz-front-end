@@ -34,5 +34,5 @@ export const useTimer = ({
     return () => clearInterval(interval)
   }, [endTime, onTimeOver, order, time])
 
-  return { time, start }
+  return { start, time }
 }

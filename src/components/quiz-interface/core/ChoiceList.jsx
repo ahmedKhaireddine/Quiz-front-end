@@ -17,6 +17,9 @@ const ChoiceList = ({
         })}
         key={index}
         selected={id === answerSelected.answerId}
+        firstColorGradient="#45DDE7"
+        secondColorGradient="white"
+        thirdColorGradient="rgba(26, 32, 44, 1)"
       >
         <Text>{value}</Text>
       </Item>
@@ -30,7 +33,7 @@ ChoiceList.defaultProps = {
   answerSelected: {},
   choices: [],
   handleClick: () => {},
-  questionId: "Pas d'id"
+  questionId: ""
 }
 
 export default ChoiceList

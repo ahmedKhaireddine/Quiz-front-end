@@ -1,19 +1,11 @@
-import React from "react"
 import { useContext } from "react"
 import { Formik } from "formik"
 import * as Yup from "yup"
-import { VStack, Heading } from "@chakra-ui/react"
-import styled from "styled-components"
+import { Box, Heading, VStack } from "@chakra-ui/react"
 
-import TextField from "../TextField"
 import Button from "./core/Button"
 import { QuizContext } from "../../contexts/Quiz"
-
-const Box = styled.div`
-    display: flex;
-    flex-direction column;
-    width: 150%;
-`
+import TextField from "../TextField"
 
 const PlayerInfos = (props) => {
     const { setStep, setInfos } = useContext(QuizContext)
@@ -35,17 +27,21 @@ const PlayerInfos = (props) => {
                     .required("*Veuillez renseigner un prénom"),
             })}
             onSubmit={(values, actions) => {
-                console.log("value onSubmit", values)
                 setInfos(values)
                 setStep(3)
                 actions.resetForm()
             }}
         >
             {(formik) => (
-                <Box>
+                <Box
+                    width="45vw"
+                    justifyContent="center"
+                    display="flex"
+                    flexDirection="column"
+                >
                     <VStack
                         as="form"
-                        w={{ base: "100%" }}
+                        w={{ base: "80%" }}
                         mx="auto"
                         spacing="30px"
                         onSubmit={formik.handleSubmit}
@@ -60,15 +56,11 @@ const PlayerInfos = (props) => {
                         <TextField
                             name="lastName"
                             placeholder="Nom..."
-                            bgColor="rgba(26, 32, 44, 1)"
-                            boxShadow="md"
                         />
                         <TextField
                             name="firstName"
                             placeholder="Prénom..."
                             mb="30px"
-                            bgColor="rgba(26, 32, 44, 1)"
-                            boxShadow="md"
                         />
                         <Button type="submit">Entrer</Button>
                     </VStack>

@@ -1,25 +1,7 @@
 import React from "react"
-import styled from "styled-components"
 import { ColorMode } from "@chakra-ui/react"
 
-const Btn = styled.button`
-    font-size: 20px;
-    border: ${ props => props.colorMode === "dark" ? "" : "2px solid #242233"};
-    width: ${props => props.width};
-    color: white;
-    background: #45DDE7;
-    cursor: pointer;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px auto;
-    padding: 7px 30px;
-    :hover {
-        background: #95F6FD;
-        color: #636161;
-    }
-`
+import { Btn } from "../../../styles/ButtonStyled"
 
 const Button = ({ handleClick, children, width, type }) => {
     return (

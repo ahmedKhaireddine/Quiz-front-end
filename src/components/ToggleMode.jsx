@@ -3,8 +3,8 @@ import { Button, useColorMode } from "@chakra-ui/react"
 import { MoonIcon, SunIcon } from "@chakra-ui/icons"
 
 const ToggleMode = () => {
-    const {colorMode, toggleColorMode} = useColorMode()
-    
+    const { colorMode, toggleColorMode } = useColorMode()
+
     return (   
         <Button
             onClick={() => toggleColorMode()}
@@ -12,13 +12,10 @@ const ToggleMode = () => {
             top="0"
             right="0"
             m="1rem"
+            zIndex="10"
             bg={colorMode === "dark" ? "#242233" : "#e6e6e6"}
         >
-            {colorMode === "light" ? (
-                <SunIcon color="orange.400"/>
-            ) : (
-                <MoonIcon color="yellow.300"/>
-            )}
+            {colorMode === "light" ? <SunIcon color="orange.400"/> : <MoonIcon color="yellow.300"/>}
         </Button>
     )
 }

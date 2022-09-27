@@ -1,12 +1,10 @@
 import { useContext, useEffect } from "react"
-import styled from "styled-components"
 
-import { Text, SmallText } from "../../styles/OverStyled"
 import { QuizContext } from "../../contexts/Quiz"
-import Logo from "../Logo"
+import { Text, SmallText } from "../../styles/OverStyled"
 
 const Over = (props) => {
-    const { answers, infos, score, quiz } = useContext(QuizContext)
+    const { answers, infos, quiz, score } = useContext(QuizContext)
 
     useEffect(() => {
         let player = {
@@ -15,8 +13,6 @@ const Over = (props) => {
             quiz: quiz._id,
             score
         }
-
-        console.log("player => ", player)
     }, [answers, infos, score, quiz])
 
     return (

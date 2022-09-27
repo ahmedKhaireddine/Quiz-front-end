@@ -1,12 +1,5 @@
 import styled from "styled-components"
 
-export const BubblesContainer = styled.div`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -1;
-`
 export const Bubble = styled.div`
   position: absolute;
   left: ${props => props.bubbleLeftOffset};
@@ -19,7 +12,7 @@ export const Bubble = styled.div`
 
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     top: 0;
     left: 0;
     width: 100%;
@@ -52,4 +45,12 @@ export const Bubble = styled.div`
           transform: translateX(-100%);
       }
   }
+`
+
+export const BubblesContainer = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
 `

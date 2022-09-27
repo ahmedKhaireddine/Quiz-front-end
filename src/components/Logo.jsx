@@ -1,16 +1,6 @@
 import React from "react"
-import styled from "styled-components"
 
-const Link = styled.a`
-    text-decoration: none;
-    margin: ${props => props.margin};
-`
-
-const Span = styled.span`
-    font-family: "Henny Penny";
-    font-size: ${props => props.size};
-    color: ${props => props.color};
-`
+import { Link, Span } from "../styles/LogoStyled"
 
 const Logo = ({
     color,
