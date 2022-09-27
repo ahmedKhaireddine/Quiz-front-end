@@ -13,9 +13,9 @@ const ToggleMode = () => {
             right="0"
             m="1rem"
             zIndex="10"
-            bg={colorMode === "dark" ? "#242233" : "#e6e6e6"}
+            bg={colorMode === "dark" ? "#718096" : "#CBD5E0"}
         >
-            {colorMode === "light" ? <SunIcon color="orange.400"/> : <MoonIcon color="yellow.300"/>}
+            {colorMode === "dark" ? <MoonIcon color="yellow.300"/> : <SunIcon color="orange.400"/>}
         </Button>
     )
 }
