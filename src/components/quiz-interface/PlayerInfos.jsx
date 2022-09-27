@@ -12,11 +12,12 @@ import { QuizContext } from "../../contexts/Quiz"
 const Box = styled.div`
     display: flex;
     flex-direction column;
+    width: 150%;
 `
 
 const PlayerInfos = (props) => {
     const { setStep, setInfos } = useContext(QuizContext)
-    
+
     return (
         <Formik
             initialValues={{
@@ -40,34 +41,38 @@ const PlayerInfos = (props) => {
                 actions.resetForm()
             }}
         >
-            {(formik) => ( 
+            {(formik) => (
                 <Box>
                     <VStack
                         as="form"
-                        w={{ base: "80%" }}
+                        w={{ base: "100%" }}
                         mx="auto"
                         spacing="30px"
                         onSubmit={formik.handleSubmit}
                         textAlign="center"
                     >
                         <Heading
-                            as="h1" 
-                            mb="30px"    
+                            as="h1"
+                            mb="30px"
                         >
-                            Dernière étape avant de commencer
+                            Tu y es presque...
                         </Heading>
                         <TextField
                             name="lastName"
                             placeholder="Nom..."
+                            bgColor="rgba(26, 32, 44, 1)"
+                            boxShadow="md"
                         />
                         <TextField
                             name="firstName"
                             placeholder="Prénom..."
                             mb="30px"
+                            bgColor="rgba(26, 32, 44, 1)"
+                            boxShadow="md"
                         />
                         <Button type="submit">Entrer</Button>
                     </VStack>
-                </Box>   
+                </Box>
             )}
         </Formik>
     )

@@ -15,13 +15,13 @@ export const Item = styled.li`
   width: 48%;
   margin-bottom: 20px;
   height: 50px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 12px;
   background: ${ props => props.selected ? (
     "linear-gradient(100deg, #45DDE7 75%, #d5f9fc 90%)"
   ) : (
-    "linear-gradient(100deg, #45DDE7 0%, #45DDE7 10%, #2d3359 15%)"
+    "linear-gradient(100deg, #45DDE7 0%, #45DDE7 10%, rgba(26, 32, 44, 1) 15%)"
   )};
   border-radius: 5px;
-  // box-shadow: 4px 4px 20px #202020, -4px -4px 5px #464646;
 
   &:nth-child(2n+0) {
     margin-left: 15px;
@@ -31,7 +31,6 @@ export const Item = styled.li`
     margin-right: 15px;
   }
 `
-
 export const Polygon = styled.span`
   display: flex;
   flex-direction: column;
@@ -46,18 +45,3 @@ export const Polygon = styled.span`
 export const Text = styled.p`
   margin-left: 60px;
 `
-
-// p {
-//   animation-duration: 1s;
-//   animation-name: slidein;
-// }
-
-// @keyframes slidein {
-//   from {
-//     left: 0;
-//   }
-
-//   to {
-//     right: 0;
-//   }
-// }

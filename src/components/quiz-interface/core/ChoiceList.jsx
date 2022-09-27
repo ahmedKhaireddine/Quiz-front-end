@@ -1,5 +1,5 @@
 import React from "react"
-import { Item, ListItems, Polygon, Text } from "../../../styles/ChoiceListStyled"
+import { Item, ListItems, Text } from "../../../styles/ChoiceListStyled"
 
 const ChoiceList = ({
   answerSelected,
@@ -18,10 +18,6 @@ const ChoiceList = ({
         key={index}
         selected={id == answerSelected.answerId}
       >
-        <Polygon>
-          <span>✨</span>
-          <span>✨</span>
-        </Polygon>
         <Text>{value}</Text>
       </Item>
     )

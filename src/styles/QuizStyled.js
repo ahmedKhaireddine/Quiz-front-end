@@ -26,7 +26,8 @@ export const Timer = styled.div`
 export const Question = styled.h2`
   padding: 70px 40px;
   margin: 20px;
-  background-color: #2d3359;
+  background-color: rgba(26, 32, 44, 1);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 12px;
   border-radius: 5px;
   text-align: center;
   position: relative;

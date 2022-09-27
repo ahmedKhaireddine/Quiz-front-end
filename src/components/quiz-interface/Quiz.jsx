@@ -53,16 +53,16 @@ const Quiz = (props) => {
     }
   }, [answers, answerSelected, index, setAnswers, setIndex, setAnswerSelected, setStep, quiz])
 
-  // useEffect(() => {
-  //   start(quiz.questions[index].duration)
-  // }, [index, start, quiz])
+  useEffect(() => {
+    start(quiz.questions[index].duration)
+  }, [index, start, quiz])
 
   return (
     <QuizContainer>
       <Logo margin="0px 0px 50px 0px" size="50px" color="#45DDE7"/>
       <Question>
         <Timer>
-          <Text>✨{time}✨</Text>
+          <Text>{time}</Text>
         </Timer>
         {title}
       </Question>
