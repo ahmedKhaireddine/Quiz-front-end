@@ -31,13 +31,14 @@ const Home = () => {
             })}
             onSubmit={(values, actions) => {
                 setQuiz({
+                    _id: "_id",
                     questions
                 })
                 actions.resetForm()
                 setStep(2)
             }}
         >
-            {(formik) => ( 
+            {(formik) => (
                 <Box width={[1, 1 / 2, 1 / 4]} >
                     <VStack
                         as="form"
@@ -51,10 +52,12 @@ const Home = () => {
                         <TextField
                             name="code"
                             placeholder="Entrer votre code..."
+                            bgColor="rgba(26, 32, 44, 1)"
+                            boxShadow="md"
                         />
                         <Button type="submit">Entrer</Button>
                     </VStack>
-                </Box>   
+                </Box>
             )}
         </Formik>
     )

@@ -70,6 +70,7 @@ export const Item = styled.li`
   border-radius: 5px;
   cursor: pointer;
   transition: 0.6s all ease;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 12px;
 
   &:nth-child(2n+0) {
     margin-left: 15px;
@@ -79,7 +80,6 @@ export const Item = styled.li`
     margin-right: 15px;
   }
 `
-
 export const Polygon = styled.span`
   display: flex;
   flex-direction: column;
@@ -92,5 +92,5 @@ export const Polygon = styled.span`
 `
 
 export const Text = styled.p`
-  margin-left: 20px;
+  margin-left: 60px;
 `

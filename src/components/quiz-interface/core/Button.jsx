@@ -4,9 +4,9 @@ import { ColorMode } from "@chakra-ui/react"
 
 const Btn = styled.button`
     font-size: 20px;
-    width: 200px;
-    color: #242233;
     border: ${ props => props.colorMode === "dark" ? "" : "2px solid #242233"};
+    width: ${props => props.width};
+    color: white;
     background: #45DDE7;
     cursor: pointer;
     border-radius: 5px;
@@ -21,11 +21,12 @@ const Btn = styled.button`
     }
 `
 
-const Button = ({ handleClick, children, type }) => {
+const Button = ({ handleClick, children, width, type }) => {
     return (
         <Btn
             onClick={handleClick}
-            type={type}    
+            type={type}
+            width={width}
         >
             {children}
         </Btn>
@@ -33,8 +34,9 @@ const Button = ({ handleClick, children, type }) => {
 }
 
 Button.defaultProps = {
-    handleClick: () => console.log("clicked"),
-    type: "button"
+    handleClick: () => {},
+    type: "button",
+    width: "200px"
 }
 
 export default Button

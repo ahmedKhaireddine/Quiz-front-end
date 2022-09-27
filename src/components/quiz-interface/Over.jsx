@@ -1,18 +1,29 @@
-import React from "react"
-// import { Box } from "@chakra-ui/react"
+import { useContext, useEffect } from "react"
+import styled from "styled-components"
 
-import { Item, MagicItems, Text } from "../../styles/OverStyled"
+import { Text, SmallText } from "../../styles/OverStyled"
+import { QuizContext } from "../../contexts/Quiz"
 import Logo from "../Logo"
 
 const Over = (props) => {
+    const { answers, infos, score, quiz } = useContext(QuizContext)
+
+    useEffect(() => {
+        let player = {
+            answers,
+            full_name: `${infos.firstName} ${infos.lastName}`,
+            quiz: quiz._id,
+            score
+        }
+
+        console.log("player => ", player)
+    }, [answers, infos, score, quiz])
+
     return (
         <>
-            <Logo size="50px" />
-            <Text size="3em">Félicitations!</Text>
+            <Text size="2.5em">Bravo!</Text>
             <Text size="2em">Vous avez terminé le quiz!</Text>
-            <MagicItems>
-                {Array(8).fill().map((el, index) => <Item key={index}>✨</Item>)}
-            </MagicItems>
+            <SmallText>Lorem ipsum dolor sit amet consectetur adipisicing elit.</SmallText>
         </>
     )
 }

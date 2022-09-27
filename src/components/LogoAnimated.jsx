@@ -1,14 +1,16 @@
 import React from "react"
+import { useColorMode } from "@chakra-ui/react"
 
 import { Grid, Letter, Span } from "../styles/LogoAnimatedStyled"
 
 const LogoAnimated = ({ color, href, margin, size, word }) => {
+    const { colorMode } = useColorMode()
     const LogoItemsJSX = word.split("").map((element, index) => {
         return (
             <Letter key={index}>
                 <Span 
                     data-letter={element} 
-                    color={color}
+                    color={colorMode === "dark" ? "#0B878F" : "#45DDE7"}
                     size={size}
                 >
                     {element}

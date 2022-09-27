@@ -37,7 +37,7 @@ export const Span = styled.span`
         content: attr(data-letter);
         inset: 0;
         transform-origin: left;
-        color: #45DDE7;
+        // color:;
         transition: transform 0.4s ease-out;
         transform: rotateY(-20deg);
     }
