@@ -45,12 +45,7 @@ const Home = () => {
                         justifyContent="center"
                         onSubmit={formik.handleSubmit}
                     >
-                        <LogoAnimated 
-                            color="black"
-                            colorAfter="#45DDE7"
-                            colorBefore="rgba(0, 0, 0, 0.8)"
-                            word="Quiz &nbsp; !!!"
-                        />
+                        <LogoAnimated word="Quiz &nbsp; !!!"/>
                         <TextField
                             name="code"
                             placeholder="Entrer votre code..."

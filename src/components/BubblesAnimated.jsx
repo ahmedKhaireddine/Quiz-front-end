@@ -4,6 +4,7 @@ import bubbles from "../bubbles.json"
 import { Bubble, BubblesContainer } from "../styles/BubblesAnimatedStyled"
 
 const BubblesAnimated = () => {
+
   const BubblesJSX = bubbles.map((element, index) => {
     return <Bubble
       bubbleFloatDelay={element["bubble-float-delay"]}

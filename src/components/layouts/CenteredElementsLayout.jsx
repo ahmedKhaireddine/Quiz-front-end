@@ -5,10 +5,12 @@ import { Container } from  "../../styles/CenteredElementsLayoutStyled"
 import ToggleMode from "../ToggleMode"
 
 const CenteredElementsLayout = ({children}) => {
-    const bg = useColorModeValue("rgba(26, 44, 12, 1)", "")
+    // const bg = useColorModeValue('yellow', "red")
     
     return (
-        <Container bg={bg}>
+        <Container 
+            // bg={bg}
+        >
             <ToggleMode />
             {children}
         </Container>

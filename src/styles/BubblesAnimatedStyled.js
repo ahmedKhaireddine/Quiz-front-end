@@ -9,6 +9,7 @@ export const Bubble = styled.div`
   height: ${props => props.bubbleRadius};
   border-radius: 50%;
   animation: float-up ${props => props.bubbleFloatDuration} ${props => props.bubbleFloatDelay} ease-in infinite;
+  z-index: 5;
 
   &::before {
     position: absolute;
