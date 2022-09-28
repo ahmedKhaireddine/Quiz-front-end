@@ -4,7 +4,7 @@ export const Container = styled.div`
     height: 100vh;
     width; 100vw;
     position: relative;
-    // background: ${props => props.background}; #1a202c
+    background: ${props => props.bg};
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -3,8 +3,8 @@ import styled from "styled-components"
 export const Btn = styled.button`
     font-size: 20px;
     width: ${props => props.width};
-    color: white;
-    background: #45DDE7;
+    color: ${props => props.color};
+    background: ${props => props.bg};
     cursor: pointer;
     border-radius: 5px;
     display: flex;
@@ -13,5 +13,7 @@ export const Btn = styled.button`
     margin: 30px auto;
     padding: 7px 30px;
 
-    // :hover {}
+    :hover {
+        opacity: 0.9;
+    }
 `

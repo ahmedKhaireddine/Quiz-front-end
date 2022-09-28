@@ -1,14 +1,19 @@
 import React from "react"
-import { ColorMode } from "@chakra-ui/react"
+import { useColorModeValue } from "@chakra-ui/react"
 
 import { Btn } from "../../../styles/ButtonStyled"
 
 const Button = ({ handleClick, children, width, type }) => {
+    const bg = useColorModeValue("grey", "salmon")
+    const color = useColorModeValue("purple", "yellow")
+
     return (
         <Btn
             onClick={handleClick}
             type={type}
             width={width}
+            bg={bg}
+            color={color}
         >
             {children}
         </Btn>

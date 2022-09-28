@@ -1,5 +1,4 @@
 import { extendTheme } from "@chakra-ui/react"
-import { useColorModeValue } from "@chakra-ui/react"
 
 const theme = extendTheme({
     config: {
