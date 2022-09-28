@@ -1,6 +1,7 @@
 import { extendTheme } from "@chakra-ui/react"
 import { useColorModeValue } from "@chakra-ui/react"
 
+
 const theme = extendTheme({
     config: {
         initialColorMode: "light",
@@ -8,10 +9,8 @@ const theme = extendTheme({
     },
     styles: {
         global: {
-            
             body: {
                 margin: 0,
-                padding: 0,
                 "font-family": 
                     "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif",
                 "-webkit-font-smoothing": "antialiased",

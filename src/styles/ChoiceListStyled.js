@@ -5,23 +5,12 @@ export const Item = styled.li`
   height: 50px;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
-  ${props => props.selected ? (
-    `background: linear-gradient(100deg, 
-      ${props.firstColorGradient} 75%, 
-      ${props.secondColorGradient} 90%
-    )`
-  ) : (
-    `background: linear-gradient(100deg, 
-      ${props.firstColorGradient} 0%, 
-      ${props.firstColorGradient} 10%, 
-      ${props.thirdColorGradient} 15%
-    )`
-  )};
+  margin-bottom: 20px; 
+  background: ${props => props.selected ? "#45DDE7" : ""}
   border-radius: 5px;
   cursor: pointer;
   transition: 0.6s all ease;
-  box-shadow: rgba(0, 0, 0, 0.9) 0px 4px 12px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 4px;
 
   &:nth-child(2n+0) {
     margin-left: 15px;
@@ -45,3 +34,4 @@ export const ListItems = styled.ul`
 export const Text = styled.p`
   margin-left: 60px;
 `
+

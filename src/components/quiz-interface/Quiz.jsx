@@ -59,7 +59,7 @@ const Quiz = (props) => {
   return (
     <QuizContainer>
       <Logo margin="0px 0px 50px 0px" size="50px"/>
-      <Question>
+      <Question bg="bg">
         <Timer>
           <Text>{time}</Text>
         </Timer>
