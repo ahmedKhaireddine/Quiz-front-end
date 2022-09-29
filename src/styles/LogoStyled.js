@@ -8,5 +8,5 @@ export const Link = styled.a`
 export const Span = styled.span`
     font-family: "Henny Penny";
     font-size: ${props => props.size};
-    color: ${props => props.color};
+    color: ${props => props.bg};
 `

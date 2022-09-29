@@ -1,4 +1,5 @@
 import { useCallback, useContext, useEffect, useState } from "react"
+import { useColorModeValue } from "@chakra-ui/react"
 
 import Button from "./core/Button"
 import ChoiceList from "./core/ChoiceList"
@@ -13,7 +14,10 @@ const Quiz = (props) => {
     answerId: "",
     questionId: "",
     weight: 0
-   })
+  })
+  const bgQuestion = useColorModeValue("#5ba5cc", "#171923")
+  const bgTimer = useColorModeValue("#1f939b", "#45DDE7")
+  const color = useColorModeValue("rgba(0, 0, 0, 0.8)", "#F1F1F1")
   const [index, setIndex] = useState(0)
   const { start, time } = useTimer({
     onTimeOver: () => handleTimeOver(),
@@ -58,9 +62,15 @@ const Quiz = (props) => {
 
   return (
     <QuizContainer>
-      <Logo margin="0px 0px 50px 0px" size="50px"/>
-      <Question bg="bg">
-        <Timer>
+      <Logo 
+        margin="0px 0px 50px 0px" 
+        size="50px"
+      />
+      <Question 
+        bg={bgQuestion}
+        color={color}
+      >
+        <Timer bg={bgTimer}>
           <Text>{time}</Text>
         </Timer>
         {title}
