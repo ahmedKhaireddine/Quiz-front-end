@@ -1,3 +1,4 @@
+import { useColorModeValue } from "@chakra-ui/react"
 import { useContext, useEffect } from "react"
 
 import { QuizContext } from "../../contexts/Quiz"
@@ -5,6 +6,7 @@ import { Text, SmallText } from "../../styles/OverStyled"
 
 const Over = (props) => {
     const { answers, infos, quiz, score } = useContext(QuizContext)
+    const color = useColorModeValue("rgba(0, 0, 0, 0.8)", "#F1F1F1")
 
     useEffect(() => {
         let player = {
@@ -17,8 +19,18 @@ const Over = (props) => {
 
     return (
         <>
-            <Text size="2.5em">Bravo!</Text>
-            <Text size="2em">Vous avez terminé le quiz!</Text>
+            <Text
+                color={color}
+                size="2.5em"
+            >
+                Bravo!
+            </Text>
+            <Text
+                color={color} 
+                size="2em"
+            >
+                Vous avez terminé le quiz!
+            </Text>
             <SmallText>Lorem ipsum dolor sit amet consectetur adipisicing elit.</SmallText>
         </>
     )

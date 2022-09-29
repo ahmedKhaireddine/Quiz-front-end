@@ -43,6 +43,7 @@ export const Timer = styled.div`
   border-radius: 50%;
   text-align: center;
   font-weight: bold;
+  color: ${props => props.color};
   position: absolute;
   top: -46px;
   left: 43%;
