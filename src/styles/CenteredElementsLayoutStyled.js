@@ -8,8 +8,9 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: ${props => props.color}
     // z-index: -2;
-    
+
     @media (max-width: 1440px) {
         padding: 10vw;
     }

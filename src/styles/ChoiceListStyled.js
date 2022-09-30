@@ -12,7 +12,7 @@ export const Item = styled.li`
   cursor: pointer;
   color: ${props => props.color};
   transition: 0.6s all ease;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 4px;
+  box-shadow: ${props => props.boxShadow} 0px 1px 4px;
 
   &:nth-child(2n+0) {
     margin-left: 15px;
@@ -42,6 +42,7 @@ export const Polygon = styled.div`
 `
 
 export const Text = styled.p`
-  margin-left: 60px;
+  margin-left: 20px;
+  flex-basis: 80%;
 `
 

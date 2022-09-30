@@ -17,14 +17,14 @@ const TextField = ({ label, ...props }) => {
                 as={Input}
                 {...field}
                 {...props}
-                bg="white"
+                bg="#f1f1f1"
                 borderColor="#1f939b"
                 border="2px solid"
                 focusBorderColor="#02818a"
                 _hover={{ borderColor: "#02818a"}}
                 _placeholder={{ opacity: 0.8, color: 'gray.700' }}
             />
-                ) : ( 
+                ) : (
             <Field
                 as={Input}
                 {...field}

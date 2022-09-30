@@ -4,12 +4,12 @@ import { useColorModeValue } from "@chakra-ui/react"
 import { Container } from  "../../styles/CenteredElementsLayoutStyled"
 import ToggleMode from "../ToggleMode"
 
-const CenteredElementsLayout = ({children}) => {
-    // const bg = useColorModeValue('yellow', "red")
-    
+const CenteredElementsLayout = ({ children }) => {
+    const color = useColorModeValue("black", "white")
+
     return (
-        <Container 
-            // bg={bg}
+        <Container
+            color={color}
         >
             <ToggleMode />
             {children}
