@@ -22,11 +22,11 @@ export const Question = styled.h2`
 `
 
 export const QuizContainer = styled.div`
-  width: 70%;
   display: flex;
+  flex-grow: 1;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   color: white
 `
 
