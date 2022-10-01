@@ -4,7 +4,7 @@ import { useColorModeValue } from "@chakra-ui/react"
 import Button from "./core/Button"
 import ChoiceList from "./core/ChoiceList"
 import Logo from "../Logo"
-import { Index, Question, QuizContainer, Text, Timer } from "../../styles/QuizStyled"
+import { Index, LogoContainer, Question, QuizContainer, Text, Timer } from "../../styles/QuizStyled"
 import { QuizContext } from "../../contexts/Quiz"
 import { useTimer } from "../../hooks/useTimer"
 
@@ -56,16 +56,19 @@ const Quiz = (props) => {
     }
   }, [answers, answerSelected, index, quiz, setAnswers, setAnswerSelected, setIndex, setStep])
 
-  useEffect(() => {
-    start(quiz.questions[index].duration)
-  }, [index, start, quiz])
+  // useEffect(() => {
+  //   start(quiz.questions[index].duration)
+  // }, [index, start, quiz])
 
   return (
     <QuizContainer>
-      <Logo 
-        margin="0px 0px 50px 0px" 
-        size="50px"
-      />
+
+      <LogoContainer>
+        <Logo
+          size="50px"
+        />
+      </LogoContainer>
+
       <Question 
         bg={bgQuestion}
         color={color}
@@ -78,14 +81,21 @@ const Quiz = (props) => {
         </Timer>
         {title}
       </Question>
+
       <ChoiceList
         answerSelected={answerSelected}
         choices={choices}
         handleClick={setAnswerSelected}
         questionId={id}
       />
+
       <Button handleClick={() => saveAnswer()} width="250px">Question suivante</Button>
-      <Index>{index + 1} / {quiz.questions.length}</Index>
+      <Index 
+        color={color}
+        borderColor={bgTimer}
+      >
+        {index + 1} / {quiz.questions.length}
+      </Index>
     </QuizContainer>
   )
 }

@@ -49,6 +49,7 @@ const Home = () => {
                         <TextField
                             name="code"
                             placeholder="Entrer votre code..."
+                            autoFocus
                         />
                         <Button type="submit">Entrer</Button>
                     </VStack>

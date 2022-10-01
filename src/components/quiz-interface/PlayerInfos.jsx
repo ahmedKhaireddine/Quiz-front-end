@@ -56,6 +56,7 @@ const PlayerInfos = (props) => {
                         <TextField
                             name="lastName"
                             placeholder="Nom..."
+                            autoFocus
                         />
                         <TextField
                             name="firstName"

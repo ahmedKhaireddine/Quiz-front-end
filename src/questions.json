@@ -10,21 +10,6 @@
         "id": 2,
         "value": "16",
         "weight": 0
-      },
-      {
-        "id": 3,
-        "value": "20",
-        "weight": 0
-      },
-      {
-        "id": 4,
-        "value": "24",
-        "weight": 1
-      },
-      {
-        "id": 5,
-        "value": "28",
-        "weight": 1
       }
     ],
     "id": 1,
@@ -76,6 +61,21 @@
       },
       {
         "id": 3,
+        "value": "Nantes",
+        "weight": 1
+      },
+            {
+        "id": 4,
+        "value": "Nice",
+        "weight": 0
+      },
+      {
+        "id": 5,
+        "value": "Saint-Étienne",
+        "weight": 0
+      },
+      {
+        "id": 6,
         "value": "Nantes",
         "weight": 1
       }

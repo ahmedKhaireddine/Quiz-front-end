@@ -9,7 +9,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     
-    @media (max-width: 1440px) {
-        padding: 10vw;
-    }
+    // @media (max-width: 1440px) {
+    //     padding: 10vw;
+    // }
 `
