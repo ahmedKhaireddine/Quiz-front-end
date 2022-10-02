@@ -31,6 +31,7 @@ export const Question = styled.h2`
 `
 
 export const QuizContainer = styled.div`
+<<<<<<< HEAD
   width: 70%;
   max-width: 1300px;
   height: auto;
@@ -39,6 +40,14 @@ export const QuizContainer = styled.div`
   grid-gap: 50px;
   // justify-content: center;
   text-align: center;
+=======
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white
+>>>>>>> a14892418a76d626e4782a914dea703e6ec37cb7
 `
 
 export const Text = styled.p``
