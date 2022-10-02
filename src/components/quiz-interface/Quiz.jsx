@@ -89,7 +89,13 @@ const Quiz = (props) => {
         questionId={id}
       />
 
-      <Button handleClick={() => saveAnswer()} width="250px">Question suivante</Button>
+      <Button 
+        handleClick={() => saveAnswer()} 
+        width="250px"
+        margin="300px"
+      >
+        Question suivante
+      </Button>
       <Index 
         color={color}
         borderColor={bgTimer}

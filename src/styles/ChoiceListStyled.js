@@ -23,7 +23,6 @@ export const ListItems = styled.ul`
   width: 800px;
   margin: 0 auto;
   height: 200px;
-  margin-top: 40px;
 `
 
 export const Polygon = styled.div`

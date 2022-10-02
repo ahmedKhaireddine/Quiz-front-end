@@ -10,7 +10,7 @@ export const Index = styled.span`
 `
 
 export const LogoContainer = styled.div`
-  margin: 0 auto 100px;
+  margin: 0 auto 70px;
 `
 
 export const Question = styled.h2`
@@ -24,6 +24,10 @@ export const Question = styled.h2`
   width: 800px;
   height: 60px;
   line-height: 35px;
+
+  // @media (max-width: 1080px) {
+  //   width: 600px;
+  // }
 `
 
 export const QuizContainer = styled.div`
@@ -32,7 +36,8 @@ export const QuizContainer = styled.div`
   height: auto;
   margin: 30px auto 30px;
   display: grid;
-  justify-content: center;
+  grid-gap: 50px;
+  // justify-content: center;
   text-align: center;
 `
 
