@@ -77,7 +77,7 @@ const Quiz = (props) => {
           bg={bgTimer}
           color={color}
           >
-          <Text>{time}</Text>
+          <p>{time}</p>
         </Timer>
         {title}
       </Question>

@@ -10,9 +10,7 @@ export const Index = styled.span`
 `
 
 export const LogoContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 50px 0;
+  margin: 0 auto 100px;
 `
 
 export const Question = styled.h2`
