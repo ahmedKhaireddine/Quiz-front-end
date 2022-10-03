@@ -47,6 +47,7 @@ const Home = () => {
                     >
                         <LogoAnimated word="Quiz &nbsp; !!!"/>
                         <TextField
+                            tabindex="0"
                             name="code"
                             placeholder="Entrer votre code..."
                         />

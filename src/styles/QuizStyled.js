@@ -1,13 +1,19 @@
 import styled from "styled-components"
 
+export const Content = styled.div`
+  display: grid;
+  grid-template: auto 1fr auto;
+`
+
 export const Index = styled.span`
   padding: 8px 20px;
+  text-align: center;
   border-top: 2px solid #45DDE7;
   margin: 20px;
   font-weight: bold;
-  color: white;
-`
-export const Question = styled.h2`
+  `
+
+  export const Question = styled.h2`
   padding: 70px 40px;
   margin: 20px;
   background-color: ${props => props.bg};
@@ -19,15 +25,23 @@ export const Question = styled.h2`
   width: 800px;
   height: 60px;
   line-height: 35px;
+  `
+  
+export const QuizContainer = styled.div`
+height: 100vh;
+display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 1;
+  align-items: center;
 `
 
-export const QuizContainer = styled.div`
+export const Section = styled.div`
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white
+  justify-content: space-around;
+  // height: ${props => props.height};
+  // padding: ${props => props.padding};
 `
 
 export const Text = styled.p``
