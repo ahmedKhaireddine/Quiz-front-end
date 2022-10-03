@@ -1,14 +1,10 @@
 import styled from "styled-components"
 
-export const Content = styled.div`
-  display: grid;
-  grid-template: auto 1fr auto;
-`
-
 export const Index = styled.span`
+  width: 100px;
   padding: 8px 20px;
   text-align: center;
-  border-top: 2px solid #45DDE7;
+  border-top: 2px solid ${props => props.borderColor};
   margin: 20px;
   font-weight: bold;
   `

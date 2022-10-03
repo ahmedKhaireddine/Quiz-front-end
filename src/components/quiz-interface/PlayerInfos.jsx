@@ -61,9 +61,9 @@ const PlayerInfos = (props) => {
                         <TextField
                             name="lastName"
                             placeholder="Nom..."
+                            autoFocus
                             />
                         <TextField
-                            // id="nom"
                             name="firstName"
                             placeholder="Prénom..."
                             mb="30px"

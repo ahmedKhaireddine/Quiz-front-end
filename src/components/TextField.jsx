@@ -23,7 +23,6 @@ const TextField = ({ label, ...props }) => {
                 focusBorderColor="#02818a"
                 _hover={{ borderColor: "#02818a"}}
                 _placeholder={{ opacity: 0.8, color: 'gray.700' }}
-                autoFocus
             />
                 ) : ( 
             <Field
