@@ -27,8 +27,8 @@ export const QuizContainer = styled.div`
   width: 800px;
   margin: 30px auto 30px;
   display: grid;
-  grid-template-rows: 150px 150px 200px 50px 30px;
-  grid-gap: 50px;
+  grid-template-rows: 20% 30% 30% 15% 5%;
+  grid-gap: 35px;
 `
 
 export const Text = styled.p``

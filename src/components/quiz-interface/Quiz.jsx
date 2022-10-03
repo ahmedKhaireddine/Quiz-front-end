@@ -63,8 +63,6 @@ const Quiz = (props) => {
   return (
     <QuizContainer>
 
-      {/* <LogoContainer>
-        </LogoContainer> */}
         <Logo
           size="50px"
           margin="40px auto"
