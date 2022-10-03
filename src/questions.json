@@ -65,25 +65,20 @@
         "value": "Nantes",
         "weight": 1
       },
-      {
+            {
         "id": 4,
-        "value": "Manchester United",
+        "value": "Nice",
         "weight": 0
       },
       {
         "id": 5,
-        "value": "Arsenal FC",
-        "weight": 1
+        "value": "Saint-Étienne",
+        "weight": 0
       },
       {
         "id": 6,
-        "value": "Sunderland AFC",
-        "weight": 0
-      },
-      {
-        "id": 7,
-        "value": "Manchester City",
-        "weight": 0
+        "value": "Nantes",
+        "weight": 1
       }
     ],
     "id": 3,

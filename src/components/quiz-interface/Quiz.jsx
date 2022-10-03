@@ -4,7 +4,7 @@ import { useColorModeValue } from "@chakra-ui/react"
 import Button from "./core/Button"
 import ChoiceList from "./core/ChoiceList"
 import Logo from "../Logo"
-import { Content, Index, Question, Section, QuizContainer, Text, Timer } from "../../styles/QuizStyled"
+import { Index, LogoContainer, Question, QuizContainer, Text, Timer } from "../../styles/QuizStyled"
 import { QuizContext } from "../../contexts/Quiz"
 import { useTimer } from "../../hooks/useTimer"
 
@@ -61,50 +61,48 @@ const Quiz = (props) => {
   // }, [index, start, quiz])
 
   return (
-    <>
-      <QuizContainer>
-        <Section
-          height="30%"
-          // padding="100px 0px 0px 0px"
-        >
-          <Logo 
-            margin="50px auto" 
-            size="50px"
-          />
-          <Question 
-            bg={bgQuestion}
-            color={color}
-          >
-            <Timer
-              bg={bgTimer}
-              color={color}
-            >
-              <Text>{time}</Text>
-            </Timer>
-            {title}
-          </Question>
-        </Section>
+    <QuizContainer>
 
-        <Content
-          // height="40%"
-        >
-          <ChoiceList
-            answerSelected={answerSelected}
-            choices={choices}
-            handleClick={setAnswerSelected}
-            questionId={id}
-          />
-        </Content>
+      <LogoContainer>
+        <Logo
+          size="50px"
+        />
+      </LogoContainer>
 
-        <Section
-          height="30%"
-          // padding="0px 0px 50px 0px"
+      <Question 
+        bg={bgQuestion}
+        color={color}
+      >
+        <Timer 
+          bg={bgTimer}
+          color={color}
         >
-          <Button handleClick={() => saveAnswer()} width="250px">Question suivante</Button>
-          <Index>{index + 1} / {quiz.questions.length}</Index>
-        </Section>
-      </QuizContainer>
-    </>
+          <Text>{time}</Text>
+        </Timer>
+        {title}
+      </Question>
+
+      <ChoiceList
+        answerSelected={answerSelected}
+        choices={choices}
+        handleClick={setAnswerSelected}
+        questionId={id}
+      />
+
+      <Button 
+        handleClick={() => saveAnswer()} 
+        width="250px"
+        margin="300px"
+      >
+        Question suivante
+      </Button>
+      <Index 
+        color={color}
+        borderColor={bgTimer}
+      >
+        {index + 1} / {quiz.questions.length}
+      </Index>
+    </QuizContainer>
   )
 }
 

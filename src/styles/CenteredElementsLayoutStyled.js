@@ -10,7 +10,7 @@ export const Container = styled.div`
     align-items: center;
     // z-index: -2;
     
-    @media (max-width: 1440px) {
-        padding: 10vw;
-    }
+    // @media (max-width: 1440px) {
+    //     padding: 10vw;
+    // }
 `

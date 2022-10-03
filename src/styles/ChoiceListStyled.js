@@ -13,24 +13,16 @@ export const Item = styled.li`
   color: ${props => props.color};
   transition: 0.6s all ease;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 4px;
-
-  &:nth-child(2n+0) {
-    margin-left: 15px;
-  }
-
-  &:nth-child(2n+1) {
-    margin-right: 15px;
-  }
 `
 
 export const ListItems = styled.ul`
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   list-style: none;
   width: 800px;
-  margin-top: 40px;
+  margin: 0 auto;
+  height: 200px;
 `
 
 export const Polygon = styled.div`
