@@ -65,7 +65,7 @@ const Quiz = (props) => {
 
         <Logo
           size="50px"
-          margin="40px auto"
+          margin="0 auto"
         />
 
       <Question 
@@ -91,7 +91,6 @@ const Quiz = (props) => {
       <Button 
         handleClick={() => saveAnswer()} 
         width="250px"
-        margin="300px"
       >
         Question suivante
       </Button>

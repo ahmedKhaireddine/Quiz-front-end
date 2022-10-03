@@ -25,10 +25,11 @@ export const Question = styled.h2`
 
 export const QuizContainer = styled.div`
   width: 800px;
-  margin: 30px auto 30px;
+  height: 100vh;
   display: grid;
-  grid-template-rows: 20% 30% 30% 15% 5%;
-  grid-gap: 35px;
+  align-items: center;
+  grid-template-rows: 16% 28% 25% 9% 5%;
+  grid-gap: 25px;
 `
 
 export const Text = styled.p``
