@@ -76,13 +76,8 @@ const Quiz = (props) => {
         <Timer 
           bg={bgTimer}
           color={color}
-<<<<<<< HEAD
           >
           <p>{time}</p>
-=======
-        >
-          <Text>{time}</Text>
->>>>>>> a14892418a76d626e4782a914dea703e6ec37cb7
         </Timer>
         {title}
       </Question>

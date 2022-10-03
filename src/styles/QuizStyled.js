@@ -24,30 +24,13 @@ export const Question = styled.h2`
   width: 800px;
   height: 60px;
   line-height: 35px;
-
-  // @media (max-width: 1080px) {
-  //   width: 600px;
-  // }
 `
 
 export const QuizContainer = styled.div`
-<<<<<<< HEAD
-  width: 70%;
-  max-width: 1300px;
-  height: auto;
-  margin: 30px auto 30px;
+  width: 800px;
   display: grid;
-  grid-gap: 50px;
-  // justify-content: center;
-  text-align: center;
-=======
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white
->>>>>>> a14892418a76d626e4782a914dea703e6ec37cb7
+  grid-template-rows: 150px 150px auto 50px 30px;
+  grid-gap: 20px;
 `
 
 export const Text = styled.p``
