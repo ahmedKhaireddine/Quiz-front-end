@@ -63,11 +63,12 @@ const Quiz = (props) => {
   return (
     <QuizContainer>
 
-      <LogoContainer>
+      {/* <LogoContainer>
+        </LogoContainer> */}
         <Logo
           size="50px"
+          margin="40px auto"
         />
-      </LogoContainer>
 
       <Question 
         bg={bgQuestion}
@@ -102,6 +103,7 @@ const Quiz = (props) => {
       >
         {index + 1} / {quiz.questions.length}
       </Index>
+
     </QuizContainer>
   )
 }

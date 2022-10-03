@@ -6,11 +6,8 @@ export const Index = styled.span`
   border-top: 2px solid ${props => props.borderColor};
   margin: 20px auto 0;
   font-weight: bold;
+  text-align: center;
   color: ${props => props.color};
-`
-
-export const LogoContainer = styled.div`
-  margin: 0 auto 70px;
 `
 
 export const Question = styled.h2`
@@ -21,19 +18,17 @@ export const Question = styled.h2`
   border-radius: 5px;
   text-align: center;
   position: relative;
-  width: 800px;
+  width: 100%;
   height: 60px;
   line-height: 35px;
 `
 
 export const QuizContainer = styled.div`
-  width: 70%;
-  max-width: 1300px;
-  height: auto;
+  width: 800px;
   margin: 30px auto 30px;
   display: grid;
+  grid-template-rows: 150px 150px 200px 50px 30px;
   grid-gap: 50px;
-  text-align: center;
 `
 
 export const Text = styled.p``
