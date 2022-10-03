@@ -22,6 +22,7 @@ export const Span = styled.span`
     cursor: pointer;
     position: relative;
     perspective: 550px;
+    text-transform: uppercase;
 
     &::before {
         position: absolute;

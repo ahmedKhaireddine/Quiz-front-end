@@ -7,6 +7,7 @@ const Logo = ({
     color,
     href,
     margin,
+    padding,
     size
 }) => {
     const bg = useColorModeValue("#1f939b", "#45DDE7")
@@ -15,13 +16,14 @@ const Logo = ({
         <Link 
             href={href} 
             margin={margin}
+            padding={padding}
         >
             <Span
                 bg={bg}
                 color={color}
                 size={size} 
             >
-                Quiz !!!
+                Quiz
             </Span>
         </Link>
     )
@@ -31,6 +33,7 @@ Logo.defaultProps = {
     color: "#45DDE7",
     href: "#",
     margin: "0px",
+    padding: "0px",
     size: "100px"
 }
 

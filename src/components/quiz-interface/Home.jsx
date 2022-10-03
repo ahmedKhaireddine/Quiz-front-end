@@ -45,7 +45,7 @@ const Home = () => {
                         justifyContent="center"
                         onSubmit={formik.handleSubmit}
                     >
-                        <LogoAnimated word="Quiz &nbsp; !!!"/>
+                        <LogoAnimated word="Quiz"/>
                         <TextField
                             name="code"
                             placeholder="Entrer votre code..."

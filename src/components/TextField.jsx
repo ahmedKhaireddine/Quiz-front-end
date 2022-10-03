@@ -1,42 +1,31 @@
 import React from "react"
-import { FormControl, FormErrorMessage, FormLabel, Input, useColorMode } from "@chakra-ui/react"
+import { FormControl, FormErrorMessage, FormLabel, Input } from "@chakra-ui/react"
 import { Field, useField } from "formik"
+import { useColorModeValue } from "@chakra-ui/react"
 
 const TextField = ({ label, ...props }) => {
     const [field, meta] = useField(props)
-    const { colorMode } = useColorMode("light", "dark")
-    // const borderColor = useColorModeValue("#242233", "")
-    // const placeholder = useColorModeValue("inherit", "")
-    // const hover = useColorModeValue("#276eca", "")
+    const bg = useColorModeValue("#f1f1f1", "#171923")
+    const borderColor = useColorModeValue("#1f939b", "#45DDE7")
+    const focusBorderColor = useColorModeValue("#02818a", "9ceff5")
+    const hoverBorderColor = useColorModeValue("#02818a", "#9ceff5")
+    const placeholderOpacity = useColorModeValue(0.8, 0.6)
+    const placeholderColor = useColorModeValue('gray.700', 'gray.300')
 
     return (
         <FormControl isInvalid={meta.error && meta.touched}>
             <FormLabel>{label}</FormLabel>
-            {colorMode === "light" ? (
             <Field
                 as={Input}
                 {...field}
                 {...props}
-                bg="white"
-                borderColor="#1f939b"
+                bg={bg}
+                borderColor={borderColor}
                 border="2px solid"
-                focusBorderColor="#02818a"
-                _hover={{ borderColor: "#02818a"}}
-                _placeholder={{ opacity: 0.8, color: 'gray.700' }}
+                focusBorderColor={focusBorderColor}
+                _hover={{ borderColor: hoverBorderColor }}
+                _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
             />
-                ) : ( 
-            <Field
-                as={Input}
-                {...field}
-                {...props}
-                bg="#171923"
-                borderColor="#45DDE7"
-                border="2px solid"
-                focusBorderColor="9ceff5"
-                _hover={{ borderColor: "#9ceff5"}}
-                _placeholder={{ opacity: 0.6, color: 'gray.300' }}
-            />
-            )}
             <FormErrorMessage>{meta.error}</FormErrorMessage>
         </FormControl>
     )
