@@ -11,7 +11,7 @@ export const Container = styled.div`
     color: ${props => props.color}
     // z-index: -2;
 
-    @media (max-width: 1440px) {
-        padding: 10vw;
-    }
+    // @media (max-width: 1440px) {
+    //     padding: 10vw;
+    // }
 `

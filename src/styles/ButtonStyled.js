@@ -10,7 +10,7 @@ export const Btn = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px auto;
+    margin: 0 auto;
     padding: 7px 30px;
     border: 1px solid rgba(255, 255, 255, 0);
 

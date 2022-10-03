@@ -10,6 +10,10 @@ import TextField from "../TextField"
 const PlayerInfos = (props) => {
     const { setStep, setInfos } = useContext(QuizContext)
 
+    // const focus = () => {
+    //     document.getElementById("nom").focus();
+    // }
+
     return (
         <Formik
             initialValues={{
@@ -50,12 +54,14 @@ const PlayerInfos = (props) => {
                         <Heading
                             as="h1"
                             mb="30px"
+                            tabIndex="-1"
                         >
                             Tu y es presque...
                         </Heading>
                         <TextField
                             name="lastName"
                             placeholder="Nom..."
+                            autoFocus
                         />
                         <TextField
                             name="firstName"

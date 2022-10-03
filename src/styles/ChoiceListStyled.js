@@ -1,36 +1,36 @@
 import styled from "styled-components"
 
 export const Item = styled.li`
-  position: relative;
-  width: 48%;
+  width: 390px;
   height: 50px;
+  position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
   background-color: ${props => props.selected ? props.bgItemSelected : props.bgItems};
   border-radius: 5px;
   cursor: pointer;
   color: ${props => props.color};
   transition: 0.6s all ease;
   box-shadow: ${props => props.boxShadow} 0px 1px 4px;
+  margin-bottom: 20px;
 
-  &:nth-child(2n+0) {
-    margin-left: 15px;
+  &:nth-child(odd) {
+    margin-right: 10px;
   }
 
-  &:nth-child(2n+1) {
-    margin-right: 15px;
+  &:nth-child(even) {
+    margin-left: 10px;
   }
 `
 
 export const ListItems = styled.ul`
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: flex-start;
   list-style: none;
   width: 800px;
-  margin-top: 40px;
+  margin: 0 auto;
 `
 
 export const Polygon = styled.div`
