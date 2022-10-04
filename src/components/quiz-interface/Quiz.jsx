@@ -4,7 +4,7 @@ import { useColorModeValue } from "@chakra-ui/react"
 import Button from "./core/Button"
 import ChoiceList from "./core/ChoiceList"
 import Logo from "../Logo"
-import { Index, LogoContainer, Question, QuizContainer, Text, Timer } from "../../styles/QuizStyled"
+import { Index, Question, QuizContainer, Text, Timer } from "../../styles/QuizStyled"
 import { QuizContext } from "../../contexts/Quiz"
 import { useTimer } from "../../hooks/useTimer"
 
@@ -15,12 +15,13 @@ const Quiz = (props) => {
     questionId: "",
     weight: 0
   })
+  const [index, setIndex] = useState(0)
+
   const bgQuestion = useColorModeValue("#f1f1f1", "#171923")
-  const borderColor = useColorModeValue("#1f939b", "#45DDE7")
   const boxShadow = useColorModeValue("rgba(0, 0, 0, 0.1)", "rgba(255, 255, 255, 0.1)")
   const bgTimer = useColorModeValue("#1f939b", "#45DDE7")
   const color = useColorModeValue("rgba(0, 0, 0, 0.8)", "#F1F1F1")
-  const [index, setIndex] = useState(0)
+
   const { start, time } = useTimer({
     onTimeOver: () => handleTimeOver(),
     order: "DECREMENTAL"
@@ -58,22 +59,20 @@ const Quiz = (props) => {
     }
   }, [answers, answerSelected, index, quiz, setAnswers, setAnswerSelected, setIndex, setStep])
 
-  // useEffect(() => {
-  //   start(quiz.questions[index].duration)
-  // }, [index, start, quiz])
+  useEffect(() => {
+    start(quiz.questions[index].duration)
+  }, [index, start, quiz])
 
   return (
     <QuizContainer>
-
-        <Logo
-          size="50px"
-          margin="0px auto"
-        />
-
+      <Logo
+        margin="0px auto"
+        size="50px"
+      />
       <Question
         bg={bgQuestion}
-        color={color}
         boxShadow={boxShadow}
+        color={color}
       >
         <Timer
           bg={bgTimer}
@@ -83,14 +82,12 @@ const Quiz = (props) => {
         </Timer>
         {title}
       </Question>
-
       <ChoiceList
         answerSelected={answerSelected}
         choices={choices}
         handleClick={setAnswerSelected}
         questionId={id}
       />
-
       <Button
         handleClick={() => saveAnswer()}
         width="250px"
@@ -103,7 +100,6 @@ const Quiz = (props) => {
       >
         {index + 1} / {quiz.questions.length}
       </Index>
-
     </QuizContainer>
   )
 }

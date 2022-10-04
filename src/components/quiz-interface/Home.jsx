@@ -1,14 +1,14 @@
-import { useContext } from "react"
-import { Formik } from "formik"
 import * as Yup from "yup"
 import { Box, useColorModeValue, VStack } from "@chakra-ui/react"
+import { Formik } from "formik"
+import { useContext } from "react"
 
 import Button from "./core/Button"
 import LogoAnimated from "../LogoAnimated"
 import questions from "../../questions.json"
 import { QuizContext } from "../../contexts/Quiz"
 import TextField from "../TextField"
-import { Footer, Link, Text, SmallText } from "../../styles/HomeStyled"
+import { Footer, Link, SmallText, Text } from "../../styles/HomeStyled"
 
 
 const Home = () => {
@@ -37,24 +37,24 @@ const Home = () => {
             >
                 {(formik) => (
                     <Box
-                        width="45vw"
-                        justifyContent="center"
                         display="flex"
                         flexDirection="column"
+                        justifyContent="center"
+                        width="45vw"
                     >
                         <VStack
                             as="form"
-                            w={{ base: "80%", md: 400 }}
-                            mx="auto"
-                            spacing="50px"
                             justifyContent="center"
+                            mx="auto"
                             onSubmit={formik.handleSubmit}
+                            spacing="50px"
+                            w={{ base: "80%", md: 400 }}
                         >
                             <LogoAnimated word="Quiz"/>
                             <TextField
+                                autoFocus
                                 name="code"
                                 placeholder="Entrer votre code..."
-                                autoFocus
                             />
                             <Button type="submit">Entrer</Button>
                         </VStack>
@@ -64,12 +64,30 @@ const Home = () => {
             <Footer>
                 <Text>
                     <SmallText>
-                        Crée ton propre Quiz GRATUITEMENT sur <Link href="#" color={color}>Quiz.com</Link>
+                        Crée ton propre Quiz GRATUITEMENT sur
+                        <Link
+                            color={color}
+                            href="#"
+                        >
+                            Quiz.com
+                        </Link>
                     </SmallText>
                 </Text>
                 <Text>
                     <SmallText>
-                        <Link href="#" color={color}>Conditions d'utilisation</Link> | <Link href="#" color={color}>Confidentialité</Link>
+                        <Link
+                            color={color}
+                            href="#"
+                        >
+                            Conditions d'utilisation
+                        </Link>
+                        |
+                        <Link
+                            color={color}
+                            href="#"
+                        >
+                            Confidentialité
+                        </Link>
                     </SmallText>
                 </Text>
             </Footer>

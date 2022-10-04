@@ -1,55 +1,51 @@
-import { useContext } from "react"
-import { Formik } from "formik"
 import * as Yup from "yup"
 import { Box, Heading, VStack } from "@chakra-ui/react"
+import { Formik } from "formik"
+import { useContext } from "react"
 
 import Button from "./core/Button"
 import { QuizContext } from "../../contexts/Quiz"
 import TextField from "../TextField"
 
 const PlayerInfos = (props) => {
-    const { setStep, setInfos } = useContext(QuizContext)
-
-    // const focus = () => {
-    //     document.getElementById("nom").focus();
-    // }
+    const { setInfos, setStep } = useContext(QuizContext)
 
     return (
         <Formik
             initialValues={{
-                lastName: "",
-                firstName: ""
+                firstName: "",
+                lastName: ""
             }}
-            validationSchema={Yup.object({
-                lastName: Yup
-                    .string()
-                    .max(15, "*15 caractères maximum")
-                    .required("*Veuillez renseigner un nom"),
-                firstName: Yup
-                    .string()
-                    .max(15, "*15 caractères maximum")
-                    .required("*Veuillez renseigner un prénom"),
-            })}
             onSubmit={(values, actions) => {
                 setInfos(values)
                 setStep(3)
                 actions.resetForm()
             }}
+            validationSchema={Yup.object({
+                firstName: Yup
+                    .string()
+                    .max(15, "*15 caractères maximum")
+                    .required("*Veuillez renseigner un prénom"),
+                lastName: Yup
+                    .string()
+                    .max(15, "*15 caractères maximum")
+                    .required("*Veuillez renseigner un nom"),
+            })}
         >
             {(formik) => (
                 <Box
-                    width="45vw"
-                    justifyContent="center"
                     display="flex"
                     flexDirection="column"
+                    justifyContent="center"
+                    width="45vw"
                 >
                     <VStack
                         as="form"
-                        w={{ base: "80%" }}
                         mx="auto"
-                        spacing="30px"
                         onSubmit={formik.handleSubmit}
+                        spacing="30px"
                         textAlign="center"
+                        w={{ base: "80%" }}
                     >
                         <Heading
                             as="h1"
@@ -59,14 +55,14 @@ const PlayerInfos = (props) => {
                             Tu y es presque...
                         </Heading>
                         <TextField
+                            autoFocus
                             name="lastName"
                             placeholder="Nom..."
-                            autoFocus
                         />
                         <TextField
                             name="firstName"
-                            placeholder="Prénom..."
                             mb="30px"
+                            placeholder="Prénom..."
                         />
                         <Button type="submit">Entrer</Button>
                     </VStack>

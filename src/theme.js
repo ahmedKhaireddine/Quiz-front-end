@@ -14,7 +14,7 @@ const theme = extendTheme({
                 "-webkit-font-smoothing": "antialiased",
                 "-moz-osx-font-smoothing": "grayscale",
             },
-                code: {
+            code: {
                     "font-family": "source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace",
             },
         },
