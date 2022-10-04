@@ -13,7 +13,7 @@ const Flex = ({
     width
 }) => {
 
-        return (
+    return (
         <Container 
             alignItems={alignItems}
             background={background}
@@ -22,7 +22,6 @@ const Flex = ({
             height={height}
             justifyContent={justifyContent}
             width={width}
-            // background: ${props => props.bg};
         >
             {children}
         </Container>
