@@ -15,7 +15,9 @@ const Quiz = (props) => {
     questionId: "",
     weight: 0
   })
-  const bgQuestion = useColorModeValue("#5ba5cc", "#171923")
+  const bgQuestion = useColorModeValue("#f1f1f1", "#171923")
+  const borderColor = useColorModeValue("#1f939b", "#45DDE7")
+  const boxShadow = useColorModeValue("rgba(0, 0, 0, 0.1)", "rgba(255, 255, 255, 0.1)")
   const bgTimer = useColorModeValue("#1f939b", "#45DDE7")
   const color = useColorModeValue("rgba(0, 0, 0, 0.8)", "#F1F1F1")
   const [index, setIndex] = useState(0)
@@ -68,11 +70,12 @@ const Quiz = (props) => {
           margin="0 auto"
         />
 
-      <Question 
+      <Question
         bg={bgQuestion}
         color={color}
+        boxShadow={boxShadow}
       >
-        <Timer 
+        <Timer
           bg={bgTimer}
           color={color}
         >
@@ -88,13 +91,13 @@ const Quiz = (props) => {
         questionId={id}
       />
 
-      <Button 
-        handleClick={() => saveAnswer()} 
+      <Button
+        handleClick={() => saveAnswer()}
         width="250px"
       >
         Question suivante
       </Button>
-      <Index 
+      <Index
         color={color}
         borderColor={bgTimer}
       >

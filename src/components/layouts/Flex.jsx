@@ -10,25 +10,24 @@ const Flex = ({
     flexDirection,
     height,
     justifyContent,
-    width
+    width,
 }) => {
-
     return (
-        <Container 
-            alignItems={alignItems}
-            background={background}
-            color={color}
-            flexDirection={flexDirection}
-            height={height}
-            justifyContent={justifyContent}
-            width={width}
+        <Container
+            alignItems= {alignItems}
+            background= {background}
+            color= {color}
+            flexDirection= {flexDirection}
+            height= {height}
+            justifyContent= {justifyContent}
+            width= {width}
         >
             {children}
         </Container>
     )
 }
 
-Flex.defaultProps={
+Flex.defaultProps= {
     alignItems: "normal",
     background: "transparent",
     color: "transparent",
