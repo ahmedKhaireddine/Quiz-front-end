@@ -11,17 +11,18 @@ const Logo = ({
     size
 }) => {
     const bg = useColorModeValue("#1f939b", "#45DDE7")
-    
+
     return (
-        <Link 
-            href={href} 
+        <Link
+            href={href}
             margin={margin}
             padding={padding}
         >
             <Span
                 bg={bg}
                 color={color}
-                size={size} 
+                margin={margin}
+                size={size}
             >
                 Quiz
             </Span>
