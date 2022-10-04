@@ -64,7 +64,7 @@ const Home = () => {
             <Footer>
                 <Text>
                     <SmallText>
-                        Crée ton propre Quiz GRATUITEMENT sur
+                        Crée ton propre Quiz GRATUITEMENT sur &nbsp;
                         <Link
                             color={color}
                             href="#"
@@ -81,7 +81,7 @@ const Home = () => {
                         >
                             Conditions d'utilisation
                         </Link>
-                        |
+                        &nbsp;|&nbsp;
                         <Link
                             color={color}
                             href="#"
