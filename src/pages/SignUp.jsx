@@ -9,70 +9,58 @@ import TextField from "../components/TextField"
 YupPassword(Yup)
 
 const SignUp = () => {
+
+  const initialValues={
+    email: "",
+    password: "",
+    confirmPassword: ""
+    // remember: false
+  }
+
+  const validationSchema = Yup.object({
+    email: Yup
+      .string()
+      .email("Format d'email valide")
+      .required("*Email requis"),
+    password: Yup
+      .string()
+      .required("*Mot de passe requis")
+      .min(8, "8 caractères minimum")
+      .test("Mot de passe valide", "Votre mot de passe doit contenir au minimum 8 caractères dont 1 minuscule, 1 majuscule, 1 chiffre et 1 symbole", (value, context) => {
+        const hasUpperCase = /[A-Z]/.test(value)
+        const hasLowerCase = /[a-z]/.test(value)
+        const hasNumber = /[0-9]/.test(value)
+        const hasSymbole = /[!@#%&]/.test(value)
+        let validConditions = 0
+        const numberOfMustBeValidConditions = 3
+        const conditions = [hasLowerCase, hasUpperCase, hasNumber, hasSymbole]
+        console.log("conditions =>", conditions)
+        conditions.forEach((condition) =>
+          condition ? validConditions++ : null
+        )
+        if (validConditions >= numberOfMustBeValidConditions) {
+          return true
+        }
+        return false
+      }),
+      confirmPassword: Yup
+        .string()
+        .password("Confirmer votre mot de passe")
+        .required("*Veuillez confirmer votre mot de passe")
+        // .test("Mot de passe valide", "Mot de passe invalide", (value, context) => {
+        // })
+  })
+
+  const onSubmit = (values, actions) => {
+    // actions.resetForm()
+    console.log("values =>", values)
+  }
+
   return (
     <Formik
-      initialValues={{
-        email: "",
-        password: "",
-        confirmPassword: ""
-      }}
-      validationSchema={Yup.object({
-        email: Yup
-          .string()
-          .email("Entrer un email valide")
-          .required("*Email requis"),
-        password: Yup
-          .string()
-          .password("Entrer un mot de passe valide")
-          .min(8, "*8 caractères minimum")
-          .minUppercase(1, "*1 majuscule minimum")
-          .minNumbers(1, "*1 chiffre minimum")
-          .minSymbols(1, "*1 caractère spécial minimum")
-          .required("*Mot de passe requis")
-          .min(8, "8 caractères minimum")
-          .test("Mot de passe valide", "Mot de passe invalide", (value, context) => {
-            const hasUpperCase = /[A-Z]/.test(value);
-            const hasLowerCase = /[a-z]/.test(value);
-            const hasNumber = /[0-9]/.test(value);
-            const hasSymbole = /[!@#%&]/.test(value);
-            let validConditions = 0;
-            const numberOfMustBeValidConditions = 3;
-            const conditions = [hasLowerCase, hasUpperCase, hasNumber, hasSymbole];
-            conditions.forEach((condition) =>
-              condition ? validConditions++ : null
-            );
-            if (validConditions >= numberOfMustBeValidConditions) {
-              return true
-            }
-            return false
-          }),
-        confirmPassword: Yup
-          .string()
-          .password("Confirmer votre mot de passe")
-          .min(8, "*8 caractères minimum")
-          .required("*Mot de passe requis")
-          .min(8, "8 caractères minimum")
-          .test("Mot de passe valide", "Mot de passe invalide", (value, context) => {
-            const hasUpperCase = /[A-Z]/.test(value);
-            const hasLowerCase = /[a-z]/.test(value);
-            const hasNumber = /[0-9]/.test(value);
-            const hasSymbole = /[!@#%&]/.test(value);
-            let validConditions = 0;
-            const numberOfMustBeValidConditions = 3;
-            const conditions = [hasLowerCase, hasUpperCase, hasNumber, hasSymbole];
-            conditions.forEach((condition) =>
-              condition ? validConditions++ : null
-            );
-            if (validConditions >= numberOfMustBeValidConditions) {
-              return true
-            }
-            return false
-          })
-      })}
-      onSubmit={(values, actions) => {
-        actions.resetForm()
-        console.log(actions)
-      }}
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit()}
     >
       {(formik) => (
         <Box
@@ -115,7 +103,7 @@ const SignUp = () => {
               placeholder="Confirmation du mot de passe..."
               type="password"
             />
-            <Button type="submit">Entrer</Button>
+            <Button type="submit">Enregistrer</Button>
             </VStack>
         </Box>
       )}
