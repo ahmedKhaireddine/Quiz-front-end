@@ -63,12 +63,10 @@ const Quiz = (props) => {
   return (
     <QuizContainer>
 
-      {/* <LogoContainer>
-        </LogoContainer> */}
-        <Logo
-          size="50px"
-          margin="40px auto"
-        />
+      <Logo
+        size="50px"
+        margin="0 auto"
+      />
 
       <Question 
         bg={bgQuestion}
@@ -77,13 +75,8 @@ const Quiz = (props) => {
         <Timer 
           bg={bgTimer}
           color={color}
-<<<<<<< HEAD
-          >
-          <p>{time}</p>
-=======
         >
           <Text>{time}</Text>
->>>>>>> efe080c1209659e717509888ccd05c71cc6e81f2
         </Timer>
         {title}
       </Question>
@@ -108,7 +101,6 @@ const Quiz = (props) => {
       >
         {index + 1} / {quiz.questions.length}
       </Index>
-
     </QuizContainer>
   )
 }
