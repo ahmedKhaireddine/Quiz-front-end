@@ -1,10 +1,12 @@
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 
-const User = createContext({})
+const UserContext = createContext({})
 
-const UserProvider = (props) => {
+const UserContextProvider = ({ children }) => {
+    const [user, setUser] = useState(null)
 
-    const[user, setUser] = useState(null)
+    useEffect(() => {
+    }, [])
 
     const value = {
         user,
@@ -12,13 +14,13 @@ const UserProvider = (props) => {
     }
 
     return (
-        <User.Provider value={value}>
-            {props.children}
-        </User.Provider>
+        <UserContext.Provider value={value}>
+            {children}
+        </UserContext.Provider>
     )
 }
 
 export {
-    UserProvider,
-    User
+  UserContext,
+  UserContextProvider
 }

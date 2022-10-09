@@ -1,15 +1,29 @@
 import React from "react"
+import { useColorModeValue } from "@chakra-ui/react"
 
+import BubblesAnimated from "../components/BubblesAnimated"
+import Flex from "../components/layouts/Flex"
 import { QuizContextProvider } from "../contexts/Quiz"
-import QuizLayout from "../components/layouts/QuizLayout"
 import Stepper from "../components/quiz-interface/core/Stepper"
+import ToggleMode from "../components/ToggleMode"
 
 const QuizInterface = () => {
+  const color = useColorModeValue("black", "white")
+
   return (
     <QuizContextProvider>
-      <QuizLayout>
+      <Flex
+        alignItems= "center"
+        color={color}
+        flexDirection= "column"
+        height= "100vh"
+        justifyContent= "center"
+        width= "100vw"
+      >
+        <ToggleMode />
         <Stepper />
-      </QuizLayout>
+        <BubblesAnimated/>
+      </Flex>
     </QuizContextProvider>
   )
 }

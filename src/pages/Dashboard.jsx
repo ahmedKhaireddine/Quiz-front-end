@@ -1,11 +1,11 @@
 import React from "react"
 
-const Error404 = () => {
+const Dashboard = () => {
   return (
     <div>
-      Error404
+      Dashboard
     </div>
   )
 }
 
-export default Error404
+export default Dashboard
