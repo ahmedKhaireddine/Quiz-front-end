@@ -10,6 +10,7 @@ import TextField from "../components/TextField"
 YupPassword(Yup) // On étend la méthode Yup à YupPassword
 
 const SignIn = () => {
+<<<<<<< HEAD
 
   const initialValues={
     email: "",
@@ -98,6 +99,12 @@ const SignIn = () => {
         </Box>
       )}
   </Formik>
+=======
+  return (
+    <div>
+      SignIn
+    </div>
+>>>>>>> 29b385d07e64fa21b3b25030ad103f9f721c6940
   )
 }
 

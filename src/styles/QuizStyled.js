@@ -28,9 +28,9 @@ export const QuizContainer = styled.div`
   height: 100vh;
   width: 800px;
   display: grid;
+  align-items: center;
   grid-template-rows: 16% 28% 25% 9% 5%;
   grid-gap: 25px;
-  align-items: center;
 `
 
 export const Text = styled.p``

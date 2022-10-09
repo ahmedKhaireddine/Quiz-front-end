@@ -37,4 +37,4 @@ Flex.defaultProps= {
     width: "100px"
 }
 
-export default Flex;
+export default Flex

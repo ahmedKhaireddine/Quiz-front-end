@@ -12,7 +12,10 @@ const TextField = ({ label, ...props }) => {
     const hoverBorderColor = useColorModeValue("#02818a", "#9ceff5")
     const placeholderColor = useColorModeValue('gray.700', 'gray.300')
     const placeholderOpacity = useColorModeValue(0.8, 0.6)
+<<<<<<< HEAD
     console.log("error =>", meta.error)
+=======
+>>>>>>> 29b385d07e64fa21b3b25030ad103f9f721c6940
 
     return (
         <FormControl isInvalid={meta.error && meta.touched}>

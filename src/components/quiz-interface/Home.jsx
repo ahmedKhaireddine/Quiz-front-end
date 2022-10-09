@@ -4,11 +4,15 @@ import { Formik } from "formik"
 import { useContext } from "react"
 
 import Button from "./core/Button"
+import { Footer, Link, SmallText, Text } from "../../styles/HomeStyled"
 import LogoAnimated from "../LogoAnimated"
 import questions from "../../questions.json"
 import { QuizContext } from "../../contexts/Quiz"
 import TextField from "../TextField"
+<<<<<<< HEAD
 import { Footer, Link, SmallText, Text } from "../../styles/HomeStyled"
+=======
+>>>>>>> 29b385d07e64fa21b3b25030ad103f9f721c6940
 
 
 const Home = () => {
@@ -65,9 +69,15 @@ const Home = () => {
                 <Text>
                     <SmallText>
                         Crée ton propre Quiz GRATUITEMENT sur &nbsp;
+<<<<<<< HEAD
                         <Link
                             color={color}
                             href="#"
+=======
+                        <Link 
+                            color={color}
+                            href="#" 
+>>>>>>> 29b385d07e64fa21b3b25030ad103f9f721c6940
                         >
                             Quiz.com
                         </Link>

@@ -142,6 +142,16 @@
         "id": 4,
         "value": "Croatie/République tchèque/Turquie",
         "weight": 0
+      },
+      {
+        "id": 5,
+        "value": "Angleterre/Russie/Slovaquie",
+        "weight": 0
+      },
+      {
+        "id": 6,
+        "value": "Croatie/République tchèque/Turquie",
+        "weight": 0
       }
     ],
     "id": 5,
