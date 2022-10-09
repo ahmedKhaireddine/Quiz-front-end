@@ -4,7 +4,7 @@ import { useColorModeValue } from "@chakra-ui/react"
 import Button from "./core/Button"
 import ChoiceList from "./core/ChoiceList"
 import Logo from "../Logo"
-import { Index, LogoContainer, Question, QuizContainer, Text, Timer } from "../../styles/QuizStyled"
+import { Index, Question, QuizContainer, Text, Timer } from "../../styles/QuizStyled"
 import { QuizContext } from "../../contexts/Quiz"
 import { useTimer } from "../../hooks/useTimer"
 
@@ -15,10 +15,13 @@ const Quiz = (props) => {
     questionId: "",
     weight: 0
   })
-  const bgQuestion = useColorModeValue("#5ba5cc", "#171923")
+  const [index, setIndex] = useState(0)
+
+  const bgQuestion = useColorModeValue("#f1f1f1", "#171923")
+  const boxShadow = useColorModeValue("rgba(0, 0, 0, 0.1)", "rgba(255, 255, 255, 0.1)")
   const bgTimer = useColorModeValue("#1f939b", "#45DDE7")
   const color = useColorModeValue("rgba(0, 0, 0, 0.8)", "#F1F1F1")
-  const [index, setIndex] = useState(0)
+
   const { start, time } = useTimer({
     onTimeOver: () => handleTimeOver(),
     order: "DECREMENTAL"
@@ -56,23 +59,22 @@ const Quiz = (props) => {
     }
   }, [answers, answerSelected, index, quiz, setAnswers, setAnswerSelected, setIndex, setStep])
 
-  // useEffect(() => {
-  //   start(quiz.questions[index].duration)
-  // }, [index, start, quiz])
+  useEffect(() => {
+    start(quiz.questions[index].duration)
+  }, [index, start, quiz])
 
   return (
     <QuizContainer>
-
       <Logo
+        margin="0px auto"
         size="50px"
-        margin="0 auto"
       />
-
-      <Question 
+      <Question
         bg={bgQuestion}
+        boxShadow={boxShadow}
         color={color}
       >
-        <Timer 
+        <Timer
           bg={bgTimer}
           color={color}
         >
@@ -80,22 +82,19 @@ const Quiz = (props) => {
         </Timer>
         {title}
       </Question>
-
       <ChoiceList
         answerSelected={answerSelected}
         choices={choices}
         handleClick={setAnswerSelected}
         questionId={id}
       />
-
-      <Button 
-        handleClick={() => saveAnswer()} 
+      <Button
+        handleClick={() => saveAnswer()}
         width="250px"
-        margin="300px"
       >
         Question suivante
       </Button>
-      <Index 
+      <Index
         color={color}
         borderColor={bgTimer}
       >

@@ -1,61 +1,97 @@
-import { useContext } from "react"
-import { Formik } from "formik"
 import * as Yup from "yup"
-import { VStack, Box } from "@chakra-ui/react"
+import { Box, useColorModeValue, VStack } from "@chakra-ui/react"
+import { Formik } from "formik"
+import { useContext } from "react"
 
 import Button from "./core/Button"
 import LogoAnimated from "../LogoAnimated"
 import questions from "../../questions.json"
 import { QuizContext } from "../../contexts/Quiz"
 import TextField from "../TextField"
+import { Footer, Link, SmallText, Text } from "../../styles/HomeStyled"
+
 
 const Home = () => {
     const { setStep, setQuiz } = useContext(QuizContext)
 
+    const color = useColorModeValue("#1F939B", "#45DDE7")
+
     return (
-        <Formik
-            initialValues={{code: ""}}
-            validationSchema={Yup.object({
-                code: Yup
-                    .string()
-                    .required("Vous devez entrer un code")
-                    .max(15, "Le code ne peut contenir plus de 15 caractères")
-            })}
-            onSubmit={(values, actions) => {
-                setQuiz({
-                    _id: "_id",
-                    questions
-                })
-                actions.resetForm()
-                setStep(2)
-            }}
-        >
-            {(formik) => (
-                <Box
-                    width="45vw"
-                    justifyContent="center"
-                    display="flex"
-                    flexDirection="column"
-                >
-                    <VStack
-                        as="form"
-                        w={{ base: "80%", md: 400 }}
-                        mx="auto"
-                        spacing="50px"
+        <>
+            <Formik
+                initialValues={{code: ""}}
+                validationSchema={Yup.object({
+                    code: Yup
+                        .string()
+                        .required("Vous devez entrer un code")
+                        .max(15, "Le code ne peut contenir plus de 15 caractères")
+                })}
+                onSubmit={(values, actions) => {
+                    setQuiz({
+                        _id: "_id",
+                        questions
+                    })
+                    actions.resetForm()
+                    setStep(2)
+                }}
+            >
+                {(formik) => (
+                    <Box
+                        display="flex"
+                        flexDirection="column"
                         justifyContent="center"
-                        onSubmit={formik.handleSubmit}
+                        width="45vw"
                     >
-                        <LogoAnimated word="Quiz"/>
-                        <TextField
-                            name="code"
-                            placeholder="Entrer votre code..."
-                            autoFocus
-                        />
-                        <Button type="submit">Entrer</Button>
-                    </VStack>
-                </Box>
-            )}
-        </Formik>
+                        <VStack
+                            as="form"
+                            justifyContent="center"
+                            mx="auto"
+                            onSubmit={formik.handleSubmit}
+                            spacing="50px"
+                            w={{ base: "80%", md: 400 }}
+                        >
+                            <LogoAnimated word="Quiz"/>
+                            <TextField
+                                autoFocus
+                                name="code"
+                                placeholder="Entrer votre code..."
+                            />
+                            <Button type="submit">Entrer</Button>
+                        </VStack>
+                    </Box>
+                )}
+            </Formik>
+            <Footer>
+                <Text>
+                    <SmallText>
+                        Crée ton propre Quiz GRATUITEMENT sur
+                        <Link
+                            color={color}
+                            href="#"
+                        >
+                            Quiz.com
+                        </Link>
+                    </SmallText>
+                </Text>
+                <Text>
+                    <SmallText>
+                        <Link
+                            color={color}
+                            href="#"
+                        >
+                            Conditions d'utilisation
+                        </Link>
+                        |
+                        <Link
+                            color={color}
+                            href="#"
+                        >
+                            Confidentialité
+                        </Link>
+                    </SmallText>
+                </Text>
+            </Footer>
+        </>
     )
 }
 

@@ -2,8 +2,8 @@ import { useColorModeValue } from "@chakra-ui/react"
 import { useContext, useEffect } from "react"
 
 import Logo from "../Logo"
+import { Footer, Text, SmallText } from "../../styles/OverStyled"
 import { QuizContext } from "../../contexts/Quiz"
-import { Text, SmallText } from "../../styles/OverStyled"
 
 const Over = (props) => {
     const { answers, infos, quiz, score } = useContext(QuizContext)
@@ -16,7 +16,7 @@ const Over = (props) => {
             quiz: quiz._id,
             score
         }
-    }, [answers, infos, score, quiz])
+    }, [answers, infos, quiz, score])
 
     return (
         <>
@@ -30,13 +30,18 @@ const Over = (props) => {
                 color={color}
                 size="2.5em"
             >
-                {/* Vous avez terminé le quiz! */}
                 Et à la prochaine !
             </Text>
-            <SmallText>
-                <Logo size="12px" padding="0px 6px" color="black"/>
-                Corporation © 2022
-            </SmallText>
+            <Footer>
+                <SmallText>
+                    <Logo
+                        color="black"
+                        padding="0px 6px"
+                        size="12px"
+                    />
+                    Corporation © 2022
+                </SmallText>
+            </Footer>
         </>
     )
 }

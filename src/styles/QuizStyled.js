@@ -13,23 +13,24 @@ export const Index = styled.span`
 export const Question = styled.h2`
   padding: 70px 40px;
   background-color: ${props => props.bg};
-  color: ${props => props.color};
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 4px;
+  color: inherit;
+  box-shadow: ${props => props.boxShadow} 0px 1px 4px;
   border-radius: 5px;
   text-align: center;
   position: relative;
   width: 100%;
   height: 60px;
   line-height: 35px;
+  align-self: base-line;
 `
 
 export const QuizContainer = styled.div`
-  width: 800px;
   height: 100vh;
+  width: 800px;
   display: grid;
-  align-items: center;
   grid-template-rows: 16% 28% 25% 9% 5%;
   grid-gap: 25px;
+  align-items: center;
 `
 
 export const Text = styled.p``
@@ -45,7 +46,7 @@ export const Timer = styled.div`
   border-radius: 50%;
   text-align: center;
   font-weight: bold;
-  color: ${props => props.color};
+  color: inherit;
   position: absolute;
   top: -46px;
   left: 43%;
