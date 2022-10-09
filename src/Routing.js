@@ -2,7 +2,7 @@ import React from "react"
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom"
 
 import Dashboard from "./pages/Dashboard"
-import Error404 from "./pages/Error404"
+import NotFound from "./pages/NotFound"
 import Home from "./pages/Home"
 import QuizInterface from "./pages/QuizInterface"
 import SignIn from "./pages/SignIn"
@@ -26,7 +26,7 @@ const routes = [
     path: "/dashboard"
   },
   {
-    element: <Error404/>,
+    element: <NotFound/>,
     name: "Error 404",
     path: "*"
   },
