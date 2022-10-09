@@ -1,14 +1,14 @@
-import { useContext } from "react"
-import { Formik } from "formik"
 import * as Yup from "yup"
 import { Box, useColorModeValue, VStack } from "@chakra-ui/react"
+import { Formik } from "formik"
+import { useContext } from "react"
 
 import Button from "./core/Button"
+import { Footer, Link, SmallText, Text } from "../../styles/HomeStyled"
 import LogoAnimated from "../LogoAnimated"
 import questions from "../../questions.json"
 import { QuizContext } from "../../contexts/Quiz"
 import TextField from "../TextField"
-import { Footer, Link, Text, SmallText } from "../../styles/HomeStyled"
 
 
 const Home = () => {
@@ -64,7 +64,13 @@ const Home = () => {
             <Footer>
                 <Text>
                     <SmallText>
-                        Crée ton propre Quiz GRATUITEMENT sur <Link href="#" color={color}>Quiz.com</Link>
+                        Crée ton propre Quiz GRATUITEMENT sur &nbsp;
+                        <Link 
+                            color={color}
+                            href="#" 
+                        >
+                            Quiz.com
+                        </Link>
                     </SmallText>
                 </Text>
                 <Text>

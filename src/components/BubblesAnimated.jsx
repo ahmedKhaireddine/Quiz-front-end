@@ -1,5 +1,5 @@
-import { useColorModeValue } from "@chakra-ui/react"
 import React from "react"
+import { useColorModeValue } from "@chakra-ui/react"
 
 import bubbles from "../bubbles.json"
 import { Bubble, BubblesContainer } from "../styles/BubblesAnimatedStyled"

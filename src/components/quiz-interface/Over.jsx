@@ -35,7 +35,11 @@ const Over = (props) => {
             </Text>
             <Footer>
                 <SmallText>
-                    <Logo size="12px" padding="0px 6px" color="black"/>
+                    <Logo 
+                        color="black"
+                        padding="0px 6px" 
+                        size="12px" 
+                    />
                     Corporation © 2022
                 </SmallText>
             </Footer>

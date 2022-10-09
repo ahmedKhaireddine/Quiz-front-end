@@ -1,7 +1,7 @@
 import React from "react"
 import { useColorModeValue } from "@chakra-ui/react"
 
-import { Item, ListItems, Text, Polygon } from "../../../styles/ChoiceListStyled"
+import { Item, ListItems, Polygon, Text } from "../../../styles/ChoiceListStyled"
 
 const ChoiceList = ({
   answerSelected,
@@ -10,9 +10,9 @@ const ChoiceList = ({
   questionId
 }) => {
   const bgItems = useColorModeValue("#f1f1f1", "#171923")
-  const boxShadow = useColorModeValue("rgba(0, 0, 0, 0.1)", "rgba(255, 255, 255, 0.1)")
   const bgItemSelected = useColorModeValue("#1f939b", "#45DDE7")
   const bgPolygon = useColorModeValue("#1f939b", "#45DDE7")
+  const boxShadow = useColorModeValue("rgba(0, 0, 0, 0.1)", "rgba(255, 255, 255, 0.1)")
   const color = useColorModeValue("rgba(0, 0, 0, 0.8)", "#F1F1F1")
 
   const choicesItemsJsx = choices.map(({ id, value, weight }, index) => {
