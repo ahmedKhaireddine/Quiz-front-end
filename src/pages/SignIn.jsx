@@ -26,13 +26,13 @@ const SignIn = () => {
       .required("*Mote de passe requis")
       .min(8, "8 caractères minimum")
       .test("Mot de passe valide", "Mot de passe invalide", (value, context) => {
-        const hasUpperCase = /[A-Z]/.test(value);
-        const hasLowerCase = /[a-z]/.test(value);
-        const hasNumber = /[0-9]/.test(value);
-        const hasSymbole = /[!@#%&]/.test(value);
-        let validConditions = 0;
-        const numberOfMustBeValidConditions = 3;
-        const conditions = [hasLowerCase, hasUpperCase, hasNumber, hasSymbole];
+        const hasUpperCase = /[A-Z]/.test(value)
+        const hasLowerCase = /[a-z]/.test(value)
+        const hasNumber = /[0-9]/.test(value)
+        const hasSymbole = /[!@#%&]/.test(value)
+        let validConditions = 0
+        const numberOfMustBeValidConditions = 3
+        const conditions = [hasLowerCase, hasUpperCase, hasNumber, hasSymbole]
         console.log("conditions =>", conditions)
         conditions.forEach((condition) =>
           condition ? validConditions++ : null
