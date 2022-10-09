@@ -65,19 +65,10 @@ const Quiz = (props) => {
 
   return (
     <QuizContainer>
-<<<<<<< HEAD
       <Logo
         margin="0px auto"
         size="50px"
       />
-=======
-
-        <Logo
-          margin="0 auto"
-          size="50px"
-        />
-
->>>>>>> 29b385d07e64fa21b3b25030ad103f9f721c6940
       <Question
         bg={bgQuestion}
         boxShadow={boxShadow}

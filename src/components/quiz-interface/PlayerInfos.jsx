@@ -16,19 +16,6 @@ const PlayerInfos = (props) => {
                 firstName: "",
                 lastName: ""
             }}
-<<<<<<< HEAD
-=======
-            validationSchema={Yup.object({
-                firstName: Yup
-                    .string()
-                    .max(15, "*15 caractères maximum")
-                    .required("*Veuillez renseigner un prénom"),
-                lastName: Yup
-                    .string()
-                    .max(15, "*15 caractères maximum")
-                    .required("*Veuillez renseigner un nom")
-            })}
->>>>>>> 29b385d07e64fa21b3b25030ad103f9f721c6940
             onSubmit={(values, actions) => {
                 setInfos(values)
                 setStep(3)
