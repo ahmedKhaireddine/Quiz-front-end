@@ -1,6 +1,6 @@
 import React from "react"
 import { FormControl, FormErrorMessage, FormLabel, Input } from "@chakra-ui/react"
-import { Field, useField } from "formik"
+import { ErrorMessage, Field, useField } from "formik"
 import { useColorModeValue } from "@chakra-ui/react"
 
 const TextField = ({ label, ...props }) => {
@@ -12,6 +12,7 @@ const TextField = ({ label, ...props }) => {
     const hoverBorderColor = useColorModeValue("#02818a", "#9ceff5")
     const placeholderColor = useColorModeValue('gray.700', 'gray.300')
     const placeholderOpacity = useColorModeValue(0.8, 0.6)
+    console.log("error =>", meta.error)
 
     return (
         <FormControl isInvalid={meta.error && meta.touched}>

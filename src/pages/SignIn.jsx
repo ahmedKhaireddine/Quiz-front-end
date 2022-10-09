@@ -9,6 +9,7 @@ import TextField from "../components/TextField"
 YupPassword(Yup)
 
 const SignIn = () => {
+
   return (
     <Formik
       initialValues={{
@@ -19,21 +20,32 @@ const SignIn = () => {
       validationSchema={Yup.object({
         email: Yup
           .string()
-          .email("Entrer un email valide")
+          .email("Format d'email valide")
           .required("*Email requis"),
-        password: Yup
-          .string()
+        password: Yup.string()
+          .required("*Mote de passe requis")
           .min(8, "8 caractères minimum")
-          .password("Entrer un mot de passe valide")
-          .minUppercase(1, "*1 majuscule minimum")
-          .minNumbers(1, "1 chiffre minimum")
-          .minSymbols(1, "1 caractère spécial minimum")
-          .required("*Mot de passe requis")
+          .test("Mot de passe valide", "Mot de passe invalide", (value, context) => {
+            const hasUpperCase = /[A-Z]/.test(value);
+            const hasLowerCase = /[a-z]/.test(value);
+            const hasNumber = /[0-9]/.test(value);
+            const hasSymbole = /[!@#%&]/.test(value);
+            let validConditions = 0;
+            const numberOfMustBeValidConditions = 3;
+            const conditions = [hasLowerCase, hasUpperCase, hasNumber, hasSymbole];
+            console.log("conditions =>", conditions)
+            conditions.forEach((condition) =>
+              condition ? validConditions++ : null
+            );
+            if (validConditions >= numberOfMustBeValidConditions) {
+              return true
+            }
+            return false
+          })
       })}
       onSubmit={(values, actions) => {
-        // setInfos(values)
         actions.resetForm()
-        console.log(values)
+        console.log("values =>", values)
       }}
     >
       {(formik) => (
@@ -56,7 +68,7 @@ const SignIn = () => {
               mb="30px"
               tabIndex="-1"
             >
-              Tu y es presque...
+              Connexion
             </Heading>
             <TextField
               autoFocus
@@ -64,12 +76,15 @@ const SignIn = () => {
               name="email"
               placeholder="Email..."
               type="email"
+              // validate={validateLogin}
+
             />
             <TextField
               label="Mot de passe"
               name="password"
               placeholder="Mot de passe..."
               type="password"
+              // validate={validateLogin}
             />
             <Button type="submit">Entrer</Button>
             </VStack>
