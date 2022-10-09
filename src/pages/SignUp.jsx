@@ -26,6 +26,10 @@ const SignUp = () => {
       .string()
       .required("*Mot de passe requis")
       .min(8, "8 caractères minimum")
+      .minUppercase(1, "1 majuscule minimum")
+      .minLowercase(1, "1 minuscule minimum")
+      .minNumbers(1, "1 chiffre minimum")
+      .minSymbols(1, "1 symbole minimum")
       .test("Mot de passe valide", "Votre mot de passe doit contenir au minimum 8 caractères dont 1 minuscule, 1 majuscule, 1 chiffre et 1 symbole", (value, context) => {
         const hasUpperCase = /[A-Z]/.test(value)
         const hasLowerCase = /[a-z]/.test(value)
@@ -39,6 +43,7 @@ const SignUp = () => {
           condition ? validConditions++ : null
         )
         if (validConditions >= numberOfMustBeValidConditions) {
+          alert("Welcome to the jungle !")
           return true
         }
         return false
@@ -46,6 +51,7 @@ const SignUp = () => {
       confirmPassword: Yup
         .string()
         .password("Confirmer votre mot de passe")
+        .oneOf([Yup.ref("password"), ""], "La confirmation du mot de passe n'est pas valide")
         .required("*Veuillez confirmer votre mot de passe")
         // .test("Mot de passe valide", "Mot de passe invalide", (value, context) => {
         // })
