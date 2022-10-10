@@ -19,19 +19,31 @@ const NotFound = () => {
       <Title>404</Title>
       <Text
         color="#757575"
-        size="2em"
+        size={{
+          lg:"2em",
+          md:"1.5em",
+          sm:"1em"
+        }}
       >
         Oups, Cette page est introuvable!
       </Text>
       <Text
         color="#cfcfcf"
-        size="1.7em"
+        size={{
+          lg:"1.7em",
+          md:"1.2em",
+          sm:".7em"
+        }}
       >
         Le lien est peut-être corrompu,
       </Text>
       <Text
         color="#626262"
-        size="1em"
+        size={{
+          lg:"1em",
+          md:".8em",
+          sm:".5em"
+        }}
       >
         ou la page a peut-être été supprimée
       </Text>
@@ -46,7 +58,7 @@ const NotFound = () => {
       />
       <Box
         bottom={0}
-        height="390px"
+        height="380px"
         left={0}
         position="absolute"
         url={LeftElement}
