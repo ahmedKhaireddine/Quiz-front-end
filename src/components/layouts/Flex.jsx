@@ -1,3 +1,4 @@
+import { position } from "@chakra-ui/react"
 import React from "react"
 
 import { Container } from  "../../styles/FlexStyled"
@@ -11,6 +12,7 @@ const Flex = ({
     height,
     justifyContent,
     width,
+    position
 }) => {
     return (
         <Container
@@ -21,6 +23,7 @@ const Flex = ({
             height= {height}
             justifyContent= {justifyContent}
             width= {width}
+            position={position}
         >
             {children}
         </Container>
@@ -34,7 +37,8 @@ Flex.defaultProps= {
     flexDirection: "row",
     height: "100px",
     justifyContent: "normal",
-    width: "100px"
+    width: "100px",
+    position: ""
 }
 
 export default Flex;

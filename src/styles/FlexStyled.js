@@ -9,4 +9,5 @@ export const Container = styled.div`
     height: ${props => props.height};
     justify-content: ${props => props.justifyContent};
     width: ${props => props.width};
+    position: ${props => props.position};
 `

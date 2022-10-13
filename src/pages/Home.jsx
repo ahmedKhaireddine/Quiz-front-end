@@ -1,31 +1,19 @@
 import React from "react"
-<<<<<<< HEAD
 import Header from "../components/dashboard/Header"
+
+import FirstArticle from "../components/dashboard/FirstArticle"
+import SecondArticle from "../components/dashboard/SecondArticle"
+import ThirdArticle from "../components/dashboard/ThirdArticle"
 
 const Home = () => {
   return (
     <>
         <Header />
-
-        <section>
-
-        </section>
-
-
+        <FirstArticle />
+        <SecondArticle />
+        <ThirdArticle />
     </>
   )
 }
 
 export default Home
-=======
-
-const Home = () => {
-    return (
-      <div>
-        Home
-      </div>
-    )
-  }
-  
-  export default Home
->>>>>>> 86e3cb02b4cc0aee9dab89f507db25dfc6661323
