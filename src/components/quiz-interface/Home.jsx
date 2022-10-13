@@ -1,78 +1,96 @@
-import React from "react"
-import styled from "styled-components"
 import * as Yup from "yup"
-import { useFormik } from "formik"
+import { Box, useColorModeValue, VStack } from "@chakra-ui/react"
+import { Formik } from "formik"
+import { useContext } from "react"
 
-import Logo from "../Logo"
 import Button from "./core/Button"
+import LogoAnimated from "../LogoAnimated"
+import questions from "../../questions.json"
+import { QuizContext } from "../../contexts/Quiz"
+import TextField from "../TextField"
+import { Footer, Link, SmallText, Text } from "../../styles/HomeStyled"
 
-const Box = styled.div`
-    height: 400px;
-    width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction column;
-    border: 1px solid white;
-`
-const Form = styled.div`
-    display: flex;
-    flex-direction column;
-    justify-content: center;
-    align-items: center;
-    label {
-        font-size: 25px;
-        color: #F1F1F1;
-        margin: 10px auto;
-    }
-    input {
-        height: 30px;
-        width: 200px;
-        border-radius: 5px;
-        margin: 30px 0;
-    }
-`
 
-const Home = (props) => {
-    const formik = useFormik({
+const Home = () => {
+    const { setStep, setQuiz } = useContext(QuizContext)
 
-        initialValues: {
-            code: '',
-        },
-        validationSchema: Yup.object({
-            code: Yup.number()
-                .max(15, 'Must be 15 characters or less')
-                .required('*Champs requis'),
-        }),
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
-        },
-    });
+    const color = useColorModeValue("#1F939B", "#45DDE7")
 
     return (
         <>
-            <Box>
-                <Logo/>
-                <Form onSubmit={formik.handleSubmit}>
-                    <label htmlFor="code">Code</label><br></br>
-                    <input
-                        id="code"
-                        name="code"
-                        type="number"
-                        placeholder='Entrer le code ici'
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.code}
-                        error={formik.errors.code}
-                    />
-
-                    {formik.touched.code && formik.errors.code ? (
-                        <div>{formik.errors.code}</div>
-                    ) : null}
-
-                    <Button type="submit">Entrer</Button>
-                </Form>
-            </Box>
+            <Formik
+                initialValues={{code: ""}}
+                validationSchema={Yup.object({
+                    code: Yup
+                        .string()
+                        .required("Vous devez entrer un code")
+                        .max(15, "Le code ne peut contenir plus de 15 caractères")
+                })}
+                onSubmit={(values, actions) => {
+                    setQuiz({
+                        _id: "_id",
+                        questions
+                    })
+                    actions.resetForm()
+                    setStep(2)
+                }}
+            >
+                {(formik) => (
+                    <Box
+                        display="flex"
+                        flexDirection="column"
+                        justifyContent="center"
+                        width="45vw"
+                    >
+                        <VStack
+                            as="form"
+                            justifyContent="center"
+                            mx="auto"
+                            onSubmit={formik.handleSubmit}
+                            spacing="50px"
+                            w={{ base: "80%", md: 400 }}
+                        >
+                            <LogoAnimated word="Quiz"/>
+                            <TextField
+                                autoFocus
+                                name="code"
+                                placeholder="Entrer votre code..."
+                            />
+                            <Button type="submit">Entrer</Button>
+                        </VStack>
+                    </Box>
+                )}
+            </Formik>
+            <Footer>
+                <Text>
+                    <SmallText>
+                        Crée ton propre Quiz GRATUITEMENT sur &nbsp;
+                        <Link
+                            color={color}
+                            href="#"
+                        >
+                            Quiz.com
+                        </Link>
+                    </SmallText>
+                </Text>
+                <Text>
+                    <SmallText>
+                        <Link
+                            color={color}
+                            href="#"
+                        >
+                            Conditions d'utilisation
+                        </Link>
+                        &nbsp;|&nbsp;
+                        <Link
+                            color={color}
+                            href="#"
+                        >
+                            Confidentialité
+                        </Link>
+                    </SmallText>
+                </Text>
+            </Footer>
         </>
     )
 }

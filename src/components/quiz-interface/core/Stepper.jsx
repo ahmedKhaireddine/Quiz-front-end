@@ -7,7 +7,6 @@ import Quiz from "../Quiz"
 import { QuizContext } from "../../../contexts/Quiz"
 
 const Stepper = () => {
-
   const { step } = useContext(QuizContext)
 
   switch (step) {
@@ -19,9 +18,6 @@ const Stepper = () => {
       return <Quiz />
     case 4:
       return <Over />
-
-    default:
-      return <h1 style={{ color: "white" }}>Unknown step</h1>;
   }
 }
 

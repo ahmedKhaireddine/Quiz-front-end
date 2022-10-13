@@ -1,21 +1,51 @@
 import React from "react"
+import { useColorModeValue } from "@chakra-ui/react"
 
-const ChoiceList = (props) => {
+import { Item, ListItems, Polygon, Text } from "../../../styles/ChoiceListStyled"
 
-  const { choices } = props
+const ChoiceList = ({
+  answerSelected,
+  choices,
+  handleClick,
+  questionId
+}) => {
+  const bgItems = useColorModeValue("#f1f1f1", "#171923")
+  const bgItemSelected = useColorModeValue("#1f939b", "#45DDE7")
+  const bgPolygon = useColorModeValue("#1f939b", "#45DDE7")
+  const boxShadow = useColorModeValue("rgba(0, 0, 0, 0.1)", "rgba(255, 255, 255, 0.1)")
+  const color = useColorModeValue("rgba(0, 0, 0, 0.8)", "#F1F1F1")
 
-  const choicesItemsJsx = choices.map(({id, value, weight}, index) => {
-    return <li
-      key={index}
-      onClick={() => {}}
-    >{value}</li>
+  const choicesItemsJsx = choices.map(({ id, value, weight }, index) => {
+    return (
+      <Item
+        onClick={() => handleClick({
+          answerId: id,
+          questionId,
+          weight
+        })}
+        bgItems={bgItems}
+        bgItemSelected={bgItemSelected}
+        boxShadow={boxShadow}
+        color={color}
+        key={index}
+        selected={id === answerSelected.answerId}
+      >
+        <Polygon
+          bgPolygon={bgPolygon}
+        />
+        <Text>{value}</Text>
+      </Item>
+    )
   })
 
-  return <ul>{choicesItemsJsx}</ul>
+  return <ListItems>{choicesItemsJsx}</ListItems>
 }
 
 ChoiceList.defaultProps = {
-  choises: []
+  answerSelected: {},
+  choices: [],
+  handleClick: () => {},
+  questionId: ""
 }
 
 export default ChoiceList

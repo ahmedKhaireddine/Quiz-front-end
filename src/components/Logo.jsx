@@ -1,29 +1,41 @@
 import React from "react"
-import styled from "styled-components"
+import { useColorModeValue } from "@chakra-ui/react"
 
-const Span = styled.span`
-    font-family: 'Henny Penny';
-    font-size: ${props => props.size};
-    color: #F1F1F1;
-`
-    
-const Link = styled.a`
-    text-decoration: none;
-`
-const Logo = ({href, size}) => {
+import { Link, Span } from "../styles/LogoStyled"
+
+const Logo = ({
+    color,
+    href,
+    margin,
+    padding,
+    size
+}) => {
+    const bg = useColorModeValue("#1f939b", "#45DDE7")
+
     return (
-        <Link href={href}>
-            <Span size={size}>
+        <Link
+            href={href}
+            margin={margin}
+            padding={padding}
+        >
+            <Span
+                bg={bg}
+                color={color}
+                margin={margin}
+                size={size}
+            >
                 Quiz
             </Span>
         </Link>
-        
     )
 }
 
 Logo.defaultProps = {
-    href: '#',
-    size: '100px'
+    color: "#45DDE7",
+    href: "#",
+    margin: "0px",
+    padding: "0px",
+    size: "100px"
 }
 
 export default Logo

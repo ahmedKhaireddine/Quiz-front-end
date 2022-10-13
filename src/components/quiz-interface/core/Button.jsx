@@ -1,33 +1,33 @@
 import React from "react"
-import styled from "styled-components"
+import { useColorModeValue } from "@chakra-ui/react"
 
-const Btn = styled.div`
-    height: 40px;
-    width: 300px;
-    font-size: 30px;
-    color: white;
-    background: #45DDE7;
-    outline: none;
-    cursor: pointer;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px auto;
-    :hover {
-        background: #95F6FD;
-        color: #636161;
-    }
-`
+import { Btn } from "../../../styles/ButtonStyled"
 
-const Button = ({handleClick, children}) => {
-    return ( 
-        <Btn onClick={children} type='button'>{children}</Btn>
+const Button = ({ handleClick, children, width, type }) => {
+    const bg = useColorModeValue("#1f939b", "#45DDE7")
+    const color = useColorModeValue("rgba(0, 0, 0, 0.8)", "#F1F1F1")
+    const hoverBg = useColorModeValue("#02818a", "#9ceff5")
+    const hoverColor = useColorModeValue("#fafafa", "rgba(0, 0, 0, 0.8)")
+
+    return (
+        <Btn
+            bg={bg}
+            color={color}
+            hoverBg={hoverBg}
+            hoverColor={hoverColor}
+            onClick={handleClick}
+            type={type}
+            width={width}
+        >
+            {children}
+        </Btn>
     )
 }
 
 Button.defaultProps = {
-    handleClick: () => {}
+    handleClick: () => {},
+    type: "button",
+    width: "200px"
 }
 
 export default Button
