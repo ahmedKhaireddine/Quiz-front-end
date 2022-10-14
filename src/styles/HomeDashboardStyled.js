@@ -12,10 +12,10 @@ export const Container = styled.div`
 `
 
 export const BoxSlogan = styled.div`
-    top: 28%;
-    left: 16%;
-    height: 250px;
-    width: 400px;
+    top: 27%;
+    left: 20%;
+    height: 275px;
+    width: 450px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     border-radius: 5px;
     position: relative;
@@ -37,15 +37,16 @@ export const BoxSlogan = styled.div`
     
     p {
         font-family: "Henny Penny";
-        font-size: 40px;
+        letter-spacing: 1px;
+        font-size: 45px;
         font-weight: 600;
         color: white;
     }
 `
 
 export const BoxDiscover = styled.div`
-    top: 18%;
-    left: 38%;
+    top: 15%;
+    left: 43%;
     height: 150px;
     width: 250px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -123,34 +124,11 @@ export const Button = styled.button`
 
 // ---------- FirstArticle ---------- //
 
-export const ContainerArticle = styled.div`
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-`
-
-export const Text = styled.div`
-    height: 80vh;
-    width: 80vw;
-    background-color: #BABABA;
-    padding: ${props => props.padding};
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-
-    p {
-        font-size: 40px;
-        color: white;
-    }
-`
-
 export const Image = styled.div`
-    height: 70vh;
-    width: 40vw;
+    height: 60vh;
+    width: 35vw;
     position: absolute;
+    right: ${props => props.right};
     left: ${props => props.left};
     background-image: ${props => props.image};
     background-size: cover;
@@ -166,3 +144,20 @@ export const Section = styled.div`
     background-size: cover;
     background-position: center;
 `
+
+export const Text = styled.div`
+    height: 70vh;
+    width: 70vw;
+    background-color: #BABABA;
+    padding: ${props => props.padding};
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+    p {
+        font-size: 36px;
+        color: white;
+        text-align: center;
+    }
+`
+

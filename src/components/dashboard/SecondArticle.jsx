@@ -14,10 +14,10 @@ const SecondArticle = () => {
         position="relative"
     >   
         <Image 
-            left="5%"
+            right="55%"
             image={`url(${team})`}
         /> 
-        <Text padding="0 100px 0 630px">
+        <Text padding="0 100px 0 600px">
             <div>
                 <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'snchanged. standard dummy text ever since the 1500s.

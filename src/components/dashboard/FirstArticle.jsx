@@ -13,7 +13,7 @@ const FirstArticle = () => {
       width="100vw"
       position="relative"
     >     
-      <Text padding="0 630px 0 100px">
+      <Text padding="0 600px 0 100px">
         <div>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'snchanged. standard dummy text ever since the 1500s.
