@@ -20,10 +20,11 @@ const SignIn = () => {
   const validationSchema = Yup.object({
     email: Yup
       .string()
-      .email("Format d'email valide")
+      .email("Format d'email valide") // A checker
       .required("*Email requis"),
-    password: Yup.string()
-      .required("*Mote de passe requis")
+    password: Yup
+      .string()
+      .required("*Mot de passe requis")
       .min(8, "8 caractères minimum")
       .test("Mot de passe valide", "Mot de passe invalide", (value, context) => {
         const hasUpperCase = /[A-Z]/.test(value);
@@ -73,7 +74,7 @@ const SignIn = () => {
             <Heading
               as="h1"
               mb="30px"
-              tabIndex="-1"
+              // tabIndex="-1"
             >
               Connexion
             </Heading>
