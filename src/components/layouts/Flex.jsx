@@ -12,7 +12,8 @@ const Flex = ({
     height,
     justifyContent,
     width,
-    position
+    position,
+    padding
 }) => {
     return (
         <Container
@@ -24,6 +25,7 @@ const Flex = ({
             justifyContent= {justifyContent}
             width= {width}
             position={position}
+            padding={padding}
         >
             {children}
         </Container>
@@ -38,7 +40,8 @@ Flex.defaultProps= {
     height: "100px",
     justifyContent: "normal",
     width: "100px",
-    position: ""
+    position: "",
+    padding: ""
 }
 
 export default Flex;

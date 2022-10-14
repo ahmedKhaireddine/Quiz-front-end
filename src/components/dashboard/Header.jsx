@@ -11,7 +11,7 @@ const Header = () => {
         </BoxSlogan>
         <BoxDiscover>
             <Button>
-                Découvrir
+                <a href="#description">Découvrir</a>
             </Button>
         </BoxDiscover>
     </Container>

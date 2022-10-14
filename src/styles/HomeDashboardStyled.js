@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import people from "../assets/images/people.jpg"
-import tab from "../assets/images/1155173.svg"
+import tablet from "../assets/images/tablet.svg"
 
 // ---------- Header ---------- //
 export const Container = styled.div`
@@ -68,7 +68,7 @@ export const BoxDiscover = styled.div`
     }
 `
 
-export const Button = styled.button`
+export const Button = styled.a`
     width: 190px;
     height: 50px;
     color: #fff;
@@ -77,6 +77,8 @@ export const Button = styled.button`
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 3px;
+    text-align: center;
+    line-height: 50px;
     background: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -91,7 +93,6 @@ export const Button = styled.button`
     :hover {
     color: #72e0e8;
     background: transparent;
-    // box-shadow: none;
     }
 
     &::before, ::after {
@@ -140,9 +141,9 @@ export const Image = styled.div`
 export const Section = styled.div`
     height: 50vh;
     width: 50vw;
-    background-image: url(${tab});
-    background-size: cover;
-    background-position: center;
+    // background-image: url(${tablet});
+    // background-size: cover;
+    // background-position: center;
 `
 
 export const Text = styled.div`
@@ -151,6 +152,8 @@ export const Text = styled.div`
     background-color: #BABABA;
     padding: ${props => props.padding};
     border-radius: 5px;
+    box-shadow:  20px 20px 36px #cccccc,
+             -20px -20px 36px #f4f4f4;
     display: flex;
     align-items: center;
 

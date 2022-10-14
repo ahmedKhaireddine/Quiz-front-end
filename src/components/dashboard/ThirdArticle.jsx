@@ -12,6 +12,7 @@ const ThirdArticle = () => {
             width="100vw"
         >     
             <Section>
+              <img src="../../assets/images.tablet.svg" alt="tablette" /> 
             </Section>
         </Flex>
   )

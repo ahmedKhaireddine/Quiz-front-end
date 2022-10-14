@@ -12,6 +12,7 @@ const SecondArticle = () => {
         height="100vh"
         width="100vw"
         position="relative"
+        // padding="0 170px 0 0"
     >   
         <Image 
             right="55%"

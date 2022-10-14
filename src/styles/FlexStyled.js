@@ -10,4 +10,5 @@ export const Container = styled.div`
     justify-content: ${props => props.justifyContent};
     width: ${props => props.width};
     position: ${props => props.position};
+    padding: ${props => props.padding}
 `
