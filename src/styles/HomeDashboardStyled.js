@@ -41,6 +41,7 @@ export const BoxSlogan = styled.div`
         font-size: 45px;
         font-weight: 600;
         color: white;
+}
     }
 `
 
@@ -87,12 +88,12 @@ export const Button = styled.a`
     padding: 0;
     border: none;
     border-radius: 5px;
-    background: #45dde7;
-    background: linear-gradient(0deg, rgba(69, 220, 231, 1) 0%, rgba(114, 224, 232, 1) 100%);
+    background: #1f939b;
+    background: linear-gradient(0deg, rgba(19, 113, 120, 1) 0%, rgba(87, 204, 212, 1) 100%);
 
     :hover {
-    color: #72e0e8;
-    background: transparent;
+        color: #72e0e8;
+        background: transparent;
     }
 
     &::before, ::after {
@@ -102,7 +103,7 @@ export const Button = styled.a`
         right: 0;
         height: 2px;
         width: 0;
-        background: #72e0e8;
+        background: #37a8b0;
         box-shadow:
         -1px -1px 5px 0px #fff,
         7px 7px 20px 0px #0003,
@@ -164,3 +165,22 @@ export const Text = styled.div`
     }
 `
 
+// ---------- ScrollTop ---------- //
+
+export const Arrow = styled.div`
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgba(19, 113, 120, 1) 0%, rgba(87, 204, 212, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+
+    .icone {
+        width: 35px;
+    }
+`

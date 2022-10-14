@@ -10,6 +10,7 @@ const Flex = ({
     color,
     flexDirection,
     height,
+    id,
     justifyContent,
     width,
     position,
@@ -22,6 +23,7 @@ const Flex = ({
             color= {color}
             flexDirection= {flexDirection}
             height= {height}
+            id={id}
             justifyContent= {justifyContent}
             width= {width}
             position={position}
@@ -41,7 +43,8 @@ Flex.defaultProps= {
     justifyContent: "normal",
     width: "100px",
     position: "",
-    padding: ""
+    padding: "",
+    id: ""
 }
 
 export default Flex;
