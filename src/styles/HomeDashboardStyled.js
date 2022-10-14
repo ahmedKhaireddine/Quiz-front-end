@@ -67,6 +67,60 @@ export const BoxDiscover = styled.div`
     }
 `
 
+export const Button = styled.button`
+    width: 190px;
+    height: 50px;
+    color: #fff;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    background: #45dde7;
+    background: linear-gradient(0deg, rgba(69, 220, 231, 1) 0%, rgba(114, 224, 232, 1) 100%);
+
+    :hover {
+    color: #72e0e8;
+    background: transparent;
+    // box-shadow: none;
+    }
+
+    &::before, ::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 2px;
+        width: 0;
+        background: #72e0e8;
+        box-shadow:
+        -1px -1px 5px 0px #fff,
+        7px 7px 20px 0px #0003,
+        4px 4px 5px 0px #0002;
+        transition: 400ms ease all;
+    }
+
+    &::before {
+        right: inherit;
+        top: inherit;
+        left: 0;
+        bottom: 0;
+    }
+
+    &:hover::before, :hover::after {
+        width: 100%;
+        transition: 800ms ease all;
+    }
+`
+
 // ---------- FirstArticle ---------- //
 
 export const ContainerArticle = styled.div`

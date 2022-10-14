@@ -1,7 +1,7 @@
 import React from "react"
 
-import Button from "../quiz-interface/core/Button"
-import { BoxDiscover, BoxSlogan, Container } from "../../styles/HomeDashboardStyled"
+// import Button from "../quiz-interface/core/Button"
+import { BoxDiscover, BoxSlogan, Button, Container } from "../../styles/HomeDashboardStyled"
 
 const Header = () => {
   return (
@@ -10,7 +10,7 @@ const Header = () => {
             <p>Animez vos soirées entre amis</p>
         </BoxSlogan>
         <BoxDiscover>
-            <Button color="white">
+            <Button>
                 Découvrir
             </Button>
         </BoxDiscover>
