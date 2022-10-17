@@ -10,10 +10,10 @@ export const Btn = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: ${props => props.margin};
     padding: 7px 30px;
     border: 1px solid rgba(255, 255, 255, 0);
-
+    ${props => props.boxShadow && `box-shadow: ${props.boxShadow}`};
     :hover {
         background-color: ${props => props.hoverBg};
         color: ${props => props.hoverColor};
