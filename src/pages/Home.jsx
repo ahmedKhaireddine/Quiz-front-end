@@ -10,12 +10,12 @@ import ScrollToTop from "../components/dashboard/ScrollToTop"
 const Home = () => {
   return (
     <>
-        <Header />
-        <FirstArticle />
-        <SecondArticle />
-        <ThirdArticle />
-        <ContactForm />
-        <ScrollToTop />
+        <Header className="v-slider-bloc"/>
+        <FirstArticle/>
+        <SecondArticle/>
+        <ThirdArticle/>
+        <ContactForm/>
+        <ScrollToTop/>
     </>
   )
 }

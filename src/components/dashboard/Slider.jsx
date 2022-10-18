@@ -1,51 +1,69 @@
-import React from "react"
+import React, { Component } from "react"
+import Carousel from "react-spring-3d-carousel"
+import { config } from "react-spring"
 
-import { Arrow, Carousel, CarouselImages, Nav} from "../../styles/SliderStyled"
+import { ArrowContainer, CarouselContainer } from "../../styles/SliderStyled"
 
-const Slider = () => {
+export default class Slider extends Component {
+  state = {
+    goToSlide: 0,
+    offsetRadius: 2,
+    showNavigation: true,
+    config: config.gentle
+  }
 
-    let slider = document.querySelector(".slider");
-    let sliderInner = document.querySelector(".slider__inner");
-    let sliderNav = document.querySelector(".slider__nav");
-    let numImages = sliderInner.childElementCount;
-    let delta = (2 * Math.PI) / numImages;
-    let currImage = 0;
-
-    function onClick(e) {
-    e.stopPropagation();
-
-    const target = e.target;
-    if (target.tagName.toUpperCase() != "BUTTON") return;
-
-    if (target.classList.contains("slider__next")) {
-        currImage++;
-    } else {
-        currImage--;
+  slides = [
+    {
+      key: 1,
+      content: <img src="https://picsum.photos/id/0/650/400/?random" alt="1" />
+    },
+    {
+      key: 2,
+      content: <img src="https://picsum.photos/id/1/650/400/?random" alt="2" />
+    },
+    {
+      key: 3,
+      content: <img src="https://picsum.photos/id/10/650/400/?random" alt="3" />
+    },
+    {
+      key: 4,
+      content: <img src="https://picsum.photos/id/100/650/400/?random" alt="4" />
+    },
+    {
+      key: 5,
+      content: <img src="https://picsum.photos/id/1000/650/400/?random" alt="5" />
+    },
+    {
+      key: 6,
+      content: <img src="https://picsum.photos/id/1001/650/400/?random" alt="6" />
+    },
+    {
+      key: 7,
+      content: <img src="https://picsum.photos/id/1002/650/400/?random" alt="7" />
+    },
+    {
+      key: 8,
+      content: <img src="https://picsum.photos/id/1003/650/400/?random" alt="8" />
     }
+  ].map((slide, index) => {
+    return { ...slide, onClick: () => this.setState({ goToSlide: index }) }
+  })
 
-    sliderInner.style.transform = `rotateY(${currImage * -delta}rad)`;
-    }
+  onChangeInput = e => {
+    this.setState({
+      [e.target.name]: parseInt(e.target.value, 10) || 0
+    })
+  }
 
-    sliderNav.addEventListener("click", onClick, true);
-
-  return (
-        <Carousel className="slider">
-            <CarouselImages className="slider__inner">
-                <img className="slider__img" src="https://i.ibb.co/GWFRQBj/phone.jpg" alt=""/>
-                <img className="slider__img" src="https://i.ibb.co/GWFRQBj/phone.jpg" alt=""/>
-                <img className="slider__img" src="https://i.ibb.co/GWFRQBj/phone.jpg" alt=""/>
-                <img className="slider__img" src="https://i.ibb.co/GWFRQBj/phone.jpg" alt=""/>
-                <img className="slider__img" src="https://i.ibb.co/GWFRQBj/phone.jpg" alt=""/>
-                <img className="slider__img" src="https://i.ibb.co/GWFRQBj/phone.jpg" alt=""/>
-                <img className="slider__img" src="https://i.ibb.co/GWFRQBj/phone.jpg" alt=""/>
-                <img className="slider__img" src="https://i.ibb.co/GWFRQBj/phone.jpg" alt=""/>
-            </CarouselImages>
-            <Nav className="slider__nav">
-                <Arrow className="slider__prev">Prev</Arrow>
-                <Arrow className="slider__next">Next</Arrow>
-            </Nav>
-        </Carousel>
-  )
+  render() {
+    return (
+      <CarouselContainer>
+        <Carousel
+          slides={this.slides}
+          showNavigation={this.state.showNavigation}
+        />
+        <ArrowContainer/>
+      </CarouselContainer>
+    )
+  }
 }
-
-export default Slider
