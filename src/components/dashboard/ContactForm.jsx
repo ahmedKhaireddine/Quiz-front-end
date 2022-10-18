@@ -82,8 +82,8 @@ const ContactForm = () => {
                             label="Message"
                             name="message"
                             type="text-area"
+                            marginBottom="40px" 
                         />
-
 
                         <Button type="submit">Envoyer</Button>
                         </VStack>
