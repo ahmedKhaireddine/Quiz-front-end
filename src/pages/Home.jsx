@@ -1,11 +1,12 @@
 import React from "react"
-import Header from "../components/dashboard/Header"
 
-import FirstArticle from "../components/dashboard/FirstArticle"
-import SecondArticle from "../components/dashboard/SecondArticle"
-import ThirdArticle from "../components/dashboard/ThirdArticle"
-import ContactForm from "../components/dashboard/ContactForm"
-import ScrollToTop from "../components/dashboard/ScrollToTop"
+import ContactForm from "../components/dashboard/Home/ContactForm"
+import FirstArticle from "../components/dashboard/Home/FirstArticle"
+import Footer from "../components/dashboard/Home/Footer"
+import Header from "../components/dashboard/Home/Header"
+import ScrollToTop from "../components/dashboard/Home/ScrollToTop"
+import SecondArticle from "../components/dashboard/Home/SecondArticle"
+import ThirdArticle from "../components/dashboard/Home/ThirdArticle"
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <SecondArticle/>
         <ThirdArticle/>
         <ContactForm/>
+        <Footer/>
         <ScrollToTop/>
     </>
   )

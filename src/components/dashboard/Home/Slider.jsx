@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Carousel from "react-spring-3d-carousel"
 import { config } from "react-spring"
 
-import { ArrowContainer, CarouselContainer } from "../../styles/SliderStyled"
+import { ArrowContainer, CarouselContainer } from "../../../styles/SliderStyled"
 
 export default class Slider extends Component {
   state = {

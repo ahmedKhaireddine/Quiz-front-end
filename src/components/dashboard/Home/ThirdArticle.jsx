@@ -1,8 +1,8 @@
 import React from "react"
 
-import Flex from "../layouts/Flex"
+import Flex from "../../layouts/Flex"
 import Slider from "./Slider"
-import { Section } from "../../styles/HomeDashboardStyled"
+// import { Section } from "../../../styles/HomeDashboardStyled"
 
 const ThirdArticle = () => {
   return (

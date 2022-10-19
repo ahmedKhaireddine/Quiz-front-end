@@ -1,8 +1,8 @@
 import React from "react"
 
-import Flex from "../layouts/Flex"
-import { Image, Text } from "../../styles/HomeDashboardStyled"
-import team from "../../assets/images/team.jpg"
+import Flex from "../../layouts/Flex"
+import { Image, Text } from "../../../styles/HomeDashboardStyled"
+import team from "../../../assets/images/team.jpg"
 
 const FirstArticle = () => {
   return (

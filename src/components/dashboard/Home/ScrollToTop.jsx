@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
-import { Arrow } from "../../styles/HomeDashboardStyled"
-import arrowUp from "../../assets/icônes/arrow-up-solid.svg" 
+import { Arrow } from "../../../styles/HomeDashboardStyled"
+import arrowUp from "../../../assets/icônes/arrow-up-solid.svg" 
 
 const ScrollToTop = () => {
 
