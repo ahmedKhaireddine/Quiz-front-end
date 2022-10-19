@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { Formik } from "formik"
 import { IoPersonSharp } from "react-icons/io5"
 import { RiLockFill } from "react-icons/ri"
+import { useNavigate } from "react-router-dom"
 
 import Button from "../quiz-interface/core/Button"
 import { Form, Link, Text } from "../../styles/ReusableTagsStyled"
@@ -11,13 +12,15 @@ import { UserContext } from "../../contexts/User"
 
 const SignInFormik = (props) => {
   const { setUser } = useContext(UserContext)
+  let navigate = useNavigate()
+  
   const signIn = (values, actions) => {
     setUser({
       email: values.email,
       role:"user",
       token:"string",
     })
-
+    navigate("/dashboard")
     actions.resetForm()
   }
 
