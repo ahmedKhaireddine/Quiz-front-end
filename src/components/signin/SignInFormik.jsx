@@ -1,4 +1,4 @@
-import React from "react"
+import { useContext } from "react"
 import { Formik } from "formik"
 import { IoPersonSharp } from "react-icons/io5"
 import { RiLockFill } from "react-icons/ri"
@@ -7,12 +7,18 @@ import Button from "../quiz-interface/core/Button"
 import { Form, Link, Text } from "../../styles/ReusableTagsStyled"
 import { SignInSchema } from "../../validations/auth"
 import TextFieldWithIcon from "../TextFieldWithIcon"
-
+import { UserContext } from "../../contexts/User"
 
 const SignInFormik = (props) => {
+  const { setUser } = useContext(UserContext)
   const signIn = (values, actions) => {
-    console.log("values =>", values)
-    // actions.resetForm()
+    setUser({
+      email: values.email,
+      role:"user",
+      token:"string",
+    })
+
+    actions.resetForm()
   }
 
   return (
