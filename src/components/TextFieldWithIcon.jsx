@@ -8,7 +8,7 @@ const TextFieldWithIcon = (props) => {
 
   return (
       <FormControl
-        height="70px"
+        height={meta.error && meta.touched ? "auto" : "60px"}
         isInvalid={meta.error && meta.touched}
         margin="0 auto"
         width="60%"
@@ -33,6 +33,7 @@ const TextFieldWithIcon = (props) => {
             focusBorderColor="none"
             height="50px"
             name={name}
+            _placeholder={{ fontSize: ".8em" }}
             paddingLeft="45px"
             placeholder={placeholder}
             type={type}
