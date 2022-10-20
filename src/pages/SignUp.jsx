@@ -4,8 +4,11 @@ import Flex from "../components/layouts/Flex"
 import LeftSide from "../components/signin/LeftSide"
 import RightSide from "../components/signup/RightSide"
 import { UserContextProvider } from "../contexts/User"
+import { useTitle } from "../hooks/useTitle"
 
 const SignUp = () => {
+  useTitle("Inscription")
+
   return (
     <UserContextProvider>
       <Flex
