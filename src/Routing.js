@@ -21,16 +21,6 @@ const routes = [
     name: "Quiz Interface"
   },
   {
-    element: <Dashboard/>,
-    name: "dashboard",
-    path: "/dashboard"
-  },
-  {
-    element: <NotFound/>,
-    name: "Error 404",
-    path: "*"
-  },
-  {
     element: <SignIn/>,
     name: "signin",
     path: "/signin"
@@ -40,7 +30,17 @@ const routes = [
     name: "signup",
     path: "/signup"
   },
-    {
+  {
+    element: <Dashboard/>,
+    name: "dashboard",
+    path: "/dashboard"
+  },
+  // {
+  //   element: <Error404/>,
+  //   name: "Error 404",
+  //   path: "*"
+  // },
+  {
     element: <Test/>,
     name: "test",
     path: "/test"

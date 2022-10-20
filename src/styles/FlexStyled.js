@@ -7,6 +7,8 @@ export const Container = styled.div`
     display: flex;
     flex-direction: ${props => props.flexDirection};
     height: ${props => props.height};
-    justify-content: ${props => props.justifyContent}; 
-    width: ${props => props.width}; 
+    justify-content: ${props => props.justifyContent};
+    width: ${props => props.width};
+    position: ${props => props.position};
+    padding: ${props => props.padding}
 `
