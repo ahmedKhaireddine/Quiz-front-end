@@ -6,6 +6,7 @@ import { RiLockFill } from "react-icons/ri"
 
 import Button from "../quiz-interface/core/Button"
 import { Form, Link, Text } from "../../styles/ReusableTagsStyled"
+import { SignUpSchema } from "../../validations/auth"
 import TextFieldWithIcon from "../TextFieldWithIcon"
 
 const SignUpFormik = (props) => {
@@ -23,6 +24,7 @@ const SignUpFormik = (props) => {
         password: ""
       }}
       onSubmit={signUp}
+      validationSchema={SignUpSchema}
     >
       {(formik) => (
         <Form
