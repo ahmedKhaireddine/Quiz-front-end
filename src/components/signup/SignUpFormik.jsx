@@ -1,4 +1,4 @@
-import React from "react"
+import { useContext } from "react"
 import { FaEnvelope } from "react-icons/fa"
 import { Formik } from "formik"
 import { IoPersonSharp } from "react-icons/io5"
@@ -8,10 +8,19 @@ import Button from "../quiz-interface/core/Button"
 import { Form, Link, Text } from "../../styles/ReusableTagsStyled"
 import { SignUpSchema } from "../../validations/auth"
 import TextFieldWithIcon from "../TextFieldWithIcon"
+import { UserContext } from "../../contexts/User"
 
 const SignUpFormik = (props) => {
+  const { setUser } = useContext(UserContext)
+
   const signUp = (values, actions) => {
-    console.log("values =>", values)
+    setUser({
+      active: "false",
+      email: values.email,
+      role: "user",
+      token: "string"
+    })
+
     actions.resetForm()
   }
 

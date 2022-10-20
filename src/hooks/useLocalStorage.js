@@ -24,7 +24,7 @@ export const useLocalStorage = (key, initialValue) => {
     } catch (error) {
       console.log(error)
     }
-  }, [key, storedValue])
+  }, [key])
 
   return [storedValue, setValue]
 }
