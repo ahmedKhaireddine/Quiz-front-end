@@ -1,19 +1,18 @@
 import { useContext } from "react"
-import { FaEnvelope } from "react-icons/fa"
 import { Formik } from "formik"
-import { IoPersonSharp } from "react-icons/io5"
-import { RiLockFill } from "react-icons/ri"
 
+import { ATTRIBUTES_REGISTEATION_FIELDS } from "../../constants"
 import Button from "../quiz-interface/core/Button"
+import FieldsList from "../FieldsList"
 import { Form, Link, Text } from "../../styles/ReusableTagsStyled"
 import { SignUpSchema } from "../../validations/auth"
-import TextFieldWithIcon from "../TextFieldWithIcon"
 import { UserContext } from "../../contexts/User"
 
 const SignUpFormik = (props) => {
   const { setUser } = useContext(UserContext)
 
   const signUp = (values, actions) => {
+    console.log("values => ", values)
     setUser({
       active: "false",
       email: values.email,
@@ -39,31 +38,7 @@ const SignUpFormik = (props) => {
         <Form
           onSubmit={formik.handleSubmit}
         >
-          <TextFieldWithIcon
-            autoFocus
-            icon={<IoPersonSharp />}
-            name="fullName"
-            placeholder="Nom complet..."
-            type="text"
-          />
-          <TextFieldWithIcon
-            icon={<FaEnvelope />}
-            name="email"
-            placeholder="Email..."
-            type="email"
-          />
-          <TextFieldWithIcon
-            icon={<RiLockFill />}
-            name="password"
-            placeholder="Mot de passe..."
-            type="password"
-          />
-          <TextFieldWithIcon
-            icon={<RiLockFill />}
-            name="confirmPassword"
-            placeholder="Confirmation du mot de passe..."
-            type="password"
-          />
+          <FieldsList data={ATTRIBUTES_REGISTEATION_FIELDS}/>
           <Button
             boxShadow= "rgba(0, 0, 0, 0.35) 0px 5px 15px"
             margin="20px auto 30px"
