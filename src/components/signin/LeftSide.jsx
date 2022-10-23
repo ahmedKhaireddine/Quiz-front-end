@@ -1,7 +1,7 @@
 import React from "react"
 
 import { Box } from "../../styles/ReusableTagsStyled"
-import Login from "../../assets/mobile-login-illustration-v2.svg"
+import Login from "../../assets/svg/login-illustration.svg"
 
 const LeftSide = (props) => {
   return (
