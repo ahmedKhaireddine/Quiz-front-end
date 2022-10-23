@@ -11,7 +11,7 @@ import { UserContext } from "../../contexts/User"
 const SignUpFormik = (props) => {
   const { setUser } = useContext(UserContext)
 
-  const signUp = (values, actions) => {
+  const onSubmit = (values, actions) => {
     console.log("values => ", values)
     setUser({
       active: "false",
@@ -31,7 +31,7 @@ const SignUpFormik = (props) => {
         fullName: "",
         password: ""
       }}
-      onSubmit={signUp}
+      onSubmit={onSubmit}
       validationSchema={SignUpSchema}
     >
       {(formik) => (
