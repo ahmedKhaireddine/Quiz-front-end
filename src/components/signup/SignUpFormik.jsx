@@ -1,5 +1,6 @@
 import { Formik } from "formik"
 import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 
 import Button from "../quiz-interface/core/Button"
 import FieldsList from "../FieldsList"
@@ -10,6 +11,7 @@ import { UserContext } from "../../contexts/User"
 
 const SignUpFormik = (props) => {
   const { setUser } = useContext(UserContext)
+  const navigate = useNavigate()
 
   const onSubmit = (values, actions) => {
     setUser({
@@ -18,6 +20,8 @@ const SignUpFormik = (props) => {
       role: "user",
       token: "string"
     })
+
+    navigate("/dashboard")
 
     actions.resetForm()
   }
