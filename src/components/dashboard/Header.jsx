@@ -10,9 +10,9 @@ const Header = () => {
             <p>Animez vos soirées entre amis</p>
         </BoxSlogan>
         <BoxDiscover>
-            <Button>
-                <a href="#description">Découvrir</a>
-            </Button>
+          <a href="#description">
+            <Button>Découvrir</Button>
+          </a>
         </BoxDiscover>
     </Container>
   )

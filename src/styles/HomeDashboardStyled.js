@@ -176,8 +176,8 @@ export const Arrow = styled.div`
     justify-content: center;
     align-items: center;
     position: fixed;
-    right: 30px;
-    bottom: 30px;
+    right: 20px;
+    bottom: 20px;
     cursor: pointer;
 
     .icone {
