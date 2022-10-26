@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export const useScoreCalculator = (answers) => {
+const useScoreCalculator = (answers) => {
   const [score, setScore] = useState(0)
 
   useEffect(() => {
@@ -14,3 +14,5 @@ export const useScoreCalculator = (answers) => {
 
   return score
 }
+
+export default useScoreCalculator

@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react"
 
-export const useLocalStorage = (key, initialValue) => {
+const useLocalStorage = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
     if (typeof window === "undefined") return initialValue
 
@@ -28,3 +28,5 @@ export const useLocalStorage = (key, initialValue) => {
 
   return [storedValue, setValue]
 }
+
+export default useLocalStorage

@@ -4,7 +4,7 @@ import Flex from "../components/layouts/Flex"
 import LeftSide from "../components/signin/LeftSide"
 import RightSide from "../components/signin/RightSide"
 import { UserContextProvider } from "../contexts/User"
-import { useTitle } from "../hooks/useTitle"
+import { useTitle } from "../hooks"
 
 const SignIn = () => {
   useTitle("Connexion")

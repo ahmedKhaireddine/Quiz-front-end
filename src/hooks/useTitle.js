@@ -1,9 +1,11 @@
 import { useEffect } from "react"
 
-export const useTitle = (title) => {
+const useTitle = (title) => {
   useEffect(() => {
       document.title = `${title} - Quiz`
   }, [title])
 
   return null
 }
+
+export default useTitle
