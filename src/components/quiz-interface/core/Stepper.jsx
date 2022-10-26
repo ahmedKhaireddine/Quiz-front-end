@@ -18,6 +18,8 @@ const Stepper = () => {
       return <Quiz />
     case 4:
       return <Over />
+    default:
+      return <Home />
   }
 }
 
