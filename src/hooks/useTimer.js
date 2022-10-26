@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react"
 
-export const useTimer = ({
+const useTimer = ({
   endTime = 0,
   onTimeOver,
   order = "INCREMENTAL",
@@ -36,3 +36,5 @@ export const useTimer = ({
 
   return { start, time }
 }
+
+export default useTimer

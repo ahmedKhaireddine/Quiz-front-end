@@ -1,6 +1,6 @@
 import { createContext, useState } from "react"
 
-import { useScoreCalculator } from "../hooks/useScoreCalculator"
+import { useScoreCalculator } from "../hooks"
 
 const QuizContext = createContext({})
 
