@@ -6,7 +6,7 @@ import ChoiceList from "./core/ChoiceList"
 import Logo from "../Logo"
 import { Index, Question, QuizContainer, Text, Timer } from "../../styles/QuizStyled"
 import { QuizContext } from "../../contexts/Quiz"
-import { useTimer } from "../../hooks/useTimer"
+import { useTimer } from "../../hooks"
 
 const Quiz = (props) => {
   const { answers, quiz, setAnswers, setStep } = useContext(QuizContext)

@@ -3,10 +3,10 @@ import * as Yup from "yup"
 import { Box, Heading, VStack } from "@chakra-ui/react"
 import { Formik } from "formik"
 
-import Button from "../../components/quiz-interface/core/Button"
-import Flex from "../layouts/Flex"
-import Textarea from "../../components/TextArea"
-import TextField from "../../components/TextField"
+import Button from "../../../components/quiz-interface/core/Button"
+import Flex from "../../layouts/Flex"
+import Textarea from "../../../components/TextArea"
+import TextField from "../../../components/TextField"
 
 const ContactForm = () => {
     
@@ -33,6 +33,7 @@ const ContactForm = () => {
         // actions.resetForm()
         console.log("values =>", values)
     }
+    
   return (
         <Flex
             justifyContent="center"
@@ -82,8 +83,8 @@ const ContactForm = () => {
                             label="Message"
                             name="message"
                             type="text-area"
+                            marginBottom="40px" 
                         />
-
 
                         <Button type="submit">Envoyer</Button>
                         </VStack>

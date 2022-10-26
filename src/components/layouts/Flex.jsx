@@ -14,7 +14,7 @@ const Flex = ({
     justifyContent,
     width,
     position,
-    padding
+    padding,
 }) => {
     return (
         <Container
@@ -44,7 +44,7 @@ Flex.defaultProps= {
     width: "100px",
     position: "",
     padding: "",
-    id: ""
+    id: "",
 }
 
 export default Flex;

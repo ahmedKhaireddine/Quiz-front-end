@@ -1,6 +1,6 @@
 import React from "react"
 import { FormControl, FormErrorMessage, FormLabel, Input } from "@chakra-ui/react"
-import { Field, useField } from "formik"
+import { useField } from "formik"
 import { useColorModeValue } from "@chakra-ui/react"
 
 const TextField = ({ label, ...props }) => {
@@ -16,19 +16,17 @@ const TextField = ({ label, ...props }) => {
 
     return (
         <FormControl isInvalid={meta.error && meta.touched}>
-            <FormLabel color={color}>{label}</FormLabel>
-            <Field
-                as={Input}
-                {...field}
-                {...props}
-                bg={bg}
-                border="2px solid"
-                borderColor={borderColor}
-                color={color}
-                focusBorderColor={focusBorderColor}
-                _hover={{ borderColor: hoverBorderColor }}
-                _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
-            />
+            <FormLabel>{label}</FormLabel>
+                <Input
+                    {...field}
+                    {...props}
+                    bg={bg}
+                    border="2px solid"
+                    borderColor={borderColor}
+                    focusBorderColor={focusBorderColor}
+                    _hover={{ borderColor: hoverBorderColor }}
+                    _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
+                />
             <FormErrorMessage>{meta.error}</FormErrorMessage>
         </FormControl>
     )

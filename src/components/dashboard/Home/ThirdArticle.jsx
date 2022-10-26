@@ -1,7 +1,8 @@
 import React from "react"
 
-import Flex from "../layouts/Flex"
-import { Section } from "../../styles/HomeDashboardStyled"
+import Flex from "../../layouts/Flex"
+import Slider from "./Slider"
+// import { Section } from "../../../styles/HomeDashboardStyled"
 
 const ThirdArticle = () => {
   return (
@@ -11,9 +12,10 @@ const ThirdArticle = () => {
             height="100vh"
             width="100vw"
         >     
-            <Section>
+            {/* <Section>
               <img src="../../assets/images.tablet.svg" alt="tablette" /> 
-            </Section>
+            </Section> */}
+            <Slider />
         </Flex>
   )
 }
