@@ -154,7 +154,7 @@ export const Text = styled.div`
     padding: ${props => props.padding};
     border-radius: 5px;
     box-shadow:  20px 20px 36px #cccccc,
-             -20px -20px 36px #f4f4f4;
+                -20px -20px 36px #f4f4f4;
     display: flex;
     align-items: center;
 

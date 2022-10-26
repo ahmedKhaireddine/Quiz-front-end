@@ -1,7 +1,7 @@
 import React from "react"
 
 import Flex from "../layouts/Flex"
-import Slider from "./Slider"
+// import Slider from "./Slider"
 import { Section } from "../../styles/HomeDashboardStyled"
 
 const ThirdArticle = () => {
@@ -11,11 +11,12 @@ const ThirdArticle = () => {
             alignItems="center"
             height="100vh"
             width="100vw"
+            id="description"
         >     
             {/* <Section>
               <img src="../../assets/images.tablet.svg" alt="tablette" /> 
             </Section> */}
-            <Slider />
+            {/* <Slider /> */}
         </Flex>
   )
 }

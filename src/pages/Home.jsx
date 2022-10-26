@@ -6,6 +6,7 @@ import SecondArticle from "../components/dashboard/SecondArticle"
 import ThirdArticle from "../components/dashboard/ThirdArticle"
 import ContactForm from "../components/dashboard/ContactForm"
 import ScrollToTop from "../components/dashboard/ScrollToTop"
+import Slider from "../components/dashboard/Slider"
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <SecondArticle/>
         <ThirdArticle/>
         <ContactForm/>
+        <Slider />
         <ScrollToTop/>
     </>
   )
