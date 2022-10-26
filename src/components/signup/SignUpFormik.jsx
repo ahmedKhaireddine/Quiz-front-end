@@ -1,10 +1,10 @@
-import { useContext } from "react"
 import { Formik } from "formik"
+import { useContext } from "react"
 
-import { ATTRIBUTES_REGISTEATION_FIELDS } from "../../constants"
 import Button from "../quiz-interface/core/Button"
 import FieldsList from "../FieldsList"
 import { Form, Link, Text } from "../../styles/ReusableTagsStyled"
+import { RECORD_FIELD_ATTRIBUTES } from "../../constants"
 import { SignUpSchema } from "../../validations/auth"
 import { UserContext } from "../../contexts/User"
 
@@ -12,7 +12,6 @@ const SignUpFormik = (props) => {
   const { setUser } = useContext(UserContext)
 
   const onSubmit = (values, actions) => {
-    console.log("values => ", values)
     setUser({
       active: "false",
       email: values.email,
@@ -38,7 +37,7 @@ const SignUpFormik = (props) => {
         <Form
           onSubmit={formik.handleSubmit}
         >
-          <FieldsList data={ATTRIBUTES_REGISTEATION_FIELDS}/>
+          <FieldsList data={RECORD_FIELD_ATTRIBUTES}/>
           <Button
             boxShadow= "rgba(0, 0, 0, 0.35) 0px 5px 15px"
             margin="20px auto 30px"

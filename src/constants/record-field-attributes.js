@@ -2,7 +2,7 @@ import { FaEnvelope } from "react-icons/fa"
 import { IoPersonSharp } from "react-icons/io5"
 import { RiLockFill } from "react-icons/ri"
 
-const ATTRIBUTES_REGISTEATION_FIELDS = [
+const RECORD_FIELD_ATTRIBUTES = [
   {
     autoFocus: true,
     icon: <IoPersonSharp />,
@@ -33,4 +33,4 @@ const ATTRIBUTES_REGISTEATION_FIELDS = [
   }
 ]
 
-export default ATTRIBUTES_REGISTEATION_FIELDS
+export default RECORD_FIELD_ATTRIBUTES
