@@ -6,7 +6,7 @@ import Button from "../quiz-interface/core/Button"
 import FieldsList from "../FieldsList"
 import { Form, Link, Text } from "../../styles/ReusableTagsStyled"
 import { LOGIN_FIELD_ATTRIBUTES } from "../../constants"
-import { SignInSchema } from "../../validations/auth"
+import { SignInSchema } from "../../validations"
 import { UserContext } from "../../contexts"
 
 const SignInFormik = (props) => {
