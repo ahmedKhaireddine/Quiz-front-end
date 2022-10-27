@@ -3,7 +3,7 @@ import { useColorModeValue } from "@chakra-ui/color-mode"
 
 import BubblesAnimated from "../components/BubblesAnimated"
 import Flex from "../components/layouts/Flex"
-import { QuizContextProvider } from "../contexts/Quiz"
+import { QuizContextProvider } from "../contexts"
 import Stepper from "../components/quiz-interface/core/Stepper"
 import ToggleMode from "../components/ToggleMode"
 

@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react"
 
 import Logo from "../Logo"
 import { Footer, Text, SmallText } from "../../styles/OverStyled"
-import { QuizContext } from "../../contexts/Quiz"
+import { QuizContext } from "../../contexts"
 
 const Over = (props) => {
     const { answers, infos, quiz, score } = useContext(QuizContext)

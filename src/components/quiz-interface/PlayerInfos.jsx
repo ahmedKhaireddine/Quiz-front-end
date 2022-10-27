@@ -4,7 +4,7 @@ import { Formik } from "formik"
 import { useContext } from "react"
 
 import Button from "./core/Button"
-import { QuizContext } from "../../contexts/Quiz"
+import { QuizContext } from "../../contexts"
 import TextField from "../TextField"
 
 const PlayerInfos = (props) => {

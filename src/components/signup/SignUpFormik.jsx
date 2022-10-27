@@ -7,7 +7,7 @@ import FieldsList from "../FieldsList"
 import { Form, Link, Text } from "../../styles/ReusableTagsStyled"
 import { RECORD_FIELD_ATTRIBUTES } from "../../constants"
 import { SignUpSchema } from "../../validations/auth"
-import { UserContext } from "../../contexts/User"
+import { UserContext } from "../../contexts"
 
 const SignUpFormik = (props) => {
   const { setUser } = useContext(UserContext)

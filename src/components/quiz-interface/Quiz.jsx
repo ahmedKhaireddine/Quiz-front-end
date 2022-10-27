@@ -5,7 +5,7 @@ import Button from "./core/Button"
 import ChoiceList from "./core/ChoiceList"
 import Logo from "../Logo"
 import { Index, Question, QuizContainer, Text, Timer } from "../../styles/QuizStyled"
-import { QuizContext } from "../../contexts/Quiz"
+import { QuizContext } from "../../contexts"
 import { useTimer } from "../../hooks"
 
 const Quiz = (props) => {

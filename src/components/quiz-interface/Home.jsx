@@ -6,7 +6,7 @@ import { useContext } from "react"
 import Button from "./core/Button"
 import LogoAnimated from "../LogoAnimated"
 import questions from "../../assets/json/questions.json"
-import { QuizContext } from "../../contexts/Quiz"
+import { QuizContext } from "../../contexts"
 import TextField from "../TextField"
 import { Footer, Link, SmallText, Text } from "../../styles/HomeStyled"
 
