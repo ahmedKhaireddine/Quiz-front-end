@@ -1,10 +1,14 @@
 import React from "react"
 
+import { UserContextProvider } from "../contexts"
+
 const Dashboard = () => {
   return (
-    <div>
-      Dashboard
-    </div>
+    <UserContextProvider>
+      <div>
+        Dashboard
+      </div>
+    </UserContextProvider>
   )
 }
 
