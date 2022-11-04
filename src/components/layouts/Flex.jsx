@@ -5,21 +5,27 @@ import { Container } from  "../../styles/FlexStyled"
 const Flex = ({
     alignItems,
     background,
+    borderRadius,
     children,
     color,
     flexDirection,
     height,
     justifyContent,
+    margin,
+    padding,
     width,
 }) => {
     return (
         <Container
             alignItems= {alignItems}
             background= {background}
+            borderRadius= {borderRadius}
             color= {color}
             flexDirection= {flexDirection}
-            height= {height}
+            height={height}
             justifyContent= {justifyContent}
+            margin= {margin}
+            padding= {padding}
             width= {width}
         >
             {children}
@@ -32,8 +38,9 @@ Flex.defaultProps= {
     background: "transparent",
     color: "transparent",
     flexDirection: "row",
-    height: "100px",
     justifyContent: "normal",
+    margin: "0",
+    padding: "0",
     width: "100px"
 }
 

@@ -15,10 +15,12 @@ const SignUpFormik = (props) => {
 
   const onSubmit = (values, actions) => {
     setUser({
-      active: "false",
+      active: "true",
       email: values.email,
-      role: "user",
-      token: "string"
+      full_name:"Jean Moreau",
+      picture: "null",
+      role:"user",
+      token:"string",
     })
 
     navigate("/dashboard")
@@ -43,13 +45,16 @@ const SignUpFormik = (props) => {
         >
           <FieldsList data={RECORD_FIELD_ATTRIBUTES}/>
           <Button
-            boxShadow= "rgba(0, 0, 0, 0.35) 0px 5px 15px"
+            boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
             margin="20px auto 30px"
             type="submit"
           >
             Créer un compte
           </Button>
-          <Text margin="10px auto">
+          <Text
+            margin="10px auto"
+            textAlign="center"
+          >
             Vous avez déjà un compte ? &nbsp;
             <Link href="/signin">Connectez vous</Link>
           </Text>

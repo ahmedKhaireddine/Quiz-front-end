@@ -17,7 +17,9 @@ const SignInFormik = (props) => {
     setUser({
       active: "true",
       email: values.email,
-      role:"user",
+      full_name:"Jean Moreau",
+      picture: "null",
+      role:"admin",
       token:"string",
     })
 
@@ -48,10 +50,16 @@ const SignInFormik = (props) => {
           >
             Se connecter
           </Button>
-          <Text margin="10px auto">
+          <Text
+            margin="10px auto"
+            textAlign= "center"
+          >
             <Link href="/mdp">Mot de passe oublié ?</Link>
           </Text>
-          <Text margin="10px auto">
+          <Text
+            margin="10px auto"
+            textAlign= "center"
+          >
             Pas de comptes Quiz ? &nbsp;
             <Link href="/signup">Créez le vôtre dès à présent.</Link>
           </Text>
