@@ -1,10 +1,10 @@
-import { TbLogout } from "react-icons/tb"
 import React from "react"
 
-import { Box, TitleH4 } from "../../styles/ReusableTagsStyled"
+import { Box } from "../../styles/ReusableTagsStyled"
 import Flex from "../layouts/Flex"
 import LinksList from "./core/LinksList"
 import Logo from "../Logo"
+import Logout from "./core/Logout"
 import UserCard from "./core/UserCard"
 
 const SideBar = (props) => {
@@ -30,24 +30,7 @@ const SideBar = (props) => {
         <UserCard />
         <LinksList />
       </Box>
-      <Flex
-        alignItems= "center"
-        margin= "30px auto"
-        width= "63%"
-      >
-        <TbLogout
-          color="rgba(31,147,155,.8)"
-          fontSize="1.3em"
-        />
-        <TitleH4
-          color= "black"
-          fontSize= ".7em"
-          fontWeight= "600"
-          padding= "0 0 0 17px"
-        >
-          Se déconnecter
-        </TitleH4>
-      </Flex>
+      <Logout />
     </Flex>
   )
 }
