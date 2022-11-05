@@ -1,8 +1,8 @@
 
 import { AiFillMessage, AiFillSnippets, AiFillAppstore } from "react-icons/ai"
-import { MdTopic } from "react-icons/md"
 import { FaUsers } from "react-icons/fa"
 import { HiHome } from "react-icons/hi"
+import { MdTopic } from "react-icons/md"
 
 const SIDE_BAR_LINKS = [
   {
@@ -27,7 +27,7 @@ const SIDE_BAR_LINKS = [
     icon: <AiFillSnippets color="rgba(31,147,155,.8)" fontSize="1.3em"/>,
     name: "Questionnaires",
     whoCanAccess: "both",
-    viewToDisplay: ""
+    viewToDisplay: "Questionnaires"
   },
   {
     icon: <AiFillMessage color="rgba(31,147,155,.8)" fontSize="1.3em"/>,

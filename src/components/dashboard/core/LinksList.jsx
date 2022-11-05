@@ -6,9 +6,9 @@ import { UserContext } from "../../../contexts"
 
 
 const LinksList = (props) => {
-  const { user } = useContext(UserContext)
+  const { user, setView } = useContext(UserContext)
 
-  const listItemsJSX = SIDE_BAR_LINKS.map((element) => {
+  const listItemsJSX = SIDE_BAR_LINKS.map((element, index) => {
     if (user.role !== "admin" && element.whoCanAccess === "admin") {
       return null
     }
@@ -16,7 +16,9 @@ const LinksList = (props) => {
     return <Item
       alignItems= "center"
       display= "flex"
+      key= {index}
       margin= "20px auto"
+      onClick= {() => setView(element.viewToDisplay)}
       width= "75%"
     >
       {element.icon}
@@ -31,9 +33,11 @@ const LinksList = (props) => {
     </Item>
   })
 
-  return <ListItems margin= "50px 20px">
-    {listItemsJSX}
-  </ListItems>
+  return (
+    <ListItems margin= "50px 20px">
+      {listItemsJSX}
+    </ListItems>
+  )
 }
 
 export default LinksList

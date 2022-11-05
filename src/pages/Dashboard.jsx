@@ -2,6 +2,7 @@ import React from "react"
 
 import Grid from "../components/layouts/Grid"
 import SideBar from "../components/dashboard/SideBar"
+import SwitchView from "../components/dashboard/core/SwitchView"
 import { UserContextProvider } from "../contexts"
 
 const Dashboard = () => {
@@ -9,13 +10,7 @@ const Dashboard = () => {
     <UserContextProvider>
       <Grid>
         <SideBar />
-        <div
-          style={{
-            backgroundColor:"#f8f8fa",
-            width:"100%",
-            height:"100%"
-          }}
-        ></div>
+        <SwitchView />
       </Grid>
     </UserContextProvider>
   )

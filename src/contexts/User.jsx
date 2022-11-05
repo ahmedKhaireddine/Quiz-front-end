@@ -1,4 +1,4 @@
-import { createContext } from "react"
+import { createContext, useState } from "react"
 
 import { useLocalStorage } from "../hooks"
 
@@ -6,10 +6,13 @@ const UserContext = createContext({})
 
 const UserContextProvider = ({ children }) => {
     const [user, setUser] = useLocalStorage("user", null)
+    const [view, setView] = useState("Home")
 
     const value = {
         user,
-        setUser
+        view,
+        setUser,
+        setView
     }
 
     return (
