@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import people from "../assets/images/people.jpg"
-import tablet from "../assets/images/tablet.svg"
+import people from "../../assets/images/people.jpg"
+import tablet from "../../assets/images/tablet.svg"
 
 // ---------- Header ---------- //
 export const Container = styled.div`
@@ -14,9 +14,10 @@ export const Container = styled.div`
 export const Nav = styled.div`
     height: 70px;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.3);
+    padding-left: 70px;
+    background-color: #f1f1f1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 `
 
@@ -79,7 +80,7 @@ export const Link2 = styled.a`
 export const Link3 = styled.a`
     font-size: 27px;
     text-decoration: none;
-    color: #F1F1F1;
+    color: black;
     position: relative;
     margin-right: 70px;
     cursor: pointer;
@@ -279,16 +280,17 @@ export const Text = styled.div`
 // ---------- ScrollTop ---------- //
 
 export const Arrow = styled.div`
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: 2px solid #737373;
+    height: 70px;
+    width: 70px;
+    background-color: #1F939B;
+    border-radius: 15px 0 15px 0;
+    box-shadow: 0px 5px 15px 0px #1F939B;
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    right: 20px;
-    bottom: 20px;
+    right: 50px;
+    bottom: 50px;
     cursor: pointer;
 
     .icone {

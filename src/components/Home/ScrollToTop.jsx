@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
-import { Arrow } from "../../../styles/HomeDashboardStyled"
-import arrowUp from "../../../assets/icônes/arrow-up-solid.svg" 
+import { Arrow } from "../../styles/Home/HomeDashboardStyled"
+import { IoIosArrowUp } from "react-icons/io"
 
 const ScrollToTop = () => {
 
@@ -28,7 +28,7 @@ const ScrollToTop = () => {
         <>
             {backToTop && (
                 <Arrow onClick={scrollUp}>
-                    <img src={`${arrowUp}`} alt="flèche" className="icone" />
+                    <IoIosArrowUp style={{ color:"white", fontSize:"40px"}}/>
                 </Arrow>
             )}
         </>

@@ -22,6 +22,7 @@ const TextField = ({ label, ...props }) => {
                     {...props}
                     bg={bg}
                     border="2px solid"
+                    color={color}
                     borderColor={borderColor}
                     focusBorderColor={focusBorderColor}
                     _hover={{ borderColor: hoverBorderColor }}

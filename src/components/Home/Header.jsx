@@ -1,7 +1,7 @@
 import React from "react"
 
 import Navbar from "./Navbar"
-import { BoxDiscover, BoxSlogan, Button, Container } from "../../../styles/HomeDashboardStyled"
+import { BoxDiscover, BoxSlogan, Button, Container } from "../../styles/Home/HomeDashboardStyled"
 
 const Header = () => {
   return (

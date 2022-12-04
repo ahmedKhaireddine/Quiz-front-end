@@ -3,7 +3,7 @@ import { FormControl, FormErrorMessage, FormLabel, Textarea } from "@chakra-ui/r
 import { Field, useField } from "formik"
 import { useColorModeValue } from "@chakra-ui/react"
 
-const TextArea = ({ label, ...props }) => {
+const TextFieldArea = ({ label, ...props }) => {
     const [field, meta] = useField(props)
 
     const bg = useColorModeValue("#f1f1f1", "#171923")
@@ -17,8 +17,7 @@ const TextArea = ({ label, ...props }) => {
     return (
         <FormControl isInvalid={meta.error && meta.touched}>
             <FormLabel color={color}>{label}</FormLabel>
-            <Field
-                as={Textarea}
+            <Textarea
                 {...field}
                 {...props}
                 bg={bg}
@@ -34,4 +33,4 @@ const TextArea = ({ label, ...props }) => {
     )
 }
 
-export default TextArea
+export default TextFieldArea

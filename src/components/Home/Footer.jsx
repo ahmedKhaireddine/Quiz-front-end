@@ -1,13 +1,11 @@
 import React from "react"
-import { Heading } from "@chakra-ui/react"
 import { FaRegCopyright } from 'react-icons/fa'
 
-import { BottomSection, FooterContainer, Link1, LinkContainer, LinkSection, LogoSection } from "../../../styles/HomeDashboardStyled"
-import Logo from "../../Logo"
-import instagram from "../../../assets/logo/instagram.png"
-import facebook from "../../../assets/logo/facebook.png"
-import twitter from "../../../assets/logo/twitter.png"
-
+import { BottomSection, FooterContainer, Link1, LinkContainer, LinkSection, LogoSection } from "../../styles/Home/HomeDashboardStyled"
+import Logo from "../Logo"
+import instagram from "../../assets/logo/instagram.png"
+import facebook from "../../assets/logo/facebook.png"
+import twitter from "../../assets/logo/twitter.png"
 
 const Footer = () => {
   return (
