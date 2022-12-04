@@ -1,7 +1,7 @@
 import React from "react"
 
 import ContactForm from "../components/Home/ContactForm"
-import FirstArticle from "../components/Home/FirstArticle"
+import Presentation from "../components/Home/Presentation"
 import Footer from "../components/Home/Footer"
 import Header from "../components/Home/Header"
 import ScrollToTop from "../components/Home/ScrollToTop"
@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
       <Header className="v-slider-bloc"/>
-      <FirstArticle/>
+      <Presentation/>
       <SecondArticle/>
       <ContactForm/>
       <Footer/>

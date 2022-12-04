@@ -15,7 +15,7 @@ export const Nav = styled.div`
     height: 70px;
     width: 100vw;
     padding-left: 70px;
-    background-color: #f1f1f1;
+    background-color: rgba(0,0,0,0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,7 +80,7 @@ export const Link2 = styled.a`
 export const Link3 = styled.a`
     font-size: 27px;
     text-decoration: none;
-    color: black;
+    color: #f1f1f1;
     position: relative;
     margin-right: 70px;
     cursor: pointer;
