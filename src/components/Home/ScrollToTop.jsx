@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-import { Arrow } from "../../styles/Home/HomeDashboardStyled"
+import { Arrow } from "../../styles/Home/ScrollToTopStyled"
 import { IoIosArrowUp } from "react-icons/io"
 
 const ScrollToTop = () => {

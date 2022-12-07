@@ -4,10 +4,9 @@ import { Formik } from "formik"
 
 import Flex from "../layouts/Flex"
 import { InputContainer, InputName, InputMail } from "../../styles/Home/ContactStyled"
-import Button from "../quiz-interface/core/Button"
 import TextFieldContact from "./TextFieldContact"
 import TextareaFieldContact from "./TextareaFieldContact"
-import { ContactContainer } from "../../styles/Home/ContactStyled"
+import { Button, ContactContainer } from "../../styles/Home/ContactStyled"
 
 const ContactForm = () => {
     
@@ -18,13 +17,13 @@ const ContactForm = () => {
     }
 
     const validationSchema = Yup.object({
+        name: Yup
+        .string()
+        .required("*Nom requis"),
         email: Yup
         .string()
         .email("Format d'email valide")
-        .required("*Email requis"),
-        sujet: Yup
-        .string()
-        .required("*Indiquez un sujet"),
+        .required("*Un email est requis afin de pouvoir vous répondre"),
         message: Yup
         .string()
         .required("*Précisez la raison de votre message")
@@ -56,7 +55,7 @@ const ContactForm = () => {
                         <InputContainer>
                             <InputName>
                                 <TextFieldContact
-                                    name="nom"
+                                    name="name"
                                     placeholder="*Nom..."
                                     background="white"
                                 />

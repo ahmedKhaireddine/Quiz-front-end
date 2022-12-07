@@ -1,20 +1,20 @@
 import React from "react"
 
 import Navbar from "./Navbar"
-import { BoxDiscover, BoxSlogan, Button, Container } from "../../styles/Home/HomeDashboardStyled"
+import { SloganContainer, Button, Container } from "../../styles/Home/HeaderStyled"
+import { ImArrowRight } from "react-icons/im"
 
 const Header = () => {
   return (
     <Container>
       <Navbar/>
-        <BoxSlogan>
-            <p>Animez vos soirées entre amis</p>
-        </BoxSlogan>
-        <BoxDiscover>
+        <SloganContainer>
+          <h2>Créez votre questionnaire en ligne</h2>
+          <p>Concevez, diffusez et analysez facilement votre questionnaire en ligne selon vos besoins : satisfaction, formation, ressources humaines, scolarité...</p>
           <a href="#description">
-            <Button>Découvrir</Button>
+            <Button>Lancez vous, c’est gratuit !<span><ImArrowRight /></span></Button>
           </a>
-        </BoxDiscover>
+        </SloganContainer>
     </Container>
   )
 }

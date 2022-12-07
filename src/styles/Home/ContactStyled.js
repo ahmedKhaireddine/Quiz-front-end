@@ -1,5 +1,27 @@
 import styled from "styled-components"
 
+export const Button = styled.button`
+    width: 150px;
+    margin: 40px auto 0;
+    color: #fff;
+    padding: 0 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 50px;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(0deg, rgba(19, 113, 120, 1) 0%, rgba(87, 204, 212, 1) 100%);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+        background: #37a8b0;
+    }
+`
+
 export const ContactSection = styled.div`
     width: 100%;
     display: flex;
@@ -19,6 +41,7 @@ export const ContactContainer = styled.div`
         color: #1F939B;
         margin-bottom: 30px;
     };
+    
     p {
         font-size: 20px;
         text-align: center;
