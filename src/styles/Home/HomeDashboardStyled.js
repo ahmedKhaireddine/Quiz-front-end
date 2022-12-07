@@ -1,17 +1,7 @@
 import styled from "styled-components"
 import tablet from "../../assets/images/tablet.svg"
 
-// ---------- Header ---------- //
-
-export const Nav = styled.div`
-    height: 70px;
-    width: 100vw;
-    padding-left: 70px;
-    background-color: rgba(0,0,0,0.2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`
+// ---------- Global ---------- //
 
 export const Link1 = styled.a`
     font-family: sans-serif;
@@ -37,81 +27,6 @@ export const Link1 = styled.a`
     &:hover::before {
         transform-origin: 0 0;
         transform: scaleX(1);
-    }
-`
-
-export const Link2 = styled.a`
-    font-family: staatliches;
-    font-size: 27px;
-    color: #F1F1F1;
-    position: relative;
-    margin-right: 70px;
-    cursor: pointer;
-    overflow: hidden;
-
-    .span {
-        padding: 10px;
-        display: inline-block;
-        transition: transform 0.3s esae-out;
-        -webkit-transition: transform 0.3s esae-out;
-    }
-
-    .span:nth-child(2) {
-        position: absolute;
-        width: 100%;
-        text-align: center;
-        left: 100%;
-    }
-
-    &:hover .span {
-        transform: translateX(-100%);
-    }
-
-`
-
-export const Link3 = styled.a`
-    font-size: 27px;
-    text-decoration: none;
-    color: #f1f1f1;
-    position: relative;
-    margin-right: 70px;
-    cursor: pointer;
-
-    &::before, 
-    ::after {
-        content: "";
-        position: absolute;
-        background: #F1F1F1;
-        height: 2px;
-        opacity: 0;
-        left: 50%;
-        transform: translate(-50%, 10px);
-        transition: all 0.2s ease-in-out;
-    }
-
-    &::before {
-        width: 80%;
-        bottom: 0;
-    }
-
-    &::after {
-        width: 50%;
-        bottom: -6px;
-    }
-
-    &:hover::before, 
-    :hover::after {
-        opacity: 1;
-        transform: translate(-50%, 0px);
-    }
-
-    &::before, 
-    :hover::after {
-        transition-delay: 0.1s;
-    }
-
-    &:hover::before {
-        transition-delay: 0s;
     }
 `
 
@@ -144,8 +59,8 @@ export const Text = styled.div`
     background-color: #BABABA;
     padding: ${props => props.padding};
     border-radius: 5px;
-    box-shadow:  20px 20px 36px #cccccc,
-             -20px -20px 36px #f4f4f4;
+    box-shadow: 20px 20px 36px #cccccc,
+                -20px -20px 36px #f4f4f4;
     display: flex;
     align-items: center;
 
@@ -182,7 +97,7 @@ export const LinkContainer = styled.div`
     justify-content: center;
 `
 
-export const LinkSection = styled.div`
+export const ColumnContainer = styled.div`
     width: ${props => props.width};
     display: flex;
     flex-direction: column;
@@ -195,9 +110,13 @@ export const LinkSection = styled.div`
         margin: 50px 0 25px 0;
         color: #c2c0c0;
     }
+`
 
-    a {
+export const LeftContainer = styled.div`
+    p {
         margin-bottom: 10px;
+    }
+    a {
         color: #737373;
         position: relative;
 
@@ -216,7 +135,7 @@ export const LinkSection = styled.div`
             transform: scaleX(0);
             transition: transform 0.4s;
         }
-    
+
         &:hover::before {
             transform-origin: 0 0;
             transform: scaleX(1);
@@ -224,10 +143,12 @@ export const LinkSection = styled.div`
     }
 `
 
+export const RightContainer = styled.div`
+`
+
 export const LogoSection = styled.div`
     margin-top: 20px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 
     img {

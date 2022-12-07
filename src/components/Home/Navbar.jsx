@@ -1,7 +1,7 @@
 import React from "react"
 
 import Logo from "../Logo"
-import { Link3, Nav } from "../../styles/Home/HomeDashboardStyled"
+import { Link3, Nav } from "../../styles/Home/NavbarStyled"
 
 const Navbar = () => {
   return (
