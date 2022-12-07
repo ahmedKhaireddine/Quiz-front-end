@@ -9,7 +9,7 @@ import { DiResponsive } from "react-icons/di"
 import { AiOutlineFieldTime } from "react-icons/ai"
 import { GiSandsOfTime } from "react-icons/gi"
 
-const ThirdArticle = () => {
+const ListSection = () => {
   return (
     <Flex
       justifyContent="center"
@@ -55,4 +55,4 @@ const ThirdArticle = () => {
   );
 };
 
-export default ThirdArticle;
+export default ListSection;
