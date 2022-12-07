@@ -4,10 +4,19 @@ export const Nav = styled.div`
     height: 70px;
     width: 100vw;
     padding-left: 70px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.4);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 7px 15px 5px rgba(0,0,0,0.69);
+    -webkit-box-shadow: 0px 4px 15px 5px rgba(0,0,0,0.69); 
+    z-index: 10;
+
+
+    // position: fixed;
+    // top: 0;
+    // backdrop-filter: blur(2px);
+    // -webkit-backdrop-filter: blur(10px);
 `
 
 export const Link2 = styled.a`

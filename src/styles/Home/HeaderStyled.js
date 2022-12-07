@@ -4,7 +4,7 @@ import people from "../../assets/images/people.jpg";
 
 export const Container = styled.div`
     height: 100vh;
-    width: 100vW;
+    width: 100vw;
     background-image: url(${people});
     background-size: cover;
     background-attachment: fixed;

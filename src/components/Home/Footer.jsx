@@ -1,7 +1,8 @@
 import React from "react"
 import { FaRegCopyright } from 'react-icons/fa'
 
-import { BottomSection, ColumnContainer, FooterContainer, LeftContainer, Link1, LinkContainer, LogoSection, RightContainer } from "../../styles/Home/HomeDashboardStyled"
+import { BottomSection, ColumnContainer, FooterContainer, LeftContainer, LinkContainer, LogoSection, RightContainer } from "../../styles/Home/FooterStyled"
+import { Link1 } from "../../styles/Home/HomeDashboardStyled"
 import Logo from "../Logo"
 import instagram from "../../assets/logo/instagram.png"
 import facebook from "../../assets/logo/facebook.png"

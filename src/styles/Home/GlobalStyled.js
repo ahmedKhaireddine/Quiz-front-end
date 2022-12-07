@@ -5,5 +5,5 @@ export const Title = styled.h2`
     font-size: 43px;
     font-weight: bold;
     color: #1F939B;
-    margin-bottom: 30px;
+    margin: 30px 0 20px;
 `

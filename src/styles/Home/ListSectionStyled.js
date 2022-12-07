@@ -10,17 +10,12 @@ export const ListContainer = styled.div`
 
     div {
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
         text-align: center;
         color: black;
         padding: 20px;
-        div {
-            border: 1px solid;
-            height: 90px;
-            width: 115px;
-        }
+        
         h3 {
             font-size: 20px;
             color: black;
@@ -30,4 +25,9 @@ export const ListContainer = styled.div`
             color: rgba(0,0,0,0.5);
         }
     }
+`
+
+export const Icone = styled.div`
+    height: 90px;
+    width: 115px;
 `
