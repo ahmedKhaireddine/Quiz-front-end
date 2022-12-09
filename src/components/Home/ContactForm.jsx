@@ -4,6 +4,7 @@ import { Formik } from "formik"
 
 import Flex from "../layouts/Flex"
 import { InputContainer, InputName, InputMail } from "../../styles/Home/ContactStyled"
+import { Title } from "../../styles/Home/GlobalStyled"
 import TextFieldContact from "./TextFieldContact"
 import TextareaFieldContact from "./TextareaFieldContact"
 import { Button, ContactContainer } from "../../styles/Home/ContactStyled"
@@ -19,14 +20,14 @@ const ContactForm = () => {
     const validationSchema = Yup.object({
         name: Yup
         .string()
-        .required("*Nom requis"),
+        .required("* Nom requis"),
         email: Yup
         .string()
         .email("Format d'email valide")
-        .required("*Un email est requis afin de pouvoir vous répondre"),
+        .required("* Un email est requis afin de pouvoir vous répondre"),
         message: Yup
         .string()
-        .required("*Précisez la raison de votre message")
+        .required("* Précisez la raison de votre message")
     })
 
     const onSubmit = (values, actions) => {
@@ -49,21 +50,21 @@ const ContactForm = () => {
                 >
                 {(formik) => (
                     <ContactContainer>
-                        <h2>Contactez-nous</h2>
+                        <Title>Contactez-nous</Title>
                         <p>Laissez-nous un message, nous vous répondrons rapidement</p>
 
                         <InputContainer>
                             <InputName>
                                 <TextFieldContact
                                     name="name"
-                                    placeholder="*Nom..."
+                                    placeholder="* Nom..."
                                     background="white"
                                 />
                             </InputName>
                             <InputMail>
                                 <TextFieldContact
                                     name="email"
-                                    placeholder="*Email.."
+                                    placeholder="* Email.."
                                     background="white"
                                 />
                             </InputMail>
@@ -71,7 +72,7 @@ const ContactForm = () => {
 
                         <TextareaFieldContact
                             name="message"
-                            placeholder="*Votre message..."
+                            placeholder="* Votre message..."
                             height="150px"
                             background="white"
                         />

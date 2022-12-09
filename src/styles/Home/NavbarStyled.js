@@ -1,10 +1,12 @@
 import styled from "styled-components"
 
 export const Nav = styled.div`
-    height: 70px;
+    height: 50px;
     width: 100vw;
-    padding-left: 70px;
-    background-color: rgba(0,0,0,0.4);
+    padding-left: 50px;
+    // background-color: rgba(0,0,0,0.4);
+    background-color: #F5F5F6;
+    color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,8 +15,8 @@ export const Nav = styled.div`
     z-index: 10;
 
 
-    // position: fixed;
-    // top: 0;
+    position: fixed;
+    top: 0;
     // backdrop-filter: blur(2px);
     // -webkit-backdrop-filter: blur(10px);
 `
@@ -49,11 +51,12 @@ export const Link2 = styled.a`
 `
 
 export const Link3 = styled.a`
-    font-size: 27px;
+    font-size: 16px;
     text-decoration: none;
-    color: #f1f1f1;
+    // color: #f1f1f1;
+    color: black;
     position: relative;
-    margin-right: 70px;
+    margin-right: 45px;
     cursor: pointer;
 
     &::before, 

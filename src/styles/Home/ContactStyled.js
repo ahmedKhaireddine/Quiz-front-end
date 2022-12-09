@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const Button = styled.button`
-    width: 150px;
-    margin: 40px auto 0;
+    width: 200px;
+    margin: 50px auto 0;
     color: #fff;
     padding: 0 10px;
     font-family: 'Lato', sans-serif;
@@ -34,19 +34,13 @@ export const ContactContainer = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    h2 {
-        text-align: center;
-        font-size: 43px;
-        font-weight: bold;
-        color: #1F939B;
-        margin-bottom: 30px;
-    };
     
     p {
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
         color: #000;
-        margin-bottom: 30px;
+        margin-bottom: 45px;
+        letter-spacing: 1px;
     }
 `
 

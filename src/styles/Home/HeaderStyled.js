@@ -15,6 +15,7 @@ export const SloganContainer = styled.div`
     width: 450px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     border-radius: 5px;
     z-index: 1;
@@ -26,8 +27,7 @@ export const SloganContainer = styled.div`
     margin-left: 100px;
     // top: 12%;
     // left: 15%;
-    // align-items: center;
-    // text-align: center;
+    text-align: center;
     
     h2 {
         font-size: 45px;
@@ -53,15 +53,17 @@ export const SloganContainer = styled.div`
 `
 
 export const Button = styled.a`
+    width: 234px;
     color: #fff;
-    padding: 0 10px;
+    padding: 12px 20px;
     font-family: 'Lato', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
-    letter-spacing: 2px;
-    line-height: 50px;
+    letter-spacing: 1px;
     cursor: pointer;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border: none;
     border-radius: 5px;
     background: linear-gradient(0deg, rgba(19, 113, 120, 1) 0%, rgba(87, 204, 212, 1) 100%);
@@ -69,16 +71,13 @@ export const Button = styled.a`
     left: 16%;
 
     span {
-        margin-top: 16px;
-        float: right;
-        margin-left: 20px;
         display: none;
     }
 
     &:hover {
-        background: #37a8b0;
+        width: 254px;
         span {
-            display: flex;
+            display: inline-block;
         }
     }
 `

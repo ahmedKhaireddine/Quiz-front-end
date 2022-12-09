@@ -14,19 +14,20 @@ export const ListContainer = styled.div`
         align-items: center;
         text-align: center;
         color: black;
-        padding: 20px;
+        padding: 20px; 
         
         h3 {
             font-size: 20px;
             color: black;
+            margin-bottom: 8px;
         }
+
         p {
-            font-size: 13px;
+            font-size: 15px;
             color: rgba(0,0,0,0.5);
         }
     }
 `
-
 export const Icone = styled.div`
     height: 90px;
     width: 115px;

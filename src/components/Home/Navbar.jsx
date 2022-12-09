@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <Nav>
         <div>
-          <Logo size="43px"/>
+          <Logo size="28px"/>
         </div>
         <div>
           <Link3>Inscription</Link3>
