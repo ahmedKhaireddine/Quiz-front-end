@@ -4,21 +4,16 @@ export const Nav = styled.div`
     height: 50px;
     width: 100vw;
     padding-left: 50px;
-    // background-color: rgba(0,0,0,0.4);
     background-color: #F5F5F6;
     color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 7px 15px 5px rgba(0,0,0,0.69);
-    -webkit-box-shadow: 0px 4px 15px 5px rgba(0,0,0,0.69); 
+    box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 18%);
+    -webkit-box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 18%); 
     z-index: 10;
-
-
     position: fixed;
     top: 0;
-    // backdrop-filter: blur(2px);
-    // -webkit-backdrop-filter: blur(10px);
 `
 
 export const Link2 = styled.a`
@@ -53,7 +48,6 @@ export const Link2 = styled.a`
 export const Link3 = styled.a`
     font-size: 16px;
     text-decoration: none;
-    // color: #f1f1f1;
     color: black;
     position: relative;
     margin-right: 45px;
