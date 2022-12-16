@@ -1,34 +1,5 @@
 import styled from "styled-components"
 
-export const Button = styled.button`
-    width: 200px;
-    margin: 50px auto 0;
-    color: #fff;
-    padding: 0 10px;
-    font-family: 'Lato', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    line-height: 50px;
-    cursor: pointer;
-    display: inline-block;
-    border: none;
-    border-radius: 5px;
-    background: linear-gradient(0deg, rgba(19, 113, 120, 1) 0%, rgba(87, 204, 212, 1) 100%);
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
-
-    &:hover {
-        background: #37a8b0;
-    }
-`
-
-export const ContactSection = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: #F5F5F6;
-`
-
 export const ContactContainer = styled.div`
     width: 820px;
     display: flex;
@@ -38,9 +9,9 @@ export const ContactContainer = styled.div`
     p {
         font-size: 18px;
         text-align: center;
-        color: #000;
-        margin-bottom: 45px;
         letter-spacing: 1px;
+        color: #000;
+        margin-bottom: 32px;
     }
 `
 
@@ -59,8 +30,28 @@ export const InputMail = styled.div`
     width: 405px;
 `
 
-export const TextareaContainer = styled.div`
-    width: 820px;
-    margin-bottom: 30px;
+export const SelectContainer = styled.div`
+  margin-bottom: 10px;
 `
 
+export const Button = styled.button`
+    width: 200px;
+    display: block;
+    margin: 43px auto 0px;
+    padding: 0 10px;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(0deg, rgba(19, 113, 120, 1) 0%, rgba(87, 204, 212, 1) 100%);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+        background: #37a8b0;
+    }
+`

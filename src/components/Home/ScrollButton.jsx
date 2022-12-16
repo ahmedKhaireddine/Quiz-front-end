@@ -1,12 +1,12 @@
 import { useCallback } from "react"
 
 import { useScrollToTop } from "../../hooks"
-import { Arrow } from "../../styles/Home/ScrollToTopStyled"
 import { IoIosArrowUp } from "react-icons/io"
+import { Arrow } from "../../styles/Home/ScrollToTopStyled"
 
 const ScrollButton = () => {
     const visible = useScrollToTop()
-        
+    
     const scrollUp = useCallback(() => {
         window.scrollTo({
             top: 0,

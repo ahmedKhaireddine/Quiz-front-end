@@ -6,11 +6,11 @@ YupPassword(Yup)
 export const SignInSchema = Yup.object({
   email: Yup
     .string()
-    .email("Format d'email valide")
+    .email("Format d'email invalide")
     .required("* Email requis"),
   password: Yup.string()
-    .min(8, "8 caractères minimum")
-    .required("* Mote de passe requis")
+    .min(8, "* 8 caractères minimum")
+    .required("* Mot de passe requis")
     .test("Mot de passe valide", "Mot de passe invalide", (value, context) => {
       const hasLowerCase = /[a-z]/.test(value)
       const hasNumber = /[0-9]/.test(value)
@@ -31,14 +31,14 @@ export const SignInSchema = Yup.object({
 export const SignUpSchema = Yup.object({
   email: Yup
     .string()
-    .email("Format d'email n'est pas valide")
+    .email("Format d'email invalide")
     .required("* Email requis"),
   fullName: Yup
     .string()
     .required("* Nom complet requis"),
   confirmPassword: Yup
     .string()
-    .oneOf([Yup.ref("password"), null], "La confirmation du mot de passe n'est pas valide")
+    .oneOf([Yup.ref("password"), null], "La confirmation du mot de passe est invalide")
     .required("* Veuillez confirmer votre mot de passe"),
   password: Yup
     .string()

@@ -1,9 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 
 import { 
+  BackgroundContainer, 
   Button, 
-  ButtonContainer,
-  DescriptionContainer, 
+  ButtonContainer, 
   LeftContainer, 
   HeaderContainer, 
   Illustration1,
@@ -11,53 +11,48 @@ import {
   Illustration3,
   Illustration4,
   Illustration5,
-  Item,
+  List, 
   ListContainer,
   RightContainer,
-  Spacer,
-  SpanContainer,
-  Title2
-} from "../../styles/Home/HeaderStyled"
+  SloganCard
+} from "./Header1Styled"
+import { Title } from "./../styles/Home/GlobalStyled"
 import { ImArrowRight } from "react-icons/im"
 import { BsCheckLg } from "react-icons/bs"
 import { MdOutlineCreditCardOff } from "react-icons/md"
+import Navbar from "../components/Home/Navbar"
 
-const Header2 = () => {
+const Header1 = () => {
   return (
     <HeaderContainer>
+      <Navbar />
+      <BackgroundContainer>
+
         <LeftContainer>
-          <Title2>
-            <SpanContainer>
-              <span>Créez votre &nbsp;</span>
-            </SpanContainer>
-            <SpanContainer>
-              <span>questionnaire en &nbsp;</span>
-            </SpanContainer>
-            <SpanContainer>
-              <span>ligne &nbsp;</span>
-            </SpanContainer>
-          </Title2>
-          <Spacer />
-          <DescriptionContainer>
+          <SloganCard>
+            <Title>Créez votre questionnaire en ligne</Title>
+
             <p>Concevez, diffusez et analysez facilement votre questionnaire en ligne selon vos besoins : satisfaction, formation, ressources humaines, scolarité...</p>
-            <Spacer />
+            
             <ButtonContainer>
               <a href="#description">
                 <Button>
                   Lancez vous, c’est gratuit !
-                  <span><ImArrowRight /></span>
+                  {/* <span><ImArrowRight /></span> */}
                 </Button>
               </a>
-            </ButtonContainer>  
+            </ButtonContainer>
+
             <ListContainer>
-              <Item>
+              <List>
                 <BsCheckLg color="#777" size={16} /><span>&nbsp; Accès immédiat</span>
-              </Item>
-              <Item>
+              </List>
+              <List>
                 <MdOutlineCreditCardOff color="#777" size={16} /><span>&nbsp; Totalement gratuit</span>
-              </Item>
+              </List>
             </ListContainer>
-          </DescriptionContainer> 
+          </SloganCard>
+
         </LeftContainer>
 
         <RightContainer>
@@ -67,8 +62,11 @@ const Header2 = () => {
             <Illustration4 />
             <Illustration5 />
         </RightContainer>
+
+      </BackgroundContainer>
+
     </HeaderContainer>
   )
 }
 
-export default Header2
+export default Header1

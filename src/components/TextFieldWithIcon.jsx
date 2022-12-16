@@ -22,7 +22,7 @@ const TextFieldWithIcon = (props) => {
             children={props.icon}
             color="rgba(31, 147, 155, .5)"
             fontSize='1.2em'
-            height="50px"
+            height="45px"
             pointerEvents='none'
             width="50px"
           />
@@ -31,7 +31,7 @@ const TextFieldWithIcon = (props) => {
             autoFocus={autoFocus}
             color="black"
             focusBorderColor="none"
-            height="50px"
+            height="45px"
             name={name}
             _placeholder={{ fontSize: ".8em" }}
             paddingLeft="45px"

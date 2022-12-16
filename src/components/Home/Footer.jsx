@@ -2,7 +2,7 @@ import React from "react"
 import { FaRegCopyright } from 'react-icons/fa'
 
 import { BottomSection, ColumnContainer, FooterContainer, LeftContainer, LinkContainer, LogoSection, RightContainer } from "../../styles/Home/FooterStyled"
-import { Link1 } from "../../styles/Home/HomeDashboardStyled"
+import { Link1 } from "../../styles/Home/GlobalStyled"
 import Logo from "../Logo"
 import instagram from "../../assets/logo/instagram.png"
 import facebook from "../../assets/logo/facebook.png"
@@ -47,16 +47,16 @@ const Footer = () => {
                 <ColumnContainer margin="0 0 0 200px" width="200px">
                     <h3>Suivez-nous</h3>
                     <LogoSection>
-                                <a href="#"><img src={instagram}/></a>
-                                <a href="#"><img src={facebook}/></a>
-                                <a href="#"><img src={twitter}/></a>
+                                <a href="http://www.intagram.com"><img src={instagram} alt="instagram" /></a>
+                                <a href="http://www.facebook.com"><img src={facebook} alt="facebook" /></a>
+                                <a href="http://www.twitter.com"><img src={twitter} alt="twitter" /></a>
                     </LogoSection>
                 </ColumnContainer>
             </RightContainer>
         </LinkContainer>
         <hr/>
         <BottomSection>
-            <Logo size="20px"/>&nbsp;&nbsp;<FaRegCopyright color ="#e3e1e1"/>&nbsp;Tous droits réservés
+            <Logo size="12px"/>&nbsp;&nbsp;<FaRegCopyright color ="#e3e1e1"/>&nbsp;Tous droits réservés
         </BottomSection>
 
     </FooterContainer>

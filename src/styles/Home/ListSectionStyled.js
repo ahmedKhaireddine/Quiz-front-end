@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const ListContainer = styled.div`
     max-width: 1300px;
-    padding: 0 20px;
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(auto-fill, 350px);
     grid-gap: 20px;
-    justify-content: center;
+    padding: 0 20px;
 
     div {
         display: flex;

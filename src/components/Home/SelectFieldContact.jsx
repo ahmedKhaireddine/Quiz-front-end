@@ -1,20 +1,20 @@
 import React from "react"
 import { useField } from "formik"
 
-import { FormControl, FormErrorMessage, FormLabel, Textarea } from "@chakra-ui/react"
+import { FormControl, FormErrorMessage, FormLabel, Select } from "@chakra-ui/react"
 
-const TextareaFieldContact = ({ label, ...props }) => {
+const TextFieldContact = ({ label, ...props }) => {
     const [field, meta] = useField(props)
 
     return (
         <FormControl isInvalid={meta.error && meta.touched}>
             <FormLabel>{label}</FormLabel>
-                <Textarea
+                <Select
                     {...field}
                     {...props}
                     boxShadow="0px 5px 5px rgba(31, 147, 155, 0.25)"
-                    color="black"
-                    height="120px"
+                    color="#777"
+                    height="45px"
                     _placeholder={{ fontSize: ".8em" }}
                 />
             <FormErrorMessage>{meta.error}</FormErrorMessage>
@@ -22,4 +22,4 @@ const TextareaFieldContact = ({ label, ...props }) => {
     )
 }
 
-export default TextareaFieldContact
+export default TextFieldContact
