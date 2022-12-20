@@ -1,9 +1,9 @@
-// import { useState } from "react";
+import { useState } from "react";
 import * as Yup from "yup";
 import { Formik } from "formik"
-// import styled from "styled-components"
+import { useColorModeValue } from "@chakra-ui/react"
 
-// import { Alert, AlertIcon } from '@chakra-ui/react'
+import { Alert, AlertIcon } from '@chakra-ui/react'
 import Flex from "../layouts/Flex"
 import TextFieldContact from "./TextFieldContact"
 import SelectFieldContact from "./SelectFieldContact"
@@ -13,25 +13,19 @@ import {
   InputContainer,
   InputName,
   InputMail,
-} from "../../styles/Home/ContactStyled"
-import { Title } from "../../styles/Home/GlobalStyled"
-import { Button, ContactContainer, SelectContainer } from "../../styles/Home/ContactStyled"
-
-// const AlertContainer = styled.div`
-//     height: 100px;
-//     width: 200px;
-//     position: absolute;
-//     top: 45%;
-//     right: 0;
-// `
+} from "../../styles/home/ContactStyled"
+import { Title } from "../../styles/home/GlobalStyled"
+import { AlertContainer, Button, ContactContainer, SelectContainer } from "../../styles/home/ContactStyled"
 
 const ContactForm = () => {
-  // const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false)
+  console.log("visible succes :", visible)
+
+  const bg = useColorModeValue("#1f939b", "#45DDE7")
 
   const onSubmit = (values, actions) => {
-    console.log("values =>", values);
-    // setVisible(true)
-    alert("Votre message a bien été envoyé !")
+    console.log("values =>", values)
+    setVisible(true)
     actions.resetForm()
   };
 
@@ -47,10 +41,10 @@ const ContactForm = () => {
     >
       <Formik
         initialValues={{
-          name: "",
-          email: "",
-          sujet: "",
-          message: ""
+          name: "rené",
+          email: "a@a.a",
+          sujet: "option1",
+          message: "Hello"
         }}
         validationSchema={ContactSchema}
         onSubmit={onSubmit}
@@ -105,14 +99,14 @@ const ContactForm = () => {
               </Button>
             </form>
 
-            {/* {visible & 
+            {visible && 
               <AlertContainer>
-                <Alert status='success' color="black">
-                  <AlertIcon />
+                <Alert status='success' color="white" bg="#64c7ce">
+                  <AlertIcon color="white"/>
                   Message envoyé !
                 </Alert>
               </AlertContainer>
-            } */}
+            }
           </ContactContainer>
         )}
       </Formik>

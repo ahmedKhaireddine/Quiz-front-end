@@ -2,7 +2,7 @@ import { useCallback } from "react"
 
 import { useScrollToTop } from "../../hooks"
 import { IoIosArrowUp } from "react-icons/io"
-import { Arrow } from "../../styles/Home/ScrollToTopStyled"
+import { Arrow } from "../../styles/home/ScrollToTopStyled"
 
 const ScrollButton = () => {
     const visible = useScrollToTop()

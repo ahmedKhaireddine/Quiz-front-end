@@ -17,7 +17,7 @@ import {
   Spacer,
   SpanContainer,
   Title2
-} from "../../styles/Home/HeaderStyled"
+} from "../../styles/home/HeaderStyled"
 import { ImArrowRight } from "react-icons/im"
 import { BsCheckLg } from "react-icons/bs"
 import { MdOutlineCreditCardOff } from "react-icons/md"

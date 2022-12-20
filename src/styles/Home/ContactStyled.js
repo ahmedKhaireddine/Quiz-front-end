@@ -1,4 +1,21 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+
+export const appearance = keyframes`
+    0% {
+        transform: translateY(25px);
+    }
+    30% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(25px);
+    }
+`
 
 export const ContactContainer = styled.div`
     width: 820px;
@@ -54,4 +71,22 @@ export const Button = styled.button`
     &:hover {
         background: #37a8b0;
     }
+`
+
+export const AlertContainer = styled.div`
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    top: 55%;
+    right: 42%;
+    overflow: hidden;
+    display: block;
+
+    -webkit-animation-name: ${appearance}; 
+    animation-name: ${appearance};
+    -webikt-animation-duration: 4500ms;
+    animation-duration: 4500ms;
+    -webikt-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    opacity: 0;
 `

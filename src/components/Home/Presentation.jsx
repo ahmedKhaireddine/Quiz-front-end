@@ -1,8 +1,8 @@
 import React from "react"
 
 import Flex from "../layouts/Flex"
-import { Title } from "../../styles/Home/GlobalStyled"
-import { PresentationContainer } from "../../styles/Home/PresentationStyled"
+import { Title } from "../../styles/home/GlobalStyled"
+import { PresentationContainer } from "../../styles/home/PresentationStyled"
 
 const Presentation = () => {
   return (

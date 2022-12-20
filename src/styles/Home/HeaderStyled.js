@@ -35,7 +35,16 @@ export const appearance = keyframes`
     }
 `
 
-export const apparition = keyframes`
+export const disappear = keyframes`
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+`
+
+export const fadeIn = keyframes`
     0% {
         display: none;
         opacity: 0;
@@ -49,13 +58,22 @@ export const apparition = keyframes`
         opacity: 1;
     }
 `
-
+    
 export const extensionIn = keyframes`
     0% {
         width: 234px;
     }
     100% {
         width: 254px;
+    }
+`
+
+export const extensionOut = keyframes`
+    0% {
+        width: 254px;
+    }
+    100% {
+        width: 234px;
     }
 `
 
@@ -116,8 +134,8 @@ export const SpanContainer = styled.div`
 export const DescriptionContainer = styled.div`
     display: flex;
     flex-direction: column;
-    -webkit-animation-name: ${appearance};
-    animation-name: ${appearance};
+    -webkit-animation-name: ${fadeIn};
+    animation-name: ${fadeIn};
     -webkit-animation-delay: 1400ms;
     animation-delay: 1400ms;
     -webkit-animation-fill-mode: forwards;
@@ -148,28 +166,39 @@ export const Button = styled.a`
     cursor: pointer;
     padding: 12px 0px 12px 20px;
     background: linear-gradient(0deg, rgba(19, 113, 120, 1) 0%, rgba(87, 204, 212, 1) 100%);
+    -webkit-animation-name: ${extensionOut};
+    animation-name: ${extensionOut};
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 
     span {
         position: absolute;
         right: 20px;
         opacity: 0;
+        -webkit-animation-name: ${disappear};
+        animation-name: ${disappear};
+        -webkit-animation-duration: 100ms;
+        animation-duration: 100ms;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
     }
     
     &:hover {
-        -webkit-animation: ${extensionIn} 0.4s both;
-        animation: ${extensionIn} 0.4s both;
+        -webkit-animation: ${extensionIn} 0.4s forwards;
+        animation: ${extensionIn} 0.4s forwards;
     }
     
     &:hover span {
         -webkit-animation-name: ${appearance};
         animation-name: ${appearance};
-        -webkit-animation-delay: 400ms;
-        animation-delay: 400ms;
+        -webkit-animation-delay: 100ms;
+        animation-delay: 100ms;
         -webkit-animation-duration: 300ms;
         animation-duration: 300ms;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
-        opacity: 0;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
     }
 `
 

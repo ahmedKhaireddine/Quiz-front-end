@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 
-import Flex from "../layouts/Flex";
-import { Icone, ListContainer } from "../../styles/Home/ListSectionStyled";
-import { Title } from "../../styles/Home/GlobalStyled";
+import Flex from "../layouts/Flex"
+import { Icone, ListContainer } from "../../styles/home/ListSectionStyled"
+import { Title } from "../../styles/home/GlobalStyled"
 import Responsive from "../../assets/svg/responsive-illustration.svg"
 import Security from "../../assets/svg/security-illustration.svg"
 import Support from "../../assets/svg/support-illustration.svg"
