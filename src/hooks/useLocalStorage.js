@@ -26,6 +26,15 @@ const useLocalStorage = (key, initialValue) => {
     }
   }, [key])
 
+  const removeItem = useCallback((key) => {
+    try {
+      if (typeof window !== "undefined")
+        window.localStorage.removeItem(key)
+    } catch (error) {
+      console.log(error)
+    }
+  }, [])
+
   return [storedValue, setValue]
 }
 

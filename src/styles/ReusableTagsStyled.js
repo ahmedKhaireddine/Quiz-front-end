@@ -4,6 +4,7 @@ export const Box = styled.div`
   ${props => props.height && `height: ${props.height};`}
   ${props => props.width && `width: ${props.width};`}
   ${props => props.padding && `padding: ${props.padding}`}
+  ${props => props.textAlign && `text-align: ${props.textAlign};`}
   ${props => props.url && `
     background-image: url(${props.url});
     background-size: cover;
@@ -52,9 +53,12 @@ export const SubTitle = styled.h2`
 export const Text = styled.p`
   font-size: ${props => props.fontSize || ".8em"};
   margin: ${props => props.margin};
-  text-align: ${props => props.textAlign || "left"};
+  ${props => props.textAlign && `text-align: ${props.textAlign};`}
   ${props => props.color && `color: ${props.color};`}
   ${props => props.padding && `padding: ${props.padding};`}
+  ${props => props.whiteSpace && `white-space: ${props.whiteSpace};`}
+  ${props => props.overflow && `overflow: ${props.overflow};`}
+  ${props => props.textOverflow && `text-overflow: ${props.textOverflow};`}
 `
 
 export const Title = styled.h1`

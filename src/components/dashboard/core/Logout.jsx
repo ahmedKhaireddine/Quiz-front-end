@@ -1,9 +1,8 @@
+import { IoMdLogOut } from "react-icons/io";
 import { useCallback } from "react"
 import { useNavigate } from "react-router-dom"
-import { TbLogout } from "react-icons/tb"
 
-import Flex from "../../layouts/Flex"
-import { TitleH4 } from "../../../styles/ReusableTagsStyled"
+import { ItemWithoutPseudoClass, ListItems, Title } from "../../../styles/dashboard/LinksListStyled"
 
 const Logout = (props) => {
   const navigate = useNavigate()
@@ -14,25 +13,12 @@ const Logout = (props) => {
   }, [navigate])
 
   return (
-    <Flex
-        alignItems= "center"
-        margin= "30px auto"
-        width= "63%"
-      >
-        <TbLogout
-          color="rgba(31,147,155,.8)"
-          fontSize="1.3em"
-        />
-        <TitleH4
-          color= "black"
-          fontSize= ".7em"
-          fontWeight= "600"
-          padding= "0 0 0 17px"
-          onClick={() => logout("user")}
-        >
-          Se déconnecter
-        </TitleH4>
-      </Flex>
+    <ListItems margin= "30px auto">
+      <ItemWithoutPseudoClass onClick={() => logout("user")}>
+        <IoMdLogOut color="rgba(31,147,155,.8)" fontSize="1.4em"/>
+        <Title>Se déconnecter</Title>
+      </ItemWithoutPseudoClass>
+    </ListItems>
   )
 }
 

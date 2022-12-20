@@ -6,6 +6,7 @@ const Flex = ({
     alignItems,
     background,
     borderRadius,
+    boxShadow,
     children,
     color,
     flexDirection,
@@ -20,6 +21,7 @@ const Flex = ({
             alignItems= {alignItems}
             background= {background}
             borderRadius= {borderRadius}
+            boxShadow= {boxShadow}
             color= {color}
             flexDirection= {flexDirection}
             height={height}
@@ -44,4 +46,4 @@ Flex.defaultProps= {
     width: "100px"
 }
 
-export default Flex;
+export default Flex
