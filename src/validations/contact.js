@@ -6,8 +6,7 @@ export const ContactSchema = Yup.object({
     .email("Format d'email invalide")
     .required("* Un email est requis afin de pouvoir vous répondre"),
   sujet: Yup
-    .string()
-    .required("*Précisez la raison de votre message"),
+    .string(),
   message: Yup
     .string()
     .required("* Précisez la raison de votre message")

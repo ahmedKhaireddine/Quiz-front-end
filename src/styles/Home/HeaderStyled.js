@@ -1,12 +1,13 @@
 import styled, { keyframes } from "styled-components";
 
-import people from "../../assets/images/people.jpg"
+import people from "../../assets/images/people.avif"
 
 export const HeaderContainer = styled.div`
     height: 100vh;
     width: 100vw;
     display: flex;
     padding: 50px;
+    overflow: hidden;
 `
 
 //----------------------Left Side----------------------//
@@ -150,7 +151,7 @@ export const ButtonContainer = styled.div`
     width: 254px;
 `
 
-export const Button = styled.a`
+export const Button = styled.button`
     width: 234px;
     position relative;
     display: flex;
@@ -215,7 +216,7 @@ export const Item = styled.div`
 
     span {
         font-size: 12px;
-        color: #777;
+        color: #292626;
     }
 `
 
@@ -306,7 +307,7 @@ export const Illustration1 = styled.div`
     height: 200px;
     width: 300px;
     position: absolute;
-    top: 4%;
+    top: 7%;
     left: -2%;
     border-radius: 5px;
     background-image: url(${people});
@@ -330,8 +331,8 @@ export const Illustration2 = styled.div`
     height: 200px;
     width: 300px;
     position: absolute;
-    top: 8%;
-    left: 46%;
+    top: 10%;
+    left: 47%;
     z-index: 1;
     border-radius: 5px;
     background-image: url(${people});
@@ -355,7 +356,7 @@ export const Illustration3 = styled.div`
     height: 200px;
     width: 300px;
     position: absolute;
-    top: 30%;
+    top: 33%;
     left: 28%;
     z-index: 2;
     border-radius: 5px;
@@ -380,7 +381,7 @@ export const Illustration4 = styled.div`
     height: 200px;
     width: 300px;
     position: absolute;
-    top: 54%;
+    top: 57%;
     left: 7%;
     z-index: 3;
     border-radius: 5px;
@@ -405,7 +406,7 @@ export const Illustration5 = styled.div`
     height: 200px;
     width: 300px;
     position: absolute;
-    top: 57%;
+    top: 60%;
     left: 59%;
     border-radius: 5px;
     background-image: url(${people});

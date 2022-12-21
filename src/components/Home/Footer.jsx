@@ -1,66 +1,62 @@
-import React from "react"
-import { FaRegCopyright } from 'react-icons/fa'
+import React from 'react'
+import Logo from '../Logo'
 
-import { BottomSection, ColumnContainer, FooterContainer, LeftContainer, LinkContainer, LogoSection, RightContainer } from "../../styles/Home/FooterStyled"
-import { Link1 } from "../../styles/Home/GlobalStyled"
-import Logo from "../Logo"
-import instagram from "../../assets/logo/instagram.png"
-import facebook from "../../assets/logo/facebook.png"
-import twitter from "../../assets/logo/twitter.png"
+import { AiFillInstagram } from "react-icons/ai"
+import { BsFacebook } from "react-icons/bs"
+import { FaRegCopyright } from "react-icons/fa"
+import { GrTwitter } from "react-icons/gr"
+import { 
+  Bar, 
+  CopyrightContainer, 
+  FooterContainer, 
+  Link, 
+  Link1, 
+  LinkContainer, 
+  MiddleContainer, 
+  SideContainer, 
+  VerticalBar 
+} from '../../styles/home/FooterStyled'
 
-const Footer = () => {
+const Footer1 = () => {
   return (
     <FooterContainer>
-        
+      <SideContainer>
+        <Bar />
+        <Link1 href="#">PRIVACY POLICY</Link1>
+        <Link1 href="#">TERMS & CONDITIONS</Link1>
+        <Link1 href="#">ABOUT</Link1>
+      </SideContainer>
+
+      <MiddleContainer>
+        <Logo 
+          size="40px"
+        />
+        <p>Community</p>
         <LinkContainer>
-            <LeftContainer>
-                <ColumnContainer margin="0 200px 0 0" width="170px">
-                    <h3>Corporate</h3>
-                    <p>
-                        <Link1 
-                            heightBefore="1px"
-                            href="#"
-                        >
-                            Qui sommes-nous ?
-                        </Link1>
-                    </p>
-                    <p>
-                        <Link1 
-                            heightBefore="1px"
-                            href="#description"
-                        >
-                            Découvrir
-                        </Link1>
-                    </p>
-                    <p>
-                        <Link1 
-                            heightBefore="1px"
-                            href="#"
-                        >
-                            Conditions d'utilisation
-                        </Link1>
-                    </p>
-                </ColumnContainer>
-            </LeftContainer>
-
-            <RightContainer>
-                <ColumnContainer margin="0 0 0 200px" width="200px">
-                    <h3>Suivez-nous</h3>
-                    <LogoSection>
-                                <a href="http://www.intagram.com"><img src={instagram} alt="instagram" /></a>
-                                <a href="http://www.facebook.com"><img src={facebook} alt="facebook" /></a>
-                                <a href="http://www.twitter.com"><img src={twitter} alt="twitter" /></a>
-                    </LogoSection>
-                </ColumnContainer>
-            </RightContainer>
+          <Link href="http://www.twitter.com" aria-label="twitter">
+            <GrTwitter fontSize={30} color="#1DA1F2"/>
+          </Link>
+          <Link  href="http://www.facebook.com" aria-label="facebook">
+            <BsFacebook fontSize={30} color="#1877F2" />
+          </Link>
+          <Link href="http://www.intagram.com" aria-label="instagram">
+            <AiFillInstagram fontSize={35} color="#E4405F" />
+          </Link>
         </LinkContainer>
-        <hr/>
-        <BottomSection>
-            <Logo size="12px"/>&nbsp;&nbsp;<FaRegCopyright color ="#e3e1e1"/>&nbsp;Tous droits réservés
-        </BottomSection>
+        <VerticalBar />
+        <CopyrightContainer>
+          <Logo size="12px" aria-label="logo Quiz"/>&nbsp;&nbsp;<FaRegCopyright />&nbsp;Tous droits réservés
+        </CopyrightContainer>
+      </MiddleContainer>
 
+      <SideContainer>
+        <Bar />
+        <Link1 href="#">SHIPPING INFO</Link1>
+        <Link1 href="#">RETURNS / EXCHANGES</Link1>
+        <Link1 href="#contact">CONTACT</Link1>
+      </SideContainer>
     </FooterContainer>
   )
 }
 
-export default Footer
+export default Footer1

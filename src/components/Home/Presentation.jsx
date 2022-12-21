@@ -12,6 +12,7 @@ const Presentation = () => {
       height="100vh"
       width="100vw"
       background="#F5F5F6"
+      id="presentation"
     >  
       <PresentationContainer>
         <Title>Créer un questionnaire en quelques clics</Title>

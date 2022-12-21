@@ -73,14 +73,18 @@ export const Button = styled.button`
     }
 `
 
-export const AlertContainer = styled.div`
-    height: 100px;
+export const Alert = styled.div`
+    height: 50px;
     width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 55%;
-    right: 42%;
+    right: 42.2%;
+    background: rgba(31, 147, 155, 0.8);
     overflow: hidden;
-    display: block;
+    color: white;
 
     -webkit-animation-name: ${appearance}; 
     animation-name: ${appearance};
@@ -90,3 +94,8 @@ export const AlertContainer = styled.div`
     animation-fill-mode: forwards;
     opacity: 0;
 `
+
+// export const Alert =  styled.div`
+//     background-color: #1f939b;
+//     background-opacity: 0.7;
+// `

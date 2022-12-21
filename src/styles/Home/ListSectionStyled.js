@@ -24,7 +24,7 @@ export const ListContainer = styled.div`
 
         p {
             font-size: 15px;
-            color: rgba(0,0,0,0.5);
+            color: rgba(0,0,0,0.6);
         }
     }
 `

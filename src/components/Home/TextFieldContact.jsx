@@ -15,7 +15,7 @@ const TextFieldContact = ({ label, ...props }) => {
                     boxShadow="0px 5px 5px rgba(31, 147, 155, 0.25)"
                     color="black"
                     height="45px"
-                    _placeholder={{ fontSize: ".8em" }}
+                    _placeholder={{ fontSize: "1em", color: "black" }}
                 />
             <FormErrorMessage>{meta.error}</FormErrorMessage>
         </FormControl>

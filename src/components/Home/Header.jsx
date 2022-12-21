@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 
 import { 
   Button, 
@@ -22,7 +22,13 @@ import { ImArrowRight } from "react-icons/im"
 import { BsCheckLg } from "react-icons/bs"
 import { MdOutlineCreditCardOff } from "react-icons/md"
 
-const Header2 = () => {
+const Header2 = ({ myRef }) => {
+
+  const scrollToSection = () => {
+    myRef.current.scrollIntoView()
+    console.log("scroll")
+  }
+
   return (
     <HeaderContainer>
         <LeftContainer>
@@ -42,12 +48,10 @@ const Header2 = () => {
             <p>Concevez, diffusez et analysez facilement votre questionnaire en ligne selon vos besoins : satisfaction, formation, ressources humaines, scolarité...</p>
             <Spacer />
             <ButtonContainer>
-              <a href="#description">
-                <Button>
-                  Lancez vous, c’est gratuit !
-                  <span><ImArrowRight /></span>
-                </Button>
-              </a>
+              <Button onClick={scrollToSection}>
+                Lancez vous, c’est gratuit !
+                <span><ImArrowRight /></span>
+              </Button>
             </ButtonContainer>  
             <ListContainer>
               <Item>

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Nav = styled.div`
+export const Nav = styled.nav`
     height: 55px;
     width: 100vw;
     display: flex;
