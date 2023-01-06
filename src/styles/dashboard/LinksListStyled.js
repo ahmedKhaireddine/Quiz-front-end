@@ -6,6 +6,7 @@ export const Item = styled.li`
   width: 80%;
   padding: 3px 10px;
   align-items: center;
+  cursor: pointer;
 
   ${props => props.selected ? `
       border-left: 2px solid #4fa9af;

@@ -38,7 +38,7 @@ const Flex = ({
 Flex.defaultProps= {
     alignItems: "normal",
     background: "transparent",
-    color: "transparent",
+    color: "black",
     flexDirection: "row",
     justifyContent: "normal",
     margin: "0",

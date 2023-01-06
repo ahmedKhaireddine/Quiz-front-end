@@ -6,6 +6,7 @@ import Messages from "../Messages"
 import Questions from "../Questions"
 import Questionnaires from "../Questionnaires"
 import Topics from "../Topics"
+import QuestionEdit from "../questionEdit/QuestionEdit"
 import { UserContext } from "../../../contexts"
 
 const SwitchView = (props) => {
@@ -24,6 +25,8 @@ const SwitchView = (props) => {
       return <Questionnaires />
     case "Topics":
       return <Topics />
+    case "QuestionEdit":
+      return <QuestionEdit />
     default:
       break
   }
