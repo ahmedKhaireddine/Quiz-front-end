@@ -239,7 +239,7 @@ export const ill1 = keyframes`
 `
 
 export const ill2 = keyframes`
-    0%{
+    0% {
         transform: translate(300px, -100px);
         opacity: 0;
     }
@@ -253,7 +253,7 @@ export const ill2 = keyframes`
 `
 
 export const ill3 = keyframes`
-    0%{
+    0% {
         transform: translate(0px, -300px);
         opacity: 0;
     }
@@ -267,7 +267,7 @@ export const ill3 = keyframes`
 `
 
 export const ill4 = keyframes`
-    0%{
+    0% {
         transform: translate(-300px, 200px);
         opacity: 0;
     }
@@ -281,7 +281,7 @@ export const ill4 = keyframes`
 `
 
 export const ill5 = keyframes`
-    0%{
+    0% {
         transform: translate(300px, 250px);
         opacity: 0;
     }
