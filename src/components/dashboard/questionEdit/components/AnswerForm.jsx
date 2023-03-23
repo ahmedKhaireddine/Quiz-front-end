@@ -15,10 +15,11 @@ const AnswerForm = (addAnswer) => {
         console.log(e.target.value);
     }
 
-    const handleSubmit = e => {
+    const handleSubmit = (e, actions) => {
         e.preventDefault()
-        setAnswer({ answer: ""})
+        // setAnswer({ answer: ""})
         addAnswer(answer)
+        actions.resetForm()
     }
 
     return (

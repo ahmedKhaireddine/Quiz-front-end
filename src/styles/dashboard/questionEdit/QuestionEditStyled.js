@@ -11,15 +11,15 @@ export const Title = styled.h2`
     font-size: 30px;
     font-weight: bold;
     color: #1f939b;
-    margin-bottom: 20px;
-    text-align: center;
+    margin: ${props => props.margin};
+    text-align: ${props => props.txtCenter};
 `
 
 export const Subtitle = styled.h2`
     font-size: 20px;
     font-weight: bold;
     color: #1f939b;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 `
 
 export const Container = styled.div`
@@ -60,7 +60,6 @@ export const List = styled.li`
     span {
         font-size: 22px;
         font-weight: semi-bold;
-        color: #1f939b;
-        
+        color: #1f939b;      
     }
 `

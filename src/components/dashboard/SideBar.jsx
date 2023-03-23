@@ -12,7 +12,7 @@ const SideBar = (props) => {
     <Flex
       background= "#ffffff"
       flexDirection= "column"
-      height= "100%"
+      height= "100vh"
       justifyContent= "space-between"
       width= "100%"
     >

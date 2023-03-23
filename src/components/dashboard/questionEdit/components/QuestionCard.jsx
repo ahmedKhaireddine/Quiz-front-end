@@ -21,10 +21,8 @@ import {
 import AnswerForm from "./AnswerForm";
 import AnswersList from "./AnswersList";
 
-const QuestionCard = () => {
+const QuestionCard = ({ children }) => {
   const [answers, setAnswers] = useState([]);
-
-//   const answersArray = [];
 
   const onSubmit = (values, actions) => {
     // navigate("/dashboard")
@@ -45,7 +43,7 @@ const QuestionCard = () => {
 
   return (
     <Container>
-      <Title>Question</Title>
+      <Title txtCenter="center">Question</Title>
       <Formik
         initialValues={{
           question: "Quand a eu lieu le Big Bang ?",
@@ -69,21 +67,26 @@ const QuestionCard = () => {
             <TextareaField name="question" />
 
             <TimeContainer>
-              <h3>Temps pour répondre</h3>
+              <p>Temps pour répondre:&nbsp;</p>
               <NumberInput defaultValue={15} min={10} max={20} color="black">
-                <NumberInputField />
+                <NumberInputField style={{border: "2px solid #1f939b"}}/>
                 <NumberInputStepper>
-                  <NumberIncrementStepper color="black" />
-                  <NumberDecrementStepper color="black" />
+                  <NumberIncrementStepper color="white" backgroundColor="#1f939b"/>
+                  <NumberDecrementStepper color="white" backgroundColor="#1f939b"/>
                 </NumberInputStepper>
               </NumberInput>
               <span>sec</span>
             </TimeContainer>
 
-            <Title>Réponses</Title>
+            <Title txtCenter="center">Réponses</Title>
 
             <AnswersList answers/>
 
+            <AnswerForm addAnswer={addAnswer}/>
+            <AnswerForm addAnswer={addAnswer}/>
+            <AnswerForm addAnswer={addAnswer}/>
+            <AnswerForm addAnswer={addAnswer}/>
+            <AnswerForm addAnswer={addAnswer}/>
             <AnswerForm addAnswer={addAnswer}/>
 
 

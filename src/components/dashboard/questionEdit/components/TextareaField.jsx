@@ -25,6 +25,7 @@ const TextField = ({ label, ...props }) => {
                     focusBorderColor={focusBorderColor}
                     _hover={{ borderColor: hoverBorderColor }}
                     _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
+                    // minLength={10}
                 />
             <FormErrorMessage>{meta.error}</FormErrorMessage>
         </FormControl>
