@@ -12,6 +12,7 @@ export const Title = styled.h2`
     font-weight: bold;
     color: #1f939b;
     margin-bottom: 20px;
+    text-align: center;
 `
 
 export const Subtitle = styled.h2`
@@ -21,11 +22,12 @@ export const Subtitle = styled.h2`
     margin-bottom: 10px;
 `
 
-export const Card = styled.div`
+export const Container = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
     padding: 20px;
+    overflow-y: auto;
 `
 
 export const TimeContainer = styled.div`
@@ -45,13 +47,20 @@ export const TimeContainer = styled.div`
 export const AnswerContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin: 30px 0;
 
     input {
         width: 350px;
     }
 `
 
-export const Input = styled.input`
+export const List = styled.li`
+    list-style-type: none;
 
+    span {
+        font-size: 22px;
+        font-weight: semi-bold;
+        color: #1f939b;
+        
+    }
 `

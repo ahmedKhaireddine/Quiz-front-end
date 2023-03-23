@@ -1,8 +1,8 @@
 import React from "react"
 
 import Header from "../Header"
-import QuestionCard from "./QuestionCard"
-import Aside from "./Aside"
+import QuestionCard from "./components/QuestionCard"
+import Aside from "./components/Aside"
 import { MainContainer } from "../../../styles/dashboard/questionEdit/QuestionEditStyled"
 import { Flex } from "@chakra-ui/react"
 

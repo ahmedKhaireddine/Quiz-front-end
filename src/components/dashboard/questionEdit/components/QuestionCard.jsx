@@ -9,15 +9,15 @@ import {
   NumberInputField,
   NumberInputStepper,
 } from "@chakra-ui/react";
-import Button from "../../quiz-interface/core/Button";
+import Button from "../../../quiz-interface/core/Button";
 import SelectField from "./SelectField";
 import TextareaField from "./TextareaField";
 import {
-  Card,
+  Container,
   Subtitle,
   TimeContainer,
   Title,
-} from "../../../styles/dashboard/questionEdit/QuestionEditStyled";
+} from "../../../../styles/dashboard/questionEdit/QuestionEditStyled";
 import AnswerForm from "./AnswerForm";
 import AnswersList from "./AnswersList";
 
@@ -44,7 +44,7 @@ const QuestionCard = () => {
 
 
   return (
-    <Card>
+    <Container>
       <Title>Question</Title>
       <Formik
         initialValues={{
@@ -80,15 +80,17 @@ const QuestionCard = () => {
               <span>sec</span>
             </TimeContainer>
 
-            <Title>Réponse</Title>
+            <Title>Réponses</Title>
+
+            <AnswersList answers/>
 
             <AnswerForm addAnswer={addAnswer}/>
-            <AnswersList answers/>
+
 
 
             <Button
               boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-              margin="20px auto 30px"
+              margin="20px 0 30px"
               width="220px"
             >
               Ajouter une réponse
@@ -96,7 +98,7 @@ const QuestionCard = () => {
           </form>
         )}
       </Formik>
-    </Card>
+    </Container>
   );
 };
 

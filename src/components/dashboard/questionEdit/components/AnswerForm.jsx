@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
 import TextareaField from './TextareaField'
-import Button from "../../quiz-interface/core/Button"
+import Button from "../../../quiz-interface/core/Button"
 import {
     AnswerContainer,
-} from "../../../styles/dashboard/questionEdit/QuestionEditStyled" 
+} from "../../../../styles/dashboard/questionEdit/QuestionEditStyled" 
 
 const AnswerForm = (addAnswer) => {
 
