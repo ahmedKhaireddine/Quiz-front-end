@@ -14,6 +14,13 @@ export const Title = styled.h2`
     margin-bottom: 20px;
 `
 
+export const Subtitle = styled.h2`
+    font-size: 20px;
+    font-weight: bold;
+    color: #1f939b;
+    margin-bottom: 10px;
+`
+
 export const Card = styled.div`
     height: 100%;
     display: flex;

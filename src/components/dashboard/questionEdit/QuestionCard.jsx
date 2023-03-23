@@ -8,8 +8,10 @@ import {
     NumberInputStepper,
     NumberIncrementStepper,
     NumberDecrementStepper,
+    Select
   } 
 from '@chakra-ui/react'
+import SelectField from './SelectField'
 import TextField from './TextField'
 import TextareaField from './TextareaField'
 import Button from "../../quiz-interface/core/Button"
@@ -17,6 +19,7 @@ import {
     AnswerContainer,
     Card,
     Input,
+    Subtitle,
     TimeContainer,
     Title 
 } from "../../../styles/dashboard/questionEdit/QuestionEditStyled" 
@@ -24,6 +27,32 @@ import AnswerCard from './AnswerCard'
 
 const QuestionCard = () => {
     const [isVisible, setIsVisible] = useState(false)
+
+    const themes = [
+        { 
+            id: 1,
+            label: "Histoire"
+        },
+        { 
+            id: 2,
+            label: "Sport"
+        },
+        { 
+            id: 3,
+            label: "Géographie"
+        },
+        { 
+            id: 4,
+            label: "Littérature"
+        },
+    ]
+
+    //     const options = [
+    //     "Histoire",
+    //     "Sport",
+    //     "Géographie",
+    //     "Littérature"
+    // ]
 
     const onSubmit = (values, actions) => {    
         // navigate("/dashboard")
@@ -40,7 +69,7 @@ const QuestionCard = () => {
             <Title>Question</Title>
             <Formik
                 initialValues={{
-                    question: "Une question",
+                    question: "Quand a eu lieu le Big Bang ?",
                     time: "",
                     answer: "",
                     answerValue: ""
@@ -60,6 +89,14 @@ const QuestionCard = () => {
             >
                 {(formik) => (
                     <form onSubmit={formik.handleSubmit}>
+                        <Subtitle>Thèmes</Subtitle>
+                        <Select
+                            name="select"
+                            placeholder="Choisissez votre thème"
+                        >
+                            {themes.map(theme => <option value={theme.id}>{theme.label}</option>)}
+                            
+                        </Select>
                         <TextareaField 
                             name="question"
                         />
