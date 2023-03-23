@@ -6,31 +6,24 @@ import { useColorModeValue } from "@chakra-ui/react"
 const SelectField = ({ label, ...props }) => {
     const [field, meta] = useField(props)
 
-    // const options = [
-    //     "Histoire",
-    //     "Sport",
-    //     "Géographie",
-    //     "Littérature"
-    // ]
-
-    // const options = [
-    //     { 
-    //         id: 1,
-    //         label: "Histoire"
-    //     },
-    //     { 
-    //         id: 2,
-    //         label: "Sport"
-    //     },
-    //     { 
-    //         id: 3,
-    //         label: "Géographie"
-    //     },
-    //     { 
-    //         id: 4,
-    //         label: "Littérature"
-    //     },
-    // ]
+    const themes = [
+        { 
+            id: 1,
+            label: "Histoire"
+        },
+        { 
+            id: 2,
+            label: "Sport"
+        },
+        { 
+            id: 3,
+            label: "Géographie"
+        },
+        { 
+            id: 4,
+            label: "Littérature"
+        },
+    ]
 
     const bg = useColorModeValue("#f1f1f1", "#171923")
     const borderColor = useColorModeValue("#1f939b", "#45DDE7")
@@ -51,7 +44,9 @@ const SelectField = ({ label, ...props }) => {
                     focusBorderColor={focusBorderColor}
                     _hover={{ borderColor: hoverBorderColor }}
                     _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
-                />
+                >
+                    {themes.map(theme => <option value={theme.id}>{theme.label}</option>)}
+                </Select>
             <FormErrorMessage>{meta.error}</FormErrorMessage>
         </FormControl>
     )
