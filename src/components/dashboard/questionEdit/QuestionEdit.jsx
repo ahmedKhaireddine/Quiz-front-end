@@ -12,9 +12,8 @@ const Questions = (props) => {
       <MainContainer>
         <Header />
         <QuestionCard />
+        <Aside />
       </MainContainer>
-
-      <Aside />
     </Flex>
   )
 }

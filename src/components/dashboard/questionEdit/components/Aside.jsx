@@ -1,12 +1,11 @@
 import React from 'react'
 
-import { Title, Subtitle } from '../../../../styles/dashboard/questionEdit/QuestionEditStyled'
+import { Title } from '../../../../styles/dashboard/questionEdit/QuestionEditStyled'
 import { Box } from "../../../../styles/dashboard/questionEdit/AsideStyled"
 
-const Aside = (answers) => {
+const Aside = () => {
   return (
     <Box>
-      {/* <Title>Aside</Title> */}
 
       <Title margin="20px 0">Thème</Title>
       <p>Histoire</p>
@@ -16,25 +15,7 @@ const Aside = (answers) => {
 
       <Title margin="20px 0">Réponses</Title>
       <ul>
-        {/* {answers.length === 0 && <p>Aucune réponse</p>}
-          {answers.map((id, content) => {
-            return <li key={id}>{content}</li>;
-          })} */}
-        <li><span>1:&nbsp;</span>Il y a 4 milliards d'années</li>
-        <li><span>2:&nbsp;</span>Le jour où mon patron a refusé de m'augmenter</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
-        <li><span>3:&nbsp;</span>Il y a 10 milliards d'années</li>
+        <li key="1"><span>1:&nbsp;</span>Il y a 4 milliards d'années</li>
       </ul>
 
       <Title>Temps pour répondre :</Title>

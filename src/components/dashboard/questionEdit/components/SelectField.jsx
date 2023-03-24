@@ -45,7 +45,7 @@ const SelectField = ({ label, ...props }) => {
                     _hover={{ borderColor: hoverBorderColor }}
                     _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
                 >
-                    {themes.map(theme => <option value={theme.id}>{theme.label}</option>)}
+                    {themes.map(theme => <option key={theme.id} value={theme.id}>{theme.label}</option>)}
                 </Select>
             <FormErrorMessage>{meta.error}</FormErrorMessage>
         </FormControl>

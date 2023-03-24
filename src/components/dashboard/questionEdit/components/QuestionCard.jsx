@@ -13,7 +13,7 @@ import Button from "../../../quiz-interface/core/Button";
 import SelectField from "./SelectField";
 import TextareaField from "./TextareaField";
 import {
-  Container,
+  Box,
   Subtitle,
   TimeContainer,
   Title,
@@ -22,27 +22,16 @@ import AnswerForm from "./AnswerForm";
 import AnswersList from "./AnswersList";
 
 const QuestionCard = ({ children }) => {
-  const [answers, setAnswers] = useState([]);
+  const [answer, setAnswer] = useState("");
+  const [answersArray, setAnswersArray] = useState([]);
 
   const onSubmit = (values, actions) => {
     // navigate("/dashboard")
     // actions.resetForm()
   };
 
-  const addAnswer = (id, content) => {
-    const newAnswer = {
-        id: 0,
-        content: content
-    }
-    setAnswers({answers: [...answers, newAnswer]})
-    console.log("tableau de réponses:", answers);
-  };
-
-  console.log(answers);
-
-
   return (
-    <Container>
+    <Box>
       <Title txtCenter="center">Question</Title>
       <Formik
         initialValues={{
@@ -69,10 +58,16 @@ const QuestionCard = ({ children }) => {
             <TimeContainer>
               <p>Temps pour répondre:&nbsp;</p>
               <NumberInput defaultValue={15} min={10} max={20} color="black">
-                <NumberInputField style={{border: "2px solid #1f939b"}}/>
+                <NumberInputField style={{ border: "2px solid #1f939b" }} />
                 <NumberInputStepper>
-                  <NumberIncrementStepper color="white" backgroundColor="#1f939b"/>
-                  <NumberDecrementStepper color="white" backgroundColor="#1f939b"/>
+                  <NumberIncrementStepper
+                    color="white"
+                    backgroundColor="#1f939b"
+                  />
+                  <NumberDecrementStepper
+                    color="white"
+                    backgroundColor="#1f939b"
+                  />
                 </NumberInputStepper>
               </NumberInput>
               <span>sec</span>
@@ -80,16 +75,17 @@ const QuestionCard = ({ children }) => {
 
             <Title txtCenter="center">Réponses</Title>
 
-            <AnswersList answers/>
+            <AnswersList
+              answersArray={answersArray}
+              setAnswersArray={setAnswersArray}
+            />
 
-            <AnswerForm addAnswer={addAnswer}/>
-            <AnswerForm addAnswer={addAnswer}/>
-            <AnswerForm addAnswer={addAnswer}/>
-            <AnswerForm addAnswer={addAnswer}/>
-            <AnswerForm addAnswer={addAnswer}/>
-            <AnswerForm addAnswer={addAnswer}/>
-
-
+            <AnswerForm
+              setAnswer={setAnswer}
+              answer={answer}
+              answersArray={answersArray}
+              setAnswersArray={setAnswersArray}
+            />
 
             <Button
               boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
@@ -101,7 +97,7 @@ const QuestionCard = ({ children }) => {
           </form>
         )}
       </Formik>
-    </Container>
+    </Box>
   );
 };
 
