@@ -50,20 +50,23 @@ const QuestionCard = () => {
       question: values.question,
       time: values.time,
       answer1: values.answer1,
+      answer2: values.answer2,
+      answer3: values.answer3,
+      answer4: values.answer4,
     });
     console.log("answers :", answers);
     // navigate("/dashboard")
     actions.resetForm();
-    console.log(
-      "theme",
-      values.theme,
-      "question",
-      values.question,
-      "time",
-      values.time,
-      "answer1",
-      values.answer1
-    );
+    // console.log(
+    //   "theme",
+    //   values.theme,
+    //   "question",
+    //   values.question,
+    //   "time",
+    //   values.time,
+    //   "answer1",
+    //   values.answer1
+    // );
   };
 
   return (
@@ -71,12 +74,13 @@ const QuestionCard = () => {
       <Title txtCenter="center">Question</Title>
       <Formik
         initialValues={{
+          theme: "Histoire",
           question: "Quand a eu lieu le Big Bang ?",
           time: 10,
           answer1: "Hier",
-          // answer2: "",
-          // answer3: "",
-          // answer4: ""
+          answer2: "",
+          answer3: "",
+          answer4: ""
         }}
         onSubmit={onSubmit}
         validationSchema={Yup.object({
@@ -89,10 +93,11 @@ const QuestionCard = () => {
       >
         {(formik) => (
           <form onSubmit={formik.handleSubmit}>
+
             <Subtitle>Thèmes</Subtitle>
-            <Field as="select" name="theme" placeholder="Choisissez votre thème">
-            {themes.map(theme => <option key={theme.id} value={theme.id}>{theme.label}</option>)}
-            </Field>
+            <SelectField name="theme" placeholder="Choisissez votre thème" >
+              {themes.map(theme => <option key={theme.id} value={theme.label}>{theme.label}</option>)}
+            </SelectField>
 
             <TextareaField name="question" />
 
@@ -122,6 +127,9 @@ const QuestionCard = () => {
 
             <Title txtCenter="center">Réponses</Title>
             <TextareaField label="Réponse 1" name="answer1" />
+            <TextareaField label="Réponse 2" name="answer2" />
+            <TextareaField label="Réponse 3" name="answer3" />
+            <TextareaField label="Réponse 4" name="answer4" />
 
             <Button
               type="submit"
