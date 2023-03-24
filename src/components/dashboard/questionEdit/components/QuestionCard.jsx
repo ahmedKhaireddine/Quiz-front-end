@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Formik } from "formik";
+import { Field, Formik } from "formik";
 import * as Yup from "yup";
 
 import {
@@ -18,16 +18,52 @@ import {
   TimeContainer,
   Title,
 } from "../../../../styles/dashboard/questionEdit/QuestionEditStyled";
-import AnswerForm from "./AnswerForm";
-import AnswersList from "./AnswersList";
+// import AnswerForm from "./AnswerForm";
+// import AnswersList from "./AnswersList";
 
-const QuestionCard = ({ children }) => {
-  const [answer, setAnswer] = useState("");
-  const [answersArray, setAnswersArray] = useState([]);
+const QuestionCard = () => {
+  const [input, setInput] = useState("");
+  const [answers, setAnswers] = useState([]);
+
+  const themes = [
+    {
+      id: 1,
+      label: "Histoire",
+    },
+    {
+      id: 2,
+      label: "Sport",
+    },
+    {
+      id: 3,
+      label: "Géographie",
+    },
+    {
+      id: 4,
+      label: "Littérature",
+    },
+  ];
 
   const onSubmit = (values, actions) => {
+    setAnswers({
+      theme: values.theme,
+      question: values.question,
+      time: values.time,
+      answer1: values.answer1,
+    });
+    console.log("answers :", answers);
     // navigate("/dashboard")
-    // actions.resetForm()
+    actions.resetForm();
+    console.log(
+      "theme",
+      values.theme,
+      "question",
+      values.question,
+      "time",
+      values.time,
+      "answer1",
+      values.answer1
+    );
   };
 
   return (
@@ -36,9 +72,11 @@ const QuestionCard = ({ children }) => {
       <Formik
         initialValues={{
           question: "Quand a eu lieu le Big Bang ?",
-          time: "",
-          answer: "",
-          answerValue: "",
+          time: 10,
+          answer1: "Hier",
+          // answer2: "",
+          // answer3: "",
+          // answer4: ""
         }}
         onSubmit={onSubmit}
         validationSchema={Yup.object({
@@ -52,12 +90,21 @@ const QuestionCard = ({ children }) => {
         {(formik) => (
           <form onSubmit={formik.handleSubmit}>
             <Subtitle>Thèmes</Subtitle>
-            <SelectField name="select" placeholder="Choisissez votre thème" />
+            <Field as="select" name="theme" placeholder="Choisissez votre thème">
+            {themes.map(theme => <option key={theme.id} value={theme.id}>{theme.label}</option>)}
+            </Field>
+
             <TextareaField name="question" />
 
             <TimeContainer>
               <p>Temps pour répondre:&nbsp;</p>
-              <NumberInput defaultValue={15} min={10} max={20} color="black">
+              <NumberInput
+                name="time"
+                defaultValue={15}
+                min={10}
+                max={20}
+                color="black"
+              >
                 <NumberInputField style={{ border: "2px solid #1f939b" }} />
                 <NumberInputStepper>
                   <NumberIncrementStepper
@@ -74,25 +121,15 @@ const QuestionCard = ({ children }) => {
             </TimeContainer>
 
             <Title txtCenter="center">Réponses</Title>
-
-            <AnswersList
-              answersArray={answersArray}
-              setAnswersArray={setAnswersArray}
-            />
-
-            <AnswerForm
-              setAnswer={setAnswer}
-              answer={answer}
-              answersArray={answersArray}
-              setAnswersArray={setAnswersArray}
-            />
+            <TextareaField label="Réponse 1" name="answer1" />
 
             <Button
+              type="submit"
               boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-              margin="20px 0 30px"
-              width="220px"
+              margin="20px auto 30px"
+              // onClick={handleSave()}
             >
-              Ajouter une réponse
+              Enregistrer
             </Button>
           </form>
         )}
