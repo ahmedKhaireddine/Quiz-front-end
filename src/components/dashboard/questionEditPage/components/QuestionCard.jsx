@@ -13,7 +13,7 @@ import Button from "../../../quiz-interface/core/Button";
 // import NumberInputField from "./NumberInputField";
 import SelectField from "./SelectField";
 import TextareaField from "./TextareaField";
-import NumberField from "./NumberField";
+import NumberInput4 from "./NumberInput4";
 import {
   Box,
   Subtitle,
@@ -51,6 +51,7 @@ const QuestionCard = ({ answers, setAnswers }) => {
       answer3: values.answer3,
       answer4: values.answer4,
     });
+    console.log("time:", values.time);
     console.log("QuestionCard answers :", answers);
     // navigate("/dashboard")
     actions.resetForm();
@@ -105,27 +106,30 @@ const QuestionCard = ({ answers, setAnswers }) => {
             <TextareaField name="question" />
 
             <TimeContainer>
-              <p>Temps pour répondre :</p>
+              {/* <p>Temps pour répondre :</p>
               <span>
                 <NumberField name="time" type="number"/>
-                
+             
+              </span>
+              <span>sec</span> */}
+           
+
+              <p>Temps pour répondre :</p>
+              <span>
+                <NumberInput name="time">
+                  <NumberInputField/>
+                  <NumberInputStepper>
+                    <NumberIncrementStepper />
+                    <NumberDecrementStepper />
+                  </NumberInputStepper>
+                </NumberInput>
+
+                {/* <NumberInput4 name="time"/> */}
+            
               </span>
               <span>sec</span>
-           
-              
-              
+                  
 
-              {/* <NumberInput
-                defaultValue={15}
-                min={5}
-                max={30}
-              >
-                <NumberInputField />
-                <NumberInputStepper>
-                  <NumberIncrementStepper />
-                  <NumberDecrementStepper />
-                </NumberInputStepper>
-              </NumberInput> */}
 
               {/* <NumberInputField 
                 name="time"

@@ -52,7 +52,6 @@ export const Box = styled.div`
 `;
 
 export const TimeContainer = styled.div`
-  height:80px;
   display: flex;
   width: 100%;
   padding: 20px 0;
