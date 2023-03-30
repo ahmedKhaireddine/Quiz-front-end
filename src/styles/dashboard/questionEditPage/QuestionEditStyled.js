@@ -31,19 +31,43 @@ export const Box = styled.div`
   flex-direction: column;
   padding: 20px;
   overflow-y: auto;
+  
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #1f939b; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #1f939b; 
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #02818a; 
+  }
 `;
 
 export const TimeContainer = styled.div`
+  height:80px;
   display: flex;
-  align-items: center;
-  padding: 20px 0px;
+  width: 100%;
+  padding: 20px 0;
 
-  h3 {
-    margin-right: 15px;
+  p {
+    line-height: 40px;
   }
 
+  div {
+    display: flex;
+    align-items: center;
+  }
   span {
     margin-left: 15px;
+    line-height: 40px;
   }
 `;
 

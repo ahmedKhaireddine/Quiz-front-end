@@ -10,18 +10,18 @@ import {
   NumberInputStepper,
 } from "@chakra-ui/react";
 import Button from "../../../quiz-interface/core/Button";
+// import NumberInputField from "./NumberInputField";
 import SelectField from "./SelectField";
 import TextareaField from "./TextareaField";
+import NumberField from "./NumberField";
 import {
   Box,
   Subtitle,
   TimeContainer,
   Title,
-} from "../../../../styles/dashboard/questionEdit/QuestionEditStyled";
+} from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
 
 const QuestionCard = ({ answers, setAnswers }) => {
-  // const [answers, setAnswers] = useState([]);
-
   const themes = [
     {
       id: 1,
@@ -73,53 +73,64 @@ const QuestionCard = ({ answers, setAnswers }) => {
         initialValues={{
           theme: "Histoire",
           question: "Quand a eu lieu le Big Bang ?",
-          time: 10,
+          time: 18,
           answer1: "Hier",
           answer2: "",
           answer3: "",
-          answer4: ""
+          answer4: "",
         }}
         onSubmit={onSubmit}
         validationSchema={Yup.object({
           question: Yup.string()
             .required("Aucune question décrite")
             .max(255, "255 caractères maximum"),
-          time: Yup.number(),
+          time: Yup.number()
+                    .min(5, "Veuillez saisir un nombre entre 5 et 30")
+                    .max(30, "Veuillez saisir un nombre entre 5 et 30")
+                    .typeError("Veuillez saisir un nombre entre 5 et 30"),
           answer: Yup.string().max(255, "255 caractères maximum"),
         })}
       >
         {(formik) => (
           <form onSubmit={formik.handleSubmit}>
-
             <Subtitle>Thèmes</Subtitle>
-            <SelectField name="theme" placeholder="Choisissez votre thème" >
-              {themes.map(theme => <option key={theme.id} value={theme.label}>{theme.label}</option>)}
+            <SelectField name="theme" placeholder="Choisissez votre thème">
+              {themes.map((theme) => (
+                <option key={theme.id} value={theme.label}>
+                  {theme.label}
+                </option>
+              ))}
             </SelectField>
 
             <TextareaField name="question" />
 
             <TimeContainer>
-              <p>Temps pour répondre:&nbsp;</p>
-              <NumberInput
-                name="time"
-                defaultValue={15}
-                min={10}
-                max={20}
-                color="black"
-              >
-                <NumberInputField style={{ border: "2px solid #1f939b" }} />
-                <NumberInputStepper>
-                  <NumberIncrementStepper
-                    color="white"
-                    backgroundColor="#1f939b"
-                  />
-                  <NumberDecrementStepper
-                    color="white"
-                    backgroundColor="#1f939b"
-                  />
-                </NumberInputStepper>
-              </NumberInput>
+              <p>Temps pour répondre :</p>
+              <span>
+                <NumberField name="time" type="number"/>
+                
+              </span>
               <span>sec</span>
+           
+              
+              
+
+              {/* <NumberInput
+                defaultValue={15}
+                min={5}
+                max={30}
+              >
+                <NumberInputField />
+                <NumberInputStepper>
+                  <NumberIncrementStepper />
+                  <NumberDecrementStepper />
+                </NumberInputStepper>
+              </NumberInput> */}
+
+              {/* <NumberInputField 
+                name="time"
+                placeholder="Temps"
+              /> */}
             </TimeContainer>
 
             <Title txtCenter="center">Réponses</Title>

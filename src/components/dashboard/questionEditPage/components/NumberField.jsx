@@ -1,9 +1,9 @@
 import React from "react"
-import { FormControl, FormErrorMessage, FormLabel, Textarea } from "@chakra-ui/react"
+import { FormControl, FormErrorMessage, FormLabel, Input } from "@chakra-ui/react"
 import { useField } from "formik"
 import { useColorModeValue } from "@chakra-ui/react"
 
-const TextField = ({ label, ...props }) => {
+const NumberField = ({ label, ...props }) => {
     const [field, meta] = useField(props)
 
     const bg = useColorModeValue("#f1f1f1", "#171923")
@@ -14,25 +14,23 @@ const TextField = ({ label, ...props }) => {
     const placeholderOpacity = useColorModeValue(0.8, 0.6)
 
     return (
-        <FormControl isInvalid={meta.error && meta.touched}>
+        <FormControl isInvalid={meta.error && meta.touched} width="auto">
             <FormLabel>{label}</FormLabel>
-                <Textarea
+                <Input
                     {...field}
                     {...props}
                     bg={bg}
                     border="2px solid"
                     borderColor={borderColor}
-                    height={4}
-                    boxShadow="rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
                     focusBorderColor={focusBorderColor}
                     _hover={{ borderColor: hoverBorderColor }}
                     _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
-                    minHeight={65}
-                    // minLength={10}
+                    width="55px"
+                    marginRight={0}
                 />
             <FormErrorMessage>{meta.error}</FormErrorMessage>
         </FormControl>
     )
 }
 
-export default TextField
+export default NumberField
