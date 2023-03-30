@@ -11,15 +11,4 @@ export const Box = styled.div`
   padding: 30px;
   overflow-y: auto;
   border-left: 1px solid black;
-
-  li {
-    list-style-type: none;
-  }
-
-  li span {
-    font-size: 20px;
-    font-weight: bold;
-    color: #1f939b;
-    margin-bottom: 10px;
-  }
 `;

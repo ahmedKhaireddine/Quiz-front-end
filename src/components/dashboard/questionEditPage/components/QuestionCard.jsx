@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Field, Formik } from "formik";
+import { Formik } from "formik";
 import * as Yup from "yup";
 
 import {
@@ -18,12 +18,9 @@ import {
   TimeContainer,
   Title,
 } from "../../../../styles/dashboard/questionEdit/QuestionEditStyled";
-// import AnswerForm from "./AnswerForm";
-// import AnswersList from "./AnswersList";
 
-const QuestionCard = () => {
-  const [input, setInput] = useState("");
-  const [answers, setAnswers] = useState([]);
+const QuestionCard = ({ answers, setAnswers }) => {
+  // const [answers, setAnswers] = useState([]);
 
   const themes = [
     {
@@ -54,7 +51,7 @@ const QuestionCard = () => {
       answer3: values.answer3,
       answer4: values.answer4,
     });
-    console.log("answers :", answers);
+    console.log("QuestionCard answers :", answers);
     // navigate("/dashboard")
     actions.resetForm();
     // console.log(

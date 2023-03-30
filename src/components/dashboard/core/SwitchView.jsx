@@ -3,10 +3,10 @@ import { useContext } from "react"
 import Accounts from "../Accounts"
 import Home from "../Home"
 import Messages from "../Messages"
-import Questions from "../Questions"
-import Questionnaires from "../Questionnaires"
+import Questions from "../questionsPage/Questions"
+import Questionnaires from "../quizPage/Questionnaires"
 import Topics from "../Topics"
-import QuestionEdit from "../questionEdit/QuestionEdit"
+import QuestionEdit from "../questionEditPage/QuestionEdit"
 import { UserContext } from "../../../contexts"
 
 const SwitchView = (props) => {
