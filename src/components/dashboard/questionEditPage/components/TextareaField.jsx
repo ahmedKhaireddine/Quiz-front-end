@@ -23,7 +23,7 @@ const TextField = ({ label, ...props }) => {
                     border="2px solid"
                     borderColor={borderColor}
                     height={4}
-                    boxShadow="rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
+                    boxShadow="rgb(0, 0, 0, 30%) 0px 2px 8px 0px"
                     focusBorderColor={focusBorderColor}
                     _hover={{ borderColor: hoverBorderColor }}
                     _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}

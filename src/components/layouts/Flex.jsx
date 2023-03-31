@@ -18,17 +18,17 @@ const Flex = ({
 }) => {
     return (
         <Container
-            alignItems= {alignItems}
-            background= {background}
-            borderRadius= {borderRadius}
-            boxShadow= {boxShadow}
-            color= {color}
-            flexDirection= {flexDirection}
+            alignItems={alignItems}
+            background={background}
+            borderRadius={borderRadius}
+            boxShadow={boxShadow}
+            color={color}
+            flexDirection={flexDirection}
             height={height}
-            justifyContent= {justifyContent}
-            margin= {margin}
-            padding= {padding}
-            width= {width}
+            justifyContent={justifyContent}
+            margin={margin}
+            padding={padding}
+            width={width}
         >
             {children}
         </Container>

@@ -1,14 +1,5 @@
 import styled from "styled-components";
 
-export const MainContainer = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 175px auto;
-  grid-template-columns: 1fr 350px;
-  justify-content: space-between;
-`;
-
 export const Title = styled.h2`
   font-size: 30px;
   font-weight: bold;
@@ -33,7 +24,7 @@ export const Box = styled.div`
   overflow-y: auto;
   
   ::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
   }
 
   ::-webkit-scrollbar-track {

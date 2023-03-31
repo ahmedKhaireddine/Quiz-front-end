@@ -101,23 +101,24 @@
 // export default Questions
 
 import React from "react";
-import { CardContainer } from "../../../styles/dashboard/questionsPage/QuestionItemCardStyled";
-import { MainContainer } from "../../../styles/dashboard/questionsPage/QuestionsStyled";
+import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
 import Aside from "../layouts/Aside";
 import Header from "../layouts/Header";
-import QuestionItemCard from "./components/QuestionItemCard";
+import CardContainer from "./components/CardContainer";
 
 const Questions = () => {
   return (
     <MainContainer>
+
       <Header
         title="Questions"
         description="Consultez la liste de vos questions"
       />
-      <CardContainer>
-        <QuestionItemCard />
-      </CardContainer>
+
+      <CardContainer />
+
       <Aside />
+
     </MainContainer>
   );
 };
