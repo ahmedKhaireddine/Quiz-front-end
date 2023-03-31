@@ -1,19 +1,5 @@
 import styled from "styled-components";
 
-export const Title = styled.h2`
-  font-size: 30px;
-  font-weight: bold;
-  color: #1f939b;
-  margin: ${(props) => props.margin};
-  text-align: ${(props) => props.txtCenter};
-`;
-
-export const Subtitle = styled.h2`
-  font-size: 20px;
-  font-weight: bold;
-  color: #1f939b;
-`;
-
 export const Box = styled.div`
   height: 100%;
   grid-column: 1 / 2;
@@ -69,15 +55,5 @@ export const AnswerContainer = styled.div`
 
   input {
     width: 350px;
-  }
-`;
-
-export const List = styled.p`
-  list-style-type: none;
-
-  span {
-    font-size: 22px;
-    font-weight: semi-bold;
-    color: #1f939b;
   }
 `;

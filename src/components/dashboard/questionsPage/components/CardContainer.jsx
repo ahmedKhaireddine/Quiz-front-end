@@ -11,6 +11,7 @@ import { Box, Text, TitleH4 } from "../../../../styles/ReusableTagsStyled";
 
 const CardContainer = () => {
   const [activeEdit, setActiveEdit] = useState(false);
+  const [index, setIndex] = useState(null)
   const [questions, setQuestions] = useState(QuestionsJson)
 
 //   console.log("questions :", questions[8].id);
@@ -35,6 +36,7 @@ const CardContainer = () => {
       {questions.map((element) => {
         return (
           <Flex
+            width="90%"
             alignItems="center"
             background="white"
             borderRadius="3px"
@@ -44,7 +46,7 @@ const CardContainer = () => {
             margin="5px auto"
             padding="10px 20px"
             key={element.id}
-            width="90%"
+            // onMouseOver={}
           >
             <Flex justifyContent="center" width="10%">
               <Checkbox

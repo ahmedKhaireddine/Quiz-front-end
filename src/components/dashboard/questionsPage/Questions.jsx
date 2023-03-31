@@ -100,25 +100,40 @@
 
 // export default Questions
 
-import React from "react";
+import React, { useState } from "react";
 import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
 import Aside from "../layouts/Aside";
 import Header from "../layouts/Header";
 import CardContainer from "./components/CardContainer";
+import ItemPreviewCard from "./components/ItemPreviewCard";
+
+import QuestionsJson from "../../../assets/json/questions.json";
+import { SubTitle } from "../../../styles/ReusableTagsStyled";
 
 const Questions = () => {
+  const [questions, setQuestions] = useState(QuestionsJson);
+
   return (
     <MainContainer>
-
       <Header
         title="Questions"
         description="Consultez la liste de vos questions"
       />
 
-      <CardContainer />
+      <CardContainer questions={questions} setQuestions={setQuestions} />
 
-      <Aside />
-
+      <Aside questions={questions} setQuestions={setQuestions}>
+        <SubTitle
+          txtCenter="center"
+          fontSize="30px"
+          fontWeight="bold"
+          color="#1f939b"
+          margin="0 0 20px 0"
+        >
+          Question
+        </SubTitle>
+        {/* <p>{questions[].description}</p> */}
+      </Aside>
     </MainContainer>
   );
 };

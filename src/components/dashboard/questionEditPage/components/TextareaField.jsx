@@ -20,7 +20,7 @@ const TextField = ({ label, ...props }) => {
                     {...field}
                     {...props}
                     bg={bg}
-                    border="2px solid"
+                    border="1px solid"
                     borderColor={borderColor}
                     height={4}
                     boxShadow="rgb(0, 0, 0, 30%) 0px 2px 8px 0px"

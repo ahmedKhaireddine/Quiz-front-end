@@ -20,7 +20,7 @@ const SelectField = ({ label, ...props }) => {
                     {...field}
                     {...props}
                     bg={bg}
-                    border="2px solid"
+                    border="1px solid"
                     borderColor={borderColor}
                     boxShadow="rgb(0, 0, 0, 30%) 0px 2px 8px 0px"
                     focusBorderColor={focusBorderColor}

@@ -16,10 +16,9 @@ import TextareaField from "./TextareaField";
 import NumberInput4 from "./NumberInput4";
 import {
   Box,
-  Subtitle,
   TimeContainer,
-  Title,
 } from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
+import { SubTitle } from "../../../../styles/ReusableTagsStyled"
 
 const QuestionCard = ({ answers, setAnswers }) => {
   const themes = [
@@ -69,7 +68,15 @@ const QuestionCard = ({ answers, setAnswers }) => {
 
   return (
     <Box>
-      <Title txtCenter="center">Question</Title>
+      <SubTitle 
+        txtCenter="center"
+        fontSize="30px"
+        fontWeight="bold"
+        color="#1f939b"
+        margin="0 0 20px 0"
+        >
+          Question
+      </SubTitle>
       <Formik
         initialValues={{
           theme: "Histoire",
@@ -94,7 +101,13 @@ const QuestionCard = ({ answers, setAnswers }) => {
       >
         {(formik) => (
           <form onSubmit={formik.handleSubmit}>
-            <Subtitle>Thèmes</Subtitle>
+            <SubTitle
+              fontSize="20px"
+              fontWeight="bold"
+              color="#1f939b"
+              margin="0 0 15px 0"
+            >Thèmes
+            </SubTitle>
             <SelectField name="theme" placeholder="Choisissez votre thème">
               {themes.map((theme) => (
                 <option key={theme.id} value={theme.label}>
@@ -128,8 +141,6 @@ const QuestionCard = ({ answers, setAnswers }) => {
             
               </span>
               <span>sec</span>
-                  
-
 
               {/* <NumberInputField 
                 name="time"
@@ -137,7 +148,15 @@ const QuestionCard = ({ answers, setAnswers }) => {
               /> */}
             </TimeContainer>
 
-            <Title txtCenter="center">Réponses</Title>
+            <SubTitle 
+              txtCenter="center"
+              fontSize="20px"
+              fontWeight="bold"
+              color="#1f939b"
+              margin="0 0 15px 0"
+              >
+                Réponses
+            </SubTitle>
             <TextareaField label="Réponse 1" name="answer1" />
             <TextareaField label="Réponse 2" name="answer2" />
             <TextareaField label="Réponse 3" name="answer3" />
