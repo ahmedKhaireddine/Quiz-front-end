@@ -11,11 +11,19 @@ import { Box, Text, TitleH4 } from "../../../../styles/ReusableTagsStyled";
 
 const CardContainer = () => {
   const [activeEdit, setActiveEdit] = useState(false);
+  const [questions, setQuestions] = useState(QuestionsJson)
 
-  const toggleActiveEdit = () => {
-    setActiveEdit(!activeEdit);
-    console.log("Ola");
-  };
+//   console.log("questions :", questions[8].id);
+
+//   const toggleActiveEdit = () => {
+//     setActiveEdit(!activeEdit);
+//     console.log("Ola");
+//   };
+
+  const deleteCard = ({ id }) => {
+    setQuestions(questions.filter(el => el.id !== id))
+    // console.log(id);
+  }
 
   return (
     <Container
@@ -24,7 +32,7 @@ const CardContainer = () => {
       width="100%"
       height="100%"
     >
-      {QuestionsJson.map((element, index) => {
+      {questions.map((element) => {
         return (
           <Flex
             alignItems="center"
@@ -35,7 +43,7 @@ const CardContainer = () => {
             justifyContent="space-between"
             margin="5px auto"
             padding="10px 20px"
-            key={index}
+            key={element.id}
             width="90%"
           >
             <Flex justifyContent="center" width="10%">
@@ -78,11 +86,17 @@ const CardContainer = () => {
               </Text>
             </Box>
             <Flex justifyContent="space-between" width="10%">
-              <Button onClick={toggleActiveEdit}>
+              <Button 
+            //   onClick={toggleActiveEdit}
+              >
                 <MdModeEdit fontSize="1.3em" color="#4fa9af" />
               </Button>
               <Button>
-                <RiDeleteBin6Line fontSize="1.3em" color="#4fa9af" />
+                <RiDeleteBin6Line 
+                    fontSize="1.3em" 
+                    color="#4fa9af" 
+                    onClick={deleteCard}
+                />
               </Button>
             </Flex>
           </Flex>
