@@ -28,6 +28,7 @@ const TextField = ({ label, ...props }) => {
                     _hover={{ borderColor: hoverBorderColor }}
                     _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
                     minHeight={65}
+                    marginBottom="25px"
                     // minLength={10}
                 />
             <FormErrorMessage>{meta.error}</FormErrorMessage>

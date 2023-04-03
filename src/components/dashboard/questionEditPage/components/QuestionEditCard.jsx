@@ -75,9 +75,9 @@ const QuestionCard = ({ answers, setAnswers }) => {
           question: "Quand a eu lieu le Big Bang ?",
           time: 18,
           answer1: "Hier",
-          answer2: "",
-          answer3: "",
-          answer4: "",
+          answer2: "En l'an 0",
+          answer3: "Quand j'ai fait brûler le repas la semaine dernière",
+          answer4: "Il y a environ 13,8 milliards d'années",
         }}
         onSubmit={onSubmit}
         validationSchema={Yup.object({
@@ -93,16 +93,9 @@ const QuestionCard = ({ answers, setAnswers }) => {
       >
         {(formik) => (
           <form onSubmit={formik.handleSubmit}>
+
             <SubTitle
               fontSize="30px"
-              fontWeight="bold"
-              color="#1f939b"
-              padding="0 0 20px 0"
-            >
-              Question
-            </SubTitle>
-            <SubTitle
-              fontSize="20px"
               fontWeight="bold"
               color="#1f939b"
               margin="0 0 15px 0"
@@ -117,6 +110,14 @@ const QuestionCard = ({ answers, setAnswers }) => {
               ))}
             </SelectField>
 
+            <SubTitle
+              fontSize="30px"
+              fontWeight="bold"
+              color="#1f939b"
+              margin="0 0 15px 0"
+            >
+              Question
+            </SubTitle>
             <TextareaField name="question" />
 
             <TimeContainer>
@@ -149,7 +150,7 @@ const QuestionCard = ({ answers, setAnswers }) => {
 
             <SubTitle
               txtCenter="center"
-              fontSize="20px"
+              fontSize="30px"
               fontWeight="bold"
               color="#1f939b"
               margin="0 0 15px 0"
@@ -159,27 +160,6 @@ const QuestionCard = ({ answers, setAnswers }) => {
             <TextareaField label="Réponse 1" name="answer1" />
             <TextareaField label="Réponse 2" name="answer2" />
             <TextareaField label="Réponse 3" name="answer3" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
-            <TextareaField label="Réponse 4" name="answer4" />
             <TextareaField label="Réponse 4" name="answer4" />
 
             <Button

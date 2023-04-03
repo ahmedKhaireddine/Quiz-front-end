@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TimeContainer = styled.div`
   display: flex;
   width: 100%;
-  padding: 20px 0;
+  padding: 15px 0 30px;
 
   p {
     line-height: 40px;

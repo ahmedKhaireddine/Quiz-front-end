@@ -6,8 +6,9 @@ import { Checkbox } from "@chakra-ui/react";
 import Flex from "../../../layouts/Flex";
 import QuestionsJson from "../../../../assets/json/questions.json";
 
-import { Button, Container } from "../../../../styles/dashboard/questionsPage/QuestionsPageStyled";
+import { Button } from "../../../../styles/dashboard/questionsPage/QuestionsPageStyled";
 import { Box, Text, TitleH4 } from "../../../../styles/ReusableTagsStyled";
+import CentralContainer from "../../layouts/CentralContainer";
 
 const CardContainer = () => {
   const [activeEdit, setActiveEdit] = useState(false);
@@ -27,7 +28,7 @@ const CardContainer = () => {
   }
 
   return (
-    <Container
+    <CentralContainer
       flexDirection="column"
       background="#f8f8fa"
       width="100%"
@@ -104,7 +105,7 @@ const CardContainer = () => {
           </Flex>
         );
       })}
-    </Container>
+    </CentralContainer>
   );
 };
 

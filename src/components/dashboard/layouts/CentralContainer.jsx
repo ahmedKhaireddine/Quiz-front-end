@@ -2,7 +2,13 @@ import React from 'react'
 
 import { Box } from '../../../styles/dashboard/layouts/CentralContainerStyled'
 
-const CentralContainer = ({ children, flexDirection, height, width, justifyContent }) => {
+const CentralContainer = ({ 
+  children, 
+  flexDirection, 
+  height, 
+  width, 
+  justifyContent 
+}) => {
   return (
     <Box
       flexDirection={flexDirection}

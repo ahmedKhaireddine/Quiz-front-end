@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Box = styled.div`
     grid-column: 1 / 2;
-    width: ${props => props.width};
+    width: 100%;
     height: ${props => props.height};
     display: flex;
     justify-content: ${props => props.justifyContent};

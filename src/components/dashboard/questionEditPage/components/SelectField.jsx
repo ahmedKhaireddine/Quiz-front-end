@@ -26,6 +26,7 @@ const SelectField = ({ label, ...props }) => {
                     focusBorderColor={focusBorderColor}
                     _hover={{ borderColor: hoverBorderColor }}
                     _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
+                    marginBottom="25px"
                 >
                 </Select>
             <FormErrorMessage>{meta.error}</FormErrorMessage>

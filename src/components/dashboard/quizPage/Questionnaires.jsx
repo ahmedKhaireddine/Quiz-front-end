@@ -7,7 +7,6 @@ const Questionnaires = (props) => {
         backgroundColor:"#f8f8fa",
         width:"100%",
         height:"100%",
-        background: "blue"
       }}
     >
       Questionnaires
