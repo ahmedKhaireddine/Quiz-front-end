@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Box, Title } from "../../../styles/dashboard/layouts/HeaderStyled"
 
-const Header = ({title, description}) => {
+const Header = ({ title, description }) => {
   return (
     <Box>
         <Title>

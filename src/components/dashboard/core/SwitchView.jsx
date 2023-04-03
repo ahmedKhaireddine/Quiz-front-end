@@ -2,7 +2,7 @@ import { useContext } from "react"
 
 import Accounts from "../Accounts"
 import Home from "../Home"
-import Messages from "../Messages"
+import Messages from "../../dashboard/messagesPage/Messages"
 import Questions from "../questionsPage/Questions"
 import Questionnaires from "../quizPage/Questionnaires"
 import Topics from "../Topics"

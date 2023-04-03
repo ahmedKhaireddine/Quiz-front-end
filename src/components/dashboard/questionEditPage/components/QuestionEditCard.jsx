@@ -18,7 +18,8 @@ import {
   Box,
   TimeContainer,
 } from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
-import { SubTitle } from "../../../../styles/ReusableTagsStyled"
+import { SubTitle } from "../../../../styles/ReusableTagsStyled";
+import CentralContainer from "../../layouts/CentralContainer";
 
 const QuestionCard = ({ answers, setAnswers }) => {
   const themes = [
@@ -67,16 +68,7 @@ const QuestionCard = ({ answers, setAnswers }) => {
   };
 
   return (
-    <Box>
-      <SubTitle 
-        txtCenter="center"
-        fontSize="30px"
-        fontWeight="bold"
-        color="#1f939b"
-        margin="0 0 20px 0"
-        >
-          Question
-      </SubTitle>
+    <CentralContainer flexDirection="column" height="100%">
       <Formik
         initialValues={{
           theme: "Histoire",
@@ -93,20 +85,29 @@ const QuestionCard = ({ answers, setAnswers }) => {
             .required("Aucune question décrite")
             .max(255, "255 caractères maximum"),
           time: Yup.number()
-                    .min(5, "Veuillez saisir un nombre entre 5 et 30")
-                    .max(30, "Veuillez saisir un nombre entre 5 et 30")
-                    .typeError("Veuillez saisir un nombre entre 5 et 30"),
+            .min(5, "Veuillez saisir un nombre entre 5 et 30")
+            .max(30, "Veuillez saisir un nombre entre 5 et 30")
+            .typeError("Veuillez saisir un nombre entre 5 et 30"),
           answer: Yup.string().max(255, "255 caractères maximum"),
         })}
       >
         {(formik) => (
           <form onSubmit={formik.handleSubmit}>
             <SubTitle
+              fontSize="30px"
+              fontWeight="bold"
+              color="#1f939b"
+              padding="0 0 20px 0"
+            >
+              Question
+            </SubTitle>
+            <SubTitle
               fontSize="20px"
               fontWeight="bold"
               color="#1f939b"
               margin="0 0 15px 0"
-            >Thèmes
+            >
+              Thèmes
             </SubTitle>
             <SelectField name="theme" placeholder="Choisissez votre thème">
               {themes.map((theme) => (
@@ -125,12 +126,11 @@ const QuestionCard = ({ answers, setAnswers }) => {
              
               </span>
               <span>sec</span> */}
-           
 
               <p>Temps pour répondre :</p>
               <span>
                 <NumberInput name="time">
-                  <NumberInputField/>
+                  <NumberInputField />
                   <NumberInputStepper>
                     <NumberIncrementStepper />
                     <NumberDecrementStepper />
@@ -138,7 +138,6 @@ const QuestionCard = ({ answers, setAnswers }) => {
                 </NumberInput>
 
                 {/* <NumberInput4 name="time"/> */}
-            
               </span>
               <span>sec</span>
 
@@ -148,18 +147,39 @@ const QuestionCard = ({ answers, setAnswers }) => {
               /> */}
             </TimeContainer>
 
-            <SubTitle 
+            <SubTitle
               txtCenter="center"
               fontSize="20px"
               fontWeight="bold"
               color="#1f939b"
               margin="0 0 15px 0"
-              >
-                Réponses
+            >
+              Réponses
             </SubTitle>
             <TextareaField label="Réponse 1" name="answer1" />
             <TextareaField label="Réponse 2" name="answer2" />
             <TextareaField label="Réponse 3" name="answer3" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" />
             <TextareaField label="Réponse 4" name="answer4" />
 
             <Button
@@ -173,7 +193,7 @@ const QuestionCard = ({ answers, setAnswers }) => {
           </form>
         )}
       </Formik>
-    </Box>
+    </CentralContainer>
   );
 };
 
