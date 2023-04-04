@@ -6,7 +6,7 @@ export const Box = styled.div`
   margin-right: 0;
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: ${props => props.padding || '30px'};
   overflow-y: auto;
   border-left: 1px solid black;
   transform: translateX(0);
@@ -15,4 +15,24 @@ export const Box = styled.div`
   // @media (max-width: 1300px) {
   //   transform: translateX(100%);
   // }
+
+  overflow-y: auto;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px #1f939b;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1f939b;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #02818a;
+  }
 `;

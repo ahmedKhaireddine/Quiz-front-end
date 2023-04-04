@@ -48,28 +48,41 @@ const MessagesContainer = () => {
           <RightMessage>
             <BubbleRight>Lorem</BubbleRight>
           </RightMessage>
+          <LeftMessage>
+            <BubbleLeft>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </BubbleLeft>
+          </LeftMessage>
+          <RightMessage>
+            <BubbleRight>Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s 🙏</BubbleRight>
+          </RightMessage>
+          <RightMessage>
+            <BubbleRight>Lorem</BubbleRight>
+          </RightMessage>
+          
         </ChatContainer>
 
         <ChatForm>
           <InputContainer>
-            {/* <InputGroup> */}
             <Textarea
               outline="none"
               border="none"
               borderTopLeftRadius="9999px"
               borderBottomLeftRadius="9999px"
+              backgroundColor="#E6E6E6"
               resize="none"
-              height="100px"
+              height="80px"
               padding="15px 50px"
               fontSize="18px"
             />
-            {/* </InputGroup> */}
-
             <Button>
               <img src={Send} alt="envoyer" />
             </Button>
           </InputContainer>
         </ChatForm>
+
       </Box>
     </CentralContainer>
   );

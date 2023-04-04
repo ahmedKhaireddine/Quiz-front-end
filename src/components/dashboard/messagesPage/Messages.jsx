@@ -4,6 +4,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import Aside from "../layouts/Aside";
 import Header from "../layouts/Header";
 import MessagesContainer from "./components/MessagesContainer";
+import SenderCard from "./components/SenderCard";
 import ConverstionsList from "./components/ConverstionsList";
 
 import { SubTitle } from "../../../styles/ReusableTagsStyled";
@@ -23,16 +24,17 @@ const Messages = () => {
 
         <MessagesContainer />
 
-        <Aside>
+        <Aside padding="0">
           <SubTitle
             txtCenter="center"
             fontSize="30px"
             fontWeight="bold"
             color="#1f939b"
-            margin="0 0 20px 0"
+            margin="30px 0 20px 30px"
           >
             Vos Messages
           </SubTitle>
+          <SenderCard />
           <ConverstionsList />
         </Aside>
       </MainContainer>

@@ -19,14 +19,3 @@ export const TimeContainer = styled.div`
     line-height: 40px;
   }
 `;
-
-export const AnswerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 30px 0;
-
-  input {
-    width: 350px;
-  }
-`;

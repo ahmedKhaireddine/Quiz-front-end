@@ -2,9 +2,11 @@ import React from "react";
 
 import { Box } from "../../../styles/dashboard/layouts/AsideStyled";
 
-const Aside = ({ children }) => {
+const Aside = ({ children, padding }) => {
   return (
-    <Box>
+    <Box
+      padding={padding}
+    >
       {children}
     </Box>
   );

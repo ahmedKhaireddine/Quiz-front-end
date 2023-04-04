@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-
 import {
   NumberDecrementStepper,
   NumberIncrementStepper,
@@ -9,17 +8,16 @@ import {
   NumberInputField,
   NumberInputStepper,
 } from "@chakra-ui/react";
+
+import CentralContainer from "../../layouts/CentralContainer";
 import Button from "../../../quiz-interface/core/Button";
-// import NumberInputField from "./NumberInputField";
 import SelectField from "./SelectField";
 import TextareaField from "./TextareaField";
 import NumberInput4 from "./NumberInput4";
-import {
-  Box,
-  TimeContainer,
-} from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
+// import NumberInputField from "./NumberInputField";
+
+import { TimeContainer } from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
 import { SubTitle } from "../../../../styles/ReusableTagsStyled";
-import CentralContainer from "../../layouts/CentralContainer";
 
 const QuestionCard = ({ answers, setAnswers }) => {
   const themes = [
@@ -51,8 +49,10 @@ const QuestionCard = ({ answers, setAnswers }) => {
       answer3: values.answer3,
       answer4: values.answer4,
     });
+
     console.log("time:", values.time);
     console.log("QuestionCard answers :", answers);
+    
     // navigate("/dashboard")
     actions.resetForm();
     // console.log(

@@ -7,7 +7,6 @@ export const Box = styled.div`
   margin: 0 auto;
   box-shadow: 0 30px 70px 0px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
-  
 `;
 
 export const Navbar = styled.div`
@@ -22,7 +21,7 @@ export const ChatContainer = styled.div`
   height: calc(100% - 120px);
   display: flex;
   flex-direction: column;
-  padding: 0 15px;
+  padding: 15px 30px;
   overflow-y: auto;
 
   ::-webkit-scrollbar {
@@ -81,14 +80,16 @@ export const ChatForm = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f1f1f1;
+  // background: #f1f1f1;
+  border-top: 1px solid #E6E6E6;
+
 `;
 
 export const InputContainer = styled.div`
   background: #fff;
   display: flex;
   width: 95%;
-  height: 100px;
+  height: 80px;
   border-radius: 9999px;
 `;
 
@@ -101,14 +102,15 @@ export const InputGroup = styled.div`
 `;
 
 export const Button = styled.button`
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   border-top-right-radius: 9999px;
   border-bottom-right-radius: 9999px;
+  background-color: #E6E6E6;
   cursor: pointer;
   padding-right: 20px;
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const  Box= styled.div`
+export const  Box = styled.div`
     width: 100%;
     height: 150px;
     margin: 10px 0;
