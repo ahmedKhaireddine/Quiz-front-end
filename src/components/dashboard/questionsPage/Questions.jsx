@@ -101,40 +101,48 @@
 // export default Questions
 
 import React, { useState } from "react";
-import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+
 import Aside from "../layouts/Aside";
 import Header from "../layouts/Header";
 import CardContainer from "./components/CardContainer";
-import ItemPreviewCard from "./components/ItemPreviewCard";
+// import ItemPreviewCard from "./components/ItemPreviewCard";
 
 import QuestionsJson from "../../../assets/json/questions.json";
+
+import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
 import { SubTitle } from "../../../styles/ReusableTagsStyled";
 
 const Questions = () => {
   const [questions, setQuestions] = useState(QuestionsJson);
 
   return (
-    <MainContainer>
-      <Header
-        title="Questions"
-        description="Consultez la liste de vos questions"
-      />
+    <HelmetProvider>
+      <MainContainer>
+        <Header
+          title="Questions"
+          description="Consultez la liste de vos questions"
+        />
+        <Helmet>
+          <title>Questions</title>
+        </Helmet>
 
-      <CardContainer questions={questions} setQuestions={setQuestions} />
+        <CardContainer questions={questions} setQuestions={setQuestions} />
 
-      <Aside questions={questions} setQuestions={setQuestions}>
-        <SubTitle
-          txtCenter="center"
-          fontSize="30px"
-          fontWeight="bold"
-          color="#1f939b"
-          margin="0 0 20px 0"
-        >
-          Question
-        </SubTitle>
-        {/* <p>{questions[].description}</p> */}
-      </Aside>
-    </MainContainer>
+        <Aside questions={questions} setQuestions={setQuestions}>
+          <SubTitle
+            txtCenter="center"
+            fontSize="30px"
+            fontWeight="bold"
+            color="#1f939b"
+            margin="0 0 20px 0"
+          >
+            Question
+          </SubTitle>
+          {/* <p>{questions[].description}</p> */}
+        </Aside>
+      </MainContainer>
+    </HelmetProvider>
   );
 };
 

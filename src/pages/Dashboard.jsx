@@ -1,7 +1,7 @@
 import React from "react"
 
 import Grid from "../components/layouts/Grid"
-import SideBar from "../components/dashboard/SideBar"
+import SideBar from "../components/dashboard/layouts/SideBar"
 import SwitchView from "../components/dashboard/core/SwitchView"
 import { UserContextProvider } from "../contexts"
 

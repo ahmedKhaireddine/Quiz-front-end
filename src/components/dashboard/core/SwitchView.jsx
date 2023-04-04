@@ -1,11 +1,11 @@
 import { useContext } from "react"
 
-import Accounts from "../Accounts"
-import Home from "../Home"
+import Accounts from "../accountsPage/Accounts"
+import Home from "../homePage/Home"
 import Messages from "../../dashboard/messagesPage/Messages"
 import Questions from "../questionsPage/Questions"
 import Questionnaires from "../quizPage/Questionnaires"
-import Topics from "../Topics"
+import Topics from "../topicsPage/Topics"
 import QuestionEdit from "../questionEditPage/QuestionEdit"
 import { UserContext } from "../../../contexts"
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
-const Questionnaires = (props) => {
+const Accounts = (props) => {
   return (
     <HelmetProvider>
       <div
@@ -12,12 +12,12 @@ const Questionnaires = (props) => {
         }}
       >
         <Helmet>
-          <title>Questionnaires</title>
+          <title>Compte</title>
         </Helmet>
-        Questionnaires
+        Compte
       </div>
     </HelmetProvider>
   );
 };
 
-export default Questionnaires;
+export default Accounts;

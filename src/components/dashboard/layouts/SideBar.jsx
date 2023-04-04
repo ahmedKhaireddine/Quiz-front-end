@@ -1,11 +1,11 @@
 import React from "react"
 
-import { Box } from "../../styles/ReusableTagsStyled"
-import Flex from "../layouts/Flex"
-import LinksList from "./core/LinksList"
-import Logo from "../Logo"
-import Logout from "./core/Logout"
-import UserCard from "./core/UserCard"
+import { Box } from "../../../styles/ReusableTagsStyled"
+import Flex from "../../layouts/Flex"
+import LinksList from "../core/LinksList"
+import Logo from "../../Logo"
+import Logout from "../core/Logout"
+import UserCard from "../core/UserCard"
 
 const SideBar = (props) => {
   return (
