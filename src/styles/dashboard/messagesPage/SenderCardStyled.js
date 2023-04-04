@@ -4,8 +4,8 @@ export const Card = styled.div`
     width: 100%:
     height: 200px;
     background-color: #f1f1f1;
-    border-top: 1px solid #444;
-    border-bottom: 1px solid #444;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
     padding: 20px;
 `;
 

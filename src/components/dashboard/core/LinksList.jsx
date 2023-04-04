@@ -14,7 +14,7 @@ const LinksList = (props) => {
     <ListItems>
       <Item selected={view === "Home"} onClick={() => setView("Home")}>
         <HiHome color="rgba(31,147,155,.8)" fontSize="1.4em"/>
-        <Title>Acceuil</Title>
+        <Title>Accueil</Title>
       </Item>
       <Item selected={view === "Questions"} onClick={() => setView("Questions")}>
         <AiFillAppstore color="rgba(31,147,155,.8)" fontSize="1.4em"/>

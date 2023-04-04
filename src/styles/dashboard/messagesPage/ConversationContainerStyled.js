@@ -3,12 +3,13 @@ import styled from "styled-components";
 export const  Box = styled.div`
     width: 100%;
     height: 150px;
-    margin: 10px 0;
-    border-radius: 5px;
-    background: lightgray;
-    padding: 10px;
+    padding: 10px 15px;
     position: relative;
-    box-shadow: rgb(0,0,0,38%) 0px 3px 6px 0px;
+    cursor: pointer;
+
+    :hover {
+      background-color: #DFDFDF;
+    }
 
 `;
 

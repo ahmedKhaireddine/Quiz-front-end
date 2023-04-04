@@ -10,7 +10,13 @@ export const Box = styled.div`
   }
 `;
 
-export const Title = styled.div`
+export const Subtitle = styled.h3`
+  font-size: 21px;
+  font-weight: 600;
+  color: #666;
+`
+
+export const Title = styled.h1`
   font-size: 36px;
   font-weight: bold;
   color: #1f939b;

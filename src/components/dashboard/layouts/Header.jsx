@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, Title } from "../../../styles/dashboard/layouts/HeaderStyled"
+import { Box, Subtitle, Title } from "../../../styles/dashboard/layouts/HeaderStyled"
 
 const Header = ({ title, description }) => {
   return (
@@ -8,7 +8,7 @@ const Header = ({ title, description }) => {
         <Title>
             {title}
         </Title>
-        <p>{description}</p>
+        <Subtitle>{description}</Subtitle>
     </Box>
   )
 }

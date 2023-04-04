@@ -16,7 +16,7 @@ const Messages = () => {
       <MainContainer>
         <Header
           title="Messages"
-          description="Consultez vos messages et dialoguez avec l'administrateur"
+          description="Consultez vos messages et échangez avec d'autres utilisateurs"
         />
         <Helmet>
           <title>Messages</title>
