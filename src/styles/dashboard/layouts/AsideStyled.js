@@ -6,7 +6,7 @@ export const Box = styled.div`
   margin-right: 0;
   display: flex;
   flex-direction: column;
-  padding: ${props => props.padding || '30px'};
+  padding: ${(props) => props.padding || "15px 30px"};
   overflow-y: auto;
   border-left: 1px solid black;
   transform: translateX(0);
@@ -15,4 +15,12 @@ export const Box = styled.div`
   // @media (max-width: 1300px) {
   //   transform: translateX(100%);
   // }
+`;
+
+export const Subtitle = styled.div`
+  color: #1f939b;
+  font-size: 30px;
+  font-weight: bold;
+  padding: ${props => props.subtitlePadding || "15px 30px"};
+  text-align: left;
 `;

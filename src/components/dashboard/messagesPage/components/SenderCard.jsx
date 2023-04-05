@@ -4,6 +4,7 @@ import {
   Avatar,
   Card,
   Name,
+  NameContainer,
   Post,
   UserInfos,
 } from "../../../../styles/dashboard/messagesPage/SenderCardStyled";
@@ -18,16 +19,17 @@ const SenderCard = () => {
             {/* {sender.avatar} */}
           </div>
         </Avatar>
-        <Name>
-          Chuck Norris
-          {/* {sender.username} */}
-        </Name>
+        <NameContainer>
+          <Name>
+            Chuck Norris
+            {/* {sender.username} */}
+          </Name>
+          <Post>
+            7 messages
+            {/* {sender.messages.lenght} messages  */}
+          </Post>
+        </NameContainer>
       </UserInfos>
-
-      <Post>
-        7 messages
-        {/* {sender.messages.lenght} messages  */}
-      </Post>
     </Card>
   );
 };

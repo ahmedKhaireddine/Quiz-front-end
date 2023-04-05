@@ -18,7 +18,6 @@ const ConverstionsList = () => {
       <ConversationContainer />
       <ConversationContainer />
       <ConversationContainer />
-  
     </Box>
   );
 };

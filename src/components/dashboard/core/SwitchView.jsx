@@ -1,35 +1,35 @@
-import { useContext } from "react"
+import { useContext } from "react";
 
-import Accounts from "../accountsPage/Accounts"
-import Home from "../homePage/Home"
-import Messages from "../../dashboard/messagesPage/Messages"
-import Questions from "../questionsPage/Questions"
-import Questionnaires from "../quizPage/Questionnaires"
-import Topics from "../topicsPage/Topics"
-import QuestionEdit from "../questionEditPage/QuestionEdit"
-import { UserContext } from "../../../contexts"
+import Accounts from "../accountsPage/Accounts";
+import Home from "../homePage/Home";
+import Messages from "../../dashboard/messagesPage/Messages";
+import Questions from "../questionsPage/Questions";
+import Questionnaires from "../quizPage/Questionnaires";
+import Topics from "../topicsPage/Topics";
+import QuestionEdit from "../questionEditPage/QuestionEdit";
+import { UserContext } from "../../../contexts";
 
 const SwitchView = (props) => {
-  const { view } = useContext(UserContext)
+  const { view } = useContext(UserContext);
 
   switch (view) {
     case "Accounts":
-      return <Accounts />
+      return <Accounts />;
     case "Home":
-      return <Home />
+      return <Home />;
     case "Messages":
-      return <Messages />
+      return <Messages />;
     case "Questions":
-      return <Questions />
+      return <Questions />;
     case "Questionnaires":
-      return <Questionnaires />
+      return <Questionnaires />;
     case "Topics":
-      return <Topics />
+      return <Topics />;
     case "QuestionEdit":
-      return <QuestionEdit />
+      return <QuestionEdit />;
     default:
-      break
+      break;
   }
-}
+};
 
-export default SwitchView
+export default SwitchView;

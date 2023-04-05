@@ -42,8 +42,10 @@ const MessagesContainer = () => {
             </BubbleLeft>
           </LeftMessage>
           <RightMessage>
-            <BubbleRight>Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s 🙏</BubbleRight>
+            <BubbleRight>
+              Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s 🙏
+            </BubbleRight>
           </RightMessage>
           <RightMessage>
             <BubbleRight>Lorem</BubbleRight>
@@ -55,13 +57,14 @@ const MessagesContainer = () => {
             </BubbleLeft>
           </LeftMessage>
           <RightMessage>
-            <BubbleRight>Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s 🙏</BubbleRight>
+            <BubbleRight>
+              Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s 🙏
+            </BubbleRight>
           </RightMessage>
           <RightMessage>
             <BubbleRight>Lorem</BubbleRight>
           </RightMessage>
-          
         </ChatContainer>
 
         <ChatForm>
@@ -82,7 +85,6 @@ const MessagesContainer = () => {
             </Button>
           </InputContainer>
         </ChatForm>
-
       </Box>
     </CentralContainer>
   );

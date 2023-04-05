@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import { Box } from '../../../styles/dashboard/layouts/CentralContainerStyled'
+import { Box } from "../../../styles/dashboard/layouts/CentralContainerStyled";
 
-const CentralContainer = ({ 
-  children, 
-  flexDirection, 
-  height, 
-  width, 
-  justifyContent 
+const CentralContainer = ({
+  children,
+  flexDirection,
+  height,
+  width,
+  justifyContent,
 }) => {
   return (
     <Box
@@ -16,9 +16,9 @@ const CentralContainer = ({
       height={height}
       width={width}
     >
-        {children}
+      {children}
     </Box>
-  )
-}
+  );
+};
 
-export default CentralContainer
+export default CentralContainer;

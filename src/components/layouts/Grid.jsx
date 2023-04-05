@@ -13,7 +13,7 @@ const Grid = ({ children }) => {
     <Container
       height= "100vh"
       gridTemplateColumns="250px 1fr"
-      width= "100vw"
+      width= "100%"
     >
       {children}
     </Container>

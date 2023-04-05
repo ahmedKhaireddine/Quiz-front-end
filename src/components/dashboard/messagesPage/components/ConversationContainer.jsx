@@ -1,12 +1,12 @@
 import React from "react";
 
 import {
-    Box,
-    Sender,
-    Text,
-    TextContainer,
-    Time
-  } from "../../../../styles/dashboard/messagesPage/ConversationContainerStyled";
+  Box,
+  Sender,
+  Text,
+  TextContainer,
+  Time,
+} from "../../../../styles/dashboard/messagesPage/ConversationContainerStyled";
 
 const ConversationContainer = () => {
   return (

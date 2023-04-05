@@ -103,7 +103,7 @@
 import React, { useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
-import Aside from "../layouts/Aside";
+import Aside from "../layouts/aside/Aside";
 import Header from "../layouts/Header";
 import CardContainer from "./components/CardContainer";
 // import ItemPreviewCard from "./components/ItemPreviewCard";
@@ -111,7 +111,6 @@ import CardContainer from "./components/CardContainer";
 import QuestionsJson from "../../../assets/json/questions.json";
 
 import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
-import { SubTitle } from "../../../styles/ReusableTagsStyled";
 
 const Questions = () => {
   const [questions, setQuestions] = useState(QuestionsJson);
@@ -129,16 +128,12 @@ const Questions = () => {
 
         <CardContainer questions={questions} setQuestions={setQuestions} />
 
-        <Aside questions={questions} setQuestions={setQuestions}>
-          <SubTitle
-            txtCenter="center"
-            fontSize="30px"
-            fontWeight="bold"
-            color="#1f939b"
-            margin="0 0 20px 0"
-          >
-            Question
-          </SubTitle>
+        <Aside
+          questions={questions}
+          setQuestions={setQuestions}
+          subtitle="Question"
+          padding="0"
+        >
           {/* <p>{questions[].description}</p> */}
         </Aside>
       </MainContainer>

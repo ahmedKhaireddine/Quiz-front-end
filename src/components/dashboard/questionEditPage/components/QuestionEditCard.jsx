@@ -52,7 +52,7 @@ const QuestionCard = ({ answers, setAnswers }) => {
 
     console.log("time:", values.time);
     console.log("QuestionCard answers :", answers);
-    
+
     // navigate("/dashboard")
     actions.resetForm();
     // console.log(
@@ -93,7 +93,6 @@ const QuestionCard = ({ answers, setAnswers }) => {
       >
         {(formik) => (
           <form onSubmit={formik.handleSubmit}>
-
             <SubTitle
               fontSize="30px"
               fontWeight="bold"

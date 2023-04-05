@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const  Box = styled.div`
     width: 100%;
     height: 150px;
-    padding: 10px 15px;
+    padding: 10px 20px;
     position: relative;
     cursor: pointer;
 
@@ -46,7 +46,7 @@ export const Text = styled.div`
 export const Time = styled.div`
   position: absolute;
   bottom: 10px;
-  right: 10px;
+  right: 20px;
   font-size: 12px;
   font-weight: 600;
   color: rgba(0,0,0,0.7);

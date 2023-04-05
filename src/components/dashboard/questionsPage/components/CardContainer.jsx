@@ -12,20 +12,20 @@ import CentralContainer from "../../layouts/CentralContainer";
 
 const CardContainer = () => {
   const [activeEdit, setActiveEdit] = useState(false);
-  const [index, setIndex] = useState(null)
-  const [questions, setQuestions] = useState(QuestionsJson)
+  const [index, setIndex] = useState(null);
+  const [questions, setQuestions] = useState(QuestionsJson);
 
-//   console.log("questions :", questions[8].id);
+  //   console.log("questions :", questions[8].id);
 
-//   const toggleActiveEdit = () => {
-//     setActiveEdit(!activeEdit);
-//     console.log("Ola");
-//   };
+  //   const toggleActiveEdit = () => {
+  //     setActiveEdit(!activeEdit);
+  //     console.log("Ola");
+  //   };
 
   const deleteCard = ({ id }) => {
-    setQuestions(questions.filter(el => el.id !== id))
+    setQuestions(questions.filter((el) => el.id !== id));
     // console.log(id);
-  }
+  };
 
   return (
     <CentralContainer
@@ -89,16 +89,16 @@ const CardContainer = () => {
               </Text>
             </Box>
             <Flex justifyContent="space-between" width="10%">
-              <Button 
-            //   onClick={toggleActiveEdit}
+              <Button
+              //   onClick={toggleActiveEdit}
               >
                 <MdModeEdit fontSize="1.3em" color="#4fa9af" />
               </Button>
               <Button>
-                <RiDeleteBin6Line 
-                    fontSize="1.3em" 
-                    color="#4fa9af" 
-                    onClick={deleteCard}
+                <RiDeleteBin6Line
+                  fontSize="1.3em"
+                  color="#4fa9af"
+                  onClick={deleteCard}
                 />
               </Button>
             </Flex>

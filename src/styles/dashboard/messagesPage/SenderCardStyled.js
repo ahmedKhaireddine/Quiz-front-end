@@ -45,6 +45,11 @@ export const Name = styled.h4`
     color: #666;
 `;
 
+export const NameContainer = styled.h4`
+    display: flex;
+    flex-direction: column;
+`;
+
 export const Post = styled.p`
   text-align: right;
   font-size: 16px;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Box = styled.div`
-  padding: 30px;
+  padding: 15px 53px;
   border-bottom: 1px solid #a19d9d;
   background-color: #f8f8fa;
 
@@ -17,8 +17,8 @@ export const Subtitle = styled.h3`
 `
 
 export const Title = styled.h1`
-  font-size: 36px;
+  font-size: 34px;
   font-weight: bold;
   color: #1f939b;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 `;
