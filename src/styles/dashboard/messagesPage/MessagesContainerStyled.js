@@ -3,44 +3,40 @@ import styled from "styled-components";
 export const Box = styled.div`
   width: 100%;
   height: 100%;
-  position: relative;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   box-shadow: 0 30px 70px 0px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
 `;
 
-export const Navbar = styled.div`
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
-`;
-
 export const ChatContainer = styled.div`
-  height: calc(100% - 120px);
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 15px 30px;
+  // background: green;
   overflow-y: auto;
+  // position: relative;
 
   ::-webkit-scrollbar {
-      width: 10px;
-    }
-  
-    ::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 5px #1f939b; 
-      border-radius: 10px;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: #1f939b; 
-      border-radius: 10px;
-    }
-  
-    ::-webkit-scrollbar-thumb:hover {
-      background: #02818a; 
-    }
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px #1f939b;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1f939b;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #02818a;
+  }
 `;
 
 export const BubbleRight = styled.div`
@@ -54,6 +50,10 @@ export const BubbleRight = styled.div`
   color: #f1f1f1;
   font-size: 18px;
   padding: 20px;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 16px;
+  }
 `;
 
 export const BubbleLeft = styled.div`
@@ -66,6 +66,10 @@ export const BubbleLeft = styled.div`
   color: black;
   font-size: 18px;
   padding: 20px;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 16px;
+  }
 `;
 
 export const RightMessage = styled.div``;
@@ -80,17 +84,17 @@ export const ChatForm = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-  // background: #f1f1f1;
-  border-top: 1px solid #E6E6E6;
+  border-top: 1px solid #e6e6e6;
+  background: red;
 
+  @media screen and (max-width: 1024px) {
+    height: 80px;
+  }
 `;
 
 export const InputContainer = styled.div`
-  background: #fff;
-  display: flex;
   width: 95%;
-  height: 80px;
-  border-radius: 9999px;
+  display: flex;
 `;
 
 export const InputGroup = styled.div`
@@ -99,6 +103,10 @@ export const InputGroup = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 1024px) {
+    height: 80px;
+  }
 `;
 
 export const Button = styled.button`
@@ -110,7 +118,7 @@ export const Button = styled.button`
   justify-content: center;
   border-top-right-radius: 9999px;
   border-bottom-right-radius: 9999px;
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   cursor: pointer;
   padding-right: 20px;
 

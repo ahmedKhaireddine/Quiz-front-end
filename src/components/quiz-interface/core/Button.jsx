@@ -30,7 +30,7 @@ Button.defaultProps = {
     handleClick: () => {},
     type: "button",
     width: "200px",
-    margin:"0px auto"
+    margin:"0 auto"
 }
 
 export default Button

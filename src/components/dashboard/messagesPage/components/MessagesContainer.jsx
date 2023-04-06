@@ -5,7 +5,6 @@ import {
   BubbleLeft,
   ChatContainer,
   ChatForm,
-  Navbar,
   InputContainer,
   Button,
   RightMessage,
@@ -20,8 +19,6 @@ const MessagesContainer = () => {
   return (
     <CentralContainer>
       <Box>
-        {/* <Navbar></Navbar> */}
-
         <ChatContainer>
           <RightMessage>
             <BubbleRight>Hello 🖐</BubbleRight>
@@ -76,7 +73,7 @@ const MessagesContainer = () => {
               borderBottomLeftRadius="9999px"
               backgroundColor="#E6E6E6"
               resize="none"
-              height="80px"
+              maxHeight="80px"
               padding="15px 50px"
               fontSize="18px"
             />

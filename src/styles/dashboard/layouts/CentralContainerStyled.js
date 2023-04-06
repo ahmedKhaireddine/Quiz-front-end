@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Box = styled.div`
   grid-column: 1 / 2;
   width: 100%;
-  height: ${(props) => props.height};
+  height: ${(props) => props.height || "100%"};
   display: flex;
   justify-content: ${(props) => props.justifyContent};
   flex-direction: ${(props) => props.flexDirection};

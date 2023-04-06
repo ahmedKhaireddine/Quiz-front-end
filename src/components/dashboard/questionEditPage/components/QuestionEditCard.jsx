@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 
 import CentralContainer from "../../layouts/CentralContainer";
-import Button from "../../../quiz-interface/core/Button";
+import Button from "../../core/Button";
 import SelectField from "./SelectField";
 import TextareaField from "./TextareaField";
 import NumberInput4 from "./NumberInput4";
@@ -163,11 +163,8 @@ const QuestionCard = ({ answers, setAnswers }) => {
 
             <Button
               type="submit"
-              boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-              margin="20px auto 30px"
-              // onClick={handleSave()}
             >
-              Enregistrer
+              Enregistrer123
             </Button>
           </form>
         )}
