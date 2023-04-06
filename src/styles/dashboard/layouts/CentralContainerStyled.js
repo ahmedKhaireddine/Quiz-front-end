@@ -27,4 +27,8 @@ export const Box = styled.div`
   ::-webkit-scrollbar-thumb:hover {
     background: #02818a;
   }
+
+  @media screen and (max-width: 1024px) {
+    grid-column: 1 / 2;
+  }
 `;

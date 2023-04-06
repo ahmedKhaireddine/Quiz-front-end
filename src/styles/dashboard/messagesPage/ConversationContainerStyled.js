@@ -1,22 +1,15 @@
 import styled from "styled-components";
 
-export const  Box = styled.div`
-    width: 100%;
-    height: 150px;
-    padding: 10px 20px;
-    position: relative;
-    cursor: pointer;
+export const Box = styled.div`
+  width: 100%;
+  height: 150px;
+  padding: 10px 20px;
+  position: relative;
+  cursor: pointer;
 
-    :hover {
-      background-color: #DFDFDF;
-    }
-
-`;
-
-export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: black;
+  :hover {
+    background-color: #dfdfdf;
+  }
 `;
 
 export const Sender = styled.h3`
@@ -43,11 +36,17 @@ export const Text = styled.div`
   }
 `;
 
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: black;
+`;
+
 export const Time = styled.div`
   position: absolute;
   bottom: 10px;
   right: 20px;
   font-size: 12px;
   font-weight: 600;
-  color: rgba(0,0,0,0.7);
+  color: rgba(0, 0, 0, 0.7);
 `;

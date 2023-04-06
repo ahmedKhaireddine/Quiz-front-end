@@ -3,8 +3,7 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
-  ItemWithoutPseudoClass,
-  ListItems,
+  LogoutContainer,
   Title,
 } from "../../../styles/dashboard/LinksListStyled";
 
@@ -20,12 +19,10 @@ const Logout = (props) => {
   );
 
   return (
-    <ListItems margin="30px auto">
-      <ItemWithoutPseudoClass onClick={() => logout("user")}>
-        <IoMdLogOut color="rgba(31,147,155,.8)" fontSize="1.4em" />
-        <Title>Se déconnecter</Title>
-      </ItemWithoutPseudoClass>
-    </ListItems>
+    <LogoutContainer onClick={() => logout("user")}>
+      <IoMdLogOut color="rgba(31,147,155,.8)" fontSize="1.4em" />
+      <Title>Se déconnecter</Title>
+    </LogoutContainer>
   );
 };
 

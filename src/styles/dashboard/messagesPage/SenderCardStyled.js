@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 export const Card = styled.div`
     width: 100%:
-    height: 200px;
     background-color: #f1f1f1;
     border-top: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
     padding: 20px;
+
+    @media screen and (max-width: 1280px) {
+      padding: 10px 20px;
+    }
 `;
 
 export const UserInfos = styled.div`
@@ -46,8 +49,8 @@ export const Name = styled.h4`
 `;
 
 export const NameContainer = styled.h4`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Post = styled.p`

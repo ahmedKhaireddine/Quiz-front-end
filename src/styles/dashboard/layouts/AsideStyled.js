@@ -12,15 +12,15 @@ export const Box = styled.div`
   transform: translateX(0);
   transition: transform 0.2s ease-out;
 
-  // @media (max-width: 1300px) {
-  //   transform: translateX(100%);
-  // }
+  @media (max-width: 1024px) {
+    transform: translateX(100%);
+  }
 `;
 
 export const Subtitle = styled.div`
   color: #1f939b;
   font-size: 30px;
   font-weight: bold;
-  padding: ${props => props.subtitlePadding || "15px 30px"};
+  padding: ${(props) => props.subtitlePadding || "15px 30px"};
   text-align: left;
 `;

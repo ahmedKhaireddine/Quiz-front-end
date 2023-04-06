@@ -4,7 +4,6 @@ export const Button = styled.button`
   cursor: pointer;
 `;
 
-
 export const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -19,21 +18,19 @@ export const Container = styled.div`
   }
 
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px #1f939b; 
+    box-shadow: inset 0 0 5px #1f939b;
     border-radius: 10px;
   }
-  
+
   ::-webkit-scrollbar-thumb {
-    background: #1f939b; 
+    background: #1f939b;
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #02818a; 
+    background: #02818a;
   }
 `;
-
-// Aside //
 
 export const ItemPreviewCardContainer = styled.div`
   height: 100%;
@@ -41,4 +38,4 @@ export const ItemPreviewCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 50px 20px;
-`
+`;

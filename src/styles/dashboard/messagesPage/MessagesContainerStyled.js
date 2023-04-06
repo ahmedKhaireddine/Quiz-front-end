@@ -39,22 +39,7 @@ export const ChatContainer = styled.div`
   }
 `;
 
-export const BubbleRight = styled.div`
-  width: 50%;
-  display: flex;
-  align-items: center;
-  align-self: end;
-  margin: 10px 0px 10px auto;
-  border-radius: 25px;
-  background: #0078ff;
-  color: #f1f1f1;
-  font-size: 18px;
-  padding: 20px;
-
-  @media screen and (max-width: 1024px) {
-    font-size: 16px;
-  }
-`;
+// ----------- Bubbles ----------- //
 
 export const BubbleLeft = styled.div`
   width: 50%;
@@ -72,9 +57,47 @@ export const BubbleLeft = styled.div`
   }
 `;
 
+export const BubbleRight = styled.div`
+  width: 50%;
+  display: flex;
+  align-items: center;
+  align-self: end;
+  margin: 10px 0px 10px auto;
+  border-radius: 25px;
+  background: #0078ff;
+  color: #f1f1f1;
+  font-size: 18px;
+  padding: 20px;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 16px;
+  }
+`;
+
 export const RightMessage = styled.div``;
 
 export const LeftMessage = styled.div``;
+
+// ----------- Form ----------- //
+
+export const Button = styled.button`
+  width: 80px;
+  height: 80px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  background-color: #e6e6e6;
+  cursor: pointer;
+  padding-right: 20px;
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+`;
 
 export const ChatForm = styled.form`
   width: 100%;
@@ -106,24 +129,5 @@ export const InputGroup = styled.div`
 
   @media screen and (max-width: 1024px) {
     height: 80px;
-  }
-`;
-
-export const Button = styled.button`
-  width: 80px;
-  height: 80px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top-right-radius: 9999px;
-  border-bottom-right-radius: 9999px;
-  background-color: #e6e6e6;
-  cursor: pointer;
-  padding-right: 20px;
-
-  img {
-    width: 50px;
-    height: 50px;
   }
 `;

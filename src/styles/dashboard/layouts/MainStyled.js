@@ -6,5 +6,10 @@ export const MainContainer = styled.div`
   display: grid;
   grid-template-rows: 150px auto;
   grid-template-columns: 1fr 300px;
-  justify-content: ${props => props.justifyContent || "space-between"};
+  justify-content: ${(props) => props.justifyContent || "space-between"};
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+
+  }
 `;

@@ -13,7 +13,7 @@ export const TimeContainer = styled.div`
     display: flex;
     align-items: center;
   }
-  
+
   span {
     margin-left: 15px;
     line-height: 40px;

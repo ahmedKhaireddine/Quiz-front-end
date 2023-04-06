@@ -14,7 +14,7 @@ export const Subtitle = styled.h3`
   font-size: 21px;
   font-weight: 600;
   color: #666;
-`
+`;
 
 export const Title = styled.h1`
   font-size: 34px;
