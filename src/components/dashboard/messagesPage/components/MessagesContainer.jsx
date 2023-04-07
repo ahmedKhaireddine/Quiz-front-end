@@ -11,7 +11,7 @@ import {
   LeftMessage,
   BubbleRight,
 } from "../../../../styles/dashboard/messagesPage/MessagesContainerStyled";
-import { Textarea } from "@chakra-ui/react";
+import { Input, Textarea } from "@chakra-ui/react";
 
 import Send from "../../../../assets/svg/send.svg";
 
@@ -66,16 +66,15 @@ const MessagesContainer = () => {
 
         <ChatForm>
           <InputContainer>
-            <Textarea
+            <Input
               outline="none"
               border="none"
               borderTopLeftRadius="9999px"
               borderBottomLeftRadius="9999px"
               backgroundColor="#E6E6E6"
-              resize="none"
-              maxHeight="80px"
+              height={{ lg: "70px", md: "60px", sm: "50px"}}
               padding="15px 50px"
-              fontSize="18px"
+              fontSize={{ xl: "24px", lg: "21px", md: "18px", sm: "15px"}}
             />
             <Button>
               <img src={Send} alt="envoyer" />

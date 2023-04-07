@@ -1,15 +1,16 @@
 import React from "react";
+import { Field } from "formik";
 import {
   FormControl,
-  FormErrorMessage,
-  FormLabel,
-  Input,
+  NumberDecrementStepper,
+  NumberIncrementStepper,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
 } from "@chakra-ui/react";
-import { useField } from "formik";
 import { useColorModeValue } from "@chakra-ui/react";
 
 const NumberField = ({ label, ...props }) => {
-  const [field, meta] = useField(props);
 
   const bg = useColorModeValue("#f1f1f1", "#171923");
   const borderColor = useColorModeValue("#1f939b", "#45DDE7");
@@ -19,22 +20,34 @@ const NumberField = ({ label, ...props }) => {
   const placeholderOpacity = useColorModeValue(0.8, 0.6);
 
   return (
-    <FormControl isInvalid={meta.error && meta.touched} width="auto">
-      <FormLabel>{label}</FormLabel>
-      <Input
-        {...field}
-        {...props}
-        bg={bg}
-        border="2px solid"
-        borderColor={borderColor}
-        focusBorderColor={focusBorderColor}
-        _hover={{ borderColor: hoverBorderColor }}
-        _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
-        width="55px"
-        marginRight={0}
-      />
-      <FormErrorMessage>{meta.error}</FormErrorMessage>
-    </FormControl>
+    <Field name="time">
+      {({ field, form }) => (
+        <FormControl>
+          <NumberInput
+            {...field}
+            onChange={(val) => form.setFieldValue(field.name, val)}
+          >
+            <NumberInputField
+              bg={bg}
+              border="1px solid"
+              borderColor={borderColor}
+              boxShadow="rgb(0, 0, 0, 30%) 0px 2px 8px 0px"
+              focusBorderColor={focusBorderColor}
+              _hover={{ borderColor: hoverBorderColor }}
+              _placeholder={{
+                opacity: placeholderOpacity,
+                color: placeholderColor,
+              }}
+
+            />
+            <NumberInputStepper>
+              <NumberIncrementStepper />
+              <NumberDecrementStepper />
+            </NumberInputStepper>
+          </NumberInput>
+        </FormControl>
+      )}
+    </Field>
   );
 };
 

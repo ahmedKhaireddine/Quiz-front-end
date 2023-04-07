@@ -1,23 +1,17 @@
 import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import {
-  NumberDecrementStepper,
-  NumberIncrementStepper,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-} from "@chakra-ui/react";
 
 import CentralContainer from "../../layouts/CentralContainer";
 import Button from "../../core/Button";
 import SelectField from "./SelectField";
 import TextareaField from "./TextareaField";
-import NumberInput4 from "./NumberInput4";
-// import NumberInputField from "./NumberInputField";
 
 import { TimeContainer } from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
 import { SubTitle } from "../../../../styles/ReusableTagsStyled";
+import NumberField from "./NumberField";
+
+import Question from "../../../../assets/json/questions.json"
 
 const QuestionCard = ({ answers, setAnswers }) => {
   const themes = [
@@ -120,31 +114,11 @@ const QuestionCard = ({ answers, setAnswers }) => {
             <TextareaField name="question" />
 
             <TimeContainer>
-              {/* <p>Temps pour répondre :</p>
-              <span>
-                <NumberField name="time" type="number"/>
-             
-              </span>
-              <span>sec</span> */}
-
               <p>Temps pour répondre :</p>
               <span>
-                <NumberInput name="time">
-                  <NumberInputField />
-                  <NumberInputStepper>
-                    <NumberIncrementStepper />
-                    <NumberDecrementStepper />
-                  </NumberInputStepper>
-                </NumberInput>
-
-                {/* <NumberInput4 name="time"/> */}
+                <NumberField name="time" />
               </span>
               <span>sec</span>
-
-              {/* <NumberInputField 
-                name="time"
-                placeholder="Temps"
-              /> */}
             </TimeContainer>
 
             <SubTitle
@@ -156,16 +130,19 @@ const QuestionCard = ({ answers, setAnswers }) => {
             >
               Réponses
             </SubTitle>
-            <TextareaField label="Réponse 1" name="answer1" />
+            <ul>
+              {Question.map(item => {
+                return <li>{item.description}</li>
+              }
+              )}
+            </ul>
+            {/* <TextareaField label="Réponse 1" name="answer1" />
             <TextareaField label="Réponse 2" name="answer2" />
             <TextareaField label="Réponse 3" name="answer3" />
-            <TextareaField label="Réponse 4" name="answer4" />
+            <TextareaField label="Réponse 4" name="answer4" /> */}
+            
 
-            <Button
-              type="submit"
-            >
-              Enregistrer123
-            </Button>
+            <Button type="submit">Enregistrer123</Button>
           </form>
         )}
       </Formik>

@@ -71,6 +71,12 @@ export const BubbleRight = styled.div`
 
   @media screen and (max-width: 1024px) {
     font-size: 16px;
+    padding: 15px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    padding: 10px;
   }
 `;
 
@@ -82,7 +88,7 @@ export const LeftMessage = styled.div``;
 
 export const Button = styled.button`
   width: 80px;
-  height: 80px;
+  height: 70px;
   border: none;
   display: flex;
   align-items: center;
@@ -97,6 +103,22 @@ export const Button = styled.button`
     width: 50px;
     height: 50px;
   }
+
+  // @media screen and (max-width: 1280px) {
+  //   height: 60px;
+  // }
+
+  @media screen and (max-width: 992px) {
+    height: 50px;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 40px;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 30px;
+  }
 `;
 
 export const ChatForm = styled.form`
@@ -108,7 +130,7 @@ export const ChatForm = styled.form`
   justify-content: center;
   align-items: center;
   border-top: 1px solid #e6e6e6;
-  background: red;
+  // background: red;
 
   @media screen and (max-width: 1024px) {
     height: 80px;

@@ -27,16 +27,17 @@ export const Avatar = styled.div`
   align-items: center;
 
   div {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #cccccc;
   }
+  
   p {
-    font-size: 50px;
+    font-size: 40px;
   }
 `;
 
