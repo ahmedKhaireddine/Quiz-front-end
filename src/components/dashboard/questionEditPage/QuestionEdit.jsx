@@ -3,15 +3,19 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import Aside from "../layouts/aside/Aside";
 import Header from "../layouts/Header";
-
 import QuestionEditCard from "./components/QuestionEditCard";
+import QuestionEditCard2 from "./components/QuestionEditCard2";
+import QuestionList from "./components/QuestionList";
+
+import Question from "../../../assets/json/questions.json";
+
 import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
 import { Flex } from "@chakra-ui/react";
 
 const Questions = () => {
-  const [answers, setAnswers] = useState([]);
+  const [questionArray, setQuestionArray] = useState(Question);
+  console.log("questionArray =>", questionArray);
 
-  console.log("Questions edit answers", answers);
   return (
     <HelmetProvider>
       <Flex>
@@ -23,10 +27,13 @@ const Questions = () => {
             title="Edition de Questions"
             description="Editez vos questions et leurs réponses"
           />
-          <QuestionEditCard answers={answers} setAnswers={setAnswers} />
+
+          {/* <QuestionList questionArray={questionArray} setQuestionArray={setQuestionArray}/> */}
+
+          <QuestionEditCard questionArray={questionArray} setQuestionArray={setQuestionArray} />
+          {/* <QuestionEditCard2 questionArray={questionArray} setQuestionArray={setQuestionArray} /> */}
+
           <Aside
-            answers={answers}
-            setAnswers={setAnswers}
             subtitle="Liste des questions"
             padding="0"
           />

@@ -19,3 +19,26 @@ export const TimeContainer = styled.div`
     line-height: 40px;
   }
 `;
+
+export const ListContainer = styled.ul`
+  display: flex;
+  flex-direction column;
+
+  li {
+    list-style-type: none;
+  }
+`
+
+export const ItemsList = styled.div`
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  span {
+    margin-right: 10px;
+  }
+`
+export const QuestionsListCard = styled.div`
+
+` 
