@@ -14,7 +14,7 @@ import { Flex } from "@chakra-ui/react";
 
 const Questions = () => {
   const [questionArray, setQuestionArray] = useState(Question);
-  console.log("questionArray dans QuestionEdit =>", questionArray);
+  console.log("QuestionEdit: valeur de la 1ère réponse à la 1ère question =>", questionArray[0].choices[0]);
 
   return (
     <HelmetProvider>

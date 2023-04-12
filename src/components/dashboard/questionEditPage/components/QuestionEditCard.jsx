@@ -15,15 +15,14 @@ import {
 } from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
 import { SubTitle } from "../../../../styles/ReusableTagsStyled";
 import NumberField from "./NumberField";
+import { useNavigate } from "react-router-dom";
 
 const QuestionCard = ({ questionArray, setQuestionArray }) => {
   const [selectAnswer, setSelectAnswer] = useState(null);
   const [answerValue, setAnswerValue] = useState('')
+  const navigate = useNavigate()
  
-  // console.log("questionArray dans la card à l'index 0 :", questionArray[0]);
-  // console.log("choix l'index 0 :", questionArray[0].choices);
-  // console.log("state de l'input des réponses", selectAnswer);
-  console.log("questionArray dans QuestionEditCard =>", questionArray[0].choices[0]);
+  console.log("QuestionEditCard : valeur de la 1ère réponse à la 1ère question =>", questionArray[0].choices[0]);
 
   const themes = [
     {
@@ -45,14 +44,17 @@ const QuestionCard = ({ questionArray, setQuestionArray }) => {
   ];
 
   const onSubmit = (values, actions) => {
-    setQuestionArray({ 
-      ...questionArray,
-      questionArray : {
-        choices : {
-          value: answerValue
-        }
-      }
-    });
+    // answerValue est modifié mais pas questionArray
+    // setQuestionArray({ 
+    //   ...questionArray.choices.value,
+    //    answerValue
+    //   });
+
+    // renvoie une erreur "Cannot read properties of undefined (reading 'choices')"
+    // answerValue est modifié mais pas questionArray
+    setQuestionArray({
+      answer: values.answer
+    })
     console.log("answerValue au submit du form =>", answerValue);
 
     // console.log("time:", values.time);
@@ -60,29 +62,15 @@ const QuestionCard = ({ questionArray, setQuestionArray }) => {
 
     // navigate("/dashboard")
     actions.resetForm();
-    // console.log(
-    //   "theme",
-    //   values.theme,
-    //   "question",
-    //   values.question,
-    //   "time",
-    //   values.time,
-    //   "answer1",
-    //   values.answer1
-    // );
   };
 
   const editAnswer = (id) => {
     setSelectAnswer(id)
-    // setQuestionArray(questionArray.choices.filter(choice => 
-    //   choice.id === id
-    // ))
   };
 
   const onChoiceValueChange = e => {
-    setAnswerValue(e.target.value)
+    setAnswerValue({answerValue: e.target.value})
   }
-  console.log(answerValue);
 
   return (
     <CentralContainer flexDirection="column" height="100%">
@@ -171,7 +159,7 @@ const QuestionCard = ({ questionArray, setQuestionArray }) => {
                     ) : (
                       <TextareaField 
                       name="answer" 
-                      // value={choice.value} 
+                      defaultValue={choice.value} 
                       onChange={onChoiceValueChange}
                       />
                     )}
