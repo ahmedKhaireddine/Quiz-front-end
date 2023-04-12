@@ -16,14 +16,14 @@ import {
 import { SubTitle } from "../../../../styles/ReusableTagsStyled";
 import NumberField from "./NumberField";
 
-import Question from "../../../../assets/json/questions.json";
-
 const QuestionCard = ({ questionArray, setQuestionArray }) => {
   const [selectAnswer, setSelectAnswer] = useState(null);
-
+  const [answerValue, setAnswerValue] = useState('')
+ 
   // console.log("questionArray dans la card à l'index 0 :", questionArray[0]);
   // console.log("choix l'index 0 :", questionArray[0].choices);
   // console.log("state de l'input des réponses", selectAnswer);
+  console.log("questionArray dans QuestionEditCard =>", questionArray[0].choices[0]);
 
   const themes = [
     {
@@ -45,15 +45,15 @@ const QuestionCard = ({ questionArray, setQuestionArray }) => {
   ];
 
   const onSubmit = (values, actions) => {
-    // setAnswers({
-    //   theme: values.theme,
-    //   question: values.question,
-    //   time: values.time,
-    //   answer1: values.answer1,
-    //   answer2: values.answer2,
-    //   answer3: values.answer3,
-    //   answer4: values.answer4,
-    // });
+    setQuestionArray({ 
+      ...questionArray,
+      questionArray : {
+        choices : {
+          value: answerValue
+        }
+      }
+    });
+    console.log("answerValue au submit du form =>", answerValue);
 
     // console.log("time:", values.time);
     // console.log("QuestionCard answers :", answers);
@@ -72,27 +72,21 @@ const QuestionCard = ({ questionArray, setQuestionArray }) => {
     // );
   };
 
-  // const inputAppear = () => {
-  // };
-  
   const editAnswer = (id) => {
     setSelectAnswer(id)
-    setQuestionArray(questionArray.filter(question => 
-      question.choice.id === id
-    ))
+    // setQuestionArray(questionArray.choices.filter(choice => 
+    //   choice.id === id
+    // ))
   };
 
   const onChoiceValueChange = e => {
-    // setQuestionArray({
-    //   ...questionArray.choices.value,
-    //   value: e.target.value
-    // })
-    console.log(e.target.value);
+    setAnswerValue(e.target.value)
   }
+  console.log(answerValue);
 
   return (
     <CentralContainer flexDirection="column" height="100%">
-      {questionArray.map((question, index) => (
+      {questionArray.map((question) => (
         <Formik
           initialValues={{
             theme: "Histoire",
@@ -161,8 +155,8 @@ const QuestionCard = ({ questionArray, setQuestionArray }) => {
                 Réponses
               </SubTitle>
               <ListContainer>
-                {question.choices.map(choice => (
-                  <li key={choice.id}>
+                {question.choices.map((choice, id) => (
+                  <li key={id}>
                     {selectAnswer !== choice.id ? (
                     <ItemsList>
                       {choice.value}
@@ -176,20 +170,16 @@ const QuestionCard = ({ questionArray, setQuestionArray }) => {
                     </ItemsList>
                     ) : (
                       <TextareaField 
-                      name={choice.id} 
-                      value={choice.value} 
-                      onChange={() => onChoiceValueChange}
+                      name="answer" 
+                      // value={choice.value} 
+                      onChange={onChoiceValueChange}
                       />
                     )}
                   </li>
                 ))}
               </ListContainer>
-              {/* <TextareaField label="Réponse 1" name="answer1" />
-            <TextareaField label="Réponse 2" name="answer2" />
-            <TextareaField label="Réponse 3" name="answer3" />
-            <TextareaField label="Réponse 4" name="answer4" /> */}
 
-              <Button type="submit" onClick={onChoiceValueChange}>Enregistrer</Button>
+              <Button type="submit">Enregistrer</Button>
             </form>
           )}
         </Formik>

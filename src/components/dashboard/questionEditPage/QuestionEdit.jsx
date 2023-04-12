@@ -14,7 +14,7 @@ import { Flex } from "@chakra-ui/react";
 
 const Questions = () => {
   const [questionArray, setQuestionArray] = useState(Question);
-  console.log("questionArray =>", questionArray);
+  console.log("questionArray dans QuestionEdit =>", questionArray);
 
   return (
     <HelmetProvider>
