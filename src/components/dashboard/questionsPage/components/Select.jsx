@@ -28,10 +28,9 @@ const SelectField = ({ label, ...props }) => {
         borderColor={borderColor}
         focusBorderColor={focusBorderColor}
         _hover={{ borderColor: hoverBorderColor }}
-        _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
+        boxShadow="rgb(0, 0, 0, 30%) 0px 2px 8px 0px"
 
-        // ------- 2e version ------- //
-        width="40%"
+        _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
       ></Select>
     </FormControl>
   );

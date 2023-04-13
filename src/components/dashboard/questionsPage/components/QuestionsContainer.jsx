@@ -48,7 +48,7 @@ const CardContainer = () => {
       {questions
         .filter((value) => {
           return (
-            value.description.toLowerCase().includes(searchTerms) ||
+            value.description.toLowerCase().includes(searchTerms) &&
             value.topic.includes(selectedTopic)
           );
         })

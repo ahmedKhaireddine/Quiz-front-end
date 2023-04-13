@@ -2,8 +2,6 @@ import React from "react";
 
 import Select from "./Select";
 
-import { SelectContainer, SelectContainer2 } from "../../../../styles/dashboard/questionsPage/QuestionsPageStyled";
-
 const SelectTopics = ({ questions, setSelectedTopic }) => {
   const handleSelectTopic = (e) => {
     const value = e.target.value;
@@ -12,7 +10,7 @@ const SelectTopics = ({ questions, setSelectedTopic }) => {
 
   return (
     // <Select 
-    //   placeholder="Thèmes" 
+    //   placeholder="Tous les thèmes" 
     //   onChange={handleSelectTopic}
     //   padding="20px 0"
     // >
@@ -24,7 +22,11 @@ const SelectTopics = ({ questions, setSelectedTopic }) => {
     // </Select>
 
     // -------- 2e version -------- //
-    <Select placeholder="Thèmes..." onChange={handleSelectTopic} marginLeft="20px" width="30%">
+    <Select 
+      placeholder="Tous les thèmes..." 
+      onChange={handleSelectTopic} 
+      // style={{ marginLeft: "20px"}}
+    >
       {questions.map((question, index) => (
         <option key={index} value={question.topic}>
           {question.topic}

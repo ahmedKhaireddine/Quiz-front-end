@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
+import { CgAddR } from "react-icons/cg"
+import { BiAddToQueue } from "react-icons/bi"
+import { VscAdd } from "react-icons/vsc"
+import { RiAddFill } from "react-icons/ri"
+import { RiAddCircleLine } from "react-icons/ri"
 import Aside from "../layouts/aside/Aside";
 import Header from "../layouts/Header";
 import QuestionsContainer from "./components/QuestionsContainer";
@@ -11,7 +16,7 @@ import QuestionsTest from "../../../assets/json/QuestionsTest.json"
 
 import { OptionsBar } from "../../../styles/dashboard/layouts/HeaderStyled";
 import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
-import { MdBorderBottom } from "react-icons/md";
+import { Button, ButtonNew } from "../../../styles/dashboard/questionsPage/QuestionsPageStyled";
 
 const Questions = () => {
   const [questions, setQuestions] = useState(QuestionsTest);
@@ -23,14 +28,16 @@ const Questions = () => {
           title="Questions"
           subtitle="Consultez la liste des questions disponibles"
         >
-          {/* <OptionsBar display="flex">
-            <Select
+          <OptionsBar display="flex">
+            {/* <Select
               name="theme"
               placeholder="Thèmes"
               style={{ 
-                borderRight: "none",
                 borderRadius: "0",
-                borderBottom: "none"
+                borderLeft: "none",
+                borderBottom: "none",
+                boxShadow: "none",
+                borderTopRightRadius: "4px",
               }}
             >
               {questions.map((question, index) => (
@@ -38,22 +45,21 @@ const Questions = () => {
                   {question.topic}
                 </option>
               ))}
-            </Select>
-            <Select
-              name="theme"
-              placeholder="Temps de réponse"
-              style={{
-                borderRadius: "0 6px 0 0",
-                borderBottom: "none"
-              }}
-            >
-              {questions.map((question, index) => (
-                <option key={index} value={question.duration}>
-                  {question.duration}
-                </option>
-              ))}
-            </Select>
-          </OptionsBar> */}
+            </Select> */}
+
+
+            {/* Version pour le bouton */}
+            <ButtonNew>
+              <span>
+                Ajouter &nbsp;
+              </span>
+                {/* <CgAddR /> */}
+                {/* <BiAddToQueue /> */}
+                <VscAdd />
+                {/* <RiAddFill /> */}
+                {/* <RiAddCircleLine /> */}
+              </ButtonNew>
+          </OptionsBar>
         </Header>
         <Helmet>
           <title>Questions</title>

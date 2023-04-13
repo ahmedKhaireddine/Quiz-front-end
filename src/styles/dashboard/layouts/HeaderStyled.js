@@ -25,7 +25,7 @@ export const Title = styled.h1`
 `;
 
 export const OptionsBar = styled.div`
-  height: ${props => props.height || "40px"};
+  height: ${props => props.height};
   width: ${props => props.width};
   position: absolute;
   bottom: 0;

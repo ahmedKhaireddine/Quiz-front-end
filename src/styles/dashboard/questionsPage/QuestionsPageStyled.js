@@ -1,7 +1,23 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
+export const Button = styled.div`
   cursor: pointer;
+`;
+
+export const ButtonNew = styled.div`
+width: 140px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #1f939b;
+  border-right: 1px solid #1f939b;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.1);
+
+  :hover {
+    background-color: rgba(0,0,0,0.155);
+  }
 `;
 
 export const Container = styled.div`
@@ -51,7 +67,9 @@ export const SearchContainer = styled.div`
 
 export const SearchContainer2 = styled.div`
   width: 90%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 65% 1fr;
+  grid-gap: 15px;
+  padding: 10px 0 20px 0;
   margin: 0 auto;
-  padding: 20px 0;
 `
