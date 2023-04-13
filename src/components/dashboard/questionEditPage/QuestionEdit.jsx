@@ -6,7 +6,7 @@ import Header from "../layouts/Header";
 import QuestionEditContainer from "./components/QuestionEditContainer";
 import { Flex } from "@chakra-ui/react";
 
-import QuestionsTest from "./tests/QuestionsTest.json";
+import QuestionsTest from "../../../assets/json/QuestionsTest.json";
 
 import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
 

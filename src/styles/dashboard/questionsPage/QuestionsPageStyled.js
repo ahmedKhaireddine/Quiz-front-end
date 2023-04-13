@@ -41,22 +41,17 @@ export const ItemPreviewCardContainer = styled.div`
 `;
 
 export const SearchContainer = styled.div`
-  width: 100%;
+  width: 95%;
   display: flex;
   flex-direction: column;
-  
-  hr {
-    width: 50%;
-    height: 1px;
-    margin: 0 auto;
-    color: red;
-    padding 20px 0;
-  }
+  margin: 0 auto;
 `
 
-export const SelectContainer = styled.div`
-  width: 100%;
+// -------- 2e version -------- //
+
+export const SearchContainer2 = styled.div`
+  width: 90%;
   display: flex;
-  justify-content: space-between;
+  margin: 0 auto;
   padding: 20px 0;
 `

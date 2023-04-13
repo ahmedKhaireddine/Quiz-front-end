@@ -3,8 +3,7 @@ import React from "react";
 import {
   Box,
   Subtitle,
-  Title,
-  OptionsBar
+  Title
 } from "../../../styles/dashboard/layouts/HeaderStyled";
 
 const Header = ({ title, subtitle, children }) => {

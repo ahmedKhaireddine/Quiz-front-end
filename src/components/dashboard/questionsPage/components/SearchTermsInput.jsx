@@ -8,7 +8,8 @@ const SearchTermsInput = ({ setSearchTerms }) => {
     setSearchTerms(value);
   };
 
-  return <Input placeholder="Question..." onChange={handleSearchTerms} />;
+  return (
+    <Input placeholder="Question..." onChange={handleSearchTerms}/>);
 };
 
 export default SearchTermsInput;

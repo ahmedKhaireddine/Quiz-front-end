@@ -12,7 +12,7 @@ export const Box = styled.div`
 `;
 
 export const Subtitle = styled.h3`
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 600;
   color: #666;
 `;

@@ -1,7 +1,6 @@
 import React from "react";
 import {
   FormControl,
-  FormLabel,
   Input,
 } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
@@ -23,7 +22,6 @@ const InputField = ({ label, ...props }) => {
         border="1px solid"
         borderColor={borderColor}
         height="40px"
-        width="100%"
         focusBorderColor={focusBorderColor}
         _hover={{ borderColor: hoverBorderColor }}
         _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}

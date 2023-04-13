@@ -23,13 +23,15 @@ const SelectField = ({ label, ...props }) => {
       {/* <FormLabel>{label}</FormLabel> */}
       <Select
         {...props}
-        width="200px"
         bg={bg}
         border="1px solid"
         borderColor={borderColor}
         focusBorderColor={focusBorderColor}
         _hover={{ borderColor: hoverBorderColor }}
         _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
+
+        // ------- 2e version ------- //
+        width="40%"
       ></Select>
     </FormControl>
   );
