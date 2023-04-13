@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Box = styled.div`
-  padding: 15px 53px;
+  padding: 10px 53px;
   border-bottom: 1px solid #a19d9d;
   background-color: #f8f8fa;
+  position: ${props => props.position || "relative"};
 
   p {
     font-size: 17px;
@@ -20,5 +21,15 @@ export const Title = styled.h1`
   font-size: 34px;
   font-weight: bold;
   color: #1f939b;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 `;
+
+export const OptionsBar = styled.div`
+  height: ${props => props.height || "30px"};
+  width: ${props => props.width || "100px"};
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  display: ${props => props.display || "none"};
+`

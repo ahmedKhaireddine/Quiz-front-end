@@ -4,17 +4,20 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import Aside from "../layouts/aside/Aside";
 import Header from "../layouts/Header";
 import QuestionEditCard from "./components/QuestionEditCard";
-import QuestionEditCard2 from "./components/QuestionEditCard2";
-import QuestionList from "./components/QuestionList";
-
-import Question from "../../../assets/json/questions.json";
-
-import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
+import Select from "./tests/Select";
 import { Flex } from "@chakra-ui/react";
 
+import QuestionsTest from "./tests/QuestionsTest.json";
+
+import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
+import { OptionsBar } from "../../../styles/dashboard/layouts/HeaderStyled";
+
 const Questions = () => {
-  const [questionArray, setQuestionArray] = useState(Question);
-  console.log("QuestionEdit: valeur de la 1ère réponse à la 1ère question =>", questionArray[0].choices[0]);
+  const [questions, setQuestions] = useState(QuestionsTest);
+  console.log(
+    "QuestionEdit: valeur de la 1ère réponse à la 1ère question =>",
+    questions[0].choices[0]
+  );
 
   return (
     <HelmetProvider>
@@ -25,18 +28,26 @@ const Questions = () => {
         <MainContainer>
           <Header
             title="Edition de Questions"
-            description="Editez vos questions et leurs réponses"
-          />
+            subtitle="Editez vos questions et leurs réponses"
+          >
+            <OptionsBar display="visible">
+              <Select name="theme" placeholder="Choisissez votre thème">
+                {questions.map((question, id) => (
+                  <option key={question.id} value={question.topic}>
+                    {question.topic}
+                  </option>
+                ))}
+              </Select>
+            </OptionsBar>
+          </Header>
 
-          {/* <QuestionList questionArray={questionArray} setQuestionArray={setQuestionArray}/> */}
+          {/* {questions.map(question =>  */}
+          <QuestionEditCard questions={questions} setQuestions={setQuestions}>
+            {/* {question} */}
+          </QuestionEditCard>
+          {/* )} */}
 
-          <QuestionEditCard questionArray={questionArray} setQuestionArray={setQuestionArray} />
-          {/* <QuestionEditCard2 questionArray={questionArray} setQuestionArray={setQuestionArray} /> */}
-
-          <Aside
-            subtitle="Liste des questions"
-            padding="0"
-          />
+          <Aside subtitle="Liste des questions" padding="0" />
         </MainContainer>
       </Flex>
     </HelmetProvider>

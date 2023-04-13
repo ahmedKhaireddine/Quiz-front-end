@@ -4,13 +4,15 @@ import {
   Box,
   Subtitle,
   Title,
+  OptionsBar
 } from "../../../styles/dashboard/layouts/HeaderStyled";
 
-const Header = ({ title, description }) => {
+const Header = ({ title, subtitle, children }) => {
   return (
     <Box>
       <Title>{title}</Title>
-      <Subtitle>{description}</Subtitle>
+      <Subtitle>{subtitle}</Subtitle>
+      {children}
     </Box>
   );
 };

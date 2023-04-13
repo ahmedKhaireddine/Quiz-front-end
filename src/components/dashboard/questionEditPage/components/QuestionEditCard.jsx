@@ -17,12 +17,12 @@ import { SubTitle } from "../../../../styles/ReusableTagsStyled";
 import NumberField from "./NumberField";
 import { useNavigate } from "react-router-dom";
 
-const QuestionCard = ({ questionArray, setQuestionArray }) => {
+const QuestionCard = ({ questions, setQuestions }) => {
   const [selectAnswer, setSelectAnswer] = useState(null);
   const [answerValue, setAnswerValue] = useState('')
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
  
-  console.log("QuestionEditCard : valeur de la 1ère réponse à la 1ère question =>", questionArray[0].choices[0]);
+  console.log("QuestionEditCard : valeur de la 1ère réponse à la 1ère question =>", questions[0].choices[0]);
 
   const themes = [
     {
@@ -44,15 +44,15 @@ const QuestionCard = ({ questionArray, setQuestionArray }) => {
   ];
 
   const onSubmit = (values, actions) => {
-    // answerValue est modifié mais pas questionArray
-    // setQuestionArray({ 
-    //   ...questionArray.choices.value,
+    // answerValue est modifié mais pas question
+    // setQuestion({ 
+    //   ...question.choices.value,
     //    answerValue
     //   });
 
     // renvoie une erreur "Cannot read properties of undefined (reading 'choices')"
-    // answerValue est modifié mais pas questionArray
-    setQuestionArray({
+    // answerValue est modifié mais pas question
+    setQuestions({
       answer: values.answer
     })
     console.log("answerValue au submit du form =>", answerValue);
@@ -74,7 +74,7 @@ const QuestionCard = ({ questionArray, setQuestionArray }) => {
 
   return (
     <CentralContainer flexDirection="column" height="100%">
-      {questionArray.map((question) => (
+      {questions.map((question) => (
         <Formik
           initialValues={{
             theme: "Histoire",

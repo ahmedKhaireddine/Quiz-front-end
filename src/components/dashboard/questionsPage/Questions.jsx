@@ -120,7 +120,7 @@ const Questions = () => {
       <MainContainer>
         <Header
           title="Questions"
-          description="Consultez la liste de vos questions"
+          subtitle="Consultez la liste de vos questions"
         />
         <Helmet>
           <title>Questions</title>
