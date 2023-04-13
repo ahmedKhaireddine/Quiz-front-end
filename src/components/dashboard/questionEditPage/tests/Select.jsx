@@ -9,7 +9,7 @@ import { useField } from "formik";
 import { useColorModeValue } from "@chakra-ui/react";
 
 const SelectField = ({ label, ...props }) => {
-  const [field, meta] = useField(props);
+  // const [field, meta] = useField(props);
 
   const bg = useColorModeValue("#f1f1f1", "#171923");
   const borderColor = useColorModeValue("#1f939b", "#45DDE7");
@@ -20,13 +20,15 @@ const SelectField = ({ label, ...props }) => {
 
   return (
     <FormControl>
-      <FormLabel>{label}</FormLabel>
+      {/* <FormLabel>{label}</FormLabel> */}
       <Select
         {...props}
         bg={bg}
-        border="1px solid"
+        borderTop="1px solid"
+        borderRight="1px solid"
+        borderBottom="none"
+        borderRadius="0"
         borderColor={borderColor}
-        boxShadow="rgb(0, 0, 0, 30%) 0px 2px 8px 0px"
         focusBorderColor={focusBorderColor}
         _hover={{ borderColor: hoverBorderColor }}
         _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}

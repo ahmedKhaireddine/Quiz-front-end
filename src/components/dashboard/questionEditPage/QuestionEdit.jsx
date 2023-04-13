@@ -30,11 +30,31 @@ const Questions = () => {
             title="Edition de Questions"
             subtitle="Editez vos questions et leurs réponses"
           >
-            <OptionsBar display="visible">
-              <Select name="theme" placeholder="Choisissez votre thème">
+            <OptionsBar display="flex">
+              <Select
+                name="theme"
+                placeholder="Thèmes"
+                style={{
+                  borderRight: "none",
+                }}
+              >
                 {questions.map((question, id) => (
                   <option key={question.id} value={question.topic}>
                     {question.topic}
+                  </option>
+                ))}
+              </Select>
+              <Select
+                name="theme"
+                placeholder="Temps de réponse"
+                style={{
+                  borderRadius: "0 6px 0 0",
+                  width: "178px",
+                }}
+              >
+                {questions.map((question, id) => (
+                  <option key={question.id} value={question.duration}>
+                    {question.duration}
                   </option>
                 ))}
               </Select>

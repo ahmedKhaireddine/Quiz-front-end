@@ -25,11 +25,10 @@ export const Title = styled.h1`
 `;
 
 export const OptionsBar = styled.div`
-  height: ${props => props.height || "30px"};
-  width: ${props => props.width || "100px"};
+  height: ${props => props.height || "40px"};
+  width: ${props => props.width};
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: red;
   display: ${props => props.display || "none"};
 `
