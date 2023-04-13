@@ -3,21 +3,29 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import Aside from "../layouts/aside/Aside";
 import Header from "../layouts/Header";
-import QuestionEditCard from "./components/QuestionEditCard";
-import Select from "./tests/Select";
+import QuestionEditContainer from "./components/QuestionEditContainer";
 import { Flex } from "@chakra-ui/react";
 
 import QuestionsTest from "./tests/QuestionsTest.json";
 
 import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
-import { OptionsBar } from "../../../styles/dashboard/layouts/HeaderStyled";
 
 const Questions = () => {
   const [questions, setQuestions] = useState(QuestionsTest);
+  const [filtredTopics, setFiltredTopics] = useState([questions.topic]);
+  const [filtredDurations, setFiltredDurations] = useState([]);
+
   console.log(
     "QuestionEdit: valeur de la 1ère réponse à la 1ère question =>",
-    questions[0].choices[0]
+    questions[0].choices[0],
+    "topics =>", filtredTopics
   );
+
+  // const filterValues = (value) => {
+  //   // questions.filter(value => value !== value.id)
+  //   setFiltredTopics({...questions.topics.filter((value, index) => value !== value[index - 1] )})
+  // }
+  // filterValues(questions.topic)
 
   return (
     <HelmetProvider>
@@ -29,42 +37,11 @@ const Questions = () => {
           <Header
             title="Edition de Questions"
             subtitle="Editez vos questions et leurs réponses"
-          >
-            <OptionsBar display="flex">
-              <Select
-                name="theme"
-                placeholder="Thèmes"
-                style={{
-                  borderRight: "none",
-                }}
-              >
-                {questions.map((question, id) => (
-                  <option key={question.id} value={question.topic}>
-                    {question.topic}
-                  </option>
-                ))}
-              </Select>
-              <Select
-                name="theme"
-                placeholder="Temps de réponse"
-                style={{
-                  borderRadius: "0 6px 0 0",
-                  width: "178px",
-                }}
-              >
-                {questions.map((question, id) => (
-                  <option key={question.id} value={question.duration}>
-                    {question.duration}
-                  </option>
-                ))}
-              </Select>
-            </OptionsBar>
-          </Header>
-
+          />
           {/* {questions.map(question =>  */}
-          <QuestionEditCard questions={questions} setQuestions={setQuestions}>
+          <QuestionEditContainer questions={questions} setQuestions={setQuestions}/>
             {/* {question} */}
-          </QuestionEditCard>
+          {/* </QuestionEditCard> */}
           {/* )} */}
 
           <Aside subtitle="Liste des questions" padding="0" />

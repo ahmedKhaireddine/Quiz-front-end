@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+export const ItemsList = styled.div`
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  span {
+    margin-right: 10px;
+  }
+`
+
 export const TimeContainer = styled.div`
   display: flex;
   width: 100%;
@@ -28,17 +39,3 @@ export const ListContainer = styled.ul`
     list-style-type: none;
   }
 `
-
-export const ItemsList = styled.div`
-  height: 50px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-
-  span {
-    margin-right: 10px;
-  }
-`
-export const QuestionsListCard = styled.div`
-
-` 

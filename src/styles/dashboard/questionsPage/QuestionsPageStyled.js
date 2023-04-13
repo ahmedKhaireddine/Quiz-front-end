@@ -39,3 +39,24 @@ export const ItemPreviewCardContainer = styled.div`
   flex-direction: column;
   padding: 50px 20px;
 `;
+
+export const SearchContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  hr {
+    width: 50%;
+    height: 1px;
+    margin: 0 auto;
+    color: red;
+    padding 20px 0;
+  }
+`
+
+export const SelectContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+`

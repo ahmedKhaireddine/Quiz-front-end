@@ -1,15 +1,12 @@
 import React from "react";
 import {
   FormControl,
-  FormErrorMessage,
   FormLabel,
-  Select,
+  Input,
 } from "@chakra-ui/react";
-import { useField } from "formik";
 import { useColorModeValue } from "@chakra-ui/react";
 
-const SelectField = ({ label, ...props }) => {
-  // const [field, meta] = useField(props);
+const InputField = ({ label, ...props }) => {
 
   const bg = useColorModeValue("#f1f1f1", "#171923");
   const borderColor = useColorModeValue("#1f939b", "#45DDE7");
@@ -20,22 +17,19 @@ const SelectField = ({ label, ...props }) => {
 
   return (
     <FormControl>
-      {/* <FormLabel>{label}</FormLabel> */}
-      <Select
+      <Input
         {...props}
         bg={bg}
-        borderTop="1px solid"
-        borderRight="1px solid"
-        borderBottom="none"
-        borderRadius="0"
+        border="1px solid"
         borderColor={borderColor}
+        height="40px"
+        width="100%"
         focusBorderColor={focusBorderColor}
         _hover={{ borderColor: hoverBorderColor }}
         _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
-        marginBottom="25px"
-      ></Select>
+      />
     </FormControl>
   );
 };
 
-export default SelectField;
+export default InputField;
