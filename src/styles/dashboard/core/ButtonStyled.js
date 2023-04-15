@@ -43,7 +43,23 @@ export const Btn = styled.button`
   }
 `;
 
-export const ButtonIcon = styled.div`
+export const ButtonIcon = styled.button`
+  cursor: pointer;
+
+  :hover {
+    transform: scale(1.15);
+  }
+`;
+
+export const DeleteButton = styled.button`
+  cursor: pointer;
+
+  :hover {
+    transform: scale(1.15);
+  }
+`;
+
+export const EditButton = styled.button`
   cursor: pointer;
 
   :hover {

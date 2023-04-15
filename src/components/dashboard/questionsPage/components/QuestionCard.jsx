@@ -1,18 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 
 import { Checkbox } from "@chakra-ui/react";
 import Flex from "../../../layouts/Flex";
 
-import { 
-  Box,
-  Text,
-  TitleH4
-} from "../../../../styles/ReusableTagsStyled";
-import DeleteButton from "../../core/DeleteButton";
-import EditButton from "../../core/EditButton";
+import { Box, Text, TitleH4 } from "../../../../styles/ReusableTagsStyled";
+import { MdModeEdit } from "react-icons/md";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
-const Card = ({ value, deleteCard }) => {
-  console.log("id =>", value.id);
+import { DeleteButton, EditButton } from "../../../../styles/dashboard/core/ButtonStyled";
+
+const Card = ({
+  value, 
+  deleteQuestion,
+  editQuestion,
+}) => {
 
   return (
     <Flex
@@ -25,8 +26,6 @@ const Card = ({ value, deleteCard }) => {
       justifyContent="space-between"
       margin="5px auto"
       padding="10px 20px"
-      key={value.id}
-      // onMouseOver={}
     >
       <Flex justifyContent="center" width="10%">
         <Checkbox
@@ -67,8 +66,12 @@ const Card = ({ value, deleteCard }) => {
         </Text>
       </Box>
       <Flex justifyContent="space-between" width="10%">
-        <EditButton />
-        <DeleteButton onClick={() => deleteCard(value.id)}/>
+        <EditButton onClick={(e) => editQuestion(value.id)}>
+          <MdModeEdit fontSize="1.3em" color="#4fa9af"/>
+        </EditButton>
+        <DeleteButton onClick={(e) => deleteQuestion(value.id)}>
+          <RiDeleteBin6Line fontSize="1.3em" color="#4fa9af"/>
+        </DeleteButton>
       </Flex>
     </Flex>
   );

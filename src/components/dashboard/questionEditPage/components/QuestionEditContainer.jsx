@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
 
 // --------- Components --------- //
 import { MdModeEdit } from "react-icons/md";
@@ -21,12 +20,6 @@ import NumberField from "./NumberField";
 const QuestionCard = ({ questions, setQuestions }) => {
   const [selectAnswer, setSelectAnswer] = useState(null);
   const [answerValue, setAnswerValue] = useState("");
-  // const navigate = useNavigate()
-
-  console.log(
-    "QuestionEditCard : valeur de la 1ère réponse à la 1ère question =>",
-    questions[0].choices[0]
-  );
 
   const onSubmit = (values, actions) => {
     // answerValue est modifié mais pas question
@@ -40,12 +33,6 @@ const QuestionCard = ({ questions, setQuestions }) => {
     setQuestions({
       answer: values.answer,
     });
-    console.log("answerValue au submit du form =>", answerValue);
-
-    // console.log("time:", values.time);
-    // console.log("QuestionCard answers :", answers);
-
-    // navigate("/dashboard")
     actions.resetForm();
   };
 
