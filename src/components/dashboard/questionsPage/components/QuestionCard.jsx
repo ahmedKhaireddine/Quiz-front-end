@@ -7,7 +7,7 @@ import { Box, Text, TitleH4 } from "../../../../styles/ReusableTagsStyled";
 import { MdModeEdit } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-import { DeleteButton, EditButton } from "../../../../styles/dashboard/core/ButtonStyled";
+import { ButtonIcon } from "../../../../styles/dashboard/core/ButtonStyled";
 
 const Card = ({
   value, 
@@ -66,12 +66,12 @@ const Card = ({
         </Text>
       </Box>
       <Flex justifyContent="space-between" width="10%">
-        <EditButton onClick={(e) => editQuestion(value.id)}>
+        <ButtonIcon onClick={(e) => editQuestion(value.id)}>
           <MdModeEdit fontSize="1.3em" color="#4fa9af"/>
-        </EditButton>
-        <DeleteButton onClick={(e) => deleteQuestion(value.id)}>
+        </ButtonIcon>
+        <ButtonIcon onClick={(e) => deleteQuestion(value.id)}>
           <RiDeleteBin6Line fontSize="1.3em" color="#4fa9af"/>
-        </DeleteButton>
+        </ButtonIcon>
       </Flex>
     </Flex>
   );

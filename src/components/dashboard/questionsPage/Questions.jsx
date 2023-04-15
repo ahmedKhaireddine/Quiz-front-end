@@ -23,7 +23,7 @@ import {
 } from "../../../styles/dashboard/questionsPage/QuestionsPageStyled";
 
 const Questions = () => {
-  // const [questions, setQuestions] = useState(QuestionsTest);
+  const [questions, setQuestions] = useState(QuestionsTest)
 
   return (
     <HelmetProvider>
@@ -65,17 +65,11 @@ const Questions = () => {
         <Helmet>
           <title>Questions</title>
         </Helmet>
-          <QuestionsContainer
-            // questions={questions}
-            // setQuestions={setQuestions}
-          />
+          <QuestionsContainer questions={questions}  setQuestions={setQuestions}/>
         <Aside
-          // questions={questions}
-          // setQuestions={setQuestions}
           subtitle="Question"
           padding="0"
         >
-          {/* <p>{questions[].description}</p> */}
         </Aside>
       </MainContainer>
     </HelmetProvider>

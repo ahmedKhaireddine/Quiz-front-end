@@ -50,19 +50,3 @@ export const ButtonIcon = styled.button`
     transform: scale(1.15);
   }
 `;
-
-export const DeleteButton = styled.button`
-  cursor: pointer;
-
-  :hover {
-    transform: scale(1.15);
-  }
-`;
-
-export const EditButton = styled.button`
-  cursor: pointer;
-
-  :hover {
-    transform: scale(1.15);
-  }
-`;
