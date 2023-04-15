@@ -5,11 +5,9 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  useDisclosure,
 } from "@chakra-ui/react";
 
 // --------- Components --------- //
@@ -27,7 +25,7 @@ import {
 } from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
 import { SubTitle } from "../../../../styles/ReusableTagsStyled";
 
-const QuestionEditModal = ({ value, isOpen, onClose, onOpen }) => {
+const QuestionEditModal = ({ value, isOpen, onClose, setQuestions }) => {
     const [selectAnswer, setSelectAnswer] = useState(null);
     const [answerValue, setAnswerValue] = useState("");
 
@@ -40,17 +38,28 @@ const QuestionEditModal = ({ value, isOpen, onClose, onOpen }) => {
     
         // renvoie une erreur "Cannot read properties of undefined (reading 'choices')"
         // answerValue est modifié mais pas question
-        // setQuestions({
-        //   answer: values.answer,
-        // });
+        setQuestions({
+          answer: values.answer,
+        });
         actions.resetForm();
       };
+
+      const editAnswer = (id) => {
+        setSelectAnswer(id);
+      };
+    
+      const onChoiceValueChange = (e) => {
+        setAnswerValue({ answerValue: e.target.value });
+      };
+    
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl">
       <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>Modal Title</ModalHeader>
+      <ModalContent 
+        // maxH="400px" 
+        maxW="1000px"
+        >
         <ModalCloseButton />
         <ModalBody>
             <Formik
@@ -115,7 +124,7 @@ const QuestionEditModal = ({ value, isOpen, onClose, onOpen }) => {
                             <MdModeEdit
                               fontSize="1.3em"
                               color="#4fa9af"
-                            //   onClick={() => editAnswer(choice.id)}
+                              onClick={() => editAnswer(choice.id)}
                             />
                           </button>
                         </ItemsList>
@@ -123,7 +132,7 @@ const QuestionEditModal = ({ value, isOpen, onClose, onOpen }) => {
                         <TextareaField
                           name="answer"
                           defaultValue={choice.value}
-                        //   onChange={onChoiceValueChange}
+                          onChange={onChoiceValueChange}
                         />
                       )}
                     </li>

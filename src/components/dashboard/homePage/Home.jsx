@@ -27,7 +27,7 @@ const Home = (props) => {
           margin="0 0 5px  0"
           padding="10px 53px"
         >
-          Bienvenu {user.full_name}!
+          Bienvenue {user.full_name}!
         </Title>
         <HomeContainer />
       </div>
