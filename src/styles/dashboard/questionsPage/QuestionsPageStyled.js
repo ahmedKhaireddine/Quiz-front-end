@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const Button = styled.div`
   cursor: pointer;
+  
+  :hover {
+    transform: scale(1.15);
+  }
 `;
 
 export const ButtonNew = styled.div`
@@ -11,7 +15,7 @@ width: 140px;
   justify-content: center;
   align-items: center;
   border-top: 1px solid #1f939b;
-  border-right: 1px solid #1f939b;
+  border-right: 7px solid #1f939b;
   cursor: pointer;
   background-color: rgba(0,0,0,0.1);
 

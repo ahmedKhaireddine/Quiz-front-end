@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { UserContext } from "../../../contexts";
+
+import { Title } from "../../../styles/ReusableTagsStyled";
+import HomeContainer from "./components/HomeContainer";
 
 const Home = (props) => {
+  const { user } = useContext(UserContext);
+
   return (
     <HelmetProvider>
       <div
@@ -14,7 +20,16 @@ const Home = (props) => {
         <Helmet>
           <title>Accueil</title>
         </Helmet>
-        Home
+        <Title
+          color="#1f939b"  
+          fontSize="34px"
+          fontWeight="bold"
+          margin="0 0 5px  0"
+          padding="10px 53px"
+        >
+          Bienvenu {user.full_name}!
+        </Title>
+        <HomeContainer />
       </div>
     </HelmetProvider>
   );

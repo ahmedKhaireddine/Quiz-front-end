@@ -16,6 +16,14 @@ const CardContainer = () => {
 
   const deleteCard = (id) => {
     setQuestions(questions.filter((question) => question.id !== id));
+    console.log("id de deleteCard function =>", id);
+    console.log("deleteCard");
+  };
+
+  const editCard = (id) => {
+    setQuestions(questions.filter((question) => question.id === id));
+    console.log("id d'editCard function =>", id);
+    console.log("editCard");
   };
 
   return (
@@ -52,8 +60,8 @@ const CardContainer = () => {
             value.topic.includes(selectedTopic)
           );
         })
-        .map((value, index) => {
-          return <QuestionCard key={index} value={value} delete={deleteCard} />;
+        .map((value) => {
+          return <QuestionCard value={value} deleteCard={deleteCard} />;
         })}
     </CentralContainer>
   );

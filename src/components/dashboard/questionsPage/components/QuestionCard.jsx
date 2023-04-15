@@ -2,17 +2,18 @@ import React from "react";
 
 import { Checkbox } from "@chakra-ui/react";
 import Flex from "../../../layouts/Flex";
-import { MdModeEdit } from "react-icons/md";
-import { RiDeleteBin6Line } from "react-icons/ri";
 
 import { 
   Box,
   Text,
   TitleH4
 } from "../../../../styles/ReusableTagsStyled";
-import { Button } from "../../../../styles/dashboard/questionsPage/QuestionsPageStyled";
+import DeleteButton from "../../core/DeleteButton";
+import EditButton from "../../core/EditButton";
 
 const Card = ({ value, deleteCard }) => {
+  console.log("id =>", value.id);
+
   return (
     <Flex
       width="90%"
@@ -66,18 +67,8 @@ const Card = ({ value, deleteCard }) => {
         </Text>
       </Box>
       <Flex justifyContent="space-between" width="10%">
-        <Button
-        //   onClick={toggleActiveEdit}
-        >
-          <MdModeEdit fontSize="1.3em" color="#4fa9af" />
-        </Button>
-        <Button>
-          <RiDeleteBin6Line
-            fontSize="1.3em"
-            color="#4fa9af"
-            onClick={deleteCard}
-          />
-        </Button>
+        <EditButton />
+        <DeleteButton onClick={() => deleteCard(value.id)}/>
       </Flex>
     </Flex>
   );
