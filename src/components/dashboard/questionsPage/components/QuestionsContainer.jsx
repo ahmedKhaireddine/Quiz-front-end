@@ -134,19 +134,22 @@ const CardContainer = ({ questions, setQuestions }) => {
           );
         })
         .map((question, id) => (
-          <QuestionCard
-            key={question.id}
-            value={question}
-            questions={questions}
-            editQuestion={editQuestion}
-            deleteQuestion={deleteQuestion}
-            isOpen={isOpen}
-          />
-        )
-      )}
-      {isOpen && 
-        <QuestionEditModal isOpen={isOpen} onClose={onClose}/>
-      }
+          <>
+            <QuestionCard
+              key={question.id}
+              value={question}
+              editQuestion={editQuestion}
+              deleteQuestion={deleteQuestion}
+            />
+            {isOpen && (
+              <QuestionEditModal
+                isOpen={isOpen}
+                onClose={onClose}
+                value={question}
+              ></QuestionEditModal>
+            )}
+          </>
+        ))}
     </CentralContainer>
   );
 };
