@@ -20,6 +20,8 @@ import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
 import {
   Button,
   ButtonNew,
+  Icon,
+  Text
 } from "../../../styles/dashboard/questionsPage/QuestionsPageStyled";
 
 const Questions = () => {
@@ -53,12 +55,14 @@ const Questions = () => {
 
             {/* Version pour le bouton */}
             <ButtonNew>
-              <span>Ajouter &nbsp;</span>
+              <Text>Ajouter &nbsp;</Text>
+              <Icon>
               {/* <CgAddR /> */}
               {/* <BiAddToQueue /> */}
               <VscAdd />
               {/* <RiAddFill /> */}
               {/* <RiAddCircleLine /> */}
+              </Icon>
             </ButtonNew>
           </OptionsBar>
         </Header>

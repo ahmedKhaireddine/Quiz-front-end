@@ -9,19 +9,69 @@ export const Button = styled.div`
 `;
 
 export const ButtonNew = styled.div`
-width: 140px;
+  width: 140px;
   height: 35px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-top: 1px solid #1f939b;
-  border-right: 7px solid #1f939b;
+  border-right: 1px solid #1f939b;
   cursor: pointer;
   background-color: rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
 
   :hover {
     background-color: rgba(0,0,0,0.155);
   }
+  
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    height: 100%;
+    width: 5%;
+    background-color: #1f939b;
+    transform: translateX(100%);
+    transition: all .2s .1s ease-in-out;
+  }
+
+  ::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    height: 2%;
+    width: 100%;
+    background-color: #1f939b;
+    transform: translateX(100%);
+    transition: all .3s ease-in-out;
+  }
+
+  :hover::before,
+  :hover::after {
+    transform: translateX(0%);
+    transform: opacity;
+    opacity: 1;
+  }
+`;
+
+export const Icon = styled.div`
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+export const Text = styled.div`
+  width: 75%;
+  height: 100%;
+  text-align: center;
+  line-height: 31px;
 `;
 
 export const Container = styled.div`
