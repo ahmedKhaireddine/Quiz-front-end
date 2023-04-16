@@ -4,7 +4,7 @@ import Accounts from "../accountsPage/Accounts";
 import Home from "../homePage/Home";
 import Messages from "../../dashboard/messagesPage/Messages";
 import Questions from "../questionsPage/Questions";
-import Questionnaires from "../quizPage/Questionnaires";
+import Quiz from "../quizPage/Quiz";
 import Topics from "../topicsPage/Topics";
 import QuestionEdit from "../questionEditPage/QuestionEdit";
 import { UserContext } from "../../../contexts";
@@ -21,8 +21,8 @@ const SwitchView = (props) => {
       return <Messages />;
     case "Questions":
       return <Questions />;
-    case "Questionnaires":
-      return <Questionnaires />;
+    case "Quiz":
+      return <Quiz />;
     case "Topics":
       return <Topics />;
     case "QuestionEdit":

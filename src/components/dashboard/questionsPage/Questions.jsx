@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
-import { CgAddR } from "react-icons/cg";
-import { BiAddToQueue } from "react-icons/bi";
-import { VscAdd } from "react-icons/vsc";
-import { RiAddFill } from "react-icons/ri";
-import { RiAddCircleLine } from "react-icons/ri";
 import Aside from "../layouts/aside/Aside";
+import ButtonAdd from "../core/ButtonAdd";
 import Header from "../layouts/Header";
 import QuestionsContainer from "./components/QuestionsContainer";
 // import ItemPreviewCard from "./components/ItemPreviewCard";
@@ -17,12 +13,7 @@ import QuestionsTest from "../../../assets/json/QuestionsTest.json";
 
 import { OptionsBar } from "../../../styles/dashboard/layouts/HeaderStyled";
 import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
-import {
-  Button,
-  ButtonNew,
-  Icon,
-  Text
-} from "../../../styles/dashboard/questionsPage/QuestionsPageStyled";
+
 
 const Questions = () => {
   const [questions, setQuestions] = useState(QuestionsTest)
@@ -54,16 +45,7 @@ const Questions = () => {
             </Select> */}
 
             {/* Version pour le bouton */}
-            <ButtonNew>
-              <Text>Ajouter &nbsp;</Text>
-              <Icon>
-              {/* <CgAddR /> */}
-              {/* <BiAddToQueue /> */}
-              <VscAdd />
-              {/* <RiAddFill /> */}
-              {/* <RiAddCircleLine /> */}
-              </Icon>
-            </ButtonNew>
+            <ButtonAdd />
           </OptionsBar>
         </Header>
         <Helmet>

@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+
+// -------- Eléments de la barre d'option -------- //
+
 export const Button = styled.div`
   cursor: pointer;
   
@@ -8,7 +11,7 @@ export const Button = styled.div`
   }
 `;
 
-export const ButtonNew = styled.div`
+export const BtnAdd = styled.div`
   width: 140px;
   height: 35px;
   display: flex;
@@ -35,7 +38,7 @@ export const ButtonNew = styled.div`
     width: 5%;
     background-color: #1f939b;
     transform: translateX(100%);
-    transition: all .2s .1s ease-in-out;
+    transition: all .2s .2s ease-in-out;
   }
 
   ::after {
@@ -74,6 +77,134 @@ export const Text = styled.div`
   line-height: 31px;
 `;
 
+// -------- Deuxième version du bouton Add -------- //
+
+export const BtnAdd2 = styled.div`
+  width: 120px;
+  height: 35px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  ::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    height: 2%;
+    width: 100%;
+    background-color: #1f939b;
+    transform: translateY(100%);
+    transition: all .15s ease-in-out;
+  }
+
+  :hover {
+    font-weight: 500;
+  }
+
+  :hover::before,
+  :hover::after {
+    transform: translateY(0%);
+    transform: opacity;
+    opacity: 1;
+  }
+`;
+
+export const Icon2 = styled.div`
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  :hover {
+    font-weight: 500;
+  }
+`;
+
+export const Text2 = styled.div`
+  width: 75%;
+  height: 100%;
+  text-align: center;
+  line-height: 31px;
+`;
+
+// -------- Troisième version du bouton Add -------- //
+
+export const BtnAdd3 = styled.div`
+  width: 120px;
+  height: 35px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #1f939b;
+    transform: translateX(-100%);
+    transition: all .2s ease-in-out;
+  }
+
+  ::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #1f939b;
+    transform: translateY(-101%);
+    transition: all .1s .2s ease-in-out;
+  }
+
+  :hover::before{
+    transform: translateX(0%);
+  }
+
+  :hover::after {
+    transform: translateY(0%);
+  }
+  
+  :hover::before, 
+  :hover::after {
+    opacity: 1;
+  }
+`;
+
+// -------- Search Container -------- //
+
+export const SearchContainer = styled.div`
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+`
+
+// -------- 2e version -------- //
+
+export const SearchContainer2 = styled.div`
+  width: 90%;
+  display: grid;
+  grid-template-columns: 65% 1fr;
+  grid-gap: 15px;
+  padding: 10px 0 20px 0;
+  margin: 0 auto;
+`
+
 export const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -109,21 +240,3 @@ export const ItemPreviewCardContainer = styled.div`
   flex-direction: column;
   padding: 50px 20px;
 `;
-
-export const SearchContainer = styled.div`
-  width: 95%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-`
-
-// -------- 2e version -------- //
-
-export const SearchContainer2 = styled.div`
-  width: 90%;
-  display: grid;
-  grid-template-columns: 65% 1fr;
-  grid-gap: 15px;
-  padding: 10px 0 20px 0;
-  margin: 0 auto;
-`

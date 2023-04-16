@@ -1,13 +1,12 @@
 import React from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
-import { VscAdd } from "react-icons/vsc"
 import Aside from "../layouts/aside/Aside";
+import ButtonAdd from "../core/ButtonAdd";
 import Header from "../layouts/Header";
 
 import { OptionsBar } from "../../../styles/dashboard/layouts/HeaderStyled";
 import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
-import { ButtonNew } from "../../../styles/dashboard/questionsPage/QuestionsPageStyled";
 
 const Questionnaires = (props) => {
   return (
@@ -18,16 +17,7 @@ const Questionnaires = (props) => {
           subtitle="Consultez la liste des questionnaires disponibles"
         >
           <OptionsBar display="flex">
-            <ButtonNew>
-              <span>
-                Ajouter &nbsp;
-              </span>
-                {/* <CgAddR /> */}
-                {/* <BiAddToQueue /> */}
-                <VscAdd />
-                {/* <RiAddFill /> */}
-                {/* <RiAddCircleLine /> */}
-              </ButtonNew>
+            <ButtonAdd />
           </OptionsBar>
         </Header>
         <Helmet>
