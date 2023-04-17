@@ -1,22 +1,29 @@
 import React, { useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { useDisclosure } from "@chakra-ui/react";
 
 import Aside from "../layouts/aside/Aside";
 import ButtonAdd from "../core/ButtonAdd";
 import Header from "../layouts/Header";
-import QuestionsContainer from "./components/QuestionsContainer";
 // import ItemPreviewCard from "./components/ItemPreviewCard";
-import Select from "./components/Select";
+import QuestionsContainer from "./components/QuestionsContainer";
 import QuestionEditContainer from "../questionEditPage/components/QuestionEditContainer";
+import QuestionNewModal from "./components/QuestionNewModal";
+import Select from "./components/Select";
 
 import QuestionsTest from "../../../assets/json/QuestionsTest.json";
 
 import { OptionsBar } from "../../../styles/dashboard/layouts/HeaderStyled";
 import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
 
-
 const Questions = () => {
-  const [questions, setQuestions] = useState(QuestionsTest)
+  const [questions, setQuestions] = useState(QuestionsTest);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const openAddQuestionModal = () => {
+    onOpen();
+  };
+  console.log(onOpen);
 
   return (
     <HelmetProvider>
@@ -45,18 +52,21 @@ const Questions = () => {
             </Select> */}
 
             {/* Version pour le bouton */}
-            <ButtonAdd />
+            <ButtonAdd onClick={openAddQuestionModal} />
           </OptionsBar>
         </Header>
         <Helmet>
           <title>Questions</title>
         </Helmet>
-          <QuestionsContainer questions={questions}  setQuestions={setQuestions}/>
-        <Aside
-          subtitle="Question"
-          padding="0"
-        >
-        </Aside>
+        <QuestionsContainer questions={questions} setQuestions={setQuestions} />
+        {isOpen && (
+          <QuestionNewModal
+            isOpen={isOpen}
+            onClose={onClose}
+            setQuestions={setQuestions}
+          />
+        )}
+        <Aside subtitle="Question" padding="0"></Aside>
       </MainContainer>
     </HelmetProvider>
   );

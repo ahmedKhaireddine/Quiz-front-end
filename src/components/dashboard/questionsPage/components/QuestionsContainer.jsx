@@ -32,8 +32,6 @@ const CardContainer = ({ questions, setQuestions }) => {
       )
     );
     onOpen(id);
-    console.log("id =>", id);
-    console.log("onOpen =>", onOpen);
   };
 
   return (
@@ -84,7 +82,7 @@ const CardContainer = ({ questions, setQuestions }) => {
               onClose={onClose}
               value={question}
               setQuestions={setQuestions}
-              ></QuestionEditModal>
+              />
             }
           </>
         ))}

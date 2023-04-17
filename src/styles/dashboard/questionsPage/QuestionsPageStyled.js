@@ -12,7 +12,7 @@ export const Button = styled.div`
 `;
 
 export const BtnAdd = styled.div`
-  width: 140px;
+  width: 110px;
   height: 35px;
   display: flex;
   justify-content: flex-start;
@@ -63,7 +63,7 @@ export const BtnAdd = styled.div`
 `;
 
 export const Icon = styled.div`
-  width: 25%;
+  width: 30%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
@@ -71,16 +71,15 @@ export const Icon = styled.div`
 `;
 
 export const Text = styled.div`
-  width: 75%;
+  width: 70%;
   height: 100%;
-  text-align: center;
+  text-align: end;
   line-height: 31px;
 `;
 
 // -------- Deuxième version du bouton Add -------- //
 
 export const BtnAdd2 = styled.div`
-  width: 120px;
   height: 35px;
   display: flex;
   justify-content: flex-start;
@@ -88,6 +87,10 @@ export const BtnAdd2 = styled.div`
   cursor: pointer;
   position: relative;
   overflow: hidden;
+
+  // seconde version
+  padding-left: 5px;
+  // 
 
   ::after {
     content: "";
@@ -115,7 +118,7 @@ export const BtnAdd2 = styled.div`
 `;
 
 export const Icon2 = styled.div`
-  width: 25%;
+  width: 15px;
   height: 100%;
   display: flex;
   justify-content: flex-end;
@@ -131,6 +134,10 @@ export const Text2 = styled.div`
   height: 100%;
   text-align: center;
   line-height: 31px;
+
+  // seconde version
+  padding-left: 5px;
+  // 
 `;
 
 // -------- Troisième version du bouton Add -------- //
@@ -178,7 +185,7 @@ export const BtnAdd3 = styled.div`
   :hover::after {
     transform: translateY(0%);
   }
-  
+
   :hover::before, 
   :hover::after {
     opacity: 1;

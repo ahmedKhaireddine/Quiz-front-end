@@ -10,16 +10,16 @@ import { BtnAdd, BtnAdd2, BtnAdd3, Icon, Icon2, Text2, Text } from '../../../sty
 
 const ButtonAdd = () => {
   return (
-  //   <BtnAdd>
-  //   <Text>Ajouter &nbsp;</Text>
-  //   <Icon>
-  //   {/* <CgAddR /> */}
-  //   {/* <BiAddToQueue /> */}
-  //   <VscAdd />
-  //   {/* <RiAddFill /> */}
-  //   {/* <RiAddCircleLine /> */}
-  //   </Icon>
-  // </BtnAdd>
+    <BtnAdd>
+    <Text>Ajouter &nbsp;</Text>
+    <Icon>
+    {/* <CgAddR /> */}
+    {/* <BiAddToQueue /> */}
+    <VscAdd />
+    {/* <RiAddFill /> */}
+    {/* <RiAddCircleLine /> */}
+    </Icon>
+  </BtnAdd>
       
     //   <BtnAdd2>
     //   <Icon2>
@@ -32,16 +32,16 @@ const ButtonAdd = () => {
     //   <Text2>Ajouter &nbsp;</Text2>
     // </BtnAdd2>
 
-    <BtnAdd3>
-    <Icon2>
-    {/* <CgAddR /> */}
-    {/* <BiAddToQueue /> */}
-    <VscAdd />
-    {/* <RiAddFill /> */}
-    {/* <RiAddCircleLine /> */}
-    </Icon2>
-    <Text2>Ajouter &nbsp;</Text2>
-  </BtnAdd3>
+  //   <BtnAdd3>
+  //   <Icon2>
+  //   {/* <CgAddR /> */}
+  //   {/* <BiAddToQueue /> */}
+  //   <VscAdd />
+  //   {/* <RiAddFill /> */}
+  //   {/* <RiAddCircleLine /> */}
+  //   </Icon2>
+  //   <Text2>Ajouter &nbsp;</Text2>
+  // </BtnAdd3>
   )
 }
 
