@@ -7,10 +7,7 @@ import QuestionEditModal from "./QuestionEditModal";
 import SearchTermsInput from "./SearchTermsInput";
 import SelectTopics from "./SelectTopics";
 
-import {
-  SearchContainer,
-  SearchContainer2,
-} from "../../../../styles/dashboard/questionsPage/QuestionsPageStyled";
+import { SearchContainer2 } from "../../../../styles/dashboard/questionsPage/QuestionsPageStyled";
 
 const CardContainer = ({ questions, setQuestions }) => {
   const [searchTerms, setSearchTerms] = useState("");
@@ -25,7 +22,11 @@ const CardContainer = ({ questions, setQuestions }) => {
   const editQuestion = (id) => {
     setSelectedQuestion(id);
     // A mieux comprendre ????
-    setQuestions(questions.map((question) => question.id === id ? { ...question } : question ));
+    setQuestions(
+      questions.map((question) =>
+        question.id === id ? { ...question } : question
+      )
+    );
     onOpen();
   };
 
@@ -61,14 +62,14 @@ const CardContainer = ({ questions, setQuestions }) => {
               editQuestion={editQuestion}
               deleteQuestion={deleteQuestion}
             />
-            {selectedQuestion === id &&
+            {selectedQuestion === id && (
               <QuestionEditModal
-              isOpen={isOpen}
-              onClose={onClose}
-              value={question}
-              setQuestions={setQuestions}
+                isOpen={isOpen}
+                onClose={onClose}
+                value={question}
+                setQuestions={setQuestions}
               />
-            }
+            )}
           </>
         ))}
     </CentralContainer>

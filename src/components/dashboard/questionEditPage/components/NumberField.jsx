@@ -20,7 +20,7 @@ const NumberField = ({ label, ...props }) => {
   const placeholderOpacity = useColorModeValue(0.8, 0.6);
 
   return (
-    <Field name="time">
+    <Field name="duration">
       {({ field, form }) => (
         <FormControl>
           <NumberInput

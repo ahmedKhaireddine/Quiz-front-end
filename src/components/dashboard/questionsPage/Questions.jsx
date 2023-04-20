@@ -23,7 +23,7 @@ const Questions = () => {
   const openAddQuestionModal = () => {
     onOpen();
   };
-  // console.log("questions dans QuestionPage =>", questions);
+  console.log("questions dans QuestionPage =>", questions);
 
 
   return (

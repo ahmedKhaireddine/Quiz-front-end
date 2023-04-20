@@ -25,40 +25,36 @@ import {
 } from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
 import { SubTitle } from "../../../../styles/ReusableTagsStyled";
 
-const QuestionEditModal = ({ value, isOpen, onClose, setQuestions }) => {
-    const [selectAnswer, setSelectAnswer] = useState(null);
-    const [answerValue, setAnswerValue] = useState("");
-    const [questionValue, setQuestionValue] = useState("");
+const QuestionEditModal = ({
+  value,
+  isOpen,
+  onClose,
+  questions,
+  setQuestions,
+}) => {
+  const [selectAnswer, setSelectAnswer] = useState(null);
+  const [answerValue, setAnswerValue] = useState("");
+  const [questionValue, setQuestionValue] = useState("");
+  const [durationValue, setDurationValue] = useState("");
 
-    const onSubmit = (values, actions) => {
-        // answerValue est modifié mais pas question
-        // setQuestion({
-        //   ...question.choices.value,
-        //    answerValue
-        //   });
-    
-        // renvoie une erreur "Cannot read properties of undefined (reading 'choices')"
-        // answerValue est modifié mais pas question
-        setQuestions({
-          answer: values.answer,
-        });
-        actions.resetForm();
-      };
+  const editAnswer = (id) => {
+    setSelectAnswer(id);
+  };
 
-      const editAnswer = (id) => {
-        setSelectAnswer(id);
-      };
-      
-      const handleQuestionValueChange = (e) => {
-        setQuestionValue({ questionValue: e.target.value });
-        console.log(questionValue);
-      }
-    
-      const handleAnswerValueChange = (e) => {
-        setAnswerValue({ answerValue: e.target.value });
-        console.log(answerValue);
-      };
-    
+  const handleQuestionValueChange = (e) => {
+    setQuestionValue({ questionValue: e.target.value });
+    console.log("questionValue =>", questionValue);
+  };
+
+  const handleDurationValueChange = (e) => {
+    setDurationValue({ durationValue: e.target.value });
+    console.log("durationValue =>", durationValue);
+  };
+
+  const handleAnswerValueChange = (e) => {
+    setAnswerValue({ answerValue: e.target.value });
+    console.log("answerValue =>", answerValue);
+  };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl">
@@ -66,26 +62,36 @@ const QuestionEditModal = ({ value, isOpen, onClose, setQuestions }) => {
       <ModalContent>
         <ModalCloseButton />
         <ModalBody>
-            <Formik
-            key={value.id}
+          <Formik
+            // key={value.id}
             initialValues={{
-              question: "",
-              time: "",
-              answer1: "",
-              answer2: "",
-              answer3: "",
-              answer4: "",
+              description: "",
+              duration: "",
+              answer: "",
             }}
-            onSubmit={onSubmit}
+            onSubmit={(values, actions) => {
+              // answerValue est modifié mais pas question
+              setQuestions({questions: values});
+
+              // renvoie une erreur "Cannot read properties of undefined (reading 'choices')"
+              // answerValue est modifié mais pas question
+              // setQuestions({...questions.description, questionValue})
+              // setQuestions({
+              //   answer: values.answer,
+              // });
+              actions.resetForm();
+              alert(JSON.stringify(values, null, 2));
+              console.log("questions =>", questions);
+            }}
             validationSchema={Yup.object({
-              question: Yup.string()
+              description: Yup.string()
                 .required("Aucune question décrite")
                 .max(255, "255 caractères maximum"),
-              time: Yup.number()
+              duration: Yup.number()
                 .min(5, "Veuillez saisir un nombre entre 5 et 30")
                 .max(30, "Veuillez saisir un nombre entre 5 et 30")
                 .typeError("Veuillez saisir un nombre entre 5 et 30"),
-              answer: Yup.string().max(255, "255 caractères maximum"),
+              // answer: Yup.string().max(255, "255 caractères maximum"),
             })}
           >
             {(formik) => (
@@ -98,16 +104,20 @@ const QuestionEditModal = ({ value, isOpen, onClose, setQuestions }) => {
                 >
                   Question
                 </SubTitle>
-                <TextareaField 
-                  name="question" 
-                  value={value.description}
-                  onChange={handleQuestionValueChange}
-                >{value.description}</TextareaField>
+                <TextareaField
+                  name="description"
+                  value={formik.values.description}
+                  onChange={formik.handleChange}
+                />
 
                 <TimeContainer>
                   <p>Temps pour répondre :</p>
                   <span>
-                    <NumberField name="time" value={value.duration}/>
+                    <NumberField
+                      name="duration"
+                      value={formik.values.duration}
+                      onChange={formik.handleChange}
+                    />
                   </span>
                   <span>sec</span>
                 </TimeContainer>
@@ -122,24 +132,24 @@ const QuestionEditModal = ({ value, isOpen, onClose, setQuestions }) => {
                   Réponses
                 </SubTitle>
                 <ListContainer>
-                  {value.choices.map((choice, id) => (
+                  {value.choices.map((answer, id) => (
                     <li key={id}>
-                      {selectAnswer !== choice.id ? (
+                      {selectAnswer !== answer.id ? (
                         <ItemsList>
-                          {choice.value}
+                          {answer.value}
                           <button>
                             <MdModeEdit
                               fontSize="1.3em"
                               color="#4fa9af"
-                              onClick={() => editAnswer(choice.id)}
+                              onClick={() => editAnswer(answer.id)}
                             />
                           </button>
                         </ItemsList>
                       ) : (
                         <TextareaField
                           name="answer"
-                          defaultValue={choice.value}
-                          onChange={handleAnswerValueChange}
+                          value={formik.values.answer}
+                          onChange={formik.handleChange}
                         />
                       )}
                     </li>
