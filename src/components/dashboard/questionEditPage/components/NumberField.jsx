@@ -25,6 +25,7 @@ const NumberField = ({ label, ...props }) => {
         <FormControl>
           <NumberInput
             {...field}
+            {...props}
             onChange={(val) => form.setFieldValue(field.name, val)}
           >
             <NumberInputField

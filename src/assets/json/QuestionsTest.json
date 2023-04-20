@@ -17,7 +17,7 @@
           "weight": 0
         }
       ],
-      "description": "En quelle année a eu lieu la prise de la Bastille",
+      "description": "En quelle année a eu lieu la prise de la Bastille ?",
       "duration": 4,
       "id": 0,
       "is_active": false,
@@ -115,7 +115,7 @@
           "weight": 0
         }
       ],
-      "description": "Quel est le surnom du roi Louis XIV",
+      "description": "Quel est le surnom du roi Louis XIV ?",
       "duration": 3,
       "id": 3,
       "is_active": true,
@@ -125,7 +125,7 @@
       "choices": [
         {
           "id": 1,
-          "value": "Autriche/Hongrie/Islande",
+          "value": "1522",
           "weight": 0
         },
         {

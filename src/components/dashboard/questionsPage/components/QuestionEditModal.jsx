@@ -69,13 +69,12 @@ const QuestionEditModal = ({ value, isOpen, onClose, setQuestions }) => {
             <Formik
             key={value.id}
             initialValues={{
-              theme: "Histoire",
-              question: value.description,
+              question: "",
               time: "",
-              answer1: "Hier",
-              answer2: "En l'an 0",
-              answer3: "Quand j'ai fait brûler le repas la semaine dernière",
-              answer4: "Il y a environ 13,8 milliards d'années",
+              answer1: "",
+              answer2: "",
+              answer3: "",
+              answer4: "",
             }}
             onSubmit={onSubmit}
             validationSchema={Yup.object({
@@ -101,9 +100,9 @@ const QuestionEditModal = ({ value, isOpen, onClose, setQuestions }) => {
                 </SubTitle>
                 <TextareaField 
                   name="question" 
-                  // defaultValue={value.description}
+                  value={value.description}
                   onChange={handleQuestionValueChange}
-                />
+                >{value.description}</TextareaField>
 
                 <TimeContainer>
                   <p>Temps pour répondre :</p>
