@@ -69,11 +69,11 @@ const QuestionEditModal = ({ isOpen, onClose, setQuestions }) => {
     
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="xl">
+    <Modal isOpen={isOpen} onClose={onClose} size="xs">
       <ModalOverlay />
       <ModalContent 
         // maxH="400px" 
-        maxW="1000px"
+        maxW="500px"
         >
         <ModalCloseButton />
         <ModalBody>

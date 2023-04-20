@@ -7,14 +7,14 @@ export const ItemsList = styled.div`
   margin-bottom: 10px;
 
   span {
-    margin-right: 10px;
+    margin-right: ${props => props.marginRight || "10px"};
   }
 `
 
 export const TimeContainer = styled.div`
   display: flex;
   width: 100%;
-  padding: 15px 0 30px;
+  padding: ${props => props.padding || "15px 0 30px"};
 
   p {
     line-height: 40px;

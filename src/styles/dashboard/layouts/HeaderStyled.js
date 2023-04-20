@@ -12,13 +12,13 @@ export const Box = styled.div`
 `;
 
 export const Subtitle = styled.h3`
-  font-size: 18px;
+  font-size: ${props => props.fontSizeSubtitle || "18px"};
   font-weight: 600;
   color: #666;
 `;
 
 export const Title = styled.h1`
-  font-size: 34px;
+  font-size: ${props => props.fontSizeTitle || "34px"};
   font-weight: bold;
   color: #1f939b;
   margin-bottom: 5px;

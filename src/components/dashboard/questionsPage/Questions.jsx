@@ -23,35 +23,19 @@ const Questions = () => {
   const openAddQuestionModal = () => {
     onOpen();
   };
-  console.log(onOpen);
+  // console.log("questions dans QuestionPage =>", questions);
+
 
   return (
     <HelmetProvider>
       <MainContainer>
         <Header
+          fontSizeTitle="28px"
+          fontSizeSubtitle="24px"
           title="Questions"
           subtitle="Consultez la liste des questions disponibles"
         >
           <OptionsBar display="flex">
-            {/* <Select
-              name="theme"
-              placeholder="Thèmes"
-              style={{ 
-                borderRadius: "0",
-                borderLeft: "none",
-                borderBottom: "none",
-                boxShadow: "none",
-                borderTopRightRadius: "4px",
-              }}
-            >
-              {questions.map((question, index) => (
-                <option key={index} value={question.topic}>
-                  {question.topic}
-                </option>
-              ))}
-            </Select> */}
-
-            {/* Version pour le bouton */}
             <ButtonAdd onClick={openAddQuestionModal} />
           </OptionsBar>
         </Header>

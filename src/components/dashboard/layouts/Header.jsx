@@ -6,11 +6,11 @@ import {
   Title
 } from "../../../styles/dashboard/layouts/HeaderStyled";
 
-const Header = ({ title, subtitle, children }) => {
+const Header = ({ children, fontSizeSubtitle, fontSizeTitle, subtitle, title }) => {
   return (
     <Box>
-      <Title>{title}</Title>
-      <Subtitle>{subtitle}</Subtitle>
+      <Title fontSizeTitle={fontSizeTitle}>{title}</Title>
+      <Subtitle fontSizeSubtitle={fontSizeSubtitle}>{subtitle}</Subtitle>
       {children}
     </Box>
   );

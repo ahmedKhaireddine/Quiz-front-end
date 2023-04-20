@@ -24,14 +24,9 @@ const CardContainer = ({ questions, setQuestions }) => {
 
   const editQuestion = (id) => {
     setSelectedQuestion(id);
-    setQuestions(
-      questions.map((question) =>
-        question.id === id
-          ? { ...question, isEditing: !question.isEditing }
-          : question
-      )
-    );
-    onOpen(id);
+    // A mieux comprendre ????
+    setQuestions(questions.map((question) => question.id === id ? { ...question } : question ));
+    onOpen();
   };
 
   return (
@@ -41,16 +36,6 @@ const CardContainer = ({ questions, setQuestions }) => {
       width="100%"
       height="100%"
     >
-      {/* <SearchContainer>
-            <SearchTermsInput
-              questions={questions}
-              setSearchTerms={setSearchTerms}
-            />
-            <SelectTopics
-              questions={questions}
-              setSelectedTopic={setSelectedTopic}
-            />
-          </SearchContainer> */}
       <SearchContainer2>
         <SearchTermsInput
           questions={questions}

@@ -28,6 +28,7 @@ import { SubTitle } from "../../../../styles/ReusableTagsStyled";
 const QuestionEditModal = ({ value, isOpen, onClose, setQuestions }) => {
     const [selectAnswer, setSelectAnswer] = useState(null);
     const [answerValue, setAnswerValue] = useState("");
+    const [questionValue, setQuestionValue] = useState("");
 
     const onSubmit = (values, actions) => {
         // answerValue est modifié mais pas question
@@ -47,26 +48,29 @@ const QuestionEditModal = ({ value, isOpen, onClose, setQuestions }) => {
       const editAnswer = (id) => {
         setSelectAnswer(id);
       };
+      
+      const handleQuestionValueChange = (e) => {
+        setQuestionValue({ questionValue: e.target.value });
+        console.log(questionValue);
+      }
     
-      const onChoiceValueChange = (e) => {
+      const handleAnswerValueChange = (e) => {
         setAnswerValue({ answerValue: e.target.value });
+        console.log(answerValue);
       };
     
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl">
       <ModalOverlay />
-      <ModalContent 
-        // maxH="400px" 
-        maxW="1000px"
-        >
+      <ModalContent>
         <ModalCloseButton />
         <ModalBody>
             <Formik
             key={value.id}
             initialValues={{
               theme: "Histoire",
-              question: "Quand a eu lieu le Big Bang ?",
+              question: value.description,
               time: "",
               answer1: "Hier",
               answer2: "En l'an 0",
@@ -95,12 +99,16 @@ const QuestionEditModal = ({ value, isOpen, onClose, setQuestions }) => {
                 >
                   Question
                 </SubTitle>
-                <TextareaField name="question" value={value.description} />
+                <TextareaField 
+                  name="question" 
+                  // defaultValue={value.description}
+                  onChange={handleQuestionValueChange}
+                />
 
                 <TimeContainer>
                   <p>Temps pour répondre :</p>
                   <span>
-                    <NumberField name="time" />
+                    <NumberField name="time" value={value.duration}/>
                   </span>
                   <span>sec</span>
                 </TimeContainer>
@@ -132,7 +140,7 @@ const QuestionEditModal = ({ value, isOpen, onClose, setQuestions }) => {
                         <TextareaField
                           name="answer"
                           defaultValue={choice.value}
-                          onChange={onChoiceValueChange}
+                          onChange={handleAnswerValueChange}
                         />
                       )}
                     </li>
@@ -144,13 +152,6 @@ const QuestionEditModal = ({ value, isOpen, onClose, setQuestions }) => {
             )}
           </Formik>
         </ModalBody>
-
-        <ModalFooter>
-          {/* <Button colorScheme="blue" mr={3} onClick={onClose}>
-            Close
-          </Button>
-          <Button variant="ghost">Secondary Action</Button> */}
-        </ModalFooter>
       </ModalContent>
     </Modal>
   );
