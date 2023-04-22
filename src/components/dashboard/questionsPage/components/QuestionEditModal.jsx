@@ -65,7 +65,7 @@ const QuestionEditModal = ({
           <Formik
             // key={value.id}
             initialValues={{
-              description: "",
+              description: value.description,
               duration: "",
               answer: "",
             }}
