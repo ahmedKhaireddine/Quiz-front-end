@@ -1,7 +1,8 @@
 import React from "react";
-import { Field } from "formik";
+import { Field, useField } from "formik";
 import {
   FormControl,
+  FormErrorMessage,
   NumberDecrementStepper,
   NumberIncrementStepper,
   NumberInput,
@@ -11,6 +12,8 @@ import {
 import { useColorModeValue } from "@chakra-ui/react";
 
 const NumberField = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
+
 
   const bg = useColorModeValue("#f1f1f1", "#171923");
   const borderColor = useColorModeValue("#1f939b", "#45DDE7");
@@ -27,6 +30,8 @@ const NumberField = ({ label, ...props }) => {
             {...field}
             {...props}
             onChange={(val) => form.setFieldValue(field.name, val)}
+            min={1} 
+            max={30}
           >
             <NumberInputField
               bg={bg}
@@ -46,6 +51,7 @@ const NumberField = ({ label, ...props }) => {
               <NumberDecrementStepper />
             </NumberInputStepper>
           </NumberInput>
+          <FormErrorMessage>{meta.error}</FormErrorMessage>
         </FormControl>
       )}
     </Field>

@@ -45,6 +45,7 @@ export const Btn = styled.button`
 
 export const ButtonIcon = styled.button`
   cursor: pointer;
+  margin: ${props => props.margin};
 
   :hover {
     transform: scale(1.15);

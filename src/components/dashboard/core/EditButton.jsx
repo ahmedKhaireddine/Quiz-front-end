@@ -3,16 +3,22 @@ import { MdModeEdit } from "react-icons/md";
 
 import { ButtonIcon } from "../../../styles/dashboard/core/ButtonStyled";
 
-const EditButton = ({ handleClick, children }) => {
+const EditButton = ({ children, margin, onClick }) => {
   return (
-    <ButtonIcon>
-      <MdModeEdit fontSize="1.3em" color="#4fa9af" onClick={handleClick}>
+    <ButtonIcon
+      margin={margin}
+    >
+      <MdModeEdit 
+        fontSize="1.3em" 
+        color="#4fa9af"
+        onClick={onClick}
+      >
         {children}
       </MdModeEdit>
     </ButtonIcon>
   );
 };
 
-EditButton.defaultProps = { handleClick: () => {} };
+EditButton.defaultProps = { onClick: () => {} };
 
 export default EditButton;

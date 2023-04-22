@@ -5,7 +5,6 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
@@ -14,12 +13,15 @@ import {
 import { MdModeEdit } from "react-icons/md";
 // import CentralContainer from "../../layouts/CentralContainer";
 import Button from "../../core/Button";
-import TextareaField from "../../questionEditPage/components/TextareaField";
+import EditButton from "../../core/EditButton"
+import DeleteButton from "../../core/DeleteButton"
 import NumberField from "../../questionEditPage/components/NumberField";
+import TextareaField from "../../questionEditPage/components/TextareaField";
 
 // --------- Styles --------- //
 import {
   ItemsList,
+  Line,
   ListContainer,
   TimeContainer,
 } from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
@@ -41,21 +43,6 @@ const QuestionEditModal = ({
     setSelectAnswer(id);
   };
 
-  const handleQuestionValueChange = (e) => {
-    setQuestionValue({ questionValue: e.target.value });
-    console.log("questionValue =>", questionValue);
-  };
-
-  const handleDurationValueChange = (e) => {
-    setDurationValue({ durationValue: e.target.value });
-    console.log("durationValue =>", durationValue);
-  };
-
-  const handleAnswerValueChange = (e) => {
-    setAnswerValue({ answerValue: e.target.value });
-    console.log("answerValue =>", answerValue);
-  };
-
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl">
       <ModalOverlay />
@@ -66,29 +53,22 @@ const QuestionEditModal = ({
             // key={value.id}
             initialValues={{
               description: value.description,
-              duration: "",
-              answer: "",
+              duration: value.duration,
+              // ne récupère pas la valeur de la réponse
+              answer: value.choices.answer,
             }}
             onSubmit={(values, actions) => {
-              // answerValue est modifié mais pas question
               setQuestions({questions: values});
-
-              // renvoie une erreur "Cannot read properties of undefined (reading 'choices')"
-              // answerValue est modifié mais pas question
-              // setQuestions({...questions.description, questionValue})
-              // setQuestions({
-              //   answer: values.answer,
-              // });
               actions.resetForm();
               alert(JSON.stringify(values, null, 2));
-              console.log("questions =>", questions);
             }}
             validationSchema={Yup.object({
               description: Yup.string()
                 .required("Aucune question décrite")
                 .max(255, "255 caractères maximum"),
               duration: Yup.number()
-                .min(5, "Veuillez saisir un nombre entre 5 et 30")
+                .required("Précisez un temps limite pour répondre")
+                .min(1, "Veuillez saisir un nombre entre 5 et 30")
                 .max(30, "Veuillez saisir un nombre entre 5 et 30")
                 .typeError("Veuillez saisir un nombre entre 5 et 30"),
               // answer: Yup.string().max(255, "255 caractères maximum"),
@@ -114,7 +94,6 @@ const QuestionEditModal = ({
                   <p>Temps pour répondre :</p>
                   <span>
                     <NumberField
-                      name="duration"
                       value={formik.values.duration}
                       onChange={formik.handleChange}
                     />
@@ -137,13 +116,15 @@ const QuestionEditModal = ({
                       {selectAnswer !== answer.id ? (
                         <ItemsList>
                           {answer.value}
-                          <button>
-                            <MdModeEdit
+                          <Line />
+                            <EditButton
                               fontSize="1.3em"
                               color="#4fa9af"
                               onClick={() => editAnswer(answer.id)}
                             />
-                          </button>
+                            <DeleteButton
+                            
+                            />
                         </ItemsList>
                       ) : (
                         <TextareaField
@@ -155,8 +136,7 @@ const QuestionEditModal = ({
                     </li>
                   ))}
                 </ListContainer>
-
-                <Button type="submit">Enregistrer</Button>
+                <Button type="submit" margin="30px auto">Enregistrer</Button>
               </form>
             )}
           </Formik>

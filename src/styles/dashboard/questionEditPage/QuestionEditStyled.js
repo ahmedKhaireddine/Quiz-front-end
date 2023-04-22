@@ -1,13 +1,29 @@
 import styled from "styled-components";
 
 export const ItemsList = styled.div`
-  height: 50px;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 10px;
 
   span {
     margin-right: ${props => props.marginRight || "10px"};
+  }
+`
+
+export const Line = styled.div`
+  align-self: flex-end;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(0,0,0,0.2);
+`
+
+export const ListContainer = styled.ul`
+  display: flex;
+  flex-direction column;
+
+  li {
+    list-style-type: none;
   }
 `
 
@@ -30,12 +46,3 @@ export const TimeContainer = styled.div`
     line-height: 40px;
   }
 `;
-
-export const ListContainer = styled.ul`
-  display: flex;
-  flex-direction column;
-
-  li {
-    list-style-type: none;
-  }
-`
