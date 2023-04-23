@@ -7,9 +7,7 @@ import ButtonAdd from "../core/ButtonAdd";
 import Header from "../layouts/Header";
 // import ItemPreviewCard from "./components/ItemPreviewCard";
 import QuestionsContainer from "./components/QuestionsContainer";
-import QuestionEditContainer from "../questionEditPage/components/QuestionEditContainer";
 import QuestionNewModal from "./components/QuestionNewModal";
-import Select from "./components/Select";
 
 import QuestionsTest from "../../../assets/json/QuestionsTest.json";
 
@@ -23,8 +21,6 @@ const Questions = () => {
   const openAddQuestionModal = () => {
     onOpen();
   };
-  console.log("questions dans QuestionPage =>", questions);
-
 
   return (
     <HelmetProvider>

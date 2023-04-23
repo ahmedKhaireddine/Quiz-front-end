@@ -1,20 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
 
 import { Checkbox } from "@chakra-ui/react";
 import Flex from "../../../layouts/Flex";
 
 import { Box, Text, TitleH4 } from "../../../../styles/ReusableTagsStyled";
-import { MdModeEdit } from "react-icons/md";
-import { RiDeleteBin6Line } from "react-icons/ri";
+import EditButton from "../../core/EditButton";
+import DeleteButton from "../../core/DeleteButton";
 
-import { ButtonIcon } from "../../../../styles/dashboard/core/ButtonStyled";
-
-const Card = ({
-  value, 
-  deleteQuestion,
-  editQuestion,
-}) => {
-
+const Card = ({ value, deleteQuestion, editQuestion }) => {
   return (
     <Flex
       width="90%"
@@ -66,12 +59,8 @@ const Card = ({
         </Text>
       </Box>
       <Flex justifyContent="space-between" width="10%">
-        <ButtonIcon onClick={(e) => editQuestion(value.id)}>
-          <MdModeEdit fontSize="1.3em" color="#4fa9af"/>
-        </ButtonIcon>
-        <ButtonIcon onClick={(e) => deleteQuestion(value.id)}>
-          <RiDeleteBin6Line fontSize="1.3em" color="#4fa9af"/>
-        </ButtonIcon>
+        <EditButton onClick={(e) => editQuestion(value.id)} />
+        <DeleteButton onClick={(e) => deleteQuestion(value.id)} />
       </Flex>
     </Flex>
   );

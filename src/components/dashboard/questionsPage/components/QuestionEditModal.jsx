@@ -10,16 +10,16 @@ import {
 } from "@chakra-ui/react";
 
 // --------- Components --------- //
-import { MdModeEdit } from "react-icons/md";
-// import CentralContainer from "../../layouts/CentralContainer";
 import Button from "../../core/Button";
-import EditButton from "../../core/EditButton"
-import DeleteButton from "../../core/DeleteButton"
-import NumberField from "../../questionEditPage/components/NumberField";
-import TextareaField from "../../questionEditPage/components/TextareaField";
+import DeleteButton from "../../core/DeleteButton";
+import EditButton from "../../core/EditButton";
+import NumberField from "./NumberField";
+import TextareaField from "./TextareaField";
 
 // --------- Styles --------- //
 import {
+  AnswerContainer,
+  ButtonContainer,
   ItemsList,
   Line,
   ListContainer,
@@ -43,6 +43,10 @@ const QuestionEditModal = ({
     setSelectAnswer(id);
   };
 
+  const deleteAnswer = (id) => {
+    setQuestions(questions.choices.filter((answer) => answer.id !== id));
+  };
+
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl">
       <ModalOverlay />
@@ -58,7 +62,7 @@ const QuestionEditModal = ({
               answer: value.choices.answer,
             }}
             onSubmit={(values, actions) => {
-              setQuestions({questions: values});
+              setQuestions({ questions: values });
               actions.resetForm();
               alert(JSON.stringify(values, null, 2));
             }}
@@ -115,16 +119,14 @@ const QuestionEditModal = ({
                     <li key={id}>
                       {selectAnswer !== answer.id ? (
                         <ItemsList>
-                          {answer.value}
+                          <AnswerContainer>{answer.value}</AnswerContainer>
                           <Line />
-                            <EditButton
-                              fontSize="1.3em"
-                              color="#4fa9af"
-                              onClick={() => editAnswer(answer.id)}
-                            />
+                          <ButtonContainer>
+                            <EditButton onClick={() => editAnswer(answer.id)} />
                             <DeleteButton
-                            
+                              onClick={() => deleteAnswer(answer.id)}
                             />
+                          </ButtonContainer>
                         </ItemsList>
                       ) : (
                         <TextareaField
@@ -136,7 +138,9 @@ const QuestionEditModal = ({
                     </li>
                   ))}
                 </ListContainer>
-                <Button type="submit" margin="30px auto">Enregistrer</Button>
+                <Button type="submit" margin="30px auto">
+                  Enregistrer
+                </Button>
               </form>
             )}
           </Formik>

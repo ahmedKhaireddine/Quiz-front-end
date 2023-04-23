@@ -72,17 +72,17 @@
         },
               {
           "id": 4,
-          "value": "Nice",
+          "value": "Marseille",
           "weight": 0
         },
         {
           "id": 5,
-          "value": "Saint-Étienne",
+          "value": "Rouen",
           "weight": 0
         },
         {
           "id": 6,
-          "value": "Nantes",
+          "value": "Strasbourg",
           "weight": 1
         }
       ],

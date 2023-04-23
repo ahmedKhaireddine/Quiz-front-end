@@ -12,10 +12,9 @@ import {
 
 // --------- Components --------- //
 import { MdModeEdit } from "react-icons/md";
-// import CentralContainer from "../../layouts/CentralContainer";
 import Button from "../../core/Button";
-import TextareaField from "../../questionEditPage/components/TextareaField";
-import NumberField from "../../questionEditPage/components/NumberField";
+import TextareaField from "./TextareaField";
+import NumberField from "./NumberField";
 
 // --------- Styles --------- //
 import {

@@ -6,7 +6,6 @@ import Messages from "../../dashboard/messagesPage/Messages";
 import Questions from "../questionsPage/Questions";
 import Quiz from "../quizPage/Quiz";
 import Topics from "../topicsPage/Topics";
-import QuestionEdit from "../questionEditPage/QuestionEdit";
 import { UserContext } from "../../../contexts";
 
 const SwitchView = (props) => {
@@ -25,8 +24,6 @@ const SwitchView = (props) => {
       return <Quiz />;
     case "Topics":
       return <Topics />;
-    case "QuestionEdit":
-      return <QuestionEdit />;
     default:
       break;
   }

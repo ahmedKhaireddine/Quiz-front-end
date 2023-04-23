@@ -1,9 +1,17 @@
 import styled from "styled-components";
 
+export const AnswerContainer = styled.p`
+  white-space: nowrap;
+` 
+
+export const ButtonContainer = styled.div`
+  display: flex;
+`
+
 export const ItemsList = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 10px;
 
   span {
