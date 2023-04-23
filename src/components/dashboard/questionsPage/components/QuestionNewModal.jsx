@@ -13,7 +13,7 @@ import {
 // --------- Components --------- //
 import { MdModeEdit } from "react-icons/md";
 import Button from "../../core/Button";
-import TextareaField from "./TextareaField";
+import TextareaField from "../../questionEditPage/components/TextareaField";
 import NumberField from "./NumberField";
 
 // --------- Styles --------- //

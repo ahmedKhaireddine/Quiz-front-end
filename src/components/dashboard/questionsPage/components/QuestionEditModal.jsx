@@ -14,7 +14,7 @@ import Button from "../../core/Button";
 import DeleteButton from "../../core/DeleteButton";
 import EditButton from "../../core/EditButton";
 import NumberField from "./NumberField";
-import TextareaField from "./TextareaField";
+import TextareaField from "../../questionEditPage/components/TextareaField";
 
 // --------- Styles --------- //
 import {
@@ -80,12 +80,7 @@ const QuestionEditModal = ({
           >
             {(formik) => (
               <form onSubmit={formik.handleSubmit}>
-                <SubTitle
-                  fontSize="30px"
-                  fontWeight="bold"
-                  color="#1f939b"
-                  margin="0 0 15px 0"
-                >
+                <SubTitle fontSize="30px" fontWeight="bold" margin="0 0 15px 0" color="#1f939b">
                   Question
                 </SubTitle>
                 <TextareaField
@@ -123,9 +118,7 @@ const QuestionEditModal = ({
                           <Line />
                           <ButtonContainer>
                             <EditButton onClick={() => editAnswer(answer.id)} />
-                            <DeleteButton
-                              onClick={() => deleteAnswer(answer.id)}
-                            />
+                            <DeleteButton onClick={() => deleteAnswer(answer.id)} />
                           </ButtonContainer>
                         </ItemsList>
                       ) : (

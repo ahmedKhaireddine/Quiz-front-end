@@ -53,14 +53,6 @@ const LinksList = (props) => {
         <AiFillMessage color="rgba(31,147,155,.8)" fontSize="1.4em" />
         <Title>Messages</Title>
       </Item>
-
-      <Item
-        selected={view === "QuestionEdit"}
-        onClick={() => setView("QuestionEdit")}
-      >
-        <AiFillMessage color="rgba(31,147,155,.8)" fontSize="1.4em" />
-        <Title>Edition de question</Title>
-      </Item>
     </ListItems>
   );
 };

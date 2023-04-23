@@ -39,13 +39,12 @@ const Questions = () => {
           <title>Questions</title>
         </Helmet>
         <QuestionsContainer questions={questions} setQuestions={setQuestions} />
-        {isOpen && (
           <QuestionNewModal
             isOpen={isOpen}
             onClose={onClose}
             setQuestions={setQuestions}
           />
-        )}
+
         <Aside subtitle="Question" padding="0"></Aside>
       </MainContainer>
     </HelmetProvider>

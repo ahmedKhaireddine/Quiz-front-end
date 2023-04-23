@@ -4,8 +4,8 @@ import { Checkbox } from "@chakra-ui/react";
 import Flex from "../../../layouts/Flex";
 
 import { Box, Text, TitleH4 } from "../../../../styles/ReusableTagsStyled";
-import EditButton from "../../core/EditButton";
 import DeleteButton from "../../core/DeleteButton";
+import EditButton from "../../core/EditButton";
 
 const Card = ({ value, deleteQuestion, editQuestion }) => {
   return (

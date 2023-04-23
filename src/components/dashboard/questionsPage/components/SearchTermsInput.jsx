@@ -1,6 +1,6 @@
 import React from "react";
 
-import Input from "../tests/Input";
+import Input from "./SearchInputField";
 
 const SearchTermsInput = ({ setSearchTerms }) => {
   const handleSearchTerms = (e) => {

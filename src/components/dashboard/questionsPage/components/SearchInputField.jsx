@@ -5,7 +5,7 @@ import {
 } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
 
-const InputField = ({ ...props }) => {
+const SearchInputField = ({ ...props }) => {
 
   const bg = useColorModeValue("#f1f1f1", "#171923");
   const borderColor = useColorModeValue("#1f939b", "#45DDE7");
@@ -31,4 +31,4 @@ const InputField = ({ ...props }) => {
   );
 };
 
-export default InputField;
+export default SearchInputField;
