@@ -8,15 +8,18 @@ import {
   Text,
 } from "../../../styles/dashboard/questionsPage/QuestionsPageStyled";
 
-const ButtonAdd = () => {
+const ButtonAdd = ({ children, onClick }) => {
   return (
-    <BtnAdd>
+    <BtnAdd onClick={onClick}>
       <Icon>
         <VscAdd />
       </Icon>
       <Text>Ajouter</Text>
+      {children}
     </BtnAdd>
   );
 };
+
+ButtonAdd.defaultProps = { onClick: () => {} };
 
 export default ButtonAdd;
