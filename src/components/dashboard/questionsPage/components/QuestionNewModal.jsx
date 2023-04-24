@@ -2,73 +2,109 @@ import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import {
+  Checkbox,
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
 
 // --------- Components --------- //
-import { MdModeEdit } from "react-icons/md";
 import Button from "../../core/Button";
-import TextareaField from "../../questionEditPage/components/TextareaField";
 import NumberField from "./NumberField";
+import SelectTopics from "./SelectTopics";
+import TextareaField from "./TextareaField";
 
 // --------- Styles --------- //
 import {
-  ItemsList,
   ListContainer,
   TimeContainer,
 } from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
 import { SubTitle } from "../../../../styles/ReusableTagsStyled";
 
-const QuestionEditModal = ({ isOpen, onClose, questions, setQuestions }) => {
+const QuestionNewModal = ({
+  isOpen,
+  onClose,
+  questions,
+  setQuestions,
+  setSelectedTopic,
+}) => {
   const [selectAnswer, setSelectAnswer] = useState(null);
   const [answerValue, setAnswerValue] = useState("");
-  const [newQuestion, setNewQuestion] = useState("")
+  const [newQuestion, setNewQuestion] = useState("");
+  const [newTopicSelected, setNewTopicSelected] = useState("");
 
-  const question = {
-    description: "",
-    duration: "",
-    id: "",
-    is_active: "",
-    topic: "",
-    choices: [
-      {
-        id: "",
-        value: "",
-        weight: "",
-      },
-    ],
-  };
+  console.log("newQuestion =>", newQuestion);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xs">
       <ModalOverlay />
-      <ModalContent
-        // maxH="400px"
-        maxW="500px"
-      >
+      <ModalContent maxW="500px">
         <ModalCloseButton />
         <ModalBody>
           <Formik
             initialValues={{
+              topic: "",
               description: "",
               duration: "",
-              // ne récupère pas la valeur de la réponse
-              answer: "",
+              answer0: "",
+              answer1: "",
+              answer2: "",
+              answer3: "",
+              answer4: "",
+              answer5: "",
             }}
             onSubmit={(values, actions) => {
-              setNewQuestion({ newQuestion: values})
-              setQuestions({ ...questions, newQuestion });
+              setNewQuestion({
+                newQuestion: {
+                  description: values.description,
+                  duration: values.duration,
+                  id: values.id,
+                  is_active: false,
+                  topic: values.topic,
+                  choices: [
+                    {
+                      id: 0,
+                      value: values.answer0,
+                      weight: 0,
+                    },
+                    {
+                      id: 1,
+                      value: values.answer1,
+                      weight: 0,
+                    },
+                    {
+                      id: 2,
+                      value: values.answer2,
+                      weight: 0,
+                    },
+                    {
+                      id: 3,
+                      value: values.answer3,
+                      weight: 0,
+                    },
+                    {
+                      id: 4,
+                      value: values.answer4,
+                      weight: 0,
+                    },
+                    {
+                      id: 5,
+                      value: values.answer5,
+                      weight: 0,
+                    },
+                  ],
+                },
+              });
+              console.log(newQuestion);
+              // setQuestions({ ...questions, newQuestion });
               actions.resetForm();
               alert(JSON.stringify(values, null, 2));
             }}
             validationSchema={Yup.object({
               description: Yup.string()
-                .required("Aucune question décrite")
+                .required("Ecrivez votre question")
                 .max(255, "255 caractères maximum"),
               duration: Yup.number()
                 .required("Précisez un temps limite pour répondre")
@@ -86,17 +122,35 @@ const QuestionEditModal = ({ isOpen, onClose, questions, setQuestions }) => {
                   color="#1f939b"
                   margin="0 0 15px 0"
                 >
+                  Thèmes
+                </SubTitle>
+                <SelectTopics
+                  // name="topic"
+                  questions={questions}
+                  margin="0 0 25px 0"
+                  onChange={formik.handleChange}
+                  setNewTopicSelected={setNewTopicSelected}
+                />
+                <SubTitle
+                  fontSize="30px"
+                  fontWeight="bold"
+                  color="#1f939b"
+                  margin="0 0 15px 0"
+                >
                   Question
                 </SubTitle>
                 <TextareaField
-                  name="question"
+                  name="description"
                   onChange={formik.handleChange}
                 />
 
                 <TimeContainer>
                   <p>Temps pour répondre :</p>
                   <span>
-                    <NumberField name="time" onChange={formik.handleChange}/>
+                    <NumberField
+                      name="duration"
+                      onChange={formik.handleChange}
+                    />
                   </span>
                   <span>sec</span>
                 </TimeContainer>
@@ -111,12 +165,37 @@ const QuestionEditModal = ({ isOpen, onClose, questions, setQuestions }) => {
                   Réponses
                 </SubTitle>
                 <ListContainer>
-                  <TextareaField name="answer1" onChange={formik.handleChange}/>
-                  <TextareaField name="answer2" onChange={formik.handleChange}/>
-                  <TextareaField name="answer3" onChange={formik.handleChange}/>
-                  <TextareaField name="answer4" onChange={formik.handleChange}/>
-                  <TextareaField name="answer5" onChange={formik.handleChange}/>
-                  <TextareaField name="answer6" onChange={formik.handleChange}/>
+                  <Checkbox
+                    iconColor="#4fa9af"
+                    colorScheme="#4fa9a"
+                    onChange={(e) =>
+                      console.log("checkbox => ", e.target.value)
+                    }
+                  />
+                  <TextareaField
+                    name="answer0"
+                    onChange={formik.handleChange}
+                  />
+                  <TextareaField
+                    name="answer1"
+                    onChange={formik.handleChange}
+                  />
+                  <TextareaField
+                    name="answer2"
+                    onChange={formik.handleChange}
+                  />
+                  <TextareaField
+                    name="answer3"
+                    onChange={formik.handleChange}
+                  />
+                  <TextareaField
+                    name="answer4"
+                    onChange={formik.handleChange}
+                  />
+                  <TextareaField
+                    name="answer5"
+                    onChange={formik.handleChange}
+                  />
                 </ListContainer>
 
                 <Button type="submit">Enregistrer</Button>
@@ -124,16 +203,9 @@ const QuestionEditModal = ({ isOpen, onClose, questions, setQuestions }) => {
             )}
           </Formik>
         </ModalBody>
-
-        <ModalFooter>
-          {/* <Button colorScheme="blue" mr={3} onClick={onClose}>
-            Close
-          </Button>
-          <Button variant="ghost">Secondary Action</Button> */}
-        </ModalFooter>
       </ModalContent>
     </Modal>
   );
 };
 
-export default QuestionEditModal;
+export default QuestionNewModal;

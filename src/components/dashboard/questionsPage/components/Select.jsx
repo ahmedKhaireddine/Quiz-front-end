@@ -22,6 +22,7 @@ const SelectField = ({ label, ...props }) => {
     <FormControl>
       {/* <FormLabel>{label}</FormLabel> */}
       <Select
+        name="topic"
         {...props}
         bg={bg}
         border="1px solid"

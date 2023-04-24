@@ -14,7 +14,7 @@ import Button from "../../core/Button";
 import DeleteButton from "../../core/DeleteButton";
 import EditButton from "../../core/EditButton";
 import NumberField from "./NumberField";
-import TextareaField from "../../questionEditPage/components/TextareaField";
+import TextareaField from "./TextareaField";
 
 // --------- Styles --------- //
 import {
@@ -59,7 +59,15 @@ const QuestionEditModal = ({
               description: value.description,
               duration: value.duration,
               // ne récupère pas la valeur de la réponse
-              answer: value.choices.answer,
+
+              // Première méthode
+              answer: value.choices.map((answer, id) => answer[id]),
+  
+              // Seconde méthode
+              answer0: value.choices[0],
+              answer1: value.choices[1],
+              answer2: value.choices[2],
+              answer3: value.choices[3]
             }}
             onSubmit={(values, actions) => {
               setQuestions({ questions: values });
@@ -68,14 +76,16 @@ const QuestionEditModal = ({
             }}
             validationSchema={Yup.object({
               description: Yup.string()
-                .required("Aucune question décrite")
+                .required("Ecrivez votre question")
                 .max(255, "255 caractères maximum"),
               duration: Yup.number()
                 .required("Précisez un temps limite pour répondre")
                 .min(1, "Veuillez saisir un nombre entre 5 et 30")
                 .max(30, "Veuillez saisir un nombre entre 5 et 30")
                 .typeError("Veuillez saisir un nombre entre 5 et 30"),
-              // answer: Yup.string().max(255, "255 caractères maximum"),
+              answer: Yup.string()
+                .required("Ecrivez au moins une réponse")
+                .max(255, "255 caractères maximum"),
             })}
           >
             {(formik) => (
@@ -123,6 +133,7 @@ const QuestionEditModal = ({
                         </ItemsList>
                       ) : (
                         <TextareaField
+                          // name={answer[id]}
                           name="answer"
                           value={formik.values.answer}
                           onChange={formik.handleChange}

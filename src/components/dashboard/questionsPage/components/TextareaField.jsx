@@ -19,7 +19,7 @@ const TextField = ({ label, ...props }) => {
   const placeholderOpacity = useColorModeValue(0.8, 0.6);
 
   return (
-    <FormControl isInvalid={meta.error && meta.touched}>
+    <FormControl isInvalid={meta.error && meta.touched} paddingBottom="25px">
       <FormLabel>{label}</FormLabel>
       <Textarea
         {...field}
@@ -33,8 +33,6 @@ const TextField = ({ label, ...props }) => {
         _hover={{ borderColor: hoverBorderColor }}
         _placeholder={{ opacity: placeholderOpacity, color: placeholderColor }}
         minHeight={65}
-        marginBottom="25px"
-        // minLength={10}
       />
       <FormErrorMessage>{meta.error}</FormErrorMessage>
     </FormControl>

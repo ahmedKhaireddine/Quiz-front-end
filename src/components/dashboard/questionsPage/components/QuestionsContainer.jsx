@@ -9,9 +9,8 @@ import SelectTopics from "./SelectTopics";
 
 import { SearchContainer2 } from "../../../../styles/dashboard/questionsPage/QuestionsPageStyled";
 
-const CardContainer = ({ questions, setQuestions }) => {
+const CardContainer = ({ questions, setQuestions, selectedTopic, setSelectedTopic }) => {
   const [searchTerms, setSearchTerms] = useState("");
-  const [selectedTopic, setSelectedTopic] = useState("");
   const [selectedQuestion, setSelectedQuestion] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -30,6 +29,13 @@ const CardContainer = ({ questions, setQuestions }) => {
     onOpen();
   };
 
+  const handleSelectTopic = (e) => {
+    const value = e.target.value;
+    setSelectedTopic(value);
+  };
+
+  console.log(selectedTopic);
+
   return (
     <CentralContainer
       flexDirection="column"
@@ -44,7 +50,9 @@ const CardContainer = ({ questions, setQuestions }) => {
         />
         <SelectTopics
           questions={questions}
-          setSelectedTopic={setSelectedTopic}
+          // selectedTopic={selectedTopic}
+          // setSelectedTopic={setSelectedTopic}
+          onChange={handleSelectTopic}
         />
       </SearchContainer2>
       {questions

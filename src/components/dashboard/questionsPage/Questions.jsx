@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useDisclosure } from "@chakra-ui/react";
 
+// --------- Components --------- //
 import Aside from "../layouts/aside/Aside";
 import ButtonAdd from "../core/ButtonAdd";
 import Header from "../layouts/Header";
@@ -11,12 +12,16 @@ import QuestionNewModal from "./components/QuestionNewModal";
 
 import QuestionsTest from "../../../assets/json/QuestionsTest.json";
 
+// --------- Styles --------- //
 import { OptionsBar } from "../../../styles/dashboard/layouts/HeaderStyled";
 import { MainContainer } from "../../../styles/dashboard/layouts/MainStyled";
 
 const Questions = () => {
   const [questions, setQuestions] = useState(QuestionsTest);
+  const [selectedTopic, setSelectedTopic] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // console.log("questions[0].choices[0] dans la page Question =>", questions[0].choices[0]);
 
   const openAddQuestionModal = () => {
     onOpen();
@@ -35,14 +40,24 @@ const Questions = () => {
             <ButtonAdd onClick={openAddQuestionModal} />
           </OptionsBar>
         </Header>
+
         <Helmet>
           <title>Questions</title>
         </Helmet>
-        <QuestionsContainer questions={questions} setQuestions={setQuestions} />
+
+        <QuestionsContainer
+          questions={questions}
+          setQuestions={setQuestions}
+          selectedTopic={selectedTopic}
+          setSelectedTopic={setSelectedTopic}
+        />
         <QuestionNewModal
           isOpen={isOpen}
           onClose={onClose}
+          questions={questions}
           setQuestions={setQuestions}
+          selectedTopic={selectedTopic}
+          setSelectedTopic={setSelectedTopic}
         />
         <Aside subtitle="Question" padding="0"></Aside>
       </MainContainer>

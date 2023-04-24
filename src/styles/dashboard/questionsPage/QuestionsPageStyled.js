@@ -77,6 +77,12 @@ export const SearchContainer2 = styled.div`
   margin: 0 auto;
 `
 
+export const SelectContainer = styled.div`
+  width: ${props => props.width || "100%"};
+  margin: ${props => props.margin};
+`
+
+
 export const Container = styled.div`
   width: 100%;
   height: 100%;

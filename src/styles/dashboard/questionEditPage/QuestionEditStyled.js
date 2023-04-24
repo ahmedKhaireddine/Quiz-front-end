@@ -38,7 +38,7 @@ export const ListContainer = styled.ul`
 export const TimeContainer = styled.div`
   display: flex;
   width: 100%;
-  padding: ${props => props.padding || "15px 0 30px"};
+  padding: ${props => props.padding || "0 0 15px 0"};
 
   p {
     line-height: 40px;
