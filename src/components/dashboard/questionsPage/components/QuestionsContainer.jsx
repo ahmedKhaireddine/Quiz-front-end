@@ -7,7 +7,7 @@ import QuestionEditModal from "./QuestionEditModal";
 import SearchTermsInput from "./SearchTermsInput";
 import SelectTopics from "./SelectTopics";
 
-import { SearchContainer2 } from "../../../../styles/dashboard/questionsPage/QuestionsPageStyled";
+import { SearchContainer } from "../../../../styles/dashboard/questionsPage/QuestionsPageStyled";
 
 const CardContainer = ({ questions, setQuestions, selectedTopic, setSelectedTopic }) => {
   const [searchTerms, setSearchTerms] = useState("");
@@ -34,8 +34,6 @@ const CardContainer = ({ questions, setQuestions, selectedTopic, setSelectedTopi
     setSelectedTopic(value);
   };
 
-  console.log(selectedTopic);
-
   return (
     <CentralContainer
       flexDirection="column"
@@ -43,7 +41,7 @@ const CardContainer = ({ questions, setQuestions, selectedTopic, setSelectedTopi
       width="100%"
       height="100%"
     >
-      <SearchContainer2>
+      <SearchContainer>
         <SearchTermsInput
           questions={questions}
           setSearchTerms={setSearchTerms}
@@ -54,7 +52,7 @@ const CardContainer = ({ questions, setQuestions, selectedTopic, setSelectedTopi
           // setSelectedTopic={setSelectedTopic}
           onChange={handleSelectTopic}
         />
-      </SearchContainer2>
+      </SearchContainer>
       {questions
         .filter((value) => {
           return (

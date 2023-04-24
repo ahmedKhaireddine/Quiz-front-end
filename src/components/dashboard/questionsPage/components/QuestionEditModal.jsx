@@ -18,21 +18,21 @@ import TextareaField from "./TextareaField";
 
 // --------- Styles --------- //
 import {
-  AnswerContainer,
+  AnswerValueContainer,
   ButtonContainer,
   ItemsList,
   Line,
   ListContainer,
   TimeContainer,
-} from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
+} from "../../../../styles/dashboard/questionsPage/QuestionsPageStyled";
 import { SubTitle } from "../../../../styles/ReusableTagsStyled";
 
 const QuestionEditModal = ({
-  value,
   isOpen,
   onClose,
   questions,
   setQuestions,
+  value
 }) => {
   const [selectAnswer, setSelectAnswer] = useState(null);
   const [answerValue, setAnswerValue] = useState("");
@@ -44,7 +44,8 @@ const QuestionEditModal = ({
   };
 
   const deleteAnswer = (id) => {
-    setQuestions(questions.choices.filter((answer) => answer.id !== id));
+    setQuestionValue(value.choices.filter((answer) => answer.id !== id));
+    console.log(id);
   };
 
   return (
@@ -58,16 +59,19 @@ const QuestionEditModal = ({
             initialValues={{
               description: value.description,
               duration: value.duration,
+
+              // Peut-être un problème avec le nommage (value de formik et value des datas)
+              answer: value.answer
               // ne récupère pas la valeur de la réponse
 
               // Première méthode
-              answer: value.choices.map((answer, id) => answer[id]),
+              // answer: value.choices.map((answer, id) => answer[id]),
   
               // Seconde méthode
-              answer0: value.choices[0],
-              answer1: value.choices[1],
-              answer2: value.choices[2],
-              answer3: value.choices[3]
+              // answer0: value.choices[0],
+              // answer1: value.choices[1],
+              // answer2: value.choices[2],
+              // answer3: value.choices[3]
             }}
             onSubmit={(values, actions) => {
               setQuestions({ questions: values });
@@ -97,6 +101,7 @@ const QuestionEditModal = ({
                   name="description"
                   value={formik.values.description}
                   onChange={formik.handleChange}
+                  paddingBottom="15px"
                 />
 
                 <TimeContainer>
@@ -124,7 +129,7 @@ const QuestionEditModal = ({
                     <li key={id}>
                       {selectAnswer !== answer.id ? (
                         <ItemsList>
-                          <AnswerContainer>{answer.value}</AnswerContainer>
+                          <AnswerValueContainer>{answer.value}</AnswerValueContainer>
                           <Line />
                           <ButtonContainer>
                             <EditButton onClick={() => editAnswer(answer.id)} />
@@ -133,8 +138,10 @@ const QuestionEditModal = ({
                         </ItemsList>
                       ) : (
                         <TextareaField
+                          key={answer.id}
                           // name={answer[id]}
-                          name="answer"
+                          // name="answer"
+                          name="answer0"
                           value={formik.values.answer}
                           onChange={formik.handleChange}
                         />

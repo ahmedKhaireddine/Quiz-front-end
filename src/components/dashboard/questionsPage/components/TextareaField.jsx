@@ -8,7 +8,7 @@ import {
 import { useField } from "formik";
 import { useColorModeValue } from "@chakra-ui/react";
 
-const TextField = ({ label, ...props }) => {
+const TextField = ({ paddingBottom, label, ...props }) => {
   const [field, meta] = useField(props);
 
   const bg = useColorModeValue("#f1f1f1", "#171923");
@@ -19,7 +19,7 @@ const TextField = ({ label, ...props }) => {
   const placeholderOpacity = useColorModeValue(0.8, 0.6);
 
   return (
-    <FormControl isInvalid={meta.error && meta.touched} paddingBottom="25px">
+    <FormControl isInvalid={meta.error && meta.touched} paddingBottom={paddingBottom}>
       <FormLabel>{label}</FormLabel>
       <Textarea
         {...field}

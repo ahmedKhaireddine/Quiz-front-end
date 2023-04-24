@@ -15,12 +15,13 @@ import Button from "../../core/Button";
 import NumberField from "./NumberField";
 import SelectTopics from "./SelectTopics";
 import TextareaField from "./TextareaField";
+import AnswerEditComponent from "./AnswerEditComponent";
 
 // --------- Styles --------- //
 import {
   ListContainer,
   TimeContainer,
-} from "../../../../styles/dashboard/questionEditPage/QuestionEditStyled";
+} from "../../../../styles/dashboard/questionsPage/QuestionsPageStyled";
 import { SubTitle } from "../../../../styles/ReusableTagsStyled";
 
 const QuestionNewModal = ({
@@ -30,8 +31,6 @@ const QuestionNewModal = ({
   setQuestions,
   setSelectedTopic,
 }) => {
-  const [selectAnswer, setSelectAnswer] = useState(null);
-  const [answerValue, setAnswerValue] = useState("");
   const [newQuestion, setNewQuestion] = useState("");
   const [newTopicSelected, setNewTopicSelected] = useState("");
 
@@ -142,6 +141,7 @@ const QuestionNewModal = ({
                 <TextareaField
                   name="description"
                   onChange={formik.handleChange}
+                  paddingBottom="15px"
                 />
 
                 <TimeContainer>
@@ -164,37 +164,37 @@ const QuestionNewModal = ({
                 >
                   Réponses
                 </SubTitle>
+                <p>Cochez la bonne réponse <i>(une seule bonne réponse possible)</i></p>
                 <ListContainer>
-                  <Checkbox
-                    iconColor="#4fa9af"
-                    colorScheme="#4fa9a"
-                    onChange={(e) =>
-                      console.log("checkbox => ", e.target.value)
-                    }
+                  <AnswerEditComponent
+                    textName="answer0"
+                    onTextChange={formik.handleChange}
+                    // checkName={choices[0]}
                   />
-                  <TextareaField
-                    name="answer0"
-                    onChange={formik.handleChange}
+                  <AnswerEditComponent
+                    textName="answer1"
+                    onTextChange={formik.handleChange}
+                    // checkName={choices[0]}
                   />
-                  <TextareaField
-                    name="answer1"
-                    onChange={formik.handleChange}
+                  <AnswerEditComponent
+                    textName="answer2"
+                    onTextChange={formik.handleChange}
+                    // checkName={choices[0]}
                   />
-                  <TextareaField
-                    name="answer2"
-                    onChange={formik.handleChange}
+                  <AnswerEditComponent
+                    textName="answer3"
+                    onTextChange={formik.handleChange}
+                    // checkName={choices[0]}
                   />
-                  <TextareaField
-                    name="answer3"
-                    onChange={formik.handleChange}
+                  <AnswerEditComponent
+                    textName="answer4"
+                    onTextChange={formik.handleChange}
+                    // checkName={choices[0]}
                   />
-                  <TextareaField
-                    name="answer4"
-                    onChange={formik.handleChange}
-                  />
-                  <TextareaField
-                    name="answer5"
-                    onChange={formik.handleChange}
+                  <AnswerEditComponent
+                    textName="answer5"
+                    onTextChange={formik.handleChange}
+                    // checkName={choices[0]}
                   />
                 </ListContainer>
 
