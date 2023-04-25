@@ -31,10 +31,56 @@ const QuestionNewModal = ({
   setQuestions,
   setSelectedTopic,
 }) => {
+  const choices = [
+    {
+      id: 0,
+      value: "",
+      weight: 0,
+    },
+    {
+      id: 1,
+      value: "",
+      weight: 0,
+    },
+    {
+      id: 2,
+      value: "",
+      weight: 0,
+    },
+    {
+      id: 3,
+      value: "",
+      weight: 0,
+    },
+    {
+      id: 4,
+      value: "",
+      weight: 0,
+    },
+    {
+      id: 5,
+      value: "",
+      weight: 0,
+    },
+  ];
+
   const [newQuestion, setNewQuestion] = useState("");
   const [newTopicSelected, setNewTopicSelected] = useState("");
+  const [checked, setChecked] = useState(0);
+  const [checkedAnswer, setCheckedAnswer] = useState(0);
 
   console.log("newQuestion =>", newQuestion);
+
+  const isChecked = (id) => {
+    setChecked(choices.filter((choice, id) => (choice.id === id ? 0 : 1)));
+  };
+
+  const handleChecked = (id) => {
+    setCheckedAnswer(id);
+    // setChecked(choices.filter((choice, id) => choice.id === id ? 0 : 1))
+
+    console.log(`l'id ${id} est à ${checked}`);
+  };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xs">
@@ -47,51 +93,46 @@ const QuestionNewModal = ({
               topic: "",
               description: "",
               duration: "",
-              answer0: "",
-              answer1: "",
-              answer2: "",
-              answer3: "",
-              answer4: "",
-              answer5: "",
+              choice: ""
             }}
             onSubmit={(values, actions) => {
               setNewQuestion({
                 newQuestion: {
                   description: values.description,
                   duration: values.duration,
-                  id: values.id,
+                  id: "",
                   is_active: false,
                   topic: values.topic,
                   choices: [
                     {
                       id: 0,
-                      value: values.answer0,
-                      weight: 0,
+                      value: values.choice,
+                      weight: checked,
                     },
                     {
                       id: 1,
-                      value: values.answer1,
-                      weight: 0,
+                      value: values.choice,
+                      weight: checked,
                     },
                     {
                       id: 2,
-                      value: values.answer2,
-                      weight: 0,
+                      value: values.choice,
+                      weight: checked,
                     },
                     {
                       id: 3,
-                      value: values.answer3,
-                      weight: 0,
+                      value: values.choice,
+                      weight: checked,
                     },
                     {
                       id: 4,
-                      value: values.answer4,
-                      weight: 0,
+                      value: values.choice,
+                      weight: checked,
                     },
                     {
                       id: 5,
-                      value: values.answer5,
-                      weight: 0,
+                      value: values.choice,
+                      weight: checked,
                     },
                   ],
                 },
@@ -164,38 +205,21 @@ const QuestionNewModal = ({
                 >
                   Réponses
                 </SubTitle>
-                <p>Cochez la bonne réponse <i>(une seule bonne réponse possible)</i></p>
+                <p>
+                  Cochez la bonne réponse
+                  <i>(une seule bonne réponse possible)</i>
+                </p>
                 <ListContainer>
-                  <AnswerEditComponent
-                    textName="answer0"
-                    onTextChange={formik.handleChange}
-                    // checkName={choices[0]}
-                  />
-                  <AnswerEditComponent
-                    textName="answer1"
-                    onTextChange={formik.handleChange}
-                    // checkName={choices[0]}
-                  />
-                  <AnswerEditComponent
-                    textName="answer2"
-                    onTextChange={formik.handleChange}
-                    // checkName={choices[0]}
-                  />
-                  <AnswerEditComponent
-                    textName="answer3"
-                    onTextChange={formik.handleChange}
-                    // checkName={choices[0]}
-                  />
-                  <AnswerEditComponent
-                    textName="answer4"
-                    onTextChange={formik.handleChange}
-                    // checkName={choices[0]}
-                  />
-                  <AnswerEditComponent
-                    textName="answer5"
-                    onTextChange={formik.handleChange}
-                    // checkName={choices[0]}
-                  />
+                  {choices.map((choice, id) => (
+                    <AnswerEditComponent
+                      key={id}
+                      textName={choice} // 0,1,2,3,4,5
+                      onTextChange={formik.handleChange}
+                      onCheckChange={() => handleChecked(choice.id)}
+                      checked={() => isChecked(choice.id)}
+                      checkName={choice.id}
+                    />
+                  ))}
                 </ListContainer>
 
                 <Button type="submit">Enregistrer</Button>

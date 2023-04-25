@@ -4,7 +4,7 @@ import { Checkbox } from "@chakra-ui/react";
 import TextareaField from "./TextareaField";
 import { AnswerContainer } from "../../../../styles/dashboard/questionsPage/QuestionsPageStyled";
 
-const AnswerEditComponent = ({ checkName, onTextChange, textName }) => {
+const AnswerEditComponent = ({ checkName, onCheckChange, onTextChange, textName }) => {
   return (
     <AnswerContainer>
     <TextareaField name={textName} onChange={onTextChange} />
@@ -13,7 +13,7 @@ const AnswerEditComponent = ({ checkName, onTextChange, textName }) => {
         iconColor="#4fa9af"
         colorScheme="#4fa9a"
         margin="0 10px"
-        onChange={(e) => console.log("checkbox => ", e.target.value)}
+        onChange={onCheckChange}
       />
     </AnswerContainer>
   );
