@@ -31,38 +31,38 @@ const QuestionNewModal = ({
   setQuestions,
   setSelectedTopic,
 }) => {
-  const choices = [
-    {
-      id: 0,
-      value: "",
-      weight: 0,
-    },
-    {
-      id: 1,
-      value: "",
-      weight: 0,
-    },
-    {
-      id: 2,
-      value: "",
-      weight: 0,
-    },
-    {
-      id: 3,
-      value: "",
-      weight: 0,
-    },
-    {
-      id: 4,
-      value: "",
-      weight: 0,
-    },
-    {
-      id: 5,
-      value: "",
-      weight: 0,
-    },
-  ];
+  // const choices = [
+  //   {
+  //     id: 0,
+  //     value: "",
+  //     weight: 0,
+  //   },
+  //   {
+  //     id: 1,
+  //     value: "",
+  //     weight: 0,
+  //   },
+  //   {
+  //     id: 2,
+  //     value: "",
+  //     weight: 0,
+  //   },
+  //   {
+  //     id: 3,
+  //     value: "",
+  //     weight: 0,
+  //   },
+  //   {
+  //     id: 4,
+  //     value: "",
+  //     weight: 0,
+  //   },
+  //   {
+  //     id: 5,
+  //     value: "",
+  //     weight: 0,
+  //   },
+  // ];
 
   const [newQuestion, setNewQuestion] = useState("");
   const [newTopicSelected, setNewTopicSelected] = useState("");
@@ -72,7 +72,7 @@ const QuestionNewModal = ({
   console.log("newQuestion =>", newQuestion);
 
   const isChecked = (id) => {
-    setChecked(choices.filter((choice, id) => (choice.id === id ? 0 : 1)));
+    setChecked(id);
   };
 
   const handleChecked = (id) => {
@@ -83,9 +83,9 @@ const QuestionNewModal = ({
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="xs">
+    <Modal isOpen={isOpen} onClose={onClose} size="lg">
       <ModalOverlay />
-      <ModalContent maxW="500px">
+      <ModalContent>
         <ModalCloseButton />
         <ModalBody>
           <Formik
@@ -93,7 +93,18 @@ const QuestionNewModal = ({
               topic: "",
               description: "",
               duration: "",
-              choice: ""
+              answer0: "",
+              weight0: "",
+              answer1: "",
+              weight1: "",
+              answer2: "",
+              weight2: "",
+              answer3: "",
+              weight3: "",
+              answer4: "",
+              weight4: "",
+              answer5: "",
+              weight5: ""
             }}
             onSubmit={(values, actions) => {
               setNewQuestion({
@@ -106,33 +117,33 @@ const QuestionNewModal = ({
                   choices: [
                     {
                       id: 0,
-                      value: values.choice,
-                      weight: checked,
+                      value: values.answer0,
+                      weight: values.weight0,
                     },
                     {
                       id: 1,
-                      value: values.choice,
-                      weight: checked,
+                      value: values.answer1,
+                      weight: values.weight1,
                     },
                     {
                       id: 2,
-                      value: values.choice,
-                      weight: checked,
+                      value: values.answer2,
+                      weight: values.weight2,
                     },
                     {
                       id: 3,
-                      value: values.choice,
-                      weight: checked,
+                      value: values.answer3,
+                      weight: values.weight3,
                     },
                     {
                       id: 4,
-                      value: values.choice,
-                      weight: checked,
+                      value: values.answer4,
+                      weight: values.weight4,
                     },
                     {
                       id: 5,
-                      value: values.choice,
-                      weight: checked,
+                      value: values.answer5,
+                      weight: values.weight5,
                     },
                   ],
                 },
@@ -210,16 +221,51 @@ const QuestionNewModal = ({
                   <i>(une seule bonne réponse possible)</i>
                 </p>
                 <ListContainer>
-                  {choices.map((choice, id) => (
+                  {/* {choices.map((choice, id) => (
                     <AnswerEditComponent
-                      key={id}
-                      textName={choice} // 0,1,2,3,4,5
+                        textName={choice}
                       onTextChange={formik.handleChange}
                       onCheckChange={() => handleChecked(choice.id)}
                       checked={() => isChecked(choice.id)}
                       checkName={choice.id}
                     />
-                  ))}
+                  ))} */}
+                  <AnswerEditComponent
+                    textName="answer0"
+                    onTextChange={formik.handleChange}
+                    checkName="weight0"
+                    onCheckChange={formik.handleChange}
+                  />
+                  <AnswerEditComponent
+                    textName="answer1"
+                    onTextChange={formik.handleChange}
+                    checkName="weight1"
+                    onCheckChange={formik.handleChange}
+                  />
+                  <AnswerEditComponent
+                    textName="answer2"
+                    onTextChange={formik.handleChange}
+                    checkName="weight2"
+                    onCheckChange={formik.handleChange}
+                  />
+                  <AnswerEditComponent
+                    textName="answer3"
+                    onTextChange={formik.handleChange}
+                    checkName="weight3"
+                    onCheckChange={formik.handleChange}
+                  />
+                  <AnswerEditComponent
+                    textName="answer4"
+                    onTextChange={formik.handleChange}
+                    checkName="weight4"
+                    onCheckChange={formik.handleChange}
+                  />
+                  <AnswerEditComponent
+                    textName="answer5"
+                    onTextChange={formik.handleChange}
+                    checkName="weight5"
+                    onCheckChange={formik.handleChange}
+                  />
                 </ListContainer>
 
                 <Button type="submit">Enregistrer</Button>

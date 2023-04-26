@@ -23,6 +23,8 @@ const Questions = () => {
 
   // console.log("questions[0].choices[0] dans la page Question =>", questions[0].choices[0]);
 
+  console.log("questions dans QuestionsPage =>", questions);
+
   const openAddQuestionModal = () => {
     onOpen();
   };
